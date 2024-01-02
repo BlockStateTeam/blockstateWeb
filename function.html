@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API Function Testing</title>
+        <style>
+            @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); }
+            @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); }
+            @font-face { font-family: MinecraftFive; src: url('/assets/fonts/MinecraftFive-Regular.woff2'); }
+            select {
+                width: 200px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #fff;
+                color: #333;
+                font-size: 23px;
+                font-family: 'Minecraft';
+                margin-bottom: 20px;
+            }
+            select option {
+                background-color: #fff;
+                color: #333;
+                font-size: 22px;
+                font-family: 'Minecraft';
+            }
+            h1 {
+                font-family: 'MinecraftTen';
+                font-size: 3vw;
+            }
+            body {
+                width: 100vw;
+                overflow-x: hidden;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Minecraft';
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+            #formTest {
+                width: 40vw;
+                height: auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+                font-family: 'MinecraftFive';
+                display: block;
+                padding: 5px;
+                font-weight: bold;
+                font-size: 26px;
+                margin-top: 20px;
+            }
+
+            input[type="text"] {
+                font-family: 'Minecraft';
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 22px;
+            }
+
+            button {
+                font-family: 'Minecraft';
+                background-color: #9900d5;
+                color: #fff;
+                padding: 10px 20px;
+                margin: 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 25px;
+            }
+
+            button:hover {
+                background-color: #6100df;
+            }
+            pre {
+                font-family: 'Minecraft';
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1><strong>API Testing</strong></h1>
+        <h3 style="width: 80vw; margin-bottom: 50px; text-align: left;">If you've found your way here accidentally, feel free to navigate back to the appropriate area of the website or application you intended to use.<br></h3>
+        <form action="/function" method="post" id="formTest">
+            <label for="id">API FUNCTION ID:</label>
+            <input type="text" id="id" name="id" autocomplete="off">
+            <br>
+            <label for="function">API TYPE:</label>
+            <select id="function" name="function" required>
+                <option value="pull">Pull</option>
+                <option value="log">Log</option>
+                <option value="data">Data</option>
+                <option value="password">Password</option>
+            </select>
+            <br>
+            <button type="submit">Submit</button>
+            <button id="datadownload" onclick="downloadData()">Download Data</button>
+        </form>
+        <div style="margin-bottom: 10vh; margin-top: 2vh; font-size: 25px; height: auto; text-align: left;" id="contentContainer"></div>
+        
+        <script>
+            document.getElementById("formTest").addEventListener("submit", function (event) {
+                event.preventDefault();
+                submitForm();
+            });
+            var specialData;
+            function submitForm() {
+                var formData = new FormData(document.getElementById("formTest"));
+                if (formData.get("function") == "password") {
+                    window.location.href = "https://www.blockstate.team/functionpassword.xml";
+                    return;
+                }
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/function", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            var jsonResponse = xhr.responseText;
+                            specialData = xhr.responseText.replace(/<br>/g, '\n');
+                            console.log(data);
+                            try {
+                                var beautifiedJson = JSON.stringify(JSON.parse(jsonResponse), null, '\t');
+                                beautifiedJson = beautifiedJson.replace(/\n/g, '<br>');
+                                beautifiedJson = beautifiedJson.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+                                document.getElementById("contentContainer").innerHTML = '<pre>' + beautifiedJson + '</pre>';
+                            } catch (error) {
+                                document.getElementById("contentContainer").innerHTML = xhr.responseText;
+                            }
+                        } else {
+                            document.getElementById("contentContainer").innerHTML = "Error: " + xhr.status;
+                        }
+                    }
+                };
+                var data = new URLSearchParams(formData).toString();
+                xhr.send(data);
+            }
+            function downloadData() {
+                let contentType = 'text/plain';
+                let fileExtension = 'txt';
+                console.log(specialData)
+                try {
+                    JSON.parse(specialData);
+                    contentType = 'application/json';
+                    fileExtension = 'json';
+                } catch (e) {};
+                var blob = new Blob([specialData], { type: contentType });
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                console.log(fileExtension);
+                a.download = `DownloadData.${fileExtension}`;
+                a.click();
+            }
+        </script>
+    </body>
+</html>

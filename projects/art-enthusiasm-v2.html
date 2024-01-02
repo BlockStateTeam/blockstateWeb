@@ -1,0 +1,180 @@
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <meta property="og:title" content="Project: Art Enthusiasm Version 2">
+    <meta property="og:image" content="https://blockstate.team/assets/media/project-logo/artEnthusiasmV2.webp">
+    <meta charset="UTF-8" />
+    <title>Project: Art Enthusiasm Version 2</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="art-enthusiasm-v2.css" rel="stylesheet" type="text/css">
+    <script>
+        window.onload = function () {
+        const menu_btn = document.querySelector('.hamburger');
+        const mobile_menu = document.querySelector('.mobile-nav');
+        menu_btn.addEventListener('click', function () {
+            menu_btn.classList.toggle('is-active');
+            mobile_menu.classList.toggle('is-active');
+        });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('hoverVideo');
+        video.pause();
+        video.addEventListener('mouseover', () => {
+            video.play();
+        });
+        video.addEventListener('mouseout', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    });
+    window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loadingScreen");
+    const fadeDuration = 1000; // 1 second
+    const intervalTime = fadeDuration / 50;
+
+    loadingScreen.style.opacity = "1";
+
+    setTimeout(() => {
+        const fadeOutStep = () => {
+            const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+            loadingScreen.style.opacity = currentOpacity;
+
+            if (currentOpacity <= 0) {
+                loadingScreen.style.visibility = "hidden";
+                clearInterval(fadeInterval);
+            }
+        };
+        const fadeInterval = setInterval(fadeOutStep, intervalTime);
+        }, 1000);
+    });
+    </script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+		<img src="/assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
+		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<nav id="desktopNav">
+			<a href="/project" class="active">Project</a>
+            <a href="/server">Server</a>
+			<a href="/contact">Contact</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/home">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="/home">Home</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/contact">Contact</a>
+            <a href="/server">Server</a>
+			<a href="/project" class="active">Project</a>
+		</div>
+	</div>
+    <h2>Project:  Art Enthusiasm Version 2</h2>
+    <div id="content">
+        <diV class="section" style="text-align: left;">
+            The "Art Enthusiasm" Add-On has taken the chart by storm, becoming the most downloaded and beloved Add-On out of all BlockState collection. Your enthusiasm for this remarkable Add-On has not gone unnoticed, and it's time to announce that the long-awaited update is finally here - introducing Art Enthusiasm Version 2!
+            <br><br>
+            Now, you must be eager to learn about the exciting new tools in Art Enthusiasm Version 2. If you need a refresher on how to use the existing features, please refer to the <a href="./art-enthusiasm">first version instruction!</a>. Now, let's dive straight into the thrilling additions that await you:
+        </diV>
+        <img src="../assets/media/art-enthusiasm-v2/1.webp">
+        <diV class="section">
+            Introducing an exciting array of fresh tools and a vibrant spectrum of new colors has just become available!
+        </diV>
+        <img src="../assets/media/art-enthusiasm-v2/2.webp">
+        <diV class="section">
+            "Tool preview" is also added! You can see what tool the cursor is hovering on!
+        </diV>
+        <video disableRemotePlayback controls loop muted>
+            <source src="https://dl.dropboxusercontent.com/scl/fi/drcyetsq50t1d5s9ig4zx/art-enthusiasm-v2.webm?rlkey=o7l4lyxp0gd2fkj25j9498rae&dl=0" type="video/webm">
+        </video>
+        <diV class="section">
+            Let's see how to use the new tools!
+        </diV>
+        <img src="../assets/media/art-enthusiasm-v2/3.webp">
+        <diV class="section">
+            The fill tool works just like the reset tool, but instead fill the whole canvas with White color, it will fill whatever color is being selected by the brush!
+        </diV>
+        <img src="../assets/media/art-enthusiasm-v2/4.webp">
+        <diV class="section">
+            Please note that there's a big change on Render system! In the previous version, whenever you draw anything, the system will auto-render it out and you can see the drawing on your map immediately.
+            <br> Unfortunately, auto-rendering is very computational expensive! So, in this version 2, auto-rendering is disable. You will need to do manually rendering!
+        </diV>
+        <img src="../assets/media/art-enthusiasm-v2/5.webp">
+        <diV class="section">
+            If you forget how to do manually render, just click this render button!
+        </diV>
+        <img src="../assets/media/art-enthusiasm-v2/6.webp">
+        <diV class="section">
+            Ta-da! Now your beautiful art is now viewable on the map!
+        </diV>
+        <img src="../assets/media/art-enthusiasm-v2/7.webp">
+        <diV class="section">
+            Also, a new reminder is added for people who keep forgetting to sneak to exit!
+        </diV>
+    </div>
+    <h2>HELP SECTION</h2>
+    <diV class="section">
+        If you need any help, feel free to join our Discord!
+        <div style="width: 100vw; height: 15vh; display: flex; justify-content: center;">
+            <a href="https://discord.gg/p3FvBh2aBd">
+                <button class="genericButton">Discord</button>
+            </a>
+        </div>
+    </diV>
+    <h2>DOWNLOAD SECTION</h2>
+    <diV class="warning">
+        WARNING:  This Addon requires Beta APIs experimental to work properly! 
+    </diV>
+    <div class="downloadSection">
+        <label for="tosCheckbox">
+          <input type="checkbox" id="tosCheckbox">
+          <span id="tosLabel">I <span style="text-decoration: underline;">disagree</span> to the <a href="../TOS">Term of service</a></span>
+        </label><br>
+        <button class="genericButton" id="genericButton" disabled>Download Now!</button>
+    </div>
+    <script>
+        const tosCheckbox = document.getElementById('tosCheckbox');
+        const downloadButton = document.getElementById('genericButton');
+        tosCheckbox.addEventListener('change', () => {
+        if (tosCheckbox.checked) {
+            downloadButton.removeAttribute('disabled');
+            tosLabel.innerHTML = 'I agree to the <a href="/TOS" target="_blank">Term of service</a>';
+        } else {
+            downloadButton.setAttribute('disabled', 'disabled');
+            tosLabel.innerHTML = 'I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a>';
+        }
+        });
+        downloadButton.addEventListener('click', () => {
+            if (!tosCheckbox.checked) {
+                alert('Please agree to the Terms of Service (TOS) before downloading.');
+                return;
+            }
+            let userIP;
+            $(document).ready(() => {
+                $.getJSON('https://api.ipify.org?format=json', (data) => {
+                    userIP = data.ip;
+                });
+            });
+            let link = document.URL;
+            let currentURL = link.substring(link.lastIndexOf("/") + 1);
+            const ws = new WebSocket('wss://blockstate.team');
+            ws.onopen = () => {
+                const data = {
+                    content: currentURL,
+                    ip: userIP,
+                    timestamp: Date.now(),
+                };
+                ws.send(JSON.stringify(data));
+                ws.close();
+            };
+            window.location.href = 'https://dl.dropboxusercontent.com/scl/fi/ixhq0xs71i5azwtq7orki/Art-Enthusiasm-V2-Addon.mcaddon?rlkey=7fqfc4ubfu8xtfqr9iqdwxmhr&dl=0';
+        });
+    </script>
+</body>
+</html>

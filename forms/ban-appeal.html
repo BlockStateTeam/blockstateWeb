@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <title>Ban Appeal</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body style="height: 100vh; overflow: hidden;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf4-elrNyqiSqrWBKwSqgqJXBILxW0fau07TiDbYpV-q4DZqw/viewform?embedded=true" frameborder="0" height="100%" width="100%">Loading…</iframe>
+    <script>
+        let userIP;
+        $(document).ready(() => {
+            $.getJSON('https://api.ipify.org?format=json', (data) => {
+                userIP = data.ip;
+            });
+        });
+        const ws = new WebSocket('wss://blockstate.team');
+        ws.onopen = () => {
+            const data = {
+                content: "Ban Appeal Access",
+                ip: userIP,
+                timestamp: Date.now(),
+            };
+            ws.send(JSON.stringify(data));
+            ws.close();
+        };
+    </script>
+</body>
+</html>

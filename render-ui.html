@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+	<script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Render-UI</title>
+	<style>
+		@font-face { font-family: MinecraftFive; src: url('./assets/fonts/MinecraftFive-Regular.woff2'); }
+		::-webkit-scrollbar {
+			display: none;
+		}
+		body{
+			background-color: #7046F0;
+			width: 100vw;
+			height: auto;
+			overflow: hidden;
+		}
+		#bottom{
+			padding-top: 25vh;
+		}
+		@media (any-pointer: coarse) {
+			body{
+				height: 105vh;
+				overflow: scroll;
+			}
+		}
+		#table {
+			display: flex; 
+			flex-direction: column; 
+			align-content: center; 
+			text-align: center; 
+			width: 20vw; 
+			margin-right: 5vw;
+		}
+		@media (max-aspect-ratio: 3/4) {
+			#dropdownList {
+				width: 30vw !important;
+				font-size: 2vh !important;
+			}
+			#dropdownList option {
+				padding: 8px;
+				font-size: 2vh !important;
+			}
+			#toggleButton{
+				top: 1vh !important;
+				font-size: 3vh;
+			}
+			#GUI{
+				margin-bottom: 5vh !important;
+				margin-left: 0 !important;
+				height: 25vh !important;
+				flex-direction: column !important;
+				align-items: center;
+  				justify-content: center;
+				gap: 2vh !important;
+			}
+			#myButton{
+				font-size: 2vh;
+				width: 30vw;
+			}
+			.custom-file-input {
+				font-size: 2vh !important;
+				padding: 5px !important;
+			}
+			#table {
+				align-content: none; 
+				text-align: none; 
+				width: fit-content; 
+			}
+			#scale{
+				font-size: 2vh !important;
+			}
+			#canvasContainer{
+				margin-left: 10vw !important;
+			}
+		}
+		canvas {
+			width: 100% !important;
+			height: 100% !important;
+		}
+		#canvasContainer{
+			margin-top: 0 !important;
+			background-color: white;
+		}
+		button {
+			border: none;
+			padding-left: 20px;
+			padding-right: 20px;
+			background-color: #4229B9;
+			color: #FFFFFF;
+			font-family: 'MinecraftFive';
+			font-size: 1vw;
+			box-shadow: 0.5vw 0px #4229B9, -0.5vw 0px #4229B9, 0px 0.5vw #4229B9, 0px -0.5vw #4229B9, 0.5vw 0.5vw 0px 0.55vw #24108a;
+			transition: 0.3s;
+		}
+		button:hover {
+			background-color: #4229B9;
+			box-shadow: 0.5vw 0px 0px 0.15vw #4229B9, -0.5vw 0px 0px 0.15vw #4229B9, 0px 0.5vw 0px 0.15vw #4229B9, 0px -0.5vw 0px 0.15vw #4229B9, 0.75vw 0.75vw 0px 0.8vw #24108a;
+			color: #fcf2ff;
+		}
+		button:active {
+			transform: translate(10px,10px);
+			box-shadow: 0.15vw 0px 0px 0.15vw #4229B9, -0.15vw 0px 0px 0.15vw #4229B9, 0px 0.15vw 0px 0.15vw #4229B9, 0px -0.15vw 0px 0.15vw #4229B9, 0.5vw 0.75vw 0px 0.55vw #24108a;
+		}
+		input[type="file"] {
+            position: absolute;
+            left: -9999px;
+        }
+        .custom-file-input {
+			padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4229B9;
+			box-shadow: 0.5vw 0px #4229B9, -0.5vw 0px #4229B9, 0px 0.5vw #4229B9, 0px -0.5vw #4229B9, 0.5vw 0.5vw 0px 0.55vw #24108a;
+            color: white;
+            cursor: pointer;
+            border: none;
+			font-family: 'MinecraftFive';
+            font-size: 1vw;
+			transition: 0.35s;
+        }
+		.custom-file-input:hover {
+			box-shadow: 0.15vw 0px 0px 0.25vw #4229B9, -0.15vw 0px 0px 0.25vw #4229B9, 0px 0.15vw 0px 0.25vw #4229B9, 0px -0.15vw 0px 0.25vw #4229B9, 0.5vw 0.75vw 0px 0.75vw #24108a;
+		}
+        .custom-file-input-wrapper {
+            margin-left: 5vw;
+        }
+        .number-input-wrapper {
+            display: inline-block;
+            position: relative;
+            border-radius: 4px;
+            padding: 8px;
+        }
+        input[type="number"] {
+            width: 150px;
+            padding: 4px;
+            border: none;
+            outline: none;
+            font-size: 1vw;
+        }
+        input[type="number"]::placeholder {
+            color: #aaa;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            --moz-appearance: textfield;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            height: 30px;
+        }
+		#GUI{
+			margin-top: 0;
+			margin-left: 10vw;
+			height: 15vh;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 5vw;
+		}
+		option {
+			font-family: 'MinecraftFive';
+		}
+		#dropdownList {
+			width: 11vw;
+			height: 5vh;
+			padding: 8px;
+			font-size: 1vw;
+			font-family: 'MinecraftFive';
+			appearance: none;
+			color: white;
+			background-color: #4229B9;
+			box-shadow: 0.35vw 0px 0px 0.15vw #4229B9, -0.35vw 0px 0px 0.15vw #4229B9, 0px 0.35vw 0px 0.15vw #4229B9, 0px -0.35vw 0px 0.15vw #4229B9, 0.5vw 0.75vw 0px 0.25vw #24108a;
+		}
+
+		/* Style for the dropdown options */
+		#dropdownList option {
+			padding: 8px;
+			font-size: 1vw;
+		}
+		#dropdownList option:hover {
+			background-color: #7046F0;
+		}
+
+		/* Style for the selected option */
+		#dropdownList option:checked {
+			background-color: white; /* Change to your desired color for the selected option */
+			color: #4229B9;
+		}
+		#scalingFactor{
+			font-size: 1vw;
+			font-family: 'MinecraftFive';
+			color: white;
+			background-color: #4229B9;
+			box-shadow: 0.35vw 0px 0px 0.15vw #4229B9, -0.35vw 0px 0px 0.15vw #4229B9, 0px 0.35vw 0px 0.15vw #4229B9, 0px -0.35vw 0px 0.15vw #4229B9, 0.5vw 0.75vw 0px 0.25vw #24108a;
+		}
+	</style>
+</head>
+<body>
+	<script src="./render-ui.js" defer type="module"></script>
+	<button id="toggleButton" style="z-index: 100; position: fixed; top:5vh; font-size: 1.5vw; margin-left: 3vw;">Hide/Show GUI</button>
+	<div style="z-index: 99; top:0;">
+		<div id="GUI" style="margin-left: 25vw; margin-top: 2.5vh; display: flex; flex-direction: row;">
+			<div>
+				<label for="modelInput" class="custom-file-input">
+					Select GLTF File
+				</label>
+				<input type="file" id="modelInput" accept=".gltf">
+			</div>
+			<div>
+				<select id="dropdownList">
+					<option value="none">No Environment</option>
+					<option value="underwater">Underwater</option>
+					<option value="nether">The Nether</option>
+					<option value="coral_reef">Coral Reef</option>
+					<option value="cherry_grove">Cherry Grove</option>
+					<option value="deep_dark">Deep Dark</option>
+					<option value="desert">Desert</option>
+					<option value="end">The End</option>
+					<option value="lush_cave">Lush Cave</option>
+					<option value="night">Night</option>
+					<option value="plains">Plains</option>
+					<option value="snowy_tundra">Snowy Tundra</option>
+					<option value="soul_sand_valley">Soul Sand Valley</option>
+					<option value="sunset">The Sunset</option>
+				</select>
+			</div>
+			<div style="display: flex; flex-direction: column; gap: 2vh;">
+				<label id="scale" style="font-family: 'MinecraftFive'; color: white; font-size: 1vw;">Scaling Factor</label>
+				<input type="number" id="scalingFactor" step="0.1" min="0.1" max="10" value="1" placeholder="Enter scaler!">
+			</div>
+			<div>
+				<button id="myButton">Export</button>
+			</div>
+		</div>
+		<div id="canvasContainer" style="position: relative;; width: 80vw; height: 80vh; border: 10px solid black; margin-left: 10vw; margin-top: 5vh;"></div>
+	</div>
+
+	<script>
+		const toggleButton = document.getElementById("toggleButton");
+		const guiContainer = document.getElementById("GUI");
+		const canvasContainer = document.getElementById("canvasContainer");
+
+		toggleButton.addEventListener("click", () => {
+			if (guiContainer.style.display === "none") {
+				guiContainer.style.display = "flex";
+				canvasContainer.style.width = "80vw";
+				canvasContainer.style.height = "80vh";
+				canvasContainer.style.marginLeft = "10vw";
+				canvasContainer.style.marginTop = "5vh";
+			} else {
+				guiContainer.style.display = "none";
+				canvasContainer.style.margin = "0px";
+				canvasContainer.style.width = "95vw";
+				canvasContainer.style.height = "95vh";
+				canvasContainer.style.marginLeft = "2vw";
+				canvasContainer.style.marginTop = "2vh";
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <meta property="og:title" content="Project: Head Decoration">
+    <meta property="og:image" content="https://blockstate.team/assets/media/project-logo/headDecoration.webp">
+    <meta charset="UTF-8" />
+    <title>Project: Head Decoration</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="head-decoration.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+		<img src="/assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
+		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<nav id="desktopNav">
+			<a href="/project" class="active">Project</a>
+            <a href="/server">Server</a>
+			<a href="/contact">Contact</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/home">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="/home">Home</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/contact">Contact</a>
+            <a href="/server">Server</a>
+			<a href="/project" class="active">Project</a>
+		</div>
+	</div>
+    <h2>Project: Head Decoration</h2>
+    <div id="content">
+        <div class="section" style="text-align: left;">    
+            Presenting Head Decorations! You now have the option to select from a variety of head blocks and seamlessly incorporate them into your game, much like in the Java Edition, but now accessible in Minecraft Bedrock Edition.
+        </div>
+        <div class="section" style="text-align: left;">    
+            Let's watch the video below to see how it works! If you have more questions, just scroll down to the Help section!
+        </div>
+        <video disableRemotePlayback controls style="width: 70vw; height: 80vh; object-fit: cover; border: 5px solid black; padding: 1px;">
+            <source src="https://dl.dropboxusercontent.com/scl/fi/0w3f3spgqhqiwb8so3cf4/Head-Decoration-Tutorial.webm?rlkey=tjr73c41lsvf78kqnudpl9ez5&dl=0" type="video/webm">
+        </video>
+        <div class="section" style="text-align: left;">
+            <br>
+        </div>
+        <img src="../assets/media/head-decoration/1.webp">
+        <div class="section">
+            To get the heads, just use /give command! All the heads share the same spacename head_system, so you can use /give @s head_system:head_name to get your decoration head!
+        </div>
+        <img src="../assets/media/head-decoration/2.webp">
+        <div class="section">
+            Here's the heads in-game! Amazing isn't it?
+        </div>
+        <h2 id="credit">CREDIT TO minecraft-heads.com</h2>
+        <div class="section" style="text-align: left;">    
+            Before proceeding further, our gratitude goes out to minecraft-heads.com for providing the exceptional API that fuels this Add-On.
+            <br> Thank you!
+        </div>
+        <img src="../assets/media/head-decoration/credit.webp">
+    </div>
+    <h2>HELP SECTION</h2>
+    <div class="section">
+        If you need any help, feel free to join our Discord!
+        <div style="width: 100vw; height: 15vh; display: flex; justify-content: center;">
+            <a href="https://discord.gg/p3FvBh2aBd">
+                <button class="genericButton">Discord</button>
+            </a>
+        </div>
+    </div>
+    <h2>TEXTURE PREVIEW SECTION</h2>
+    <div id="previewsection" class="section">
+        <div style="display: flex;">
+            <select id="category" class="selectionDeco">
+                <option value="">Category List</option>
+                <option value="alphabet">Alphabet</option>
+                <option value="animals">Animals</option>
+                <option value="blocks">Blocks</option>
+                <option value="decoration">Decoration</option>
+                <option value="food-drinks">Food & Drinks</option>
+                <option value="humans">Humans</option>
+                <option value="humanoid">Humanoid</option>
+                <option value="miscellaneous">Miscellaneous</option>
+                <option value="monsters">Monsters</option>
+                <option value="plants">Plants</option>
+            </select>
+        </div>
+        <div id="pagination">
+            <label for="page">Select Page:</label>
+            <select id="page" class="selectionDeco">
+                <option value="">Empty</option>
+            </select>
+        </div>
+        <div id="result" style="display: flex; flex-direction: column; align-items: center;">
+            <input type="text" id="search" placeholder="Search by Name" autocomplete="off">
+            <div id="datawarning" style="color: red; display: none;">
+                No category selected <br>
+            </div>
+            <button id="searchButton">Search</button>   
+        </div>
+        <div style="flex-basis: 100%; height: 0;"></div>
+        <table id="headcontent" style="display: none;">
+            <thead>
+                <tr>
+                    <th style="width: 20vw;">Name</th>
+                    <th style="width: 20vw;">Head preview (Hover me)</th>
+                    <th style="width: 25vw;">Add</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+            </tbody>
+        </table>
+    <!-- BORDER-->
+
+    </div>
+    <h2>BUILD YOUR ADDON SECTION</h2>
+    <div class="section">
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <div style="color: red;">
+                <div id="emptywarning">
+                    This section is empty! Add some heads to your addon first!
+                </div>
+            </div>
+            <table id="myTable" style="display: none;">
+              <thead>
+                <tr>
+                    <th style="width: 20vw;">Head name</th>
+                    <th style="width: 15vw;">Texture</th>
+                    <th style="width: 7.5vw;">Remove</th>
+                </tr>
+              </thead>
+            </table>
+        </div>
+        <div>
+            <div style="color: red; text-align: center; display: none;" id="namewarning">Please enter acceptable name (Use alphabet characters only)</div>
+            <div style="color: red; text-align: center; display: none;" id="duplicateNameWarning">There's a duplicated name!</div>
+        </div>
+    </div>
+    <h2>DOWNLOAD SECTION</h2>
+    <div class="warning">
+        WARNING:  This Addon requires Holiday Creator Features to work properly! 
+    </div>
+    <div class="downloadSection">
+        <label for="tosCheckbox">
+          <input type="checkbox" id="tosCheckbox">
+          <span id="tosLabel">I <span style="text-decoration: underline;">disagree</span> to the <a href="../TOS">Term of service</a></span>
+        </label><br>
+        <div class="warning" id="errorWarningCompile" style="display: none;">
+            WARNING: DUPLICATE WARNING! 
+        </div>
+        <button class="genericButton" id="genericButton" disabled>Download Now!</button>
+    </div>
+    <div class="compiler">
+        <iframe src="../loading" style="width: 80vw; height: 95vh; background-color: white; border-radius: 2vw; z-index: 50;"></iframe>
+    </div>
+    <div id="loadingBar" class="compiler" style="background-color: black; height:20px; width:60vw; margin-left: 20vw; z-index: 51; top: 69vh; display: none;">
+        <div id="loadingBarRun" style="background-color: magenta; width:0%; height: inherit; z-index: 52; position: relative; left: 0;"></div>
+    </div>
+    <div class="compiler" id="loadingText" style="max-width: 90vw; margin-left: 5vw; text-overflow: clip; font-size: 5vw; font-family: 'MinecraftTen'; z-index: 49; margin-top: 28vh; background-color: rgba(0, 0, 0, 0) !important;">
+        LOADING...
+    </div>
+    <script>
+        function handleButtonClick(name, url, cssClass, cookieState) {
+            if (cookieState === true) {
+                document.cookie = `${url}=${name}-${cssClass}; expires=${new Date('9999-12-31').toUTCString()}; path=/`;
+            }
+            let table = document.getElementById("myTable")
+            let mulitRows = table.getElementsByTagName("tr");
+            for (let i = 0; i < mulitRows.length; i++) {
+                if (mulitRows[i].getElementsByTagName("td").length >= 4 && mulitRows[i].getElementsByTagName("td")[3].textContent === url) {
+                    console.log("Match found");
+                    return;
+                }
+            }
+            document.getElementById("emptywarning").style.display = "none";
+            table.style.display = "block";
+            table.getElementsByTagName("tbody")[0];
+            let newRow = table.insertRow(table.rows.length);
+            const cell1 = newRow.insertCell(0);
+            const input = document.createElement("input");
+            input.type = "text";
+            input.autocomplete = "off";
+            input.classList.add("input-name-field");
+            input.value = name;
+            cell1.appendChild(input);
+
+            const cell2 = newRow.insertCell(1);
+            let imageRender = document.createElement("div"); // Create a div element
+            imageRender.innerHTML = `
+                <div class="${cssClass}">
+                    <div class="faces">
+                        <div class="inner back" style="background-image: url('${url}');"></div>
+                        <div class="inner right" style="background-image: url('${url}');"></div>
+                        <div class="inner top" style="background-image: url('${url}');"></div>
+                        <div class="inner bottom" style="background-image: url('${url}');"></div>
+                        <div class="inner front" style="background-image: url('${url}');"></div>
+                        <div class="inner left" style="background-image: url('${url}');"></div>
+                        <div class="outer back" style="background-image: url('${url}');"></div>
+                        <div class="outer right" style="background-image: url('${url}');"></div>
+                        <div class="outer top" style="background-image: url('${url}');"></div>
+                        <div class="outer bottom" style="background-image: url('${url}');"></div>
+                        <div class="outer front" style="background-image: url('${url}');"></div>
+                        <div class="outer left" style="background-image: url('${url}');"></div>
+                    </div>
+                </div>`;
+            cell2.appendChild(imageRender);
+
+            const cell3 = newRow.insertCell(2);
+            let removeButton = document.createElement("div");
+            removeButton.innerHTML = `<button id="searchButton" class="headButton" onClick="removeButtonClick()">Remove head</button>`;
+            cell3.appendChild(removeButton);
+
+            const cell4 = newRow.insertCell(3);
+            let hiddenElement = document.createElement("div");
+            hiddenElement.innerHTML = `${url}`;
+            hiddenElement.style.display = "none";
+            cell4.appendChild(hiddenElement);
+        };
+        function removeButtonClick() {
+            let button = event.target;
+            let row = button.closest('tr');
+            document.cookie = `${row.cells[3].querySelector('div').textContent}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+            let table = document.getElementById('myTable');
+            if (row) {
+                row.remove();
+            }
+            if (table.rows.length === 1) {
+                table.style.display = "none";
+                document.getElementById("emptywarning").style.display = "block";
+            };
+        };
+        document.cookie.split('; ').forEach(cookie => {
+            const [cookieName, cookieValue] = cookie.split('=');
+            if (cookieName && cookieValue) {
+                const [name, css] = cookieValue.split('-');
+                if (name && css) handleButtonClick(name, cookieName, css, false);
+            }
+        });
+    </script>
+    <script src="./head-decoration.js" type="module"></script>
+</body>
+</html>

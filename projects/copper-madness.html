@@ -1,0 +1,175 @@
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <meta property="og:title" content="Project: Copper Madness">
+    <meta property="og:image" content="https://blockstate.team/assets/media/project-logo/copperMadness.webp">
+    <meta charset="UTF-8" />
+    <title>Project: Copper Madness</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="copper-madness.css" rel="stylesheet" type="text/css">
+    <script>
+        window.onload = function () {
+        const menu_btn = document.querySelector('.hamburger');
+        const mobile_menu = document.querySelector('.mobile-nav');
+
+        menu_btn.addEventListener('click', function () {
+            menu_btn.classList.toggle('is-active');
+            mobile_menu.classList.toggle('is-active');
+        });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('hoverVideo');
+        video.pause();
+        video.addEventListener('mouseover', () => {
+            video.play();
+        });
+        video.addEventListener('mouseout', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    });
+    window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loadingScreen");
+    const fadeDuration = 1000; // 1 second
+    const intervalTime = fadeDuration / 50;
+
+    loadingScreen.style.opacity = "1";
+
+    setTimeout(() => {
+        const fadeOutStep = () => {
+            const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+            loadingScreen.style.opacity = currentOpacity;
+
+            if (currentOpacity <= 0) {
+                loadingScreen.style.visibility = "hidden";
+                clearInterval(fadeInterval);
+            }
+        };
+        const fadeInterval = setInterval(fadeOutStep, intervalTime);
+        }, 1000);
+    });
+    </script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+		<img src="/assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
+		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<nav id="desktopNav">
+			<a href="/project" class="active">Project</a>
+            <a href="/server">Server</a>
+			<a href="/contact">Contact</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/home">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="/home">Home</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/contact">Contact</a>
+            <a href="/server">Server</a>
+			<a href="/project"  class="active">Project</a>
+		</div>
+	</div>
+    <h2>Project:  Copper Madness</h2>
+    <div id="content">
+        <diV class="section" style="text-align: left;">
+            Long time ago, on an isolated archipelago, Dr. Cooper and his team discovered the existence of copper. Amazed by its properties, they set up three facilities to conduct research on it. The copper machines were originally made to assist the labor-intensive process. At first, everything went smoothly, but something bad was about to happen... One day, the copper machines went crazy! They malfunctioned and attacked the staff. The machines were too strong and everything seemed to be lost forever, but then... YOU!
+        </diV>
+        <iframe class="section" id="video" src="https://www.youtube.com/embed/Fp-TshP-1cY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <diV class="section">
+            Copper Madness has its own storyline and let's not spoil every details about it! Not to mention cool upbeat music from <span><a href="https://www.youtube.com/@TenM" target="_blank">T-en-M</a></span>!
+            <br>
+            But, here some images for you to have a preview about it! Have a look!
+        </diV>
+        <img src="../assets/media/copper-madness/1.webp">
+        <diV class="section">
+            The Copper Facility
+        </diV>
+        <img src="../assets/media/copper-madness/2.webp">
+        <diV class="section">
+            The road to somewhere interesting...
+        </diV>
+        <img src="../assets/media/copper-madness/3.webp">
+        <diV class="section">
+            Fixing Station? What's for?
+        </diV>
+        <img src="../assets/media/copper-madness/4.webp">
+        <diV class="section">
+            Ohh....cave....
+        </diV>
+        <img src="../assets/media/copper-madness/5.webp">
+        <diV class="section">
+            The Copper Factory 
+        </diV>
+        <img src="../assets/media/copper-madness/6.webp">
+        <diV class="section">
+            Quite a neat looking for a factory 
+        </diV>
+        <img src="../assets/media/copper-madness/7.webp">
+        <diV class="section">
+            The Copper Boss looks really tough...
+        </diV>
+    </div>
+    <h2>HELP SECTION</h2>
+    <diV class="section">
+        If you need any help, feel free to join our Discord!
+        <div style="width: 100vw; height: 15vh; display: flex; justify-content: center;">
+            <a href="https://discord.gg/p3FvBh2aBd">
+                <button class="genericButton">Discord</button>
+            </a>
+        </div>
+    </diV>
+    <h2>DOWNLOAD SECTION</h2>
+    <div class="downloadSection">
+        <label for="tosCheckbox">
+          <input type="checkbox" id="tosCheckbox">
+          <span id="tosLabel">I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a></span>
+        </label><br>
+        <button id="genericButton" class="genericButton" disabled>Download Now!</button>
+    </div>
+    <script>
+        const tosCheckbox = document.getElementById('tosCheckbox');
+        const downloadButton = document.getElementById('genericButton');
+        tosCheckbox.addEventListener('change', () => {
+        if (tosCheckbox.checked) {
+            downloadButton.removeAttribute('disabled');
+            tosLabel.innerHTML = 'I agree to the <a href="/TOS" target="_blank">Term of service</a>';
+        } else {
+            downloadButton.setAttribute('disabled', 'disabled');
+            tosLabel.innerHTML = 'I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a>';
+        }
+        });
+        downloadButton.addEventListener('click', () => {
+        if (!tosCheckbox.checked) {
+            alert('Please agree to the Terms of Service (TOS) before downloading.');
+            return;
+        }
+        let userIP;
+        $(document).ready(() => {
+            $.getJSON('https://api.ipify.org?format=json', (data) => {
+                userIP = data.ip;
+            });
+        });
+        let link = document.URL;
+        let currentURL = link.substring(link.lastIndexOf("/") + 1);
+        const ws = new WebSocket('wss://blockstate.team');
+        ws.onopen = () => {
+            const data = {
+                content: currentURL,
+                ip: userIP,
+                timestamp: Date.now(),
+            };
+            ws.send(JSON.stringify(data));
+            ws.close();
+        };
+        window.location.href = 'https://dl.dropboxusercontent.com/s/ey8fgduw3qj5503/Copper%20Madness%20%5BVER%201.2%5D.mcworld?dl=0';
+        });
+    </script>
+</body>
+</html>

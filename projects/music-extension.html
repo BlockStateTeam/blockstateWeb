@@ -1,0 +1,171 @@
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <meta property="og:title" content="Project: Music Extension">
+    <meta property="og:image" content="https://blockstate.team/assets/media/project-logo/musicExtension.webp">
+    <meta charset="UTF-8" />
+    <title>Project: Music Extension</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="music-extension.css" rel="stylesheet" type="text/css">
+    <script defer>
+        window.onload = function () {
+        const menu_btn = document.querySelector('.hamburger');
+        const mobile_menu = document.querySelector('.mobile-nav');
+
+        menu_btn.addEventListener('click', function () {
+            menu_btn.classList.toggle('is-active');
+            mobile_menu.classList.toggle('is-active');
+        });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('hoverVideo');
+        video.pause();
+        video.addEventListener('mouseover', () => {
+            video.play();
+        });
+        video.addEventListener('mouseout', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    });
+    window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loadingScreen");
+    const fadeDuration = 1000; // 1 second
+    const intervalTime = fadeDuration / 50;
+
+    loadingScreen.style.opacity = "1";
+
+    setTimeout(() => {
+        const fadeOutStep = () => {
+            const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+            loadingScreen.style.opacity = currentOpacity;
+
+            if (currentOpacity <= 0) {
+                loadingScreen.style.visibility = "hidden";
+                clearInterval(fadeInterval);
+            }
+        };
+        const fadeInterval = setInterval(fadeOutStep, intervalTime);
+        }, 1000);
+    });
+    </script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+		<img src="/assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
+		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<nav id="desktopNav">
+			<a href="/project" class="active">Project</a>
+            <a href="/server">Server</a>
+			<a href="/contact">Contact</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/home">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="/home">Home</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/contact">Contact</a>
+            <a href="/server">Server</a>
+			<a href="/project" class="active">Project</a>
+		</div>
+	</div>
+    <h2>Project:  Music Extension</h2>
+    <div id="content">
+        <diV class="section" style="text-align: left;">
+            The "Music Extension" expands and improves the music system for Minecraft Bedrock. It adds a custom Music box with cool animations and five new music discs from <span><a href="https://www.youtube.com/@TenM" target="_blank">T-en-M</a></span>. Not only that, you can also add your own custom sound to the pack with a simple tool too! Now you can enjoy awesome tunes while playing Minecraft and make your adventures even more fun!
+        </diV>
+        <diV class="section">
+            Let's see what this addon has to offer, shall we?
+        </diV>
+        <img src="../assets/media/music-extension/1.webp">
+        <diV class="section">
+            This is the Music Box! A brand new block that allows you to play music disc!
+            <br>
+            But we have Juke Box for that right? Don't worry, you will see why the Music Box is better (and cheap to craft too...)
+        </diV>
+        <img src="../assets/media/music-extension/2.webp">
+        <diV class="section">
+            Let's start off with its recipe! Just with 5 planks, 1 redstone, a stick and a gold nugget then voila... The music Box
+        </diV>
+        <img src="../assets/media/music-extension/3.webp">
+        <diV class="section">
+            To use the Music Box, while holding the music disc, right-click onto the TOP side of the Box! The Musix Box will work with all kind of disc so don't worry!
+        </diV>
+        <img src="../assets/media/music-extension/4.webp">
+        <diV class="section">
+            To get back the disc, right-click on any side of the Music Box and you will reset it to original state! (AKA spit out the disc)
+        </diV>
+        <img src="../assets/media/music-extension/5.webp">
+        <diV class="section">
+            You can only break the block from any side except from the top! (You don't want to break the fragile golden stylus, do you?)
+        </diV>
+        <img src="../assets/media/music-extension/6.webp">
+        <diV class="section">
+            For song that you want to listen on repeat, simply put a gold block on the side where the Stylus is facing! You should see a golden ring indicator pops up! From now on, your song will get played on loop!
+        </diV>
+        <img src="../assets/media/music-extension/7.webp">
+        <diV class="section">
+            One cool feature for redstone engineer: If there's any non-air block on top of the Music Box, the Box will reset itself on loop! So if you want to stop the music automatically, just place some piston and set it up! 
+        </diV>
+        <img src="../assets/media/music-extension/8.webp">
+        <diV class="section">
+            Well, this addon also add some cool music from <span><a href="https://www.youtube.com/@TenM" target="_blank">T-en-M</a></span>! Yay! You need to craft these disc using 8 charcoals, I repeat charcoal...not coal, and at the middle, simply place the special items for each special disc! 
+        </diV>
+        <img src="../assets/media/music-extension/9.webp">
+        <diV class="section">
+            The Wandering Trader also will offer special disc for just 5 emeralds each!<br> (It such a steal, isn't it?)
+        </diV>
+        <img src="../assets/media/music-extension/10.webp">
+        <diV class="section" style="text-align: left;">
+            [IMPORTANT]: You can also add your own custom sound too! Using the experimental tool below!<br>- The recipe will use Charcoal and dye! As you can see in the picture, each dye color is numerical assigned! What does it mean? It mean if you upload just 1 sound file, that sound will be assigned to the white disc, so on and so on. If you upload multiple sound files, their order will determine which disc will have what sound!<br> - Please note that even if you only add 1 sound file or didn't upload anything, the empty discs will still be included, but they won't play anything!
+        </diV>
+    </div>
+    <h2>CUSTOMIZATION SECTION</h2>
+    <div style="width: 100vw; display: flex; align-items: center; justify-content: center;">
+        <label for="musicInput" class="custom-file-input">
+            Upload Custom Music 
+        </label>
+        <input type="file" id="musicInput" accept=".ogg" multiple>
+    </div>
+    <diV class="warning" style="padding-top: 10vh;">
+        WARNING:  Experimental Customization tool only support OGG file format!<br> Also, its load time may take a while! Please be patient!
+    </diV>
+    <h2>HELP SECTION</h2>
+    <diV class="section">
+        If you need any help, feel free to join our Discord!
+        <div style="width: 100vw; height: 15vh; display: flex; justify-content: center;">
+            <a href="https://discord.gg/p3FvBh2aBd">
+                <button class="genericButton">Discord</button>
+            </a>
+        </div>
+    </diV>
+    <h2>DOWNLOAD SECTION</h2>
+    <diV class="warning">
+        WARNING:  This Addon requires Upcoming Creator Feature and Holiday Creator Feature to work properly! 
+    </diV>
+    <div class="downloadSection">
+        <label for="tosCheckbox">
+          <input type="checkbox" id="tosCheckbox">
+          <span id="tosLabel">I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a></span>
+        </label><br>
+        <button id="genericButton" class="genericButton" disabled>Download Now!</button>
+        <script src="./music-extension.js" defer type="module"></script>
+    </div>
+    <div class="compiler">
+        <iframe src="../loading" style="width: 80vw; height: 95vh; background-color: white; border-radius: 2vw; z-index: 50;"></iframe>
+    </div>
+    <div id="loadingBar" class="compiler" style="background-color: black; height:20px; width:60vw; margin-left: 20vw; z-index: 51; top: 69vh; display: none;">
+        <div id="loadingBarRun" style="background-color: magenta; width:0%; height: inherit; z-index: 52; position: relative; left: 0;"></div>
+    </div>
+    <div class="compiler" id="loadingText" style="max-width: 90vw; margin-left: 5vw; text-overflow: clip; font-size: 5vw; font-family: 'MinecraftTen'; z-index: 49; margin-top: 28vh; background-color: rgba(0, 0, 0, 0) !important;">
+        LOADING...
+    </div>
+</body>
+</html>

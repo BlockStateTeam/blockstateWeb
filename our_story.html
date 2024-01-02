@@ -1,0 +1,85 @@
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+	<script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Our Story</title>
+    <link href="our_story.css" rel="stylesheet" type="text/css">
+	<script>
+		window.onload = function () {
+		const menu_btn = document.querySelector('.hamburger');
+		const mobile_menu = document.querySelector('.mobile-nav');
+
+		menu_btn.addEventListener('click', function () {
+			menu_btn.classList.toggle('is-active');
+			mobile_menu.classList.toggle('is-active');
+		});
+	}
+	document.addEventListener('DOMContentLoaded', () => {
+		const video = document.getElementById('hoverVideo');
+		video.pause();
+		video.addEventListener('mouseover', () => {
+			video.play();
+		});
+		video.addEventListener('mouseout', () => {
+			video.pause();
+			video.currentTime = 0;
+		});
+	});
+	window.addEventListener("load", () => {
+	const loadingScreen = document.getElementById("loadingScreen");
+	const fadeDuration = 1000; // 1 second
+	const intervalTime = fadeDuration / 50;
+
+	loadingScreen.style.opacity = "1";
+
+	setTimeout(() => {
+		const fadeOutStep = () => {
+			const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+			loadingScreen.style.opacity = currentOpacity;
+
+			if (currentOpacity <= 0) {
+				loadingScreen.style.visibility = "hidden";
+				clearInterval(fadeInterval);
+			}
+		};
+		const fadeInterval = setInterval(fadeOutStep, intervalTime);
+		}, 1000);
+	});
+	</script>
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+		<img src="./assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
+		<video id="hoverVideo" src="./assets/media/rotatingBlock.webm" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<nav id="desktopNav">
+			<a href="project">Project</a>
+			<a href="server">Server</a>
+			<a href="contact">Contact</a>
+			<a href="our_story" class="active">Our Story</a>
+			<a href="home">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="home">Home</a>
+			<a href="our_story" class="active">Our Story</a>
+			<a href="contact">Contact</a>
+			<a href="server">Server</a>
+			<a href="project">Project</a>
+		</div>
+	</div>
+	<script src="./our_story.js" defer type="module"></script>
+	<div style="position: fixed; z-index: 10; width: 100vw; display: flex; align-items: center; justify-content: center;">
+		<div id="text"> Hello strangers around the globe </div>
+	</div>
+</body>
+</html>

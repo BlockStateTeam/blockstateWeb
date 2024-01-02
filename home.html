@@ -1,0 +1,244 @@
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Home</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/media/favicon.ico" />
+	<script>
+		window.onload = function () {
+		const menu_btn = document.querySelector('.hamburger');
+		const mobile_menu = document.querySelector('.mobile-nav');
+
+		menu_btn.addEventListener('click', function () {
+			menu_btn.classList.toggle('is-active');
+			mobile_menu.classList.toggle('is-active');
+		});
+	}
+	document.addEventListener('DOMContentLoaded', () => {
+		const video = document.getElementById('hoverVideo');
+		video.pause();
+		video.addEventListener('mouseover', () => {
+			video.play();
+		});
+		video.addEventListener('mouseout', () => {
+			video.pause();
+			video.currentTime = 0;
+		});
+	});
+	window.addEventListener("load", () => {
+	const loadingScreen = document.getElementById("loadingScreen");
+	const fadeDuration = 1000; // 1 second
+	const intervalTime = fadeDuration / 50;
+
+	loadingScreen.style.opacity = "1";
+
+	setTimeout(() => {
+		const fadeOutStep = () => {
+			const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+			loadingScreen.style.opacity = currentOpacity;
+
+			if (currentOpacity <= 0) {
+				loadingScreen.style.visibility = "hidden";
+				clearInterval(fadeInterval);
+			}
+		};
+		const fadeInterval = setInterval(fadeOutStep, intervalTime);
+		}, 1000);
+	});
+	
+	</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="home.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+		<img src="./assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
+		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<nav id="desktopNav">
+			<a href="project">Project</a>
+			<a href="server">Server</a>
+			<a href="contact">Contact</a>
+			<a href="our_story">Our Story</a>
+			<a href="home" class="active">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="home" class="active">Home</a>
+			<a href="our_story">Our Story</a>
+			<a href="contact">Contact</a>
+			<a href="server">Server</a>
+			<a href="project">Project</a>
+		</div>
+	</div>
+	<div class="scrollContainer">
+		<div class="videoFrame">
+			<div id="purpleBox" style="clip-path: polygon(0% 5%, 5% 5%, 5% 0%, 95% 0%, 95% 5%, 100% 5%, 100% 95%, 95% 95%, 95% 100%, 5% 100%, 5% 95%, 0% 95%);">
+				<text style="margin-left: 2.5vw;">
+					Block State is a upcoming Minecraft studio focusing on making fantastic creation on Bedrock Edition
+				</text>
+				<br>
+				<a href="project">
+					<button id="genericButton" style="margin-left: 2.5vw;">
+						Our Project
+					</button>
+				</a>
+			</div>
+			<video autoplay muted loop muted>
+				<source/> <!-- No source here-->
+			</video>
+		</div>
+		<div style="padding-top: 1vw; height: 90vh;" class="scrollChild">
+			<div id="lefty">
+				<h1>WE DREAM AND WE DREAM BIG</h1>
+				<text class="averageText">
+				We are a team from all over world. <br>
+				Each of us may from different countries, different cultures but we all share the love of Minecraft.
+				This blocky and immersive sandbox united us, inspire us to create, spark our imagination and motivate ourself! 
+				</text>
+			</div>
+			<div id="righty">
+				<div style="margin: 0; position: relative; top: 5vw; width: 35vw; height: 20vw;">
+					<text style="font-family: 'MinecraftTen';font-size: 2.5vw;">
+						Know more about us!
+					</text>
+					<br>
+					<div>
+						<a href="our_story">
+							<button class="knowmore" id="genericButton"; style="margin-top: 5vh; margin-left: 4.5vw; width: 15vw; height: 5vw;">
+								Our Story
+							</button>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div>
+				<img id="steve" style="position: relative; z-index: 2; height: 20vw; margin-top: 3vw; margin-left: 35vw;" src="./assets/media/steve.svg">
+			</div>
+		</div>
+		<div style="position: relative; z-index: 3; padding-top: 0.5vw; height: 28vw; background-color: #7046F0; padding-top: 4vw; height: 90vh;" class="scrollChild">
+			<div id="lll" style="width: 60%; float:right; padding-left: 5vw; margin-top: 7vw;">
+				<h1 style="color: white; margin-left: 3vw;">WE LIVE, WE LAUGH & WE LOVE</h1>
+				<text class="averageText" style="color: white; letter-spacing: -0.05px;">
+					We're growing a Discord community for all passionate Minecrafter! Whether you're a builder, redstone-engineer, addon-maker or artist, you're always welcomed in Block State Discord! We'd love to have you there!
+				</text>
+			</div>
+			<div id="discordpart" style="width: 40%; float:left; padding-right: 5vw; margin-top: 7vw;">
+				<div style="margin: 0; position: relative; width: 35vw; height: 20vw; background-color: none;">
+					<div style="margin-top: -5vw; margin-left: 12vw;">
+						<img id="wumpus" src="./assets/media/wumpus.svg" style="width: 17vw;">
+					</div>
+					<br>
+					<div id="dbc">
+						<a href="https://discord.gg/p3FvBh2aBd">
+							<button id="discordButton"; style="position: absolute; margin-left: 13vw; margin-top: -5vw; width: 15vw; height: 5vw;">Discord</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="padding-top: 1vw; padding-left: 5vw; height: 90vh;" class="scrollChild">
+				<h1>LET'S MEET THE TEAM</h1>
+				<div id="outer">
+					<div class="item" style="background-color: #306FF6;">
+						<img class="img" src="./assets/media/avatarBlues.png"> 
+						<text class="itemTitle" style="position: relative; color:white;">Blues</text>
+						<div class="itemRole" style="color: #002167;">@Leader</div>
+						<div class="itemPara" style="top: 14vh;">Hello! I'm Blues - the leader of Block State! <br> I want to create unique experience using Minecraft for everyone!</div>
+					</div>
+					<div class="spacing"></div>
+					<div class="item" style="background-color: #c90a70;">
+						<img class="img" src="./assets/media/avatarDefowler.webp"> 
+						<text class="itemTitle" style="position: relative; color:white;">Defow</text>
+						<div class="itemRole" style="color: #420024;">@Special Dev</div>
+						<div class="itemPara" style="top: 14vh;">Hello! I'm Defowler - A special dev from Block State Team! Take a look at my trophies I am a pro!</div>
+					</div>
+					<div class="spacing"></div>
+					<div class="item" style="background-color: #002b32;">
+						<img class="img" src="./assets/media/avatarSmasher.webp"> 
+						<text class="itemTitle" style="position: relative; color:white;">Smashr</text>
+						<div class="itemRole" style="color: #e5fbff;">@Community manager</div>
+						<div class="itemPara" style="top: 14vh;">Hey there! I'm Smasher, the friendly face of Block State. Looking forward to meet you all!</div>
+					</div>
+					<div class="spacing"></div>
+					<div class="item" style="background-color: #c43100;">
+						<img class="img" src="./assets/media/avatarCreeper.png"> 
+						<text class="itemTitle" style="position: relative; color:white; margin-left: 10.2vw;">Creper</text>
+						<div class="itemRole" style="color: #672400;">@Dev</div>
+						<div class="itemPara" style="top: 14vh;">Hi there! If you need someone to bring life to the digital realms or create experience that spark wonder. Call me!</div>
+					</div>
+					<div class="spacing"></div>
+					<div class="item" style="background-color: #3f3f3f;">
+						<img class="img" src="./assets/media/avatarGem.png"> 
+						<text class="itemTitle" style="position: relative; color:white;">HidGem</text>
+						<div class="itemRole" style="color: #c7c7c7;">@Artist</div>
+						<div class="itemPara" style="top: 13vh;">Greetings! I'm Hiddengem, a pixel artist who weaves magic into Block State maps with simple yet lively texture</div>
+					</div>
+					<div class="spacing"></div>
+					<div class="item" style="background-color: #d9992b;">
+						<img class="img" src="./assets/media/avatarSenna.png"> 
+						<text class="itemTitle" style="position: relative; color:white;">Senna</text>
+						<div class="itemRole" style="color: #3a2200;">@Artist</div>
+						<div class="itemPara" style="top: 13vh;">Hi there! I'm SennaHN, but you can call me Senna. I have a passion for Dinosaur-related content! Nice to meet you</div>
+					</div>
+					<div class="spacing"></div>
+					<!--- 
+						Hiding the snitch (Ewww)
+					<div class="item" style="background-color: #997147;">
+						<img class="img" src="./assets/media/avatarDark.webp"> 
+						<text class="itemTitle" style="position: relative; color:white;">xKing</text>
+						<div class="itemRole" style="color: #231400;">@Technical Consultant</div>
+						<div class="itemPara" style="top: 10vh;">Heya xKingDark here! King for short! I'm a programmer who loves making interesting projects and messing with software!</div>
+					</div>
+					<div class="spacing"></div>
+					-->
+					<div class="item" style="background-color: #61ba1d;">
+						<img class="img" src="./assets/media/avatarMaris.png"> 
+						<text class="itemTitle" style="position: relative; color:white;">Maris</text>
+						<div class="itemRole" style="color: #00670e;">@Community manager</div>
+						<div class="itemPara" style="top: 10vh;">Hello there! I'm Maris, a passionate artist proudly working as community manager with Block State Team</div>
+					</div>
+					<div class="spacing"></div>
+					<!-- <div class="item" style="background-color: #dd3c3c;">4</div>
+					<div class="spacing"></div>
+					<div class="item" style="background-color: #cf16a7;">5</div>
+					<div class="spacing" style="min-width: 10vw;"></div> -->
+				</div>
+		</div>
+		<div style="padding-top: 1vw; height: auto; background: linear-gradient(180deg, rgba(99,172,255,1) 0%, rgba(99,172,255,1) 90%, rgba(0,0,0,1) 92%); overflow: hidden;" class="scrollChild">
+			<h1 style="color: #002a6d; margin-left: 2.5vw;">THERE'S MORE TO COME...</h1>
+			<h1 style="color: #002a6d; margin-left: 9.5vw;">PREPARE FOR THE UPCOMING EXPERIENCE</h1>
+			<div><img src="./assets/media/Minecraft.svg" style="width: 101vw;"></div>
+		</div>
+		<div style="background-color: black; height: 90vh;" class="scrollChild">
+			<h1 style="margin-top: 0; padding-top: 10vh; padding-left: 5vw; color: white;">Follow us!</h1>
+			<div class="footer">
+				<div>
+					<a href="https://discord.gg/p3FvBh2aBd">
+						<img class="media" src="./assets/media/discord.svg"><br><h2>Discord</h2>
+					</a>
+				</div>
+				<div>
+					<a href="https://www.youtube.com/channel/UCGXaQQcfJ-Bp4zS9CNnuMew">
+						<img class="media" src="./assets/media/youtube.svg"><br><h2>Youtube</h2>
+					</a>
+				</div>
+				<div>
+					<a href="https://www.tiktok.com/@block_state_team">
+						<img class="media" src="./assets/media/tiktok.svg"><br><h2>Tiktok</h2>
+					</a>
+				</div>
+			</div>
+			<div>
+				<a href="//www.dmca.com/Protection/Status.aspx?ID=c25034cf-3bf8-4df4-ab29-032106b3f5c7" title="DMCA.com Protection Status" class="dmca-badge"> 
+					<img src ="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=c25034cf-3bf8-4df4-ab29-032106b3f5c7"  alt="DMCA.com Protection Status"/>
+				</a>  
+				<script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

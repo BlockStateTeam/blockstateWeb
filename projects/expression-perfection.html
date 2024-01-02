@@ -1,0 +1,176 @@
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <meta property="og:title" content="Project: Expression Perfection">
+    <meta property="og:image" content="https://blockstate.team/assets/media/project-logo/expressionPerfection.webp">
+    <meta charset="UTF-8" />
+    <title>Project: Expression Perfection</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="expression-perfection.css" rel="stylesheet" type="text/css">
+    <script>
+        window.onload = function () {
+            const menu_btn = document.querySelector('.hamburger');
+            const mobile_menu = document.querySelector('.mobile-nav');
+
+            menu_btn.addEventListener('click', function () {
+                menu_btn.classList.toggle('is-active');
+                mobile_menu.classList.toggle('is-active');
+            });
+        }
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('hoverVideo');
+        video.pause();
+        video.addEventListener('mouseover', () => {
+            video.play();
+        });
+        video.addEventListener('mouseout', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    });
+    window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loadingScreen");
+    const fadeDuration = 1000; // 1 second
+    const intervalTime = fadeDuration / 50;
+
+    loadingScreen.style.opacity = "1";
+
+    setTimeout(() => {
+        const fadeOutStep = () => {
+            const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+            loadingScreen.style.opacity = currentOpacity;
+
+            if (currentOpacity <= 0) {
+                loadingScreen.style.visibility = "hidden";
+                clearInterval(fadeInterval);
+            }
+        };
+        const fadeInterval = setInterval(fadeOutStep, intervalTime);
+        }, 1000);
+    });
+    </script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+		<img src="/assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
+		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<nav id="desktopNav">
+			<a href="/project" class="active">Project</a>
+            <a href="/server">Server</a>
+			<a href="/contact">Contact</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/home">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="/home">Home</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/contact">Contact</a>
+            <a href="/server">Server</a>
+			<a href="/project" class="active">Project</a>
+		</div>
+	</div>
+    <h2>Project: Expression Perfection</h2>
+    <div id="content">
+        <diV class="section" style="text-align: left;">
+            Introducing Expression Perfection. This innovative addon brings emojis to the Minecraft world, revolutionizing communication and creativity. From smiles to tears, it offers a whole new way to express emotions as you build, mine, and explore. Get ready to enhance your in-game interactions with a plethora of emojis, adding a touch of fun and immersion to your Minecraft experience.
+        </diV>
+        <img src="../assets/media/expression-perfection/1.webp">
+        <diV class="section">
+            To get started, you need to know the emoji namespace, you can search the namespace by using :emoji:number command! In this image, we do :emoji:1 to show the first 10 emoji! You can do :emoji:1 :emoji:2 :emoji:3 etc to see more emoji!
+        </diV>
+        <img src="../assets/media/expression-perfection/2.webp">
+        <diV class="section">
+            Now, the emoji and their namespaces will appear in your chat dialog!
+        </diV>
+        <img src="../assets/media/expression-perfection/3.webp">
+        <diV class="section">
+            Let's send a Hello message with the :smile: emoji, shall we?
+        </diV>
+        <img src="../assets/media/expression-perfection/4.webp">
+        <diV class="section">
+            The final message will be just like this! A smile emoji!
+        </diV>
+        <img src="../assets/media/expression-perfection/5.webp">
+        <diV class="section">
+            It also works on Sign too! If it's not working, please stare your cursor at sign! The game may take a while to load the new emoji 
+        </diV>
+        <img src="../assets/media/expression-perfection/6.webp">
+        <diV class="section">
+            Tada!
+        </diV>
+        <img src="../assets/media/expression-perfection/7.webp">
+        <diV class="section">
+            Using the anvil to rename the item with emoji will work too! Let's prepare some flower!
+        </diV>
+        <img src="../assets/media/expression-perfection/8.webp">
+        <diV class="section">
+            It's lovely, isn't it?
+        </diV>
+    </div>
+    <h2>HELP SECTION</h2>
+    <diV class="section">
+        If you need any help, feel free to join our Discord!
+        <div style="width: 100vw; height: 15vh; display: flex; justify-content: center;">
+            <a href="https://discord.gg/p3FvBh2aBd">
+                <button class="genericButton">Discord</button>
+            </a>
+        </div>
+    </diV>
+    <h2>DOWNLOAD SECTION</h2>
+    <diV class="warning">
+        WARNING:  This Addon requires Beta APIs experimental to work properly! 
+    </diV>
+    <div class="downloadSection">
+        <label for="tosCheckbox">
+          <input type="checkbox" id="tosCheckbox">
+          <span id="tosLabel">I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a></span>
+        </label><br>
+        <button class="genericButton" id="genericButton" disabled>Download Now!</button>
+    </div>
+    <script>
+        const tosCheckbox = document.getElementById('tosCheckbox');
+        const downloadButton = document.getElementById('genericButton');
+        tosCheckbox.addEventListener('change', () => {
+        if (tosCheckbox.checked) {
+            downloadButton.removeAttribute('disabled');
+            tosLabel.innerHTML = 'I agree to the <a href="/TOS" target="_blank">Term of service</a>';
+        } else {
+            downloadButton.setAttribute('disabled', 'disabled');
+            tosLabel.innerHTML = 'I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a>';
+        }
+        });
+        downloadButton.addEventListener('click', () => {
+        if (!tosCheckbox.checked) {
+            alert('Please agree to the Terms of Service (TOS) before downloading.');
+            return;
+        }
+        let userIP;
+        $(document).ready(() => {
+            $.getJSON('https://api.ipify.org?format=json', (data) => {
+                userIP = data.ip;
+            });
+        });
+        let link = document.URL;
+        let currentURL = link.substring(link.lastIndexOf("/") + 1);
+        const ws = new WebSocket('wss://blockstate.team');
+        ws.onopen = () => {
+            const data = {
+                content: currentURL,
+                ip: userIP,
+                timestamp: Date.now(),
+            };
+            ws.send(JSON.stringify(data));
+            ws.close();
+        };
+        window.location.href = 'https://dl.dropboxusercontent.com/scl/fi/vlpvggvsnmyx8tw977vkz/Expression-Perfection-Addon.mcaddon?rlkey=dse75l79thmywod2gxawy8v9v&dl=0';
+        });
+    </script>
+</body>
+</html>

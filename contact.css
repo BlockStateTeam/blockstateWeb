@@ -1,0 +1,255 @@
+@font-face { font-family: MinecraftTen; src: url('./assets/fonts/MinecraftTen.woff'); } 
+@font-face { font-family: Minecraft; src: url('./assets/fonts/Minecraft.otf'); } 
+@font-face { font-family: MinecraftFive; src: url('./assets/fonts/MinecraftFive-Regular.woff2'); }
+::-webkit-scrollbar {
+    display: none;
+}
+.topnav {
+    z-index: 30;
+    background-color: #FFFFFF;
+    height: 5vw;
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.topnav a {
+    font-family: 'MinecraftTen';
+    float: right;
+    display: block;
+    color: #373097;
+    text-align: center;
+    padding: 1.2vw 1.5vw;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: 0.15s;
+}
+
+.topnav a:hover {
+    background-color: #e9d3ff;
+    color: #8000ff;
+}
+
+.topnav a.active {
+    background-color: #4d009a;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+body {
+    overflow-x: hidden;
+    background-color: #F8ECEC;
+    font-family: 'MinecraftFive';
+    margin: 0;
+}
+
+h2 {
+    font-size: 3vw;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-bottom: 6vh;
+}
+.email {
+    width: 100%;
+    height: 20vh;
+    font-family: 'Minecraft';
+    font-size: 2.5vw;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+form {
+    background-color: #7046F0;
+    max-width: 50vw;
+    margin: 0 auto;
+    padding: 2vw;
+    margin-bottom: 15vh;
+    box-shadow: 0.75vw 0px #7046F0, -0.75vw 0px #7046F0, 0px 0.75vw #7046F0, 0px -0.75vw #7046F0, 1.15vw 1.15vw 0px 0.95vw #24108a;
+}
+
+label {
+    color: white;
+    display: block;
+    margin: 0.5vw;
+    font-size: 1.5vw;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+#genericButton {
+    position: relative;
+    left : 18.5vw;
+    margin-top: 2vh;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #4229B9;
+    color: #FFFFFF;
+    font-family: 'MinecraftTen';
+    font-size: 2vw;
+    box-shadow: 0.5vw 0px #4229B9, -0.5vw 0px #4229B9, 0px 0.5vw #4229B9, 0px -0.5vw #4229B9, 0.5vw 0.5vw 0px 0.55vw #24108a;
+    transition: 0.3s;
+}
+#genericButton:hover {
+    background-color: #4229B9;
+    box-shadow: 0.5vw 0px 0px 0.15vw #4229B9, -0.5vw 0px 0px 0.15vw #4229B9, 0px 0.5vw 0px 0.15vw #4229B9, 0px -0.5vw 0px 0.15vw #4229B9, 0.75vw 0.75vw 0px 0.8vw #24108a;
+    color: #fcf2ff;
+}
+#genericButton:active {
+    transform: translate(10px,10px);
+    box-shadow: 0.15vw 0px 0px 0.15vw #4229B9, -0.15vw 0px 0px 0.15vw #4229B9, 0px 0.15vw 0px 0.15vw #4229B9, 0px -0.15vw 0px 0.15vw #4229B9, 0.5vw 0.75vw 0px 0.55vw #24108a;
+}
+.form-control {
+    font-size: 1.3vw;
+    font-family: 'Minecraft';
+    border-radius: 5px;
+}
+#discordButton {
+    width: 12vw;
+    height: 8vh;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #4229B9;
+    color: #FFFFFF;
+    font-family: 'MinecraftTen';
+    font-size: 2vw;
+    box-shadow: 0.5vw 0px #4229B9, -0.5vw 0px #4229B9, 0px 0.5vw #4229B9, 0px -0.5vw #4229B9, 0.5vw 0.5vw 0px 0.55vw #24108a;
+    transition: 0.3s;
+}
+#discordButton:hover {
+    background-color: #4229B9;
+    box-shadow: 0.5vw 0px 0px 0.15vw #4229B9, -0.5vw 0px 0px 0.15vw #4229B9, 0px 0.5vw 0px 0.15vw #4229B9, 0px -0.5vw 0px 0.15vw #4229B9, 0.75vw 0.75vw 0px 0.8vw #24108a;
+    color: #fcf2ff;
+}
+#discordButton:active {
+    transform: translate(10px,10px);
+    box-shadow: 0.15vw 0px 0px 0.15vw #4229B9, -0.15vw 0px 0px 0.15vw #4229B9, 0px 0.15vw 0px 0.15vw #4229B9, 0px -0.15vw 0px 0.15vw #4229B9, 0.5vw 0.75vw 0px 0.55vw #24108a;
+}
+#mobileNav {
+    display: none;
+}
+.hamburger {
+margin: 2vw;
+margin-left: 85vw;
+z-index: 200;
+display: none;
+    position: fixed;
+    width: 50px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+.hamburger .bar, .hamburger:after, .hamburger:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #4229B9;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+
+.mobile-nav {
+display: none;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    padding-top: 120px;
+    transition: 0.4s;
+}
+
+.mobile-nav.is-active {
+    left: 0;
+}
+
+.mobile-nav a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+@media (max-aspect-ratio: 3/4) {
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block;
+    }
+    #desktopNav {
+        display: none;
+    }
+    #discordButton {
+        font-size: 8vw;
+        width: 40vw !important;
+        height: 6vh !important;
+    }
+    label {
+        font-size: 5.5vw;
+    }
+    textarea {
+        width: 80vw !important;
+    }
+    input[type="text"] {
+        width: 80vw !important;
+    }
+    input[type="email"] {
+        width: 80vw !important;
+    }
+    form {
+        height: 43vh !important;
+        max-width: 90vw !important;
+    }
+    h2{
+      font-size: 10vw;
+    }
+    .averageText{
+      font-size: 4vw;
+      letter-spacing: -0.75px;
+    }
+    .hidden{
+      display: none;
+    }
+    .topnav {
+      height: 15vw;
+    }
+    .topnav a {
+      padding: 4vw 2vw;
+      font-size: 8vw;
+    }
+    #genericButton {
+        margin-top: 2vh !important;
+        font-size: 8vw !important;
+    }
+}

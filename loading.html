@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            video {
+                width: 23vw;
+            }
+            img {
+                width: 50vw;
+            }
+            /* 4/3 is Computer............ 3/4 is for phone */
+            @media (max-aspect-ratio: 3/4) {
+                img {
+                    width: 90vw;
+                    margin-bottom: 10vh;
+                }
+                video {
+                    width: 43vw;
+                    margin-bottom: 20vw;
+                    margin-right: 2vw;
+                }
+            }
+        </style>
+    </head>
+    <body style="width: 90vw; height: 90vh; display: flex; justify-content: center; align-items: center;">
+        <img src="./assets/media/ConvertToSVG.webp" style="position:absolute; margin-left: 7.5vw; margin-top: 5vh;">
+        <video src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" type="video/webm" style="z-index: 2; position: absolute; margin-left: 5vw; padding-bottom: 7vw;" autoplay muted loop disableRemotePlayback></video>
+    </body>
+</html>

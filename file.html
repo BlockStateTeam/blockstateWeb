@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Debug File System</title>
+        <style>
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); }
+            @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); }
+            @font-face { font-family: MinecraftFive; src: url('/assets/fonts/MinecraftFive-Regular.woff2'); }
+            select {
+                width: 200px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #fff;
+                color: #333;
+                font-size: 23px;
+                font-family: 'Minecraft';
+                margin-bottom: 20px;
+            }
+            select option {
+                background-color: #fff;
+                color: #333;
+                font-size: 22px;
+                font-family: 'Minecraft';
+            }
+            h1 {
+                font-family: 'MinecraftTen';
+                font-size: 3vw;
+            }
+            h3 {
+                font-size: 1.5vw;
+                font-weight: bold;
+                margin: 0;
+            }
+            body {
+                width: 100vw;
+                overflow-x: hidden;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Minecraft';
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+            #formTest {
+                width: 40vw;
+                height: auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+                font-family: 'MinecraftFive';
+                display: block;
+                padding: 5px;
+                font-weight: bold;
+                font-size: 26px;
+                margin-top: 20px;
+            }
+
+            input[type="file"] {
+                font-family: 'Minecraft';
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 22px;
+            }
+
+            button {
+                font-family: 'Minecraft';
+                background-color: #9900d5;
+                color: #fff;
+                padding: 10px 20px;
+                margin: 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 25px;
+            }
+
+            button:hover {
+                background-color: #6100df;
+            }
+            .instruction {
+                width: 75vw; 
+                margin-bottom: 50px; 
+                text-align: left;
+            }
+            p {
+                margin-bottom: 10vh;
+                font-size: 25px;
+            }
+            @media (max-aspect-ratio: 3/4) {
+                p {
+                    font-size: 20px;
+                }
+                h1 {
+                    font-size: 8vw;
+                }
+                h3 {
+                    font-size: 4vw;
+                }
+                .instruction {
+                    width: 90vw;
+                }
+                label {
+                    font-size: 25px;
+                }
+                input[type="file"] {
+                    width: 70%;
+                    font-size: 15px;
+                }
+
+                button {
+                    font-size: 18px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1><strong>Debug File System</strong></h1>
+        <h3 class="instruction">This system is designed for single-use, specifically for sending files for debugging purposes, and it is not intended for file storage.<br><br>
+        Unless you are instructed to be here, please feel free to navigate back to the appropriate area of the website or application you intended to use.
+        </h3>
+        <form id="fileUploadForm">
+            <label for="fileInput">Choose a file:</label>
+            <input type="file" id="fileInput" name="file" accept="*" required>
+            <br>
+            <button type="button" onclick="uploadFile()">Upload</button>
+        </form>
+        <div id="progressSystem" style="width: 100%; display: none;">
+            <h2>Uploading file...</h3>
+            <progress id="progressBar" value="0" max="100" style="width: 50%; height:30px"></progress>
+        </div>
+        <h3>File Link (Click to copy to Clipboard): </h3>
+        <p id="resultMessage" style="cursor: pointer; text-decoration: underline;" onclick="copyToClipboard()"> No File uploaded yet</p>
+        <script>
+            function uploadFile() {
+                const fileInput = document.getElementById('fileInput');
+                const file = fileInput.files[0];
+                if (file) {
+                    document.getElementById('fileUploadForm').style.display = "none";
+                    document.getElementById('progressSystem').style.display = "block";
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    const xhr = new XMLHttpRequest();
+                    xhr.upload.addEventListener('progress', (event) => {
+                        if (event.lengthComputable) {
+                            document.getElementById('progressBar').value = (event.loaded / event.total * 100).toFixed(2);
+                        }
+                    });
+                    xhr.addEventListener('load', () => {
+                        if (xhr.status === 200) {
+                            try {
+                                const data = JSON.parse(xhr.responseText);
+                                console.log(data);
+                                document.getElementById('resultMessage').textContent = `${data.link}`;
+                            } catch (error) {
+                                console.error('Error parsing JSON response:', error);
+                            }
+                        } else {
+                            console.error('Error uploading file. Status:', xhr.status);
+                        }
+                    });
+                    xhr.addEventListener('error', (error) => {
+                        console.error('Error uploading file:', error);
+                    });
+                    xhr.open('POST', 'https://file.io');
+                    xhr.send(formData);
+                } else {
+                    alert('Please choose a file to upload.');
+                }
+            };
+            function copyToClipboard() {
+                let result = document.getElementById('resultMessage').innerHTML;
+                if (result === " No File uploaded yet") return;
+                const dummyInput = document.body.appendChild(document.createElement('input'));
+                dummyInput.value = result;
+                console.log(dummyInput.value);
+                dummyInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummyInput);
+            }
+          </script>
+    </body>
+</html>
