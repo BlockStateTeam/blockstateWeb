@@ -501,22 +501,17 @@ downloadButton.addEventListener('click', () => {
     loadingBarRun.style.display = "block";
     console.log(dataArray);
     buildAddon(dataArray);
-    let userIP;
-    $(document).ready(() => {
-        $.getJSON('https://api.ipify.org?format=json', (data) => {
-            userIP = data.ip;
-        });
-    });
-    let link = document.URL;
-    let currentURL = link.substring(link.lastIndexOf("/") + 1);
-    const ws = new WebSocket('wss://blockstate.team');
-    ws.onopen = () => {
-        const data = {
-            content: currentURL,
-            ip: userIP,
-            timestamp: Date.now(),
-        };
-        ws.send(JSON.stringify(data));
-        ws.close();
-    };
+    fetch('https://api.ipify.org/')
+    .then(r => r.ok ? r.text() : Promise.reject('Network response was not ok'))
+    .catch(e => ('undefined', console.error('Error:', e)))
+    .then(data => {
+        let formData = new FormData();
+        formData.append("entry.606279263", data);
+        formData.append("entry.1080269179", document.URL.substring(document.URL.lastIndexOf("/") + 1));
+        formData.append("entry.826374623", Date.now());
+
+        return fetch("https://docs.google.com/forms/d/e/1FAIpQLSfiIG0fLLNucnSzChPm9F2gWqkk9GOhUHGHUlYT-k3h-FBRFA/formResponse", { method: "POST", body: formData, mode: "no-cors" });
+    })
+    .then(() => console.log("Form submitted successfully"))
+    .catch(error => console.error("Error:", error));
 });
