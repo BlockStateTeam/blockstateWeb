@@ -148,7 +148,7 @@
     </div>
 	<script>
 		const container = document.querySelector('.container');
-		fetch('./projectList')
+		fetch('./projectList.json')
 		.then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
 		.then(data => {
 			data.forEach((project, index) => {
