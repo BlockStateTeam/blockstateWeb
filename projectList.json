@@ -1,86 +1,93 @@
 [
-    {
-      "project": "Working TV",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/workingTV.webp",
-      "internalLink": "./projects/working-tv",
-      "directLink": "https://dl.dropboxusercontent.com/scl/fi/e9vzm55bsdfgbgnkn2g3h/Working-TV-Addon.mcaddon?rlkey=937gyfsne5yejerm6nwhoxy8n&dl=0"
-    },
-    {
-      "project": "Crafty Plane",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/craftyPlane.webp",
-      "internalLink": "./projects/crafty-plane",
-      "directLink": "https://dl.dropboxusercontent.com/scl/fi/jeq0l77sgcs4komsc3bka/Crafty-Plane-Addon.mcaddon?rlkey=kkaczykhoc5a5lfh6ukun7qvz&dl=0"
-    },
-    {
-      "project": "Render UI",
-      "dataItem": "tool",
-      "img": "./assets/media/project-logo/renderUI.webp",
-      "internalLink": "./projects/render-ui",
-      "directLink": "https://blockstate.team/render-ui"
-    },
-    {
-      "project": "Addon Compiler",
-      "dataItem": "tool",
-      "img": "./assets/media/project-logo/addonCompiler.webp",
-      "internalLink": "./projects/addon-compiler",
-      "directLink": "https://raw.githubusercontent.com/Andinh123/Addon-Compiler/main/BlockState-Add-On-Compiler.vbs"
-    },
-    {
-      "project": "Head Decoration",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/headDecoration.webp",
-      "internalLink": "./projects/head-decoration",
-      "directLink": "https://dl.dropboxusercontent.com/scl/fi/a9h5fhxme55phkpdlxbwh/Head-Decoration-Addon.mcaddon?rlkey=lv65g9zt6emerxpxo0xqo5zzu&dl=0"
-    },
-    {
-      "project": "Art Enthusiasm V2",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/artEnthusiasmV2.webp",
-      "internalLink": "./projects/art-enthusiasm-v2",
-      "directLink": "https://dl.dropboxusercontent.com/scl/fi/ixhq0xs71i5azwtq7orki/Art-Enthusiasm-V2-Addon.mcaddon?rlkey=7fqfc4ubfu8xtfqr9iqdwxmhr&dl=0"
-    },
-    {
-      "project": "Banner Marker",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/bannerMarker.webp",
-      "internalLink": "./projects/banner-marker",
-      "directLink": "https://dl.dropboxusercontent.com/scl/fi/jmmllm5l2rhg2f0gvgihr/Banner-Marker-Addon.mcaddon?rlkey=h1kbnmjq1tduaw10vy1g0oo8q&dl=1"
-    },
-    {
-      "project": "Expression Perfection",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/expressionPerfection.webp",
-      "internalLink": "./projects/expression-perfection",
-      "directLink": "https://dl.dropboxusercontent.com/scl/fi/vlpvggvsnmyx8tw977vkz/Expression-Perfection-Addon.mcaddon?rlkey=dse75l79thmywod2gxawy8v9v&dl=0"
-    },
-    {
-      "project": "Lighting Delight",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/lightingDelight.webp",
-      "internalLink": "./projects/lighting-delight",
-      "directLink": "https://dl.dropboxusercontent.com/scl/fi/64ao67ii5sv8ilark85fp/Lighting-Delight.mcpack?rlkey=j2fk7zhvvv2lxr5jrwtb5xtyc&dl=0"
-    },
-    {
-      "project": "Art Enthusiasm",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/artEnthusiasm.webp",
-      "internalLink": "./projects/art-enthusiasm",
-      "directLink": "https://dl.dropboxusercontent.com/scl/fi/ipjbbbevdcsuci5e363sg/Art-Enthusiasm-Addon.mcaddon?rlkey=t1zlnyiywh4nn2a9fnfmrmsl1&dl=0"
-    },
-    {
-      "project": "Music Extension",
-      "dataItem": "addon",
-      "img": "./assets/media/project-logo/musicExtension.webp",
-      "internalLink": "./projects/music-extension",
-      "directLink": "https://dl.dropboxusercontent.com/s/9c5zrbpikx3vxea/Music%20Box%20RP.mcaddon?dl=0"
-    },
-    {
-      "project": "Copper Madness",
-      "dataItem": "map",
-      "img": "./assets/media/project-logo/copperMadness.webp",
-      "internalLink": "./projects/copper-madness",
-      "directLink": "https://dl.dropboxusercontent.com/s/ey8fgduw3qj5503/Copper%20Madness%20%5BVER%201.2%5D.mcworld?dl=0"
-    }
-  ]
+  {
+    "project": "Tuff Golem",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/tuffGolem.webp",
+    "internalLink": "./projects/tuff-golem",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/bdsurn3xbqbfcogcod9ry/Tuff-Golem-Addon.mcaddon?rlkey=m1eurtr2tn3cw9qkzc7imy407&dl=0"
+  },
+  {
+    "project": "Working TV",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/workingTV.webp",
+    "internalLink": "./projects/working-tv",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/e9vzm55bsdfgbgnkn2g3h/Working-TV-Addon.mcaddon?rlkey=937gyfsne5yejerm6nwhoxy8n&dl=0"
+  },
+  {
+    "project": "Crafty Plane",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/craftyPlane.webp",
+    "internalLink": "./projects/crafty-plane",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/jeq0l77sgcs4komsc3bka/Crafty-Plane-Addon.mcaddon?rlkey=kkaczykhoc5a5lfh6ukun7qvz&dl=0"
+  },
+  {
+    "project": "Render UI",
+    "dataItem": "tool",
+    "img": "./assets/media/project-logo/renderUI.webp",
+    "internalLink": "./projects/render-ui",
+    "directLink": "https://blockstate.team/render-ui"
+  },
+  {
+    "project": "Addon Compiler",
+    "dataItem": "tool",
+    "img": "./assets/media/project-logo/addonCompiler.webp",
+    "internalLink": "./projects/addon-compiler",
+    "directLink": "https://raw.githubusercontent.com/Andinh123/Addon-Compiler/main/BlockState-Add-On-Compiler.vbs"
+  },
+  {
+    "project": "Head Decoration",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/headDecoration.webp",
+    "internalLink": "./projects/head-decoration",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/a9h5fhxme55phkpdlxbwh/Head-Decoration-Addon.mcaddon?rlkey=lv65g9zt6emerxpxo0xqo5zzu&dl=0"
+  },
+  {
+    "project": "Art Enthusiasm V2",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/artEnthusiasmV2.webp",
+    "internalLink": "./projects/art-enthusiasm-v2",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/ixhq0xs71i5azwtq7orki/Art-Enthusiasm-V2-Addon.mcaddon?rlkey=7fqfc4ubfu8xtfqr9iqdwxmhr&dl=0"
+  },
+  {
+    "project": "Banner Marker",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/bannerMarker.webp",
+    "internalLink": "./projects/banner-marker",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/jmmllm5l2rhg2f0gvgihr/Banner-Marker-Addon.mcaddon?rlkey=h1kbnmjq1tduaw10vy1g0oo8q&dl=1"
+  },
+  {
+    "project": "Expression Perfection",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/expressionPerfection.webp",
+    "internalLink": "./projects/expression-perfection",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/vlpvggvsnmyx8tw977vkz/Expression-Perfection-Addon.mcaddon?rlkey=dse75l79thmywod2gxawy8v9v&dl=0"
+  },
+  {
+    "project": "Lighting Delight",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/lightingDelight.webp",
+    "internalLink": "./projects/lighting-delight",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/64ao67ii5sv8ilark85fp/Lighting-Delight.mcpack?rlkey=j2fk7zhvvv2lxr5jrwtb5xtyc&dl=0"
+  },
+  {
+    "project": "Art Enthusiasm",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/artEnthusiasm.webp",
+    "internalLink": "./projects/art-enthusiasm",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/ipjbbbevdcsuci5e363sg/Art-Enthusiasm-Addon.mcaddon?rlkey=t1zlnyiywh4nn2a9fnfmrmsl1&dl=0"
+  },
+  {
+    "project": "Music Extension",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/musicExtension.webp",
+    "internalLink": "./projects/music-extension",
+    "directLink": "https://dl.dropboxusercontent.com/s/9c5zrbpikx3vxea/Music%20Box%20RP.mcaddon?dl=0"
+  },
+  {
+    "project": "Copper Madness",
+    "dataItem": "map",
+    "img": "./assets/media/project-logo/copperMadness.webp",
+    "internalLink": "./projects/copper-madness",
+    "directLink": "https://dl.dropboxusercontent.com/s/ey8fgduw3qj5503/Copper%20Madness%20%5BVER%201.2%5D.mcworld?dl=0"
+  }
+]
