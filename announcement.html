@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Announcement</title>
+</head>
+<body>
+    <script>
+        fetch('https://api.blockstate.team/discordAnnouncement', {mode: 'no-cors'})
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            return response.json();
+        })
+        .then(data => {
+            console.log('JSON data:', data);
+        })
+    </script>
+</body>
+</html>
