@@ -6,7 +6,7 @@
 </head>
 <body>
     <script>
-        fetch('https://api.blockstate.team/discordAnnouncement', {mode: 'no-cors'})
+        fetch('https://api.blockstate.team/discordAnnouncement')
         .then(response => {
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             return response.json();
@@ -14,6 +14,9 @@
         .then(data => {
             console.log('JSON data:', data);
         })
+        .catch(error => {
+            console.error('Fetch error:', error.message);
+        });
     </script>
 </body>
 </html>
