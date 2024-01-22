@@ -21,11 +21,14 @@ h3 {
     font-size: 1.7vw;
 }
 body {
+    margin: 0;
     width: 100vw;
     overflow-x: hidden;
     background-color: #F8ECEC;
 }
 #messageContainer {
+    white-space: wrap; 
+    overflow: hidden;
     background-color: #313338;
     border-radius: 5vh;
     width: 90vw;
@@ -60,6 +63,7 @@ body {
 }
 .message {
     padding-bottom: 12vh;
+    height: fit-content;
     display: flex;
     flex-direction: row;
 }
@@ -180,9 +184,50 @@ body {
     text-decoration: none;
 }
 @media (max-aspect-ratio: 3/4) {
+    .username {
+        font-size: 4.5vw;
+    }
+    .timestamp {
+        font-size: 2.5vw;
+    }
+    .userAvatar {
+        margin-right: 5px;
+        height: 40px;
+        width: 40px;
+    }
+    .line {
+        font-size: 1.5vh;
+        width: 90vw;
+    }
+    .message {
+        width: 80vw;
+        padding-bottom: 2.5vh;
+    }
+    #messageContainer span.veryBold {
+        font-size: 2.5vh;
+    }
+    #messageContainer span.bold {
+        font-size: 2vh;
+    }
+    #messageContainer span.slightlyBold {
+        font-size: 2vh;
+    }
+    #messageContainer {
+        overflow-wrap: break-word;
+        padding: 5px;
+        border-radius: 1vh;
+        width: 93vw;
+        margin-left: 2vw;
+    }
+    h3{
+        margin-left: 5vw !important;
+        line-height: 1.2;
+        font-size: 5vw;
+        letter-spacing: -0.5px;
+    }
     h2{
         margin-left: 5vw !important;
-        font-size: 9vw !important;
+        font-size: 10vw !important;
         margin-top: 2vh !important;
         margin-bottom: 2vh !important;
     }
