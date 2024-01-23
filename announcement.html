@@ -115,7 +115,11 @@
         .then(data => {
             console.log(data);
             for (let i = 0 ; i < data.length; i++) {
-                document.getElementById('messageContainer').innerHTML +=  '<br>' + '<div class="message">' + `<img class="userAvatar" src="${data[i].avatar}"> <div> <p class="username">${data[i].author} <span class="timestamp">${formatDate(data[i].date)}</span></p>` + convertDiscordMarkupToHTML(data[i].content) + '</div>' + '</div>' + `<div class="line">${formatDate(data[i+1]?.date)}</div>`;
+                document.getElementById('messageContainer').innerHTML +=  '<br>' + '<div class="message">' + `<img class="userAvatar" src="${data[i].avatar}"> <div> <p class="username">${data[i].author} <span class="timestamp">${formatDate(data[i].date)}</span></p>` + convertDiscordMarkupToHTML(data[i].content) + '</div>' + '</div>';
+                if (data[i].attachmentURL != null) {
+                    document.getElementById('messageContainer').innerHTML += `<div class="attachment"><img class="attachmentImg" src="${data[i].attachmentURL}"></div>`;
+                };
+                document.getElementById('messageContainer').innerHTML += `<div class="line">${formatDate(data[i+1]?.date)}</div>`;
                 document.getElementById('messageContainer').style.height = 'auto';
             }
         });

@@ -58,6 +58,7 @@ body::-webkit-scrollbar{
   display: none;
 }
 #text {
+  letter-spacing: 1.5px;
   padding: 7.5px;
   background-color: rgb(0, 0, 0, 1);
   border-radius: 5px;
