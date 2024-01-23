@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>403</title>
+    <style>
+        @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); } 
+        @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); }
+        video{
+        position: fixed;
+        width: 30vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        }
+        #puter{
+            position: relative;
+            z-index: 1;
+            font-family: 'Minecraft'; 
+            font-size: 3vw; width: 100vw; 
+            text-align: center; 
+            padding-top: 5vh; 
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            color: white;
+            text-decoration: none !important;
+        }
+        @keyframes flicker {
+            0% {
+            opacity: 0.4;
+            }
+            100% {
+            opacity: 0.6;
+            }
+        }
+        @keyframes textShadow {
+            0% {
+            text-shadow: 0.4389924193300864px 0 1px rgba(255, 0, 0, 0.5), -0.4389924193300864px 0 1px rgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            5% {
+            text-shadow: 2.7928974010788217px 0 1px rgba(255, 0, 0, 0.5), -2.7928974010788217px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            10% {
+            text-shadow: 0.02956275843481219px 0 1px rgba(255, 0, 0, 0.5), -0.02956275843481219px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            15% {
+            text-shadow: 0.40218538552878136px 0 1px rgba(255, 0, 0, 0.5), -0.40218538552878136px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            20% {
+            text-shadow: 3.4794037899852017px 0 1px rgba(255, 0, 0, 0.5), -3.4794037899852017px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            25% {
+            text-shadow: 1.6125630401149584px 0 1px rgba(255, 0, 0, 0.5), -1.6125630401149584px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            30% {
+            text-shadow: 0.7015590085143956px 0 1px rgba(255, 0, 0, 0.5), -0.7015590085143956px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            35% {
+            text-shadow: 3.896914047650351px 0 1px rgba(255, 0, 0, 0.5), -3.896914047650351px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            40% {
+            text-shadow: 3.870905614848819px 0 1px rgba(255, 0, 0, 0.5), -3.870905614848819px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            45% {
+            text-shadow: 2.231056963361899px 0 1px rgba(255, 0, 0, 0.5), -2.231056963361899px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            50% {
+            text-shadow: 0.08084290417898504px 0 1px rgba(255, 0, 0, 0.5), -0.08084290417898504px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            55% {
+            text-shadow: 2.3758461067427543px 0 1px rgba(255, 0, 0, 0.5), -2.3758461067427543px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            60% {
+            text-shadow: 2.202193051050636px 0 1px rgba(255, 0, 0, 0.5), -2.202193051050636px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            65% {
+            text-shadow: 2.8638780614874975px 0 1px rgba(255, 0, 0, 0.5), -2.8638780614874975px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            70% {
+            text-shadow: 0.48874025155497314px 0 1px rgba(255, 0, 0, 0.5), -0.48874025155497314px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            75% {
+            text-shadow: 1.8948491305757957px 0 1px rgba(255, 0, 0, 0.5), -1.8948491305757957px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            80% {
+            text-shadow: 0.0833037308038857px 0 1px rgba(255, 0, 0, 0.5), -0.0833037308038857px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            85% {
+            text-shadow: 0.09769827255241735px 0 1px rgba(255, 0, 0, 0.5), -0.09769827255241735px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            90% {
+            text-shadow: 3.443339761481782px 0 1px rgba(255, 0, 0, 0.5), -3.443339761481782px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            95% {
+            text-shadow: 2.1841838852799786px 0 1px rgba(255, 0, 0, 0.5), -2.1841838852799786px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+            100% {
+            text-shadow: 2.6208764473832513px 0 1px rgba(255, 0, 0, 0.5), -2.6208764473832513px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
+            }
+        }
+        .crt::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(18, 16, 16, 0.1);
+            opacity: 0;
+            z-index: 2;
+            pointer-events: none;
+            animation: flicker 0.15s infinite;
+        }
+        .crt::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+        .crt {
+            animation: textShadow 3s infinite;
+        }
+        body {
+            background-color: #7F0808;
+            overflow: hidden; 
+            margin: 0;
+        }
+        #error{
+            position: relative;
+            z-index: 1;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+            margin-top: 15vh;
+            font-size: 13vw; 
+            font-family: 'MinecraftTen';
+            color: white;
+        }
+        #puterLooking {
+            position: fixed; 
+            z-index: -5; 
+            width: 20vw;
+            margin-left: -30vw;
+            animation: moveRight 4s ease-in-out infinite;
+        }
+        @keyframes moveRight {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(135vw);
+            }
+        }
+    </style>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3449C7QP0C"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3449C7QP0C');
+</script>
+<body class="crt">
+    <img id="puterLooking" src="./assets/media/puter_403.webp">
+    <div id="error">
+        403
+    </div>
+    <div class="crt" id="puter">What are you doing here?<br> Please go back to safety!</div>
+    <a href="/"><div class="crt" id="puter" style="font-family: 'MinecraftTen'; text-decoration: none !important;">Go back to Home page</div></a>
+</body>
+</html>
