@@ -1,5 +1,12 @@
 [
   {
+    "project": "Squid Remodeled",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/squidRemodeled.webp",
+    "internalLink": "./projects/squid-remodeled",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/zfpqgcrj88jrlayr4weoq/Squid-Remodeled-Addon.mcaddon?rlkey=uiq1oe7usgg9wsh016q99e312&dl=0"
+  },
+  {
     "project": "Tuff Golem",
     "dataItem": "addon",
     "img": "./assets/media/project-logo/tuffGolem.webp",
