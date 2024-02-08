@@ -1,5 +1,12 @@
 [
   {
+    "project": "Wind Charge Demo",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/windChargeDemo.webp",
+    "internalLink": "./projects/wind-charge-demo",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/g3rnomni2egos699e0w6t/Wind-Charge-Addon.mcaddon?rlkey=mhuw6vzlly26uw43rdw7rkugt&dl=0"
+  },
+  {
     "project": "Squid Remodeled",
     "dataItem": "addon",
     "img": "./assets/media/project-logo/squidRemodeled.webp",
