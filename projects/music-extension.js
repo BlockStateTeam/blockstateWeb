@@ -271,6 +271,9 @@ async function downloadTestZip() {
     const BPR10 = { name: "Music Box BP/recipes/wither_disc.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/t2cshd6wptlkcgyujmf3l/wither_disc.json?rlkey=g0r4zvkni9vanyz1v350aohli&dl") };
     console.log("LOADING BPR10");
     updateFetch("LOADING BPR10");
+    const BPR11 = { name: "Music Box BP/recipes/music_box.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/9wjf7ejuzgd20njlqd08i/music_box.json?rlkey=hv0uiil88olfolkzetkrd2vuy&dl=0") };
+    console.log("LOADING BPR11");
+    updateFetch("LOADING BPR11");
     const BPTD = { name: "Music Box BP/trading/economy_trades/wandering_trader_trades.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/mv6tacinlgowym2w4390z/wandering_trader_trades.json?rlkey=89qaz3dtxoa3gxn7nvoss1ah5&dl") };
     console.log("LOADING BPTD");
     updateFetch("LOADING BPTD");
@@ -278,7 +281,7 @@ async function downloadTestZip() {
     console.log("LOADING BPMF");
     updateFetch("LOADING BPMF");
     updateFetch("FINISHED!");
-    const blob = await downloadZip([...zipItems, RPSE, BPTD, BPMF, BPI10, BPLT, BPR1, BPR2, BPR3, BPR4, BPR5, BPR6, BPR7, BPR8, BPR9, BPR10, BPPI, BPAC, BPAnimInject, BPB, BPE1, BPE2, BPE3, BPI1, BPI2, BPI3, BPI4, BPI5, BPI6, BPI7, BPI8, BPI9, RPPA, RPIT, RPTT, RPBJ, RPMNF, RPPI, RPTI1, RPTI2, RPTI3, RPTI4, RPTI5, RPTI6, RPTI7, RPTI8, RPTI9, RPTI10, RPSF1, RPSF2, RPSF3, RPSF4, RPSF5, RPT, RPTB, RPTE, RPAC, RPAnim, RPE1, RPE2, RPE3, RPI1, RPI2, RPI3, RPI4, RPI5, RPI6, RPI7, RPI8, RPI9, RPI10, RPMB, RPME, RPP, RPSD]).blob()
+    const blob = await downloadZip([...zipItems, RPSE, BPTD, BPMF, BPI10, BPLT, BPR1, BPR2, BPR3, BPR4, BPR5, BPR6, BPR7, BPR8, BPR9, BPR10, BPR11, BPPI, BPAC, BPAnimInject, BPB, BPE1, BPE2, BPE3, BPI1, BPI2, BPI3, BPI4, BPI5, BPI6, BPI7, BPI8, BPI9, RPPA, RPIT, RPTT, RPBJ, RPMNF, RPPI, RPTI1, RPTI2, RPTI3, RPTI4, RPTI5, RPTI6, RPTI7, RPTI8, RPTI9, RPTI10, RPSF1, RPSF2, RPSF3, RPSF4, RPSF5, RPT, RPTB, RPTE, RPAC, RPAnim, RPE1, RPE2, RPE3, RPI1, RPI2, RPI3, RPI4, RPI5, RPI6, RPI7, RPI8, RPI9, RPI10, RPMB, RPME, RPP, RPSD]).blob()
     const link = document.createElement("a")
     link.href = URL.createObjectURL(blob)
     link.download = "Music Box Addon.mcaddon"
