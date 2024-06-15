@@ -1,5 +1,12 @@
 [
   {
+    "project": "Art Enthusiasm V3",
+    "dataItem": "addon",
+    "img": "./assets/media/project-logo/artEnthusiasmV3.webp",
+    "internalLink": "./projects/art-enthusiasm-v2",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/cx96fwreggyj5tty1gftn/Art-Enthusiasm-V3-Addon.mcaddon?rlkey=ykml2sqqjol96urh969kue51y&st=n8nl4vp0&dl=0"
+  },
+  {
     "project": "Addon Compiler V2",
     "dataItem": "tool",
     "img": "./assets/media/project-logo/addonCompilerV2.webp",
