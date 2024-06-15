@@ -1,5 +1,12 @@
 [
   {
+    "project": "Addon Compiler V2",
+    "dataItem": "tool",
+    "img": "./assets/media/project-logo/addonCompilerV2.webp",
+    "internalLink": "./projects/addon-compiler-v2",
+    "directLink": "https://github.com/BlockStateTeam/addon-compiler-v2/releases/download/INTEL/Add-On.Compiler-intel64-installer.exe"
+  },
+  {
     "project": "Wind Charge Demo",
     "dataItem": "addon",
     "img": "./assets/media/project-logo/windChargeDemo.webp",

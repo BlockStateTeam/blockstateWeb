@@ -1,0 +1,182 @@
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <meta property="og:title" content="Project: Add-On Compiler">
+    <meta property="og:image" content="https://blockstate.team/assets/media/project-logo/addonCompiler.webp">
+    <meta charset="UTF-8" />
+    <title>Project: Add-On Compiler</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="addon-compiler.css" rel="stylesheet" type="text/css">
+    <script>
+        window.onload = function () {
+        const menu_btn = document.querySelector('.hamburger');
+        const mobile_menu = document.querySelector('.mobile-nav');
+        menu_btn.addEventListener('click', function () {
+            menu_btn.classList.toggle('is-active');
+            mobile_menu.classList.toggle('is-active');
+        });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('hoverVideo');
+        video.pause();
+        video.addEventListener('mouseover', () => {
+            video.play();
+        });
+        video.addEventListener('mouseout', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    });
+    window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loadingScreen");
+    const fadeDuration = 1000; // 1 second
+    const intervalTime = fadeDuration / 50;
+
+    loadingScreen.style.opacity = "1";
+
+    setTimeout(() => {
+        const fadeOutStep = () => {
+            const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+            loadingScreen.style.opacity = currentOpacity;
+
+            if (currentOpacity <= 0) {
+                loadingScreen.style.visibility = "hidden";
+                clearInterval(fadeInterval);
+            }
+        };
+        const fadeInterval = setInterval(fadeOutStep, intervalTime);
+        }, 1000);
+    });
+    </script>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3449C7QP0C"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3449C7QP0C');
+</script>
+<body>
+    <div class="topnav" id="myTopnav">
+		<img src="/assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
+		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<nav id="desktopNav">
+			<a href="/project" class="active">Project</a>
+            <a href="/announcement">announcement</a>
+			<a href="/contact">Contact</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="/">Home</a>
+			<a href="/our_story">Our Story</a>
+			<a href="/contact">Contact</a>
+            <a href="/announcement">announcement</a>
+			<a href="/project" class="active">Project</a>
+		</div>
+	</div>
+    <h2>Project: Add-On Compiler V2</h2>
+    <div id="content">
+        <diV class="section" style="text-align: left;">
+            Are you fed up with the manual process of gathering RP and BP files from separate folders, zipping them, and constantly changing their extensions whenever you want to share your Add-On?
+            <br><br> Well, we have the solution for you! Introducing the Add-On Compiler! This tool will automatically gather all the necessary files and compile them into a single .mcaddon file for you!
+        </diV>
+        <img src="../assets/media/addon-compiler/1.webp">
+        <diV class="section">
+            Let's dive into how this compiler works! And what features it offers!
+        </diV>
+        <img src="../assets/media/addon-compiler/2.webp">
+        <diV class="section">
+            Here's the compiler User Interface! It's pretty simple, right? And yes Dark-mode is the default mode! Let's go over the features!
+        </diV>
+        <img src="../assets/media/addon-compiler/3.webp">
+        <diV class="section">
+            When launched, the compiler will automatically detect development_resource_packs and development_behavior_packs folders om your computer and will use that to sort your projects into 3 categrories: Resource Pack, Add-On and Behavior Pack. <br><br> Simply put it will scan and try to match RP and BP that share the same name and will put them into the Add-On category. If it can't find a match, it will put them into the Resource Pack or Behavior Pack category. <br><br> Note that, they must share the same name (You can use RP or BP at the end of their name) to be considered a pair! For example: "My project"/"My project RP" and "My project"/"My project BP" will be consider as an Add-On, 
+        </diV>
+        <img src="../assets/media/addon-compiler/4.webp">
+        <diV class="section">
+            You can also use the UI switcher to change to your favorite theme! (Dark mode is the default theme)
+        </diV>
+        <img src="../assets/media/addon-compiler/5.webp">
+        <diV class="section">
+            Save Mode allows you to alter the directory that the compiler will save the compiled Add-On to!
+        </diV>
+        <img src="../assets/media/addon-compiler/6.webp">
+        <diV class="section">
+            You can also add/remove custom directory to the compiler! This will allow you to compile Add-Ons from anywhere on your computer!
+        </diV>
+        <img src="../assets/media/addon-compiler/7.webp">
+        <diV class="section">
+            You should see a notification at your bottom-right screen when a new directory is added The notification will disappear after a short period of time
+        </diV>
+        <img src="../assets/media/addon-compiler/8.webp">
+        <diV class="section">
+            Now you're all set! Simply click on the "Compile" button and the compiler will do all the manual work for you! Including zipping the files and changing their extensions to .mcaddon!
+        </diV>
+        <img src="../assets/media/addon-compiler/9.webp">
+        <diV class="section">
+            For all the ScriptAPI enthusiasts out there, you can also use the compiler to update your ScriptAPI projects! The compiler will check for the latest version of ScriptAPI and will promt you to update <br> IMPORTANT: This feature is still in development and may not work properly!
+        </diV>
+    </div>
+    <h2>HELP SECTION</h2>
+    <diV class="section">
+        If you need any help, feel free to join our Discord!
+        <div style="width: 100vw; height: 15vh; display: flex; justify-content: center;">
+            <a href="https://discord.gg/p3FvBh2aBd">
+                <button class="genericButton">Discord</button>
+            </a>
+        </div>
+    </diV>
+    <h2>DOWNLOAD SECTION</h2>
+    <diV class="warning">
+        Security and Transparency is our top priority! We want to make sure that you can trust us! <br> That's why we have decided to make our source code public! <br> You can check out <a href="https://github.com/Andinh123/Addon-Compiler" style="font-weight: bolder;">our source code here</a>!
+    </diV>
+    <div class="downloadSection">
+        <label for="tosCheckbox">
+          <input type="checkbox" id="tosCheckbox">
+          <span id="tosLabel">I <span style="text-decoration: underline;">disagree</span> to the <a href="../TOS">Term of service</a></span>
+        </label><br>
+        <button class="genericButton" id="genericButton" disabled>Download Now!</button>
+    </div>
+    <script>
+        const tosCheckbox = document.getElementById('tosCheckbox');
+        const downloadButton = document.getElementById('genericButton');
+        tosCheckbox.addEventListener('change', () => {
+        if (tosCheckbox.checked) {
+            downloadButton.removeAttribute('disabled');
+            tosLabel.innerHTML = 'I agree to the <a href="/TOS" target="_blank">Term of service</a>';
+        } else {
+            downloadButton.setAttribute('disabled', 'disabled');
+            tosLabel.innerHTML = 'I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a>';
+        }
+        });
+        downloadButton.addEventListener('click', () => {
+            if (!tosCheckbox.checked) {
+                alert('Please agree to the Terms of Service (TOS) before downloading.');
+                return;
+            }
+            fetch('https://api.ipify.org/')
+            .then(r => r.ok ? r.text() : Promise.reject('Network response was not ok'))
+            .catch(e => ('undefined', console.error('Error:', e)))
+            .then(data => {
+                let formData = new FormData();
+                formData.append("entry.606279263", data);
+                formData.append("entry.1080269179", document.URL.substring(document.URL.lastIndexOf("/") + 1));
+                formData.append("entry.826374623", Date.now());
+
+                return fetch("https://docs.google.com/forms/d/e/1FAIpQLSfiIG0fLLNucnSzChPm9F2gWqkk9GOhUHGHUlYT-k3h-FBRFA/formResponse", { method: "POST", body: formData, mode: "no-cors" });
+            })
+            .then(() => console.log("Form submitted successfully"))
+            .catch(error => console.error("Error:", error));
+            window.location.href = 'https://raw.githubusercontent.com/BlockStateTeam/Addon-Compiler/main/BlockState-Add-On-Compiler.vbs';
+        });
+    </script>
+</body>
+</html>
