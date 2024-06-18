@@ -1,7 +1,9 @@
 [
   {
     "project": "Art Enthusiasm V3",
+    "formatName": "art-enthusiasm-v3",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "1.21.0",
     "img": "./assets/media/project-logo/artEnthusiasmV3.webp",
@@ -10,7 +12,9 @@
   },
   {
     "project": "Addon Compiler V2",
+    "formatName": "addon-compiler-v2",
     "dataItem": "tool",
+    "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "Windows 10",
     "img": "./assets/media/project-logo/addonCompilerV2.webp",
@@ -19,7 +23,9 @@
   },
   {
     "project": "Wind Charge Demo",
+    "formatName": "wind-charge-demo",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "deprecated",
     "img": "./assets/media/project-logo/windChargeDemo.webp",
@@ -28,7 +34,9 @@
   },
   {
     "project": "Squid Remodeled",
+    "formatName": "squid-remodeled",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "1.19.0",
     "img": "./assets/media/project-logo/squidRemodeled.webp",
@@ -37,7 +45,9 @@
   },
   {
     "project": "Tuff Golem",
+    "formatName": "tuff-golem",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
     "img": "./assets/media/project-logo/tuffGolem.webp",
@@ -46,7 +56,9 @@
   },
   {
     "project": "Working TV",
+    "formatName": "working-tv",
     "dataItem": "addon",
+    "enforceRedirect": true,
     "experimentalRequire": false,
     "supportVersion": "1.17.0",
     "img": "./assets/media/project-logo/workingTV.webp",
@@ -55,7 +67,9 @@
   },
   {
     "project": "Crafty Plane",
+    "formatName": "crafty-plane",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
     "img": "./assets/media/project-logo/craftyPlane.webp",
@@ -64,7 +78,9 @@
   },
   {
     "project": "Render UI",
+    "formatName": "render-ui",
     "dataItem": "tool",
+    "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "Windows 10",
     "img": "./assets/media/project-logo/renderUI.webp",
@@ -73,7 +89,9 @@
   },
   {
     "project": "Addon Compiler",
+    "formatName": "addon-compiler",
     "dataItem": "tool",
+    "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "Windows 10",
     "img": "./assets/media/project-logo/addonCompiler.webp",
@@ -82,7 +100,9 @@
   },
   {
     "project": "Head Decoration",
+    "formatName": "head-decoration",
     "dataItem": "addon",
+    "enforceRedirect": true,
     "experimentalRequire": false,
     "supportVersion": "1.17.0",
     "img": "./assets/media/project-logo/headDecoration.webp",
@@ -91,7 +111,9 @@
   },
   {
     "project": "Art Enthusiasm V2",
+    "formatName": "art-enthusiasm-v2",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
     "img": "./assets/media/project-logo/artEnthusiasmV2.webp",
@@ -100,7 +122,9 @@
   },
   {
     "project": "Banner Marker",
+    "formatName": "banner-marker",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
     "img": "./assets/media/project-logo/bannerMarker.webp",
@@ -109,7 +133,9 @@
   },
   {
     "project": "Expression Perfection",
+    "formatName": "expression-perfection",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
     "img": "./assets/media/project-logo/expressionPerfection.webp",
@@ -118,7 +144,9 @@
   },
   {
     "project": "Lighting Delight",
+    "formatName": "lighting-delight",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
     "img": "./assets/media/project-logo/lightingDelight.webp",
@@ -127,7 +155,9 @@
   },
   {
     "project": "Art Enthusiasm",
+    "formatName": "art-enthusiasm",
     "dataItem": "addon",
+    "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
     "img": "./assets/media/project-logo/artEnthusiasm.webp",
@@ -136,7 +166,9 @@
   },
   {
     "project": "Music Extension",
+    "formatName": "music-extension",
     "dataItem": "addon",
+    "enforceRedirect": true,
     "experimentalRequire": false,
     "supportVersion": "1.19.0",
     "img": "./assets/media/project-logo/musicExtension.webp",
@@ -145,7 +177,9 @@
   },
   {
     "project": "Copper Madness",
+    "formatName": "copper-madness",
     "dataItem": "map",
+    "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "1.19.0",
     "img": "./assets/media/project-logo/copperMadness.webp",
