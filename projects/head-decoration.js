@@ -148,7 +148,7 @@ function updatePagination(data, itemsPerPage) {
 document.getElementById("category").addEventListener("change", function() {
     let selectedCategory = this.value;
     if (selectedCategory) {
-        let apiUrl = `https://raw.githubusercontent.com/BlockStateTeam/blockstateWeb/master/json/${selectedCategory}.json`;
+        let apiUrl = `https://blockstate.team/json/${selectedCategory}.json`;
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
