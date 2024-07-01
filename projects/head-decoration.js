@@ -431,7 +431,7 @@ async function buildAddon(totalData) {
         const RPMF = { name:"Head Decoration RP/manifest.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/bti6c2dqlxalgy3vc4rxs/manifest.json?rlkey=vl1d1s8i1fua1lbh7att9upir&dl=0") };
         console.log("LOADING RPMF");
         updateFetch("LOADING RPMF");
-        const RPTX = { name:"Head Decoration RP/textures/blocks/base.png", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/9ekew12vjbcvkpwhnx5jp/base.png?rlkey=qzfysk1nc1j2yckqbcindzmg2&dl=0") };
+        const RPTX = { name:"Head Decoration RP/textures/blocks/base.png", lastModified: new Date(), input: await fetch("./base.png") };
         console.log("LOADING RPTX");
         updateFetch("LOADING RPTX");
         const RPLJ = { name:"Head Decoration RP/texts/languages.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/mtew7mgt17uleu6izalt8/languages.json?rlkey=5wpapeaccwzl186ql3njm96nx&dl=0") };
