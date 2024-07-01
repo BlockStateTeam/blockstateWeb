@@ -235,7 +235,7 @@ function updateFetch(fetchContent) {
     numericWidth += 8.333;
     loadingBarRun.style.width = numericWidth + '%';
 }
-function expandImage(url) {
+function cropImage(url) {
     return new Promise((resolve, reject) => {
         const image = new Image();
         image.crossOrigin = 'Anonymous';
@@ -243,11 +243,11 @@ function expandImage(url) {
         image.onload = () => {
             const canvas = document.createElement('canvas');
             canvas.width = 64;
-            canvas.height = 64;
+            canvas.height = 16;
             const context = canvas.getContext('2d');
             context.fillStyle = 'transparent';
-            context.fillRect(0, 0, 64, 64);
-            context.drawImage(image, 0, 0, 64, 32, 0, 0, 64, 32);
+            context.fillRect(0, 0, 64, 16);
+            context.drawImage(image, 0, 0, 64, 16, 0, 0, 64, 16);
             canvas.toBlob(blob => resolve(blob), 'image/png');
         };
         image.onerror = () => {
@@ -384,7 +384,7 @@ async function buildAddon(totalData) {
             const individualTexture = {
                 name: `Head Decoration RP/textures/blocks/custom/${trimDown(totalData[i][0])}.png`,
                 lastModified: new Date(),
-                input: await expandImage(convertToHttps(totalData[i][1])),
+                input: await cropImage(convertToHttps(totalData[i][1])),
             };
             TXLIST.push(individualTexture);
             textureFile.texture_data[trimDown(totalData[i][0])] = {
@@ -437,7 +437,7 @@ async function buildAddon(totalData) {
         const RPLJ = { name:"Head Decoration RP/texts/languages.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/mtew7mgt17uleu6izalt8/languages.json?rlkey=5wpapeaccwzl186ql3njm96nx&dl=0") };
         console.log("LOADING RPLJ");
         updateFetch("LOADING RPLJ");
-        const RPM = { name:"Head Decoration RP/models/blocks/base.geo.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/8epmni11rjzvcyvovk5q0/base.geo.json?rlkey=dlf8le7xxhlez1xr2u2vx7zwn&dl=0") };
+        const RPM = { name:"Head Decoration RP/models/blocks/base.geo.json", lastModified: new Date(), input: await fetch("./base.geo.json") };
         console.log("LOADING RPM");
         updateFetch("LOADING RPM");
         updateFetch("FINISHED!");
