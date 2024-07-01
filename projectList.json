@@ -1,5 +1,16 @@
 [
   {
+    "project": "Redstone Engine Expansion",
+    "formatName": "redstone-engine-expansion",
+    "dataItem": "addon",
+    "enforceRedirect": false,
+    "experimentalRequire": false,
+    "supportVersion": "1.21.0",
+    "img": "./assets/media/project-logo/redstoneEngineExpansion.webp",
+    "internalLink": "./projects/redstone-engine-expansion",
+    "directLink": "https://dl.dropboxusercontent.com/scl/fi/3o228q9ftug8rbjrsh86i/Redstone-Engine-Expansion-Addon.mcaddon?rlkey=byqv2aijwiyj6g23lz7z0evsi&st=p7iw6924&dl=0"
+  },
+  {
     "project": "Art Enthusiasm V3",
     "formatName": "art-enthusiasm-v3",
     "dataItem": "addon",

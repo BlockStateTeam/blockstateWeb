@@ -1,0 +1,294 @@
+@font-face { font-family: MinecraftTen; src: url('../assets/fonts/MinecraftTen.woff'); }
+@font-face { font-family: Minecraft; src: url('../assets/fonts/Minecraft.otf'); }
+@font-face { font-family: MinecraftFive; src: url('../assets/fonts/MinecraftFive-Regular.woff2'); }
+::-webkit-scrollbar {
+    display: none;
+}
+iframe {
+    width: 70vw;
+    height: 80vh
+}
+body {
+    background-color: #F8ECEC;
+    margin: 0;
+    font-family: 'Minecraft';
+    overflow-x: hidden;
+  }
+h2 {
+    font-family: 'MinecraftTen';
+    font-size: 3vw;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-bottom: 6vh;
+}
+.topnav {
+    z-index: 30;
+    background-color: #FFFFFF;
+    height: 5vw;
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.topnav a {
+    font-family: 'MinecraftTen';
+    float: right;
+    display: block;
+    color: #373097;
+    text-align: center;
+    padding: 1.2vw 1.5vw;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: 0.15s;
+}
+
+.topnav a:hover {
+    background-color: #e9d3ff;
+    color: #8000ff;
+}
+
+.topnav a.active {
+    background-color: #4d009a;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+#content{
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+#video{
+    width: 70vw;
+    height: 80vh
+}
+.section {
+    letter-spacing: -0.1vw;
+    line-height: 4.5vh;
+    font-size: 1.5vw;
+    padding-bottom: 8vh;
+    text-align: center;
+}
+#content > img {
+    border-radius: 20px;
+    width: 70vw;
+}
+#content > video {
+    border-radius: 20px;
+    width: 70vw;
+}
+.downloadSection{
+    display: flex;
+    width: 100vw;
+    font-size: 2vw;
+    letter-spacing: -0.15vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input[type="checkbox"] {
+    transform: scale(3) translateY(-1px);
+    margin-right: 40px;
+    appearance: none;
+    border: 2px solid #4d009a;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+    content: "\2713";
+    color: #fff;
+    background-color: #4d009a;
+    animation: checkboxPulse 0.4s;
+}
+input[type="checkbox"]:checked:after {
+    content: "✓";
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+@keyframes checkboxPulse {
+  0% {
+    transform: scale(3) translateY(-1px);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(3) translateY(-1px);
+  }
+}
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+  
+.genericButton {
+    border: none;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #4229B9;
+    color: #FFFFFF;
+    font-family: 'MinecraftTen';
+    font-size: 2.5vw;
+    box-shadow: 0.5vw 0px #4229B9, -0.5vw 0px #4229B9, 0px 0.5vw #4229B9, 0px -0.5vw #4229B9, 0.5vw 0.5vw 0px 0.55vw #24108a;
+    transition: 0.3s;
+}
+.genericButton:hover {
+    background-color: #4229B9;
+    box-shadow: 0.5vw 0px 0px 0.15vw #4229B9, -0.5vw 0px 0px 0.15vw #4229B9, 0px 0.5vw 0px 0.15vw #4229B9, 0px -0.5vw 0px 0.15vw #4229B9, 0.75vw 0.75vw 0px 0.8vw #24108a;
+    color: #fcf2ff;
+}
+.genericButton:active {
+    transform: translate(10px,10px);
+    box-shadow: 0.15vw 0px 0px 0.15vw #4229B9, -0.15vw 0px 0px 0.15vw #4229B9, 0px 0.15vw 0px 0.15vw #4229B9, 0px -0.15vw 0px 0.15vw #4229B9, 0.5vw 0.75vw 0px 0.55vw #24108a;
+}
+.warning {
+    color:red;
+    letter-spacing: -1px;
+    font-size: 1.5vw;
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+}
+#mobileNav {
+    display: none;
+}
+.hamburger {
+    margin: 2vw;
+    margin-left: 85vw;
+    z-index: 200;
+    display: none;
+    position: fixed;
+    width: 50px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+.hamburger .bar, .hamburger:after, .hamburger:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #4229B9;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+
+.mobile-nav {
+display: none;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    padding-top: 120px;
+    transition: 0.4s;
+}
+
+.mobile-nav.is-active {
+    left: 0;
+}
+
+.mobile-nav a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+@media (max-aspect-ratio: 3/4) {
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block;
+    }
+    #desktopNav {
+        display: none;
+    }
+    .warning {
+        font-size: 2vh;
+    }
+    .hidden {
+        display: none;
+    }
+    .topnav {
+        height: 8vh;
+    }
+    
+    .topnav a {
+        font-size: 8vw;
+    }
+    h2 {
+        font-size: 6vw;
+        margin-top: 5vw;
+        margin-left: 10vw;
+        margin-bottom: 3vw;
+    }
+    #content > img {
+        margin-left: -10vw;
+        border-radius: 5px;
+        width: 90vw;
+    }
+    #content > video {
+        margin-left: -10vw;
+        border-radius: 5px;
+        width: 90vw;
+    }
+    .section {
+        letter-spacing: -0.1vw;
+        line-height: 2.5vh;
+        font-size: 4vw;
+        padding-bottom: 2vh;
+    }
+    #video{
+        margin-left: -10vw;
+        width: 90vw;
+        height: 25vh
+    }
+    input[type="checkbox"] {
+        margin-right: 20px;
+        width: 15px;
+        height: 15px;
+        margin-top: 20px;
+    }
+    #tosLabel{
+        font-size: 1.9vh;
+    }
+    .genericButton {
+        margin-bottom: 12.5vh;
+        margin-top: 5vh;
+        font-size: 4.5vh;
+        box-shadow: 0.75vh 0px #4229B9, -0.75vh 0px #4229B9, 0px 0.75vh #4229B9, 0px -0.75vh #4229B9, 0.75vh 0.75vh 0px 0.75vh #24108a;
+        transition: 0.3s;
+    }
+}
