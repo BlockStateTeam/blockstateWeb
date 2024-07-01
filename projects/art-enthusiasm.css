@@ -222,8 +222,9 @@ display: none;
 }
 #updateWarning {
     text-align: left;
-    font-size: 1.75vw; 
+    font-size: 2vw; 
     font-weight: bolder;
+    color: red;
 }
 @media (max-aspect-ratio: 3/4) {
     #updateWarning {

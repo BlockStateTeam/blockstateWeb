@@ -9,7 +9,13 @@ body {
     margin: 0;
     font-family: 'Minecraft';
     overflow-x: hidden;
-  }
+}
+#updateWarning {
+    text-align: left;
+    font-size: 2vw; 
+    font-weight: bolder;
+    color: red;
+}
 h2 {
     font-family: 'MinecraftTen';
     font-size: 3vw;
