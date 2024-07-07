@@ -436,7 +436,8 @@
         </div>
     </div>
     <script>
-        let currenUrl = window.location.pathname.replace('.html','')
+        let currenUrl = window.location.pathname.replace('.html','');
+        currenUrl = currenUrl.endsWith("/") ? currenUrl.slice(0, -1) : currenUrl;
         if (currenUrl === '/project') {
             console.log(currenUrl, " is the display project page")
             document.getElementById('projectPage').style.display = 'block';
