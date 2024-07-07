@@ -378,7 +378,7 @@
 </script>
 <body>
     <div class="crt" id="errorState">
-        <video id="crtVideo" class="crt" src="./assets/media/PuterCorrupted.webm" muted autoplay></video>
+        <video id="crtVideo" class="crt" src="/assets/media/PuterCorrupted.webm" muted autoplay></video>
         <script>
             const video = document.getElementById('crtVideo');
             function hideVideo() {video.style.display = 'none';}
@@ -441,7 +441,7 @@
             console.log(currenUrl, " is the display project page")
             document.getElementById('projectPage').style.display = 'block';
             const container = document.querySelector('.container');
-            fetch('./projectList.json')
+            fetch('/projectList.json')
             .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
             .then(data => {
                 data.forEach((project, index) => {
