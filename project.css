@@ -23,6 +23,19 @@ body {
     margin: 0;
     font-family: 'Minecraft';
 }
+#fakeLogo {
+    position: fixed;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    margin-left: 5.5vw;
+    font-family: 'MinecraftTen';
+    font-size: 2vw;
+    line-height: 0.85;
+}
+.hidden{
+    height: 4.5vw;
+}
 h2 {
     font-family: 'MinecraftTen';
     font-size: 3vw;
@@ -175,7 +188,7 @@ display: none;
         display: none;
     }
     .hidden{
-      display: none;
+        height: 7vh;
     }
     .topnav {
       height: 15vw;

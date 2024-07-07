@@ -59,8 +59,8 @@
 </script>
 <body>
     <div class="topnav" id="myTopnav">
-		<img src="./assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
-		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<video id="hoverVideo" src="./assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
+		<div id="fakeLogo">BlockState <br>Team</div>
 		<nav id="desktopNav">
 			<a href="project">Project</a>
 			<a href="announcement" class="active">Announcement</a>
@@ -117,7 +117,7 @@
             for (let i = 0 ; i < data.length; i++) {
                 document.getElementById('messageContainer').innerHTML +=  '<br>' + '<div class="message">' + `<img class="userAvatar" src="${data[i].avatar}"> <div> <p class="username">${data[i].author} <span class="timestamp">${formatDate(data[i].date)}</span></p>` + convertDiscordMarkupToHTML(data[i].content) + '</div>' + '</div>';
                 if (data[i].attachmentURL != null) {
-                    document.getElementById('messageContainer').innerHTML += `<div class="attachment"><img class="attachmentImg" src="${data[i].attachmentURL}"></div>`;
+                    document.getElementById('messageContainer').innerHTML += `<div class="attachment"><img class="attachmentImg" src="data:image/png;base64,${data[i].attachmentBASE64}"></div>`;
                 };
                 document.getElementById('messageContainer').innerHTML += `<div class="line">${formatDate(data[i+1]?.date)}</div>`;
                 document.getElementById('messageContainer').style.height = 'auto';

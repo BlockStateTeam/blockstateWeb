@@ -2,18 +2,22 @@
 <html lang="en">
     <head>
         <style>
+            @font-face { font-family: MinecraftTen; src: url('./assets/fonts/MinecraftTen.woff'); } 
             video {
-                width: 23vw;
+                width: 20vw;
             }
-            img {
-                width: 50vw;
+            #fakeLogo {
+                height: 20vw; 
+                display: flex; 
+                align-items: center; 
+                margin-left: 1.5vw; 
+                font-family: 'MinecraftTen'; 
+                font-size: 8vw; 
+                line-height: 0.85;
+                user-select: none;
+                letter-spacing: -2px;
             }
-            /* 4/3 is Computer............ 3/4 is for phone */
             @media (max-aspect-ratio: 3/4) {
-                img {
-                    width: 90vw;
-                    margin-bottom: 10vh;
-                }
                 video {
                     width: 43vw;
                     margin-bottom: 20vw;
@@ -22,8 +26,8 @@
             }
         </style>
     </head>
-    <body style="width: 90vw; height: 90vh; display: flex; justify-content: center; align-items: center;">
-        <img src="./assets/media/ConvertToSVG.webp" style="position:absolute; margin-left: 7.5vw; margin-top: 5vh;">
-        <video src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" type="video/webm" style="z-index: 2; position: absolute; margin-left: 5vw; padding-bottom: 7vw;" autoplay muted loop disableRemotePlayback></video>
+    <body style="margin-left: 5vw; width: 90vw; height: 90vh; display: flex; justify-content: center; align-items: center;">
+        <video src="./assets/media/rotatingBlock2D.webm" type="video/webm" style="z-index: 40;" muted loop autoplay></video>
+        <div id="fakeLogo">BlockState <br>Team</div>
     </body>
 </html>

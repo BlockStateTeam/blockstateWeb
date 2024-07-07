@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <title>404</title>
     <style>
-        @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); } 
-        @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); }
+        @font-face { font-family: MinecraftTen; src: url('./assets/fonts/MinecraftTen.woff'); }
+        @font-face { font-family: Minecraft; src: url('./assets/fonts/Minecraft.otf'); }
         video{
         position: fixed;
         width: 30vw;
@@ -129,10 +129,16 @@
             animation: textShadow 3s infinite;
         }
         body {
+            margin: 0;
+        }
+        #errorState {
+            width: 100vw;
+            height: 100vh;
             user-select: none;
-            background-color: #7F0808;
             overflow: hidden; 
             margin: 0;
+            background-color: #7F0808;
+            display: none;
         }
         #error{
             position: relative;
@@ -146,6 +152,221 @@
             font-family: 'MinecraftTen';
             color: white;
         }
+        #projectPage {
+            width: 100vw;
+            display: none;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        select {
+            margin-left: 10vw;
+            font-family: 'Minecraft';
+            z-index: 97;
+            height: 5vh;
+            font-size: 3.5vh;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        body {
+            overflow-x: hidden;
+            background-color: #F8ECEC;
+            margin: 0;
+            font-family: 'Minecraft';
+        }
+        #fakeLogo {
+            position: fixed;
+            height: 5vw;
+            display: flex;
+            align-items: center;
+            margin-left: 5.5vw;
+            font-family: 'MinecraftTen';
+            font-size: 2vw;
+            line-height: 0.85;
+        }
+        .hidden{
+            height: 4.5vw;
+        }
+        h2 {
+            font-family: 'MinecraftTen';
+            font-size: 3vw;
+            margin-top: 10vh;
+            margin-left: 10vw;
+            margin-bottom: 6vh;
+        }
+        .container {
+            display: flex;
+            row-gap: 5vh;
+            flex-wrap: wrap;
+            margin-left: 10vw;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+            width: 90vw;
+        }
+
+        .box {
+            width: 35vw; /* Adjust as needed */
+            height: fit-content;
+            overflow: hidden;
+            background-color: white;
+            box-sizing: border-box;
+            border-radius: 10px;
+            transition: 0.3s;
+            margin-right: 5vw;
+        }
+        .box img{
+            width: 35vw;
+            height: auto;
+            transition: 0.3s;
+        }
+        .box:hover > a > img{
+            width: 40vw;
+        }
+        .box:hover{
+            width: 40vw;
+
+        }
+        .topnav {
+            z-index: 30;
+            background-color: #FFFFFF;
+            height: 5vw;
+            top: 0;
+            position: -webkit-sticky;
+            position: sticky;
+        }
+
+        .topnav a {
+            font-family: 'MinecraftTen';
+            float: right;
+            display: block;
+            color: #373097;
+            text-align: center;
+            padding: 1.2vw 1.5vw;
+            text-decoration: none;
+            font-size: 2vw;
+            transition: 0.15s;
+        }
+
+        .topnav a:hover {
+            background-color: #e9d3ff;
+            color: #8000ff;
+        }
+
+        .topnav a.active {
+            background-color: #4d009a;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+        #mobileNav {
+            display: none;
+        }
+        .hamburger {
+            margin: 2vw;
+            margin-left: 85vw;
+            z-index: 200;
+            display: none;
+            position: fixed;
+            width: 50px;
+            cursor: pointer;
+            appearance: none;
+            background: none;
+            outline: none;
+            border: none;
+        }
+        .hamburger .bar, .hamburger:after, .hamburger:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: #4229B9;
+            margin: 6px 0px;
+            transition: 0.4s;
+        }
+
+        .hamburger.is-active:before {
+            transform: rotate(-45deg) translate(-8px, 6px);
+        }
+
+        .hamburger.is-active:after {
+            transform: rotate(45deg) translate(-9px, -8px);
+        }
+
+        .hamburger.is-active .bar {
+            opacity: 0;
+        }
+
+        .mobile-nav {
+        display: none;
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            min-height: 100vh;
+            background-color: white;
+            padding-top: 120px;
+            transition: 0.4s;
+        }
+
+        .mobile-nav.is-active {
+            left: 0;
+        }
+
+        .mobile-nav a {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 16px;
+            text-align: center;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+        @media (max-aspect-ratio: 3/4) {
+            select {
+                font-size: 2.2vh;
+                height: 4vh;
+            }
+            .mobile-nav {
+                display: flex;
+                flex-direction: column;
+            }
+            .hamburger {
+                display: block;
+            }
+            #desktopNav {
+                display: none;
+            }
+            .hidden{
+                height: 7vh;
+            }
+            .topnav {
+            height: 15vw;
+            }
+            .topnav a {
+            padding: 4vw 2vw;
+            font-size: 8vw;
+            }
+            h2{
+                margin-left: 5vw !important;
+                font-size: 9vw !important;
+                margin-top: 2vh !important;
+                margin-bottom: 2vh !important;
+            }
+            .container {
+                margin-top: 5vh !important;
+                row-gap: 2.5vh !important;
+            }
+            .box {
+                width: 80vw !important;
+            }
+            .box img{
+                width: 80vw !important;
+            }
+        }
     </style>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3449C7QP0C"></script>
@@ -155,29 +376,126 @@
 	gtag('js', new Date());
 	gtag('config', 'G-3449C7QP0C');
 </script>
-<body class="crt">
-    <video id="crtVideo" class="crt" src="./assets/media/PuterCorrupted.webm" muted autoplay></video>
-    <script>
-        const video = document.getElementById('crtVideo');
-        function hideVideo() {video.style.display = 'none';}
-        function showVideo() {video.style.display = 'block';}
-        function playVideo() {
-            hideVideo();
-            setTimeout(() => {
-                showVideo();
-                video.play();
-            }, 3000);
-            video.addEventListener('ended', () => {
+<body>
+    <div class="crt" id="errorState">
+        <video id="crtVideo" class="crt" src="./assets/media/PuterCorrupted.webm" muted autoplay></video>
+        <script>
+            const video = document.getElementById('crtVideo');
+            function hideVideo() {video.style.display = 'none';}
+            function showVideo() {video.style.display = 'block';}
+            function playVideo() {
                 hideVideo();
-                setTimeout(playVideo, 3000);
-            });
-        }
-        playVideo();
-    </script>
-    <div id="error">
-        404
+                setTimeout(() => {
+                    showVideo();
+                    video.play();
+                }, 3000);
+                video.addEventListener('ended', () => {
+                    hideVideo();
+                    setTimeout(playVideo, 3000);
+                });
+            }
+            playVideo();
+        </script>
+        <div id="error">
+            404
+        </div>
+        <div class="crt" id="puter">Puter has messed up this page again!<br> If you need help then contact us!</div>
+        <a href="/"><div class="crt" id="puter" style="font-family: 'MinecraftTen';">Go back to Home page</div></a>
     </div>
-    <div class="crt" id="puter">Puter has messed up this page again!<br> If you need help then contact us!</div>
-    <a href="/"><div class="crt" id="puter" style="font-family: 'MinecraftTen';">Go back to Home page</div></a>
+    <div id="projectPage">
+        <div class="topnav" id="myTopnav">
+            <video id="hoverVideo" src="./assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
+            <div id="fakeLogo">BlockState <br>Team</div>
+            <nav id="desktopNav">
+                <a href="project">Project</a>
+                <a href="announcement">Announcement</a>
+                <a href="contact">Contact</a>
+                <a href="our_story">Our Story</a>
+                <a href="/" class="active">Home</a>
+            </nav>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
+            <div class="mobile-nav">
+                <a href="/" class="active">Home</a>
+                <a href="our_story">Our Story</a>
+                <a href="contact">Contact</a>
+                <a href="announcement">Announcement</a>
+                <a href="project">Project</a>
+            </div>
+        </div>
+        <h2>Our official released projects!</h2>
+        <select id="filter">
+            <option value="latest">Latest</option>
+            <option value="oldest">Oldest</option>
+            <option value="addon">Add-On</option>
+            <option value="map">Map</option>
+            <option value="tool">Tool</option>
+        </select>
+        <div class="container">
+        </div>
+    </div>
+    <script>
+        let currenUrl = window.location.pathname.replace('.html','')
+        if (currenUrl === '/project') {
+            console.log(currenUrl, " is the display project page")
+            document.getElementById('projectPage').style.display = 'block';
+            const container = document.querySelector('.container');
+            fetch('./projectList.json')
+            .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
+            .then(data => {
+                data.forEach((project, index) => {
+                    const div = document.createElement('div');
+                    div.classList.add('box');
+                    div.dataset.order = index + 1;
+                    div.dataset.item = project.dataItem;
+                    div.innerHTML = `<a href="${project.internalLink}"><img src="${project.img}"></a>`;
+                    container.appendChild(div);
+                });
+            
+            })
+            .catch(error => console.error('Error fetching data:', error.message));
+            document.getElementById('filter').addEventListener('change', function () {
+                const selectedValue = filter.value;
+                switch (selectedValue) {
+                    case 'latest':
+                        sortItem();
+                    break;
+                    case 'oldest':
+                        sortItem(false);
+                    break;
+                    case 'addon':
+                        onlyShow('addon');
+                    break;
+                    case 'map':
+                        onlyShow('map');
+                    break;
+                    case 'tool':
+                        onlyShow('tool');
+                    break;
+                }
+            });
+            const sortItem = (ascending = true) => {
+                const childDivs = Array.from(container.querySelectorAll('div[data-order]'));
+                childDivs.forEach((div) => {
+                    div.style.display = '';
+                });
+                childDivs.sort((a, b) => ascending ? a.dataset.order - b.dataset.order : b.dataset.order - a.dataset.order);
+                childDivs.forEach(div => container.appendChild(div));
+            };
+            function onlyShow(id) {
+                const childDivs = Array.from(container.querySelectorAll('div[data-item]'));
+                childDivs.forEach((div) => {
+                    div.style.display = div.dataset.item === id ? '' : 'none';
+                });
+            };
+        } else if (currenUrl.startsWith('projects')) {
+            console.log(currenUrl, " is a project page")
+        } else {
+            console.log(currenUrl, " is a 404 page");
+            document.getElementById('errorState').style.display = 'block';
+        }
+        
+    </script>
 </body>
 </html>

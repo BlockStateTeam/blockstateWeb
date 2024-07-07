@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="contact.css" rel="stylesheet" type="text/css">
+	<script src="https://www.google.com/recaptcha/api.js"></script>
 	<script>
 		window.onload = function () {
 		const menu_btn = document.querySelector('.hamburger');
@@ -61,8 +62,8 @@
 </script>
 <body>
     <div class="topnav" id="myTopnav">
-		<img src="./assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
-		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<video id="hoverVideo" src="./assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
+		<div id="fakeLogo">BlockState <br>Team</div>
 		<nav id="desktopNav">
 			<a href="project">Project</a>
 			<a href="announcement">Announcement</a>
@@ -81,26 +82,41 @@
 			<a href="project">Project</a>
 		</div>
 	</div>
-    <form action="https://formsubmit.co/244cd8f637fccb317a6fdf4561120a9c" method="POST">
-		<div>
-			<input type="hidden" name="_next" value="https://blockstate.team/success">
-			<label for="name" class="form-label">Name</label>
-			<input type="text" class="form-control" name="name" id="name" required>
-			<input type="text" name="_honey" style="display: none;">
-			<input type="hidden" name="_captcha" value="false"> 
-		</div>
-		<div>
-			<label for="emailInfo" class="form-label">E-mail</label>
-			<input type="email" class="form-control" name="email" id="emailInfo" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
-		</div>
-		<div>
-			<label for="comments" class="form-label">Message / Question?</label>
-			<textarea class="form-control" id="comments" name="comments" rows="1" required></textarea>
-		</div>
-		<div>
-			<button id="genericButton" type="submit">Submit</button>
-		</div>
-	</form>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdEkHL6bd-YvGCsfDCt7sLaNcIaAPV3vDB4D7hkCIP2UYSy2w/formResponse" method="POST" onsubmit="handleFormSubmit(event)">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="entry.1616433026" id="name" required>
+        </div>
+        <div>
+            <label for="emailInfo">E-mail</label>
+            <input type="email" name="entry.636989826" id="emailInfo" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+        </div>
+        <div>
+            <label for="comments">Message / Question?</label>
+            <textarea id="comments" name="entry.1382732115" rows="1" required></textarea>
+        </div>
+        <div>
+            <button id="genericButton" type="submit">Submit</button>
+        </div>
+    </form>
+	<script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                window.location.href = "/success";
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+            });
+        }
+    </script>
 	<h2>Or reach us through Discord!</h2>
 	<div style="width: 100vw; height: 15vh; display: flex; justify-content: center;">
 		<a href="https://discord.gg/p3FvBh2aBd">

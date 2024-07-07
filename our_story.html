@@ -4,10 +4,6 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
-	<script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Our Story</title>
@@ -64,8 +60,8 @@
 </script>
 <body>
 	<div class="topnav" id="myTopnav">
-		<img src="./assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
-		<video id="hoverVideo" src="./assets/media/rotatingBlock.webm" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<video id="hoverVideo" src="./assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
+		<div id="fakeLogo">BlockState <br>Team</div>
 		<nav id="desktopNav">
 			<a href="project">Project</a>
 			<a href="announcement">Announcement</a>
@@ -84,7 +80,10 @@
 			<a href="project">Project</a>
 		</div>
 	</div>
+	<script src="https://cdn.babylonjs.com/babylon.js"></script>
+	<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 	<script src="./our_story.js" defer type="module"></script>
+	<canvas id="renderingCanvas"></canvas>
 	<div style="position: fixed; z-index: 10; width: 100vw; display: flex; align-items: center; justify-content: center;">
 		<div id="text"> Hello strangers around the globe </div>
 	</div>

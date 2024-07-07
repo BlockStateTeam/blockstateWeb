@@ -61,8 +61,8 @@
 </script>
 <body>
 	<div class="topnav" id="myTopnav">
-		<img src="./assets/media/ConvertToSVG.webp" class="hidden" style="height: 8vh; position:fixed; margin-top: 1.5vh; margin-left: 1vw;">
-		<video id="hoverVideo" src="https://dl.dropboxusercontent.com/scl/fi/xudtox8mmlvh57rmbprku/logo.webm?rlkey=r31es7ksq7megly241ocx7see&dl=0" class="hidden" type="video/webm" style="z-index: 40; height: 3.5vw; position: fixed; margin-left: 3.6vw;" muted loop></video>
+		<video id="hoverVideo" src="./assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
+		<div id="fakeLogo">BlockState <br>Team</div>
 		<nav id="desktopNav">
 			<a href="project">Project</a>
 			<a href="announcement">Announcement</a>
@@ -83,7 +83,7 @@
 	</div>
 	<div class="scrollContainer">
 		<div class="videoFrame">
-			<div id="purpleBox" style="clip-path: polygon(0% 5%, 5% 5%, 5% 0%, 95% 0%, 95% 5%, 100% 5%, 100% 95%, 95% 95%, 95% 100%, 5% 100%, 5% 95%, 0% 95%);">
+			<div id="purpleBox">
 				<text style="margin-left: 2.5vw;">
 					Block State is a upcoming Minecraft studio focusing on making fantastic creation on Bedrock Edition
 				</text>
@@ -148,72 +148,85 @@
 			</div>
 		</div>
 		<div style="padding-top: 1vw; padding-left: 5vw; height: 90vh;" class="scrollChild">
-				<h1>LET'S MEET THE TEAM</h1>
-				<div id="outer">
-					<div class="item" style="background-color: #306FF6;">
-						<img class="img" src="./assets/media/avatarBlues.png"> 
-						<text class="itemTitle" style="position: relative; color:white;">Blues</text>
-						<div class="itemRole" style="color: #002167;">@Leader</div>
-						<div class="itemPara" style="top: 14vh;">Hello! I'm Blues - the leader of Block State! <br> I want to create unique experience using Minecraft for everyone!</div>
+			<h1>MEET THE TEAM</h1>
+			<div id="outer">
+				<div id="outerFirstElement">
+					<div id="memberDisplay">
+						<h3>Blues <span id="roleName" style="background-color: #8000ff;">Leader</span></h3>
+						<text class="averageText">
+							Hello! I'm Blues - the leader of Block State! <br> I found Blockstate with the desire to create unique experience using Minecraft for everyone!
+						</text>
 					</div>
-					<div class="spacing"></div>
-					<div class="item" style="background-color: #c90a70;">
-						<img class="img" src="./assets/media/avatarDefowler.webp"> 
-						<text class="itemTitle" style="position: relative; color:white;">Defow</text>
-						<div class="itemRole" style="color: #420024;">@Special Dev</div>
-						<div class="itemPara" style="top: 14vh;">Hello! I'm Defowler - A special dev from Block State Team! Take a look at my trophies I am a pro!</div>
+					<div>
+						<input type="radio" id="option1" name="option" value="1" checked hidden>
+						<label for="option1">
+							<img src="./assets/media/avatar/blues-head.png">
+						</label>
+						<input type="radio" id="option2" name="option" value="2" hidden>
+						<label for="option2">
+							<img src="./assets/media/avatar/defowler-head.png">
+						</label>
+						<input type="radio" id="option3" name="option" value="3" hidden>
+						<label for="option3">
+							<img src="./assets/media/avatar/smasher-head.png">
+						</label>
+						<input type="radio" id="option4" name="option" value="4" hidden>
+						<label for="option4">
+							<img src="./assets/media/avatar/senna-head.png">
+						</label>
+						<input type="radio" id="option5" name="option" value="5" hidden>
+						<label for="option5">
+							<img src="./assets/media/avatar/minato-head.png">
+						</label>
+						<input type="radio" id="option6" name="option" value="6" hidden>
+						<label for="option6">
+							<img src="./assets/media/avatar/creeper-head.png">
+						</label>
+						<input type="radio" id="option7" name="option" value="7" hidden>
+						<label for="option7">
+							<img src="./assets/media/avatar/hiddengem-head.png">
+						</label>
+						<input type="radio" id="option8" name="option" value="8" hidden>
+						<label for="option8">
+							<img src="./assets/media/avatar/bloxy-head.png">
+						</label>
 					</div>
-					<div class="spacing"></div>
-					<div class="item" style="background-color: #002b32;">
-						<img class="img" src="./assets/media/avatarSmasher.webp"> 
-						<text class="itemTitle" style="position: relative; color:white;">Smashr</text>
-						<div class="itemRole" style="color: #e5fbff;">@Community manager</div>
-						<div class="itemPara" style="top: 14vh;">Hey there! I'm Smasher, the friendly face of Block State. Looking forward to meet you all!</div>
-					</div>
-					<div class="spacing"></div>
-					<div class="item" style="background-color: #c43100;">
-						<img class="img" src="./assets/media/avatarCreeper.png"> 
-						<text class="itemTitle" style="position: relative; color:white; margin-left: 10.2vw;">Creper</text>
-						<div class="itemRole" style="color: #672400;">@Dev</div>
-						<div class="itemPara" style="top: 14vh;">Hi there! If you need someone to bring life to the digital realms or create experience that spark wonder. Call me!</div>
-					</div>
-					<div class="spacing"></div>
-					<div class="item" style="background-color: #3f3f3f;">
-						<img class="img" src="./assets/media/avatarGem.png"> 
-						<text class="itemTitle" style="position: relative; color:white;">HidGem</text>
-						<div class="itemRole" style="color: #c7c7c7;">@Artist</div>
-						<div class="itemPara" style="top: 13vh;">Greetings! I'm Hiddengem, a pixel artist who weaves magic into Block State maps with simple yet lively texture</div>
-					</div>
-					<div class="spacing"></div>
-					<div class="item" style="background-color: #d9992b;">
-						<img class="img" src="./assets/media/avatarSenna.webp"> 
-						<text class="itemTitle" style="position: relative; color:white;">Senna</text>
-						<div class="itemRole" style="color: #3a2200;">@Artist</div>
-						<div class="itemPara" style="top: 13vh;">Hi there! I'm SennaHN, but you can call me Senna. I have a passion for Dinosaur-related content! Nice to meet you</div>
-					</div>
-					<div class="spacing"></div>
-					<!--- 
-						Hiding the snitch (Ewww)
-					<div class="item" style="background-color: #997147;">
-						<img class="img" src="./assets/media/avatarDark.webp"> 
-						<text class="itemTitle" style="position: relative; color:white;">xKing</text>
-						<div class="itemRole" style="color: #231400;">@Technical Consultant</div>
-						<div class="itemPara" style="top: 10vh;">Heya xKingDark here! King for short! I'm a programmer who loves making interesting projects and messing with software!</div>
-					</div>
-					<div class="spacing"></div>
-					-->
-					<div class="item" style="background-color: #61ba1d;">
-						<img class="img" src="./assets/media/avatarMaris.png"> 
-						<text class="itemTitle" style="position: relative; color:white;">Maris</text>
-						<div class="itemRole" style="color: #00670e;">@Community manager</div>
-						<div class="itemPara" style="top: 10vh;">Hello there! I'm Maris, a passionate artist proudly working as community manager with Block State Team</div>
-					</div>
-					<div class="spacing"></div>
-					<!-- <div class="item" style="background-color: #dd3c3c;">4</div>
-					<div class="spacing"></div>
-					<div class="item" style="background-color: #cf16a7;">5</div>
-					<div class="spacing" style="min-width: 10vw;"></div> -->
 				</div>
+				<div id="imageRole">
+					<img id="theImageRole" src="./assets/media/avatar/blues.png">
+				</div>
+				<script>
+					document.addEventListener('DOMContentLoaded', () => {
+						let optionData = [
+							{name: "Blues", role: "Leader", color: "#d3cbff", roleColor: "#8000ff", description: "Hello! I'm Blues - the leader of Block State! <br> I found Blockstate with the desire to create unique experience using Minecraft for everyone!"},
+							{name: "Defowler", role: "Mechanics Dev", color: "#ffa6a6", roleColor: "#c70e0e", description: "Hi! I'm Defowler - A mechanic dev from Block State Team! I love coding and helping others! Take a look at my Github trophies! I am a pro!"},
+							{name: "Smasher", role: "Community Manager", color: "#8fe3ff", roleColor: "#0088b5", description: "Hey there! Smasher here! I am the friendly face of BlockState Team (10% friendly, 90% sarcastic). Looking forward to meet you all!"},
+							{name: "SennaHN", role: "Pixel Artist", color: "#a3ffb4", roleColor: "#02ba11", description: "I'm SennaHN, but you can call me Senna. I have a passion for Dinosaur, who doesn't? Nice to meet you"},
+							{name: "Minato", role: "Scripting Dev", color: "#83b2f7", roleColor: "#052299", description: "Hello everyone! My name is Mohamed (also known as Minato), a Minecraft Bedrock Add-on creator. I mainly code using the script API, But i do other stuff as well."},
+							{name: "Exploding Creeper", role: "Add-On Dev", color: "#4ce08c", roleColor: "#018c50", description: ">Hi there! If you need someone to bring life to the digital realms or create experience that spark wonder. Better call Exploding Creeper!"},
+							{name: "HiddenGem", role: "Artist", color: "#ffffff", roleColor: "#7632e3", description: "Greetings! I'm Hiddengem, a pixel artist who weaves the magic of art into BlockState product with simple yet amazing texture"},
+							{name: "Bloxy", role: "Helper", color: "#ffda85", roleColor: "#e39f00", description: "I always want to help other as much as I could. That's why I join BlockState Team! If you need my help, tag me!"}
+						]
+						document.querySelectorAll('input[name="option"]').forEach((radio) => {
+							radio.addEventListener('change', (event) => {
+								let data = optionData[+event.target.value - 1];
+								console.log(data)
+								document.getElementById('outer').style.backgroundColor = data.color;
+								document.getElementById('memberDisplay').innerHTML = `
+								<h3>${data.name} <span id="roleName" style="background-color: ${data.roleColor}">${data.role}</span></h3>
+								<text class="averageText">
+									${data.description}
+								</text>
+								`;
+								let source = document.getElementById('theImageRole').src;
+								document.getElementById('theImageRole').src = source.substring(0, source.indexOf("/avatar/"))+"/avatar/" + data.name.toLowerCase().replace('exploding ', '') + ".png"
+								
+							});
+						});
+					});
+					
+				</script>
+			</div>
 		</div>
 		<div style="padding-top: 1vw; height: auto; background: linear-gradient(180deg, rgba(99,172,255,1) 0%, rgba(99,172,255,1) 90%, rgba(0,0,0,1) 92%); overflow: hidden;" class="scrollChild">
 			<h1 style="color: #002a6d; margin-left: 2.5vw;">THERE'S MORE TO COME...</h1>
@@ -225,18 +238,31 @@
 			<div class="footer">
 				<div>
 					<a href="https://discord.gg/p3FvBh2aBd">
-						<img class="media" src="./assets/media/discord.svg"><br><h2>Discord</h2>
+						<svg class="media" viewBox="0 0 127.14 96.36">
+							<path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+						</svg>
 					</a>
-				</div>
-				<div>
 					<a href="https://www.youtube.com/channel/UCGXaQQcfJ-Bp4zS9CNnuMew">
-						<img class="media" src="./assets/media/youtube.svg"><br><h2>Youtube</h2>
+						<svg class="media" viewBox="0 0 71.412065 50">
+							<path d="M35.705078 0S13.35386.0001149 7.765625 1.4707031c-3 .8235294-5.4713925 3.2946921-6.2949219 6.3535157C.0001149 13.412454 0 25 0 25s.0001149 11.64637 1.4707031 17.175781c.8235294 3.058824 3.2360984 5.471393 6.2949219 6.294922C13.412684 50.000115 35.705078 50 35.705078 50s22.353171-.000115 27.941406-1.470703c3.058824-.82353 5.471393-3.236098 6.294922-6.294922 1.470588-5.588235 1.470703-17.175781 1.470703-17.175781s.058709-11.64614-1.470703-17.2343752c-.823529-3.0588236-3.236098-5.4713925-6.294922-6.2949219C58.058249-.00011488 35.705078 0 35.705078 0zm-7.117187 14.294922L47.175781 25l-18.58789 10.705078V14.294922z"/>
+						</svg>
+						
+					</a>
+					<a href="https://mcpedl.com/user/blockstate-team/">
+						<svg class="media" viewBox="0 0 278 278">
+							<path d="M113.61,91.79v89.53c.17,8.87-11.28,7.07-17.02,7.15V84.64c5.75,.08,17.18-1.72,17.02,7.15Z"/>
+							<path d="M0,0V278H278V0H0ZM149.01,186.26c0,14.1-11.43,25.53-25.53,25.53H61.87V62.18h59.66c15.18,0,27.48,12.3,27.48,27.48v96.6Zm80.52,25.53h-61.79l.68-149.61h36.59v122.89h24.52v26.72Z"/>
+						</svg>
+					</a>
+					<a href="https://www.reddit.com/r/BlockStateTeam/">
+						<svg viewBox="0 0 24 24" class="media">
+							<path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/>
+						</svg>
 					</a>
 				</div>
-				<div>
-					<a href="https://www.tiktok.com/@block_state_team">
-						<img class="media" src="./assets/media/tiktok.svg"><br><h2>Tiktok</h2>
-					</a>
+				<div style="color:white; width:100%; height: 40vh;" class="averageText">
+					© 2024 Blockstate LLC. All rights reserved <br>
+					We are in no way affiliated with or endorsed by Mojang, AB.
 				</div>
 			</div>
 			<div>

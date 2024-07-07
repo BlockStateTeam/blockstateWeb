@@ -5,327 +5,381 @@
 @font-face { font-family: MinecraftFive; src: url('./assets/fonts/MinecraftFive-Regular.woff2'); } 
 
 body {
-  overflow-x: hidden;
-  font-family: 'MinecraftBold';
-  background-color: #F8ECEC;
-  margin: 0;
+    overflow-x: hidden;
+    font-family: 'MinecraftBold';
+    background-color: #F8ECEC;
+    margin: 0;
 }
 body::-webkit-scrollbar{
-  display: none;
+    display: none;
+}
+label > img {
+    width: 5vw;
+    height: 5vw;
+    image-rendering: pixelated;
+    border-radius: 0.7vw;
+    transition: 0.25s;
+    margin-right: 10px;
+}
+input[type="radio"]:checked + label > img {
+    margin-bottom: 20px;
+}
+#imageRole > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-right: 7.5vw;
 }
 .averageText {
-  line-height: 2vw;
-  font-family: 'MinecraftTest';
-  letter-spacing: -1.25px;
-  font-size: 1.7vw;
+    user-select: none;
+    line-height: 2vw;
+    font-family: 'MinecraftTest';
+    letter-spacing: -1.25px;
+    font-size: 1.7vw;
 }
 #outer {
-  overflow: auto;
-  border-spacing: 0vw;
-  white-space: nowrap;
-  vertical-align: text-top;
-  margin-bottom: 10vh;
-  padding: 0;
-  clear: both;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #d3cbff;
+    border-radius: 1vw;
+    width: 90vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: 0.25s;
+    user-select: none;
+}
+h3 {
+    user-select: none;
+    font-family: 'MinecraftFive';
+    font-size: 2.5vw;
+}
+#roleName {
+    letter-spacing: 1px;
+    display: inline-block;
+    width: auto;
+    font-family: 'MinecraftTen';
+    font-size: 2.5vw;
+    padding: 5px;
+    color: white;
+    border-radius: 0.5vw;
 }
 #outer::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 #outer:hover::-webkit-scrollbar {
-  height: 30px;
-  display: block;
+    height: 30px;
+    display: block;
 }
 
 #outer::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 20px;
+    background-color: #888;
+    border-radius: 20px;
 }
 
 #outer::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+    background-color: #555;
 }
 
 
 .item {
-  overflow: hidden;
-  position: relative;
-  border-radius: 5vw 0.8vw 0.8vw 0.8vw;
-  display: table-cell;
-  table-layout: fixed;
-  min-width: 23vw;
-  max-width: 23vw;
-  height: 52vh;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5vw 0.8vw 0.8vw 0.8vw;
+    display: table-cell;
+    table-layout: fixed;
+    min-width: 23vw;
+    max-width: 23vw;
+    height: 52vh;
 }
 .img{
-  z-index: 20;
-  width: 10vw;
-  image-rendering: pixelated;
-  border-radius: 5vw 0.8vw 5vw 0.8vw;
-  position: absolute;
-  transition: 0.5s;
+    z-index: 20;
+    width: 10vw;
+    image-rendering: pixelated;
+    border-radius: 5vw 0.8vw 5vw 0.8vw;
+    position: absolute;
+    transition: 0.25s;
 }
 .img:hover {
-  width: 23vw;
-  border-radius: 0.8vw 0.8vw 0.8vw 0.8vw;
+    width: 23vw;
+    border-radius: 0.8vw 0.8vw 0.8vw 0.8vw;
 }
 .itemRole {
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  word-break: break-word;
-  margin-left: 10vw;
-  width: 13vw;
-  top: 4.5vh;
-  font-family: Minecraft;
-  letter-spacing: -0.05vw;
-  font-size: 1.5vw;
-  position: relative; 
-  color:white;
-  text-align: center;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-left: 10vw;
+    width: 13vw;
+    top: 4.5vh;
+    font-family: Minecraft;
+    letter-spacing: -0.05vw;
+    font-size: 1.5vw;
+    position: relative; 
+    color:white;
+    text-align: center;
 }
 .itemPara {
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  word-break: break-word;
-  text-overflow: initial;
-  display: block;
-  width: 20vw;
-  height: 10vh;
-  margin-left: 2vw;
-  font-family: Minecraft;
-  font-size: 1.5vw;
-  letter-spacing: -0.025vw;
-  line-height: 1.2;
-  position: relative; 
-  color:white;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    text-overflow: initial;
+    display: block;
+    width: 20vw;
+    height: 10vh;
+    margin-left: 2vw;
+    font-family: Minecraft;
+    font-size: 1.5vw;
+    letter-spacing: -0.025vw;
+    line-height: 1.2;
+    position: relative; 
+    color:white;
 }
 .itemTitle {
-  z-index: 22;
-  margin-left: 11vw;
-  top: 4vh;
-  font-family: MinecraftFive;
-  font-size: 2.5vw;
-  transition: 0.45s;
+    z-index: 22;
+    margin-left: 11vw;
+    top: 4vh;
+    font-family: MinecraftFive;
+    font-size: 2.5vw;
+    transition: 0.25s;
 }
 .img:hover + .itemTitle {
-  top: 1vh;
+    top: 1vh;
 }
 .spacing {
-  display: table-cell;
-  min-width: 5vw;
-  height: 50vh;
+    display: table-cell;
+    min-width: 5vw;
+    height: 50vh;
 }
 
 h1 {
-  font-family: 'MinecraftTen';
-  font-size: 3vw;
+    user-select: none;
+    font-family: 'MinecraftTen';
+    font-size: 3vw;
+}
+#fakeLogo {
+    position: fixed;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    margin-left: 5.5vw;
+    font-family: 'MinecraftTen';
+    font-size: 2vw;
+    line-height: 0.85;
 }
 .topnav {
-  z-index: 30;
-  background-color: #FFFFFF;
-  height: 5vw;
-  top: 0;
-  position: -webkit-sticky;
-  position: sticky;
+    z-index: 30;
+    background-color: #FFFFFF;
+    height: 5vw;
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
 }
 #discordSection {
-  position: relative; 
-  z-index: 3; 
-  padding-top: 0.5vw; 
-  height: 28vw; 
-  background-color: #7046F0; 
-  padding-top: 4vw; 
-  height: 90vh;
+    position: relative; 
+    z-index: 3; 
+    padding-top: 0.5vw; 
+    height: 28vw; 
+    background-color: #7046F0; 
+    padding-top: 4vw; 
+    height: 90vh;
 }
 .topnav a {
-  font-family: 'MinecraftTen';
-  float: right;
-  display: block;
-  color: #373097;
-  text-align: center;
-  padding: 1.2vw 1.5vw;
-  text-decoration: none;
-  font-size: 2vw;
-  transition: 0.15s;
+    font-family: 'MinecraftTen';
+    float: right;
+    display: block;
+    color: #373097;
+    text-align: center;
+    padding: 1.2vw 1.5vw;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: 0.15s;
 }
 .topnav a:hover {
-  background-color: #e9d3ff;
-  color: #8000ff;
+    background-color: #e9d3ff;
+    color: #8000ff;
 }
 
 .topnav a.active {
-  background-color: #4d009a;
-  color: white;
+    background-color: #4d009a;
+    color: white;
 }
 
 .topnav .icon {
-  display: none;
+    display: none;
 }
 
 .scrollContainer{
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  height: 90vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    height: 90vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 .scrollContainer::-webkit-scrollbar{
-  display: none;
+    display: none;
 }
 .scrollChild {
-  scroll-snap-align: start;
+    scroll-snap-align: start;
 }
 
 .videoFrame {
-  scroll-snap-align: center;
-  height: 90vh;
-  width: 100vw;
-  position: relative;
+    scroll-snap-align: center;
+    height: 90vh;
+    width: 100vw;
+    position: relative;
 }
 
 .videoFrame video {
-  width: 100%;
-  height: 90vh;
-  position: absolute;
-  object-fit: cover;
-  z-index: 0;
-  top: 0;
-  display:inline-block;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    object-fit: cover;
+    z-index: 0;
+    top: 0;
+    display:inline-block;
 }
 
 #purpleBox {
-  display: inline-block;
-  margin-left: 7vw;
-  margin-top: 5vw;
-  padding-left: 3vw;
-  padding-right: 3vw;
-  padding-top: 3vw;
-  top: 5vw;
-  left: 2vw;
-  position: absolute;
-  z-index: 5;
-  height: 23vw;
-  width: 30vw;
-  background-color: #7046F0;
+    border-radius: 1vw;
+    display: inline-block;
+    margin-left: 7vw;
+    margin-top: 5vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vw;
+    top: 5vw;
+    left: 2vw;
+    position: absolute;
+    z-index: 5;
+    height: 23vw;
+    width: 30vw;
+    background-color: #7046F0;
+}
+text { 
+    user-select: none;
 }
 #purpleBox text {
-  font-family: MinecraftTest;
-  color: #FFFFFF;
-  font-size: 1.75vw;
-  letter-spacing: -0.025vw;
-  text-align: justify-all;
+    user-select: none;
+    font-family: MinecraftTest;
+    color: #FFFFFF;
+    font-size: 1.75vw;
+    letter-spacing: -0.025vw;
+    text-align: justify-all;
 }
 #genericButton {
-  border: none;
-  margin-top: 2vw;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #EBA2EB;
-  color: #FFFFFF;
-  font-family: 'MinecraftTen';
-  font-size: 2.5vw;
-  box-shadow: 0.5vw 0px #EBA2EB, -0.5vw 0px #EBA2EB, 0px 0.5vw #EBA2EB, 0px -0.5vw #EBA2EB, 0.5vw 0.5vw 0px 0.55vw #630063;
-  transition: 0.3s;
+    color: #832087;
+    border: none;
+    border-radius: 0.5vw;
+    margin-top: 2vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #EBA2EB;
+    font-family: 'MinecraftTen';
+    font-size: 2.5vw;
+    transition: 0.25s;
 }
 #genericButton:hover {
-  background-color: #a800a8;
-  box-shadow: 0.5vw 0px 0px 0.15vw #a800a8, -0.5vw 0px 0px 0.15vw #a800a8, 0px 0.5vw 0px 0.15vw #a800a8, 0px -0.5vw 0px 0.15vw #a800a8, 0.75vw 0.75vw 0px 0.8vw #2a002a;
-  color: #fcf2ff;
+    background-color: #a800a8;
+    border-radius: 0.5vw;
+    color: #fcf2ff;
 }
 #genericButton:active {
-  transform: translate(10px,10px);
-  box-shadow: 0.15vw 0px 0px 0.15vw #a800a8, -0.15vw 0px 0px 0.15vw #a800a8, 0px 0.15vw 0px 0.15vw #a800a8, 0px -0.15vw 0px 0.15vw #a800a8, 0.5vw 0.5vw 0px 0.5vw #2a002a;
+    transform: translate(10px,10px);
+    box-shadow: 0.15vw 0px 0px 0.15vw #a800a8, -0.15vw 0px 0px 0.15vw #a800a8, 0px 0.15vw 0px 0.15vw #a800a8, 0px -0.15vw 0px 0.15vw #a800a8, 0.5vw 0.5vw 0px 0.5vw #2a002a;
 }
 #discordButton {
-  border: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #4229B9;
-  color: #FFFFFF;
-  font-family: 'MinecraftTen';
-  font-size: 2.5vw;
-  box-shadow: 0.5vw 0px #4229B9, -0.5vw 0px #4229B9, 0px 0.5vw #4229B9, 0px -0.5vw #4229B9, 0.5vw 0.5vw 0px 0.55vw #24108a;
-  transition: 0.3s;
+    border: none;
+    border-radius: 0.5vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #4229B9;
+    color: #FFFFFF;
+    font-family: 'MinecraftTen';
+    font-size: 2.5vw;
+    transition: 0.25s;
 }
 #discordButton:hover {
-  background-color: #4229B9;
-  box-shadow: 0.5vw 0px 0px 0.15vw #4229B9, -0.5vw 0px 0px 0.15vw #4229B9, 0px 0.5vw 0px 0.15vw #4229B9, 0px -0.5vw 0px 0.15vw #4229B9, 0.75vw 0.75vw 0px 0.8vw #24108a;
-  color: #fcf2ff;
+    border-radius: 1vw;
+    background-color: #1b0879;
+    color: #fcf2ff;
 }
 #discordButton:active {
-  transform: translate(10px,10px);
-  box-shadow: 0.15vw 0px 0px 0.15vw #4229B9, -0.15vw 0px 0px 0.15vw #4229B9, 0px 0.15vw 0px 0.15vw #4229B9, 0px -0.15vw 0px 0.15vw #4229B9, 0.5vw 0.75vw 0px 0.55vw #24108a;
+    border-radius: 1.5vw;
+    background-color: #100546;
+    transform: translate(10px,10px);
 }
 #main_video {
-  object-fit: cover;
-  border-radius: 5vw;
-  width: 95vw;
-  height: auto;
-  margin-left: 1.5vw;
+    object-fit: cover;
+    border-radius: 5vw;
+    width: 95vw;
+    height: auto;
+    margin-left: 1.5vw;
 }
 #img_container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #000F60;
-  height: 100vh;
-  width: 100vw;
-  z-index: 500 !important;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  transition: opacity 0.5s 0s ease-in-out, visibility 0.5s;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000F60;
+    height: 100vh;
+    width: 100vw;
+    z-index: 500 !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.25s 0s ease-in-out, visibility 0.5s;
 }
 #bar {
-  display: flex;
-  height:47vh;
-  width: 100vw;
-  justify-content: center;
-  align-content: center;
+    display: flex;
+    height:47vh;
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
 }
 #toptext {
-  flex-wrap: wrap;
-  display: flex;
-  font-family: 'Noto Sans', sans-serif;
-  color: white;
-  font-size: 9vw;
-  justify-content: center;
-  align-content: center;
-  font-weight: 900;
-  text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    font-size: 9vw;
+    justify-content: center;
+    align-content: center;
+    font-weight: 900;
+    text-align: center;
 }
 #explaintext {
-  font-family: 'Noto Sans', sans-serif;
-  color: white;
-  font-size: 2vw;
-  margin-left: 4.5vw;
-  margin-top: 5vh;
-  margin-right: 3vw;
-  justify-content: left;
-  align-content: left;
-  font-weight: 500;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    font-size: 2vw;
+    margin-left: 4.5vw;
+    margin-top: 5vh;
+    margin-right: 3vw;
+    justify-content: left;
+    align-content: left;
+    font-weight: 500;
 }
 *, *:before, *:after 
 { box-sizing: border-box; }
 #lefty{
-  width: 50%; 
-  float:left; 
-  padding-left: 5vw;
+    width: 50%; 
+    float:left; 
+    padding-left: 5vw;
 }
 #righty{
-  width: 40%; 
-  float:right; 
-  padding-right: 5vw;
+    width: 40%; 
+    float:right; 
+    padding-right: 5vw;
 }
 #mobileNav {
-  display: none;
+    display: none;
 }
 .hamburger {
-  margin: 2vw;
-  margin-left: 85vw;
-  z-index: 200;
-  display: none;
+    margin: 2vw;
+    margin-left: 85vw;
+    z-index: 200;
+    display: none;
 	position: fixed;
 	width: 50px;
 	cursor: pointer;
@@ -341,7 +395,7 @@ h1 {
 	height: 5px;
 	background-color: #4229B9;
 	margin: 6px 0px;
-	transition: 0.4s;
+	transition: 0.25s;
 }
 
 .hamburger.is-active:before {
@@ -357,7 +411,7 @@ h1 {
 }
 
 .mobile-nav {
-  display: none;
+    display: none;
 	position: fixed;
 	top: 0;
 	left: 100%;
@@ -365,7 +419,7 @@ h1 {
 	min-height: 100vh;
 	background-color: white;
 	padding-top: 120px;
-	transition: 0.4s;
+	transition: 0.25s;
 }
 
 .mobile-nav.is-active {
@@ -381,186 +435,221 @@ h1 {
 	padding: 12px 16px;
 	text-decoration: none;
 }
-
-@media (max-aspect-ratio: 3/4) {
-  .mobile-nav {
+#outerFirstElement {
+    display: flex; 
+    flex-direction: column; 
+    width: 50vw; 
+    justify-content: space-between
+}
+.media {
+    width: 3vw;
+    fill: white;
+}
+.footer {
+    background: linear-gradient(to bottom, #3E2AB2  20%, #6A48E7 20%);
+    border-radius: 1vw;
+    height: 50vh;
+    width: 80vw;
+    margin-left: 10vw;
     display: flex;
     flex-direction: column;
-  }
-  .hamburger {
-    display: block;
-  }
-  #desktopNav {
-    display: none;
-  }
-  #dmca{
-    width: 15vw;
-  }
-  h2{
-    font-size: 3vh !important;
-  }
-  .media {
-    height: 4vh !important;
-    transition: 0.35s;
-  }
-  .media:hover{
-    height: 5vh !important;
-  }
-  .footer {
-    height: 80vh;
-    flex-direction: column;
-  }
-  #outer{
-    margin-top: 10vh !important;
-  }
-  .itemPara {
-    width: 70vw !important;
-    margin-left: 5vw !important;
-    font-size: 6vw !important;
-  }
-  .itemRole {
-    margin-left: 40vw !important;
-    width: 40vw !important;
-    font-size: 6vw !important;
-  }
-  .itemTitle{
-    font-size: 7vw !important;
-    margin-left: 45vw !important;
-    top: 3vh !important;
-  }
-  .img{
-    width: 40vw !important;
-  }
-  .item{
-    min-width: 80vw !important;
-  }
-  #dbc{
-    margin-top: -5vh !important;
-  }
-  #discordButton {
-    font-size: 10vw;
-    width: 50vw !important;
-    height: 8vh !important;
-  }
-  #discordpart{
-    margin-left: 12vw !important;
-    margin-top: 5vh !important;
-    width: 100vw !important;
-  }
-  #wumpus{
-    width: 50vw !important;
-  }
-  #lll{
-    width: 100vw !important;
-  }
-  .knowmore {
-    margin-left: 15vw !important;
-    width: 60vw !important;
-    height: 7vh !important;
-  }
-  #steve{
-    height: 30vh !important;
-    margin-left: 6.5vw !important;
-    bottom: 0 !important;
-    margin-top: 16vh !important;
-  }
-  #lefty{
-    margin-top: 5vh;
-    width: 100vw;
-  }
-  #righty{
-    width: 100vw;
-    float:left; 
-    padding-left: 5vw;
-  }
-  #righty > div {
-    width: 100vw !important;
-  }
-  #righty > div > text {
-    font-size: 8vw !important;
-  }
-  h1{
-    font-size: 10vw;
-  }
-  .averageText{
-    line-height: 1.2;
-    font-size: 4vw;
-    letter-spacing: -0.5px;
-  }
-  .hidden{
-    display: none;
-  }
-  .topnav {
-    height: 15vw;
-  }
-  
-  .topnav a {
-    background-color: white;
-    padding: 4vw 2vw;
-    font-size: 8vw;
-  }
-  #purpleBox {
-    position: absolute;
-    bottom: 0;
-    margin-top: 50vh;
-    margin-left: 2vw;
-    padding-left: 7vw;
-    padding-right: 7vw;
-    padding-top: 2vh;
-    z-index: 5;
-    height: 30vh;
-    width: 90vw;
-  }
-  #purpleBox text {
-    font-family: MinecraftTest;
-    color: #FFFFFF;
-    font-size: 6vw;
-    letter-spacing: -0.2vw;
-    text-align: center;
-  }
-  #genericButton {
-    border: none;
-    margin-top: 1.5vh;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #EBA2EB;
-    color: #FFFFFF;
-    font-family: 'MinecraftTen';
-    font-size: 8vw;
-    box-shadow: 1.5vw 0px #EBA2EB, -1.5vw 0px #EBA2EB, 0px 1.5vw #EBA2EB, 0px -1.5vw #EBA2EB, 1.5vw 1.5vw 0px 1vw #630063;
-    transition: 0.3s;
-  }
-  #genericButton:hover {
-    background-color: #a800a8;
-    box-shadow: 1.5vw 0px 0px 0.15vw #a800a8, -1.5vw 0px 0px 0.15vw #a800a8, 0px 1.5vw 0px 0.15vw #a800a8, 0px -1.5vw 0px 0.15vw #a800a8, 1.95vw 1.95vw 0px 1.1vw #2a002a;
-    color: #fcf2ff;
-  }
-}
-
-.footer {
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .footer > div {
-  width: auto;
-  margin: 5vw;
-  text-align: center;
+    padding: 0.5vw;
+    width: 20vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
-h2{
-  display: inline-block;
-  font-family: 'Minecraft';
-  font-size: 2vw;
-  color: white;
-  text-decoration: none!important;;
+h2 {
+    user-select: none;
+    display: inline-block;
+    font-family: 'Minecraft';
+    font-size: 2vw;
+    color: white;
+    text-decoration: none!important;;
 }
-.media {
-  height: 3.5vw;
-  transition: 0.35s;
+.hidden{
+    height: 4.5vw;
 }
-.media:hover{
-  height: 5.5vw;
+@media (max-aspect-ratio: 3/4) {
+    #fakeLogo {
+        height: 15vw;
+        margin-left: 16vw;
+        font-size: 3vh;
+    }
+    #roleName {
+        letter-spacing: 1px;
+        font-size: 3.5vw;
+    }
+    h3 {
+        font-size: 3vh;
+    }
+    label > img {
+        width: 5vh;
+        height: 5vh;
+    }
+    #outerFirstElement {
+        display: flex; 
+        flex-direction: column-reverse; 
+        width: 100%; 
+        justify-content: space-between
+    }
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block;
+    }
+    #desktopNav {
+        display: none;
+    }
+    #dmca{
+        width: 15vw;
+    }
+    h2{
+        font-size: 3vh !important;
+    }
+    .media {
+        width: 5vh;
+    }
+    .footer {
+        height: 50vh;
+        width: 90vw;
+        margin-left: 5vw;
+        flex-direction: column;
+    }
+    .footer > div {
+        width: 90vw;
+        padding: 3vw;
+    }
+    #outer {
+        flex-direction: column;
+        height: 73vh;
+    }
+    .itemPara {
+        width: 70vw !important;
+        margin-left: 5vw !important;
+        font-size: 6vw !important;
+    }
+    .itemRole {
+        margin-left: 40vw !important;
+        width: 40vw !important;
+        font-size: 6vw !important;
+    }
+    .itemTitle{
+        font-size: 7vw !important;
+        margin-left: 45vw !important;
+        top: 3vh !important;
+    }
+    .img{
+        width: 40vw !important;
+    }
+    .item{
+        min-width: 80vw !important;
+    }
+    #dbc{
+        margin-top: -5vh !important;
+    }
+    #discordButton {
+        border-radius: 1.5vh;
+        font-size: 10vw;
+        width: 50vw !important;
+        height: 8vh !important;
+    }
+    #discordpart{
+        margin-left: 12vw !important;
+        margin-top: 5vh !important;
+        width: 100vw !important;
+    }
+    #wumpus{
+        width: 50vw !important;
+    }
+    #lll{
+        width: 100vw !important;
+    }
+    .knowmore {
+        margin-left: 15vw !important;
+        width: 60vw !important;
+        height: 7vh !important;
+    }
+    #steve{
+        height: 30vh !important;
+        margin-left: 6.5vw !important;
+        bottom: 0 !important;
+        margin-top: 16vh !important;
+    }
+    #lefty{
+        margin-top: 5vh;
+        width: 100vw;
+    }
+    #righty{
+        width: 100vw;
+        float:left; 
+        padding-left: 5vw;
+    }
+    #righty > div {
+        width: 100vw !important;
+    }
+    #righty > div > text {
+        font-size: 8vw !important;
+    }
+    h1{
+        font-size: 10vw;
+        margin-top: 5vh;
+    }
+    .averageText{
+        line-height: 1.2;
+        font-size: 4vw;
+        letter-spacing: -0.5px;
+    }
+    .hidden{
+        height: 7vh;
+    }
+    .topnav {
+        height: 15vw;
+    }
+    
+    .topnav a {
+        background-color: white;
+        padding: 4vw 2vw;
+        font-size: 8vw;
+    }
+    #purpleBox {
+        border-radius: 2vh;
+        position: absolute;
+        bottom: 0;
+        margin-top: 50vh;
+        margin-left: 2vw;
+        padding-left: 7vw;
+        padding-right: 7vw;
+        padding-top: 2vh;
+        z-index: 5;
+        height: 30vh;
+        width: 90vw;
+    }
+    #purpleBox text {
+        font-family: MinecraftTest;
+        font-size: 6vw;
+        letter-spacing: -0.2vw;
+        text-align: center;
+    }
+    #genericButton {
+        border: none;
+        border-radius: 1vh;
+        margin-top: 1.5vh;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-family: 'MinecraftTen';
+        font-size: 8vw;
+        transition: 0.25s;
+    }
+    #genericButton:hover {
+        background-color: #a800a8;
+        color: #fcf2ff;
+    }
 }
