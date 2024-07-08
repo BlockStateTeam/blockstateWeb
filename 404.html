@@ -380,6 +380,46 @@
     <div class="crt" id="errorState">
         <video id="crtVideo" class="crt" src="/assets/media/PuterCorrupted.webm" muted autoplay></video>
         <script>
+            window.onload = function () {
+                const menu_btn = document.querySelector('.hamburger');
+                const mobile_menu = document.querySelector('.mobile-nav');
+
+                menu_btn.addEventListener('click', function () {
+                    menu_btn.classList.toggle('is-active');
+                    mobile_menu.classList.toggle('is-active');
+                });
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+                const video = document.getElementById('hoverVideo');
+                video.pause();
+                video.addEventListener('mouseover', () => {
+                    video.play();
+                });
+                video.addEventListener('mouseout', () => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            });
+            window.addEventListener("load", () => {
+            const loadingScreen = document.getElementById("loadingScreen");
+            const fadeDuration = 1000; // 1 second
+            const intervalTime = fadeDuration / 50;
+
+            loadingScreen.style.opacity = "1";
+
+            setTimeout(() => {
+                const fadeOutStep = () => {
+                    const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+                    loadingScreen.style.opacity = currentOpacity;
+
+                    if (currentOpacity <= 0) {
+                        loadingScreen.style.visibility = "hidden";
+                        clearInterval(fadeInterval);
+                    }
+                };
+                const fadeInterval = setInterval(fadeOutStep, intervalTime);
+                }, 1000);
+            });
             const video = document.getElementById('crtVideo');
             function hideVideo() {video.style.display = 'none';}
             function showVideo() {video.style.display = 'block';}
