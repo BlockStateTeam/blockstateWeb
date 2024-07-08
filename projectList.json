@@ -6,8 +6,8 @@
     "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/redstoneEngineExpansion.webp",
-    "internalLink": "./projects/redstone-engine-expansion",
+    "img": "/assets/media/project-logo/redstoneEngineExpansion.webp",
+    "internalLink": "/projects/redstone-engine-expansion",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/3o228q9ftug8rbjrsh86i/Redstone-Engine-Expansion-Addon.mcaddon?rlkey=byqv2aijwiyj6g23lz7z0evsi&st=p7iw6924&dl=0"
   },
   {
@@ -17,8 +17,8 @@
     "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/artEnthusiasmV3.webp",
-    "internalLink": "./projects/art-enthusiasm-v3",
+    "img": "/assets/media/project-logo/artEnthusiasmV3.webp",
+    "internalLink": "/projects/art-enthusiasm-v3",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/cx96fwreggyj5tty1gftn/Art-Enthusiasm-V3-Addon.mcaddon?rlkey=ykml2sqqjol96urh969kue51y&st=n8nl4vp0&dl=0"
   },
   {
@@ -28,8 +28,8 @@
     "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "Windows 10",
-    "img": "./assets/media/project-logo/addonCompilerV2.webp",
-    "internalLink": "./projects/addon-compiler-v2",
+    "img": "/assets/media/project-logo/addonCompilerV2.webp",
+    "internalLink": "/projects/addon-compiler-v2",
     "directLink": "https://github.com/BlockStateTeam/addon-compiler-v2/releases/download/INTEL/Add-On.Compiler-intel64-installer.exe"
   },
   {
@@ -39,8 +39,8 @@
     "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "deprecated",
-    "img": "./assets/media/project-logo/windChargeDemo.webp",
-    "internalLink": "./projects/wind-charge-demo",
+    "img": "/assets/media/project-logo/windChargeDemo.webp",
+    "internalLink": "/projects/wind-charge-demo",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/g3rnomni2egos699e0w6t/Wind-Charge-Addon.mcaddon?rlkey=mhuw6vzlly26uw43rdw7rkugt&dl=0"
   },
   {
@@ -50,8 +50,8 @@
     "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "1.19.0",
-    "img": "./assets/media/project-logo/squidRemodeled.webp",
-    "internalLink": "./projects/squid-remodeled",
+    "img": "/assets/media/project-logo/squidRemodeled.webp",
+    "internalLink": "/projects/squid-remodeled",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/zfpqgcrj88jrlayr4weoq/Squid-Remodeled-Addon.mcaddon?rlkey=uiq1oe7usgg9wsh016q99e312&dl=0"
   },
   {
@@ -61,8 +61,8 @@
     "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/tuffGolem.webp",
-    "internalLink": "./projects/tuff-golem",
+    "img": "/assets/media/project-logo/tuffGolem.webp",
+    "internalLink": "/projects/tuff-golem",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/bdsurn3xbqbfcogcod9ry/Tuff-Golem-Addon.mcaddon?rlkey=m1eurtr2tn3cw9qkzc7imy407&dl=0"
   },
   {
@@ -72,8 +72,8 @@
     "enforceRedirect": true,
     "experimentalRequire": false,
     "supportVersion": "1.17.0",
-    "img": "./assets/media/project-logo/workingTV.webp",
-    "internalLink": "./projects/working-tv",
+    "img": "/assets/media/project-logo/workingTV.webp",
+    "internalLink": "/projects/working-tv",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/e9vzm55bsdfgbgnkn2g3h/Working-TV-Addon.mcaddon?rlkey=937gyfsne5yejerm6nwhoxy8n&dl=0"
   },
   {
@@ -83,8 +83,8 @@
     "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/craftyPlane.webp",
-    "internalLink": "./projects/crafty-plane",
+    "img": "/assets/media/project-logo/craftyPlane.webp",
+    "internalLink": "/projects/crafty-plane",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/jeq0l77sgcs4komsc3bka/Crafty-Plane-Addon.mcaddon?rlkey=kkaczykhoc5a5lfh6ukun7qvz&dl=0"
   },
   {
@@ -94,8 +94,8 @@
     "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "Windows 10",
-    "img": "./assets/media/project-logo/renderUI.webp",
-    "internalLink": "./projects/render-ui",
+    "img": "/assets/media/project-logo/renderUI.webp",
+    "internalLink": "/projects/render-ui",
     "directLink": "https://blockstate.team/render-ui"
   },
   {
@@ -105,8 +105,8 @@
     "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "Windows 10",
-    "img": "./assets/media/project-logo/addonCompiler.webp",
-    "internalLink": "./projects/addon-compiler",
+    "img": "/assets/media/project-logo/addonCompiler.webp",
+    "internalLink": "/projects/addon-compiler",
     "directLink": "https://raw.githubusercontent.com/Andinh123/Addon-Compiler/main/BlockState-Add-On-Compiler.vbs"
   },
   {
@@ -116,8 +116,8 @@
     "enforceRedirect": true,
     "experimentalRequire": false,
     "supportVersion": "1.17.0",
-    "img": "./assets/media/project-logo/headDecoration.webp",
-    "internalLink": "./projects/head-decoration",
+    "img": "/assets/media/project-logo/headDecoration.webp",
+    "internalLink": "/projects/head-decoration",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/a9h5fhxme55phkpdlxbwh/Head-Decoration-Addon.mcaddon?rlkey=lv65g9zt6emerxpxo0xqo5zzu&dl=0"
   },
   {
@@ -127,8 +127,8 @@
     "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/artEnthusiasmV2.webp",
-    "internalLink": "./projects/art-enthusiasm-v2",
+    "img": "/assets/media/project-logo/artEnthusiasmV2.webp",
+    "internalLink": "/projects/art-enthusiasm-v2",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/ixhq0xs71i5azwtq7orki/Art-Enthusiasm-V2-Addon.mcaddon?rlkey=7fqfc4ubfu8xtfqr9iqdwxmhr&dl=0"
   },
   {
@@ -138,8 +138,8 @@
     "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/bannerMarker.webp",
-    "internalLink": "./projects/banner-marker",
+    "img": "/assets/media/project-logo/bannerMarker.webp",
+    "internalLink": "/projects/banner-marker",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/jmmllm5l2rhg2f0gvgihr/Banner-Marker-Addon.mcaddon?rlkey=h1kbnmjq1tduaw10vy1g0oo8q&dl=1"
   },
   {
@@ -149,8 +149,8 @@
     "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/expressionPerfection.webp",
-    "internalLink": "./projects/expression-perfection",
+    "img": "/assets/media/project-logo/expressionPerfection.webp",
+    "internalLink": "/projects/expression-perfection",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/vlpvggvsnmyx8tw977vkz/Expression-Perfection-Addon.mcaddon?rlkey=dse75l79thmywod2gxawy8v9v&dl=0"
   },
   {
@@ -160,8 +160,8 @@
     "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/lightingDelight.webp",
-    "internalLink": "./projects/lighting-delight",
+    "img": "/assets/media/project-logo/lightingDelight.webp",
+    "internalLink": "/projects/lighting-delight",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/64ao67ii5sv8ilark85fp/Lighting-Delight.mcpack?rlkey=j2fk7zhvvv2lxr5jrwtb5xtyc&dl=0"
   },
   {
@@ -171,8 +171,8 @@
     "enforceRedirect": false,
     "experimentalRequire": true,
     "supportVersion": "1.21.0",
-    "img": "./assets/media/project-logo/artEnthusiasm.webp",
-    "internalLink": "./projects/art-enthusiasm",
+    "img": "/assets/media/project-logo/artEnthusiasm.webp",
+    "internalLink": "/projects/art-enthusiasm",
     "directLink": "https://dl.dropboxusercontent.com/scl/fi/ipjbbbevdcsuci5e363sg/Art-Enthusiasm-Addon.mcaddon?rlkey=t1zlnyiywh4nn2a9fnfmrmsl1&dl=0"
   },
   {
@@ -182,8 +182,8 @@
     "enforceRedirect": true,
     "experimentalRequire": false,
     "supportVersion": "1.19.0",
-    "img": "./assets/media/project-logo/musicExtension.webp",
-    "internalLink": "./projects/music-extension",
+    "img": "/assets/media/project-logo/musicExtension.webp",
+    "internalLink": "/projects/music-extension",
     "directLink": "https://dl.dropboxusercontent.com/s/9c5zrbpikx3vxea/Music%20Box%20RP.mcaddon?dl=0"
   },
   {
@@ -193,8 +193,8 @@
     "enforceRedirect": false,
     "experimentalRequire": false,
     "supportVersion": "1.19.0",
-    "img": "./assets/media/project-logo/copperMadness.webp",
-    "internalLink": "./projects/copper-madness",
+    "img": "/assets/media/project-logo/copperMadness.webp",
+    "internalLink": "/projects/copper-madness",
     "directLink": "https://dl.dropboxusercontent.com/s/ey8fgduw3qj5503/Copper%20Madness%20%5BVER%201.2%5D.mcworld?dl=0"
   }
 ]
