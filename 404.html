@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>404</title>
+    <title>Loading...</title>
     <style>
         @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); }
         @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); }
@@ -447,21 +447,21 @@
             <video id="hoverVideo" src="/assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
             <div id="fakeLogo">BlockState <br>Team</div>
             <nav id="desktopNav">
-                <a href="project">Project</a>
+                <a href="project" class="active">Project</a>
                 <a href="announcement">Announcement</a>
                 <a href="contact">Contact</a>
                 <a href="our_story">Our Story</a>
-                <a href="/" class="active">Home</a>
+                <a href="/">Home</a>
             </nav>
             <button class="hamburger">
                 <div class="bar"></div>
             </button>
             <div class="mobile-nav">
-                <a href="/" class="active">Home</a>
+                <a href="/">Home</a>
                 <a href="our_story">Our Story</a>
                 <a href="contact">Contact</a>
                 <a href="announcement">Announcement</a>
-                <a href="project">Project</a>
+                <a href="project" class="active">Project</a>
             </div>
         </div>
         <h2>Our official released projects!</h2>
@@ -481,6 +481,7 @@
         if (currentUrl === '/project') {
             console.log(currentUrl, " is the display project page")
             document.getElementById('projectPage').style.display = 'block';
+            document.title = "Project";
             const container = document.querySelector('.container');
             fetch('/projectList.json')
             .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
@@ -535,6 +536,7 @@
         } else {
             console.log(currentUrl, " is a 404 page");
             document.getElementById('errorState').style.display = 'block';
+            document.title = "404! Something went wrong!";
         }
         
     </script>
