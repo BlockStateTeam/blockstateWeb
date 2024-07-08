@@ -476,10 +476,10 @@
         </div>
     </div>
     <script>
-        let currenUrl = window.location.pathname.replace('.html','');
-        currenUrl = currenUrl.endsWith("/") ? currenUrl.slice(0, -1) : currenUrl;
-        if (currenUrl === '/project') {
-            console.log(currenUrl, " is the display project page")
+        let currentUrl = window.location.pathname.replace('.html','');
+        console.log(currentUrl);
+        if (currentUrl === '/project/') {
+            console.log(currentUrl, " is the display project page")
             document.getElementById('projectPage').style.display = 'block';
             const container = document.querySelector('.container');
             fetch('/projectList.json')
@@ -530,10 +530,10 @@
                     div.style.display = div.dataset.item === id ? '' : 'none';
                 });
             };
-        } else if (currenUrl.startsWith('/projects')) {
-            console.log(currenUrl, " is a project page")
+        } else if (currentUrl.startsWith('/projects/')) {
+            console.log(currentUrl, " is a project page")
         } else {
-            console.log(currenUrl, " is a 404 page");
+            console.log(currentUrl, " is a 404 page");
             document.getElementById('errorState').style.display = 'block';
         }
         
