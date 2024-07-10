@@ -1,12 +1,11 @@
 @font-face { font-family: MinecraftTen; src: url('./assets/fonts/MinecraftTen.woff'); } 
 @font-face { font-family: Monocraft; src: url('./assets/fonts/Monocraft.ttf'); } 
-@font-face { font-family: Minecraft; src: url('./assets/fonts/Minecraft.otf'); } 
-@font-face { font-family: MinecraftTest; src: url('./assets/fonts/MinecraftTest.otf'); } 
+@font-face { font-family: Minecraft; src: url('./assets/fonts/Minecraft.otf'); }
 @font-face { font-family: MinecraftFive; src: url('./assets/fonts/MinecraftFive-Regular.woff2'); } 
 
 body {
     overflow-x: hidden;
-    font-family: 'MinecraftBold';
+    font-family: 'Minecraft';
     background-color: #F8ECEC;
     margin: 0;
 }
@@ -33,7 +32,7 @@ input[type="radio"]:checked + label > img {
 .averageText {
     user-select: none;
     line-height: 2vw;
-    font-family: 'MinecraftTest';
+    font-family: 'Minecraft';
     letter-spacing: -1.25px;
     font-size: 1.7vw;
 }
@@ -262,7 +261,7 @@ text {
 }
 #purpleBox text {
     user-select: none;
-    font-family: MinecraftTest;
+    font-family: Minecraft;
     color: #FFFFFF;
     font-size: 1.75vw;
     letter-spacing: -0.025vw;
@@ -634,7 +633,7 @@ h2 {
         width: 90vw;
     }
     #purpleBox text {
-        font-family: MinecraftTest;
+        font-family: Minecraft;
         font-size: 6vw;
         letter-spacing: -0.2vw;
         text-align: center;

@@ -1,7 +1,6 @@
 @font-face { font-family: MinecraftTen; src: url('./assets/fonts/MinecraftTen.woff'); } 
 @font-face { font-family: Monocraft; src: url('./assets/fonts/Monocraft.ttf'); } 
-@font-face { font-family: Minecraft; src: url('./assets/fonts/Minecraft.otf'); } 
-@font-face { font-family: MinecraftTest; src: url('./assets/fonts/MinecraftTest.otf'); } 
+@font-face { font-family: Minecraft; src: url('./assets/fonts/Minecraft.otf'); }
 @font-face { font-family: MinecraftFive; src: url('./assets/fonts/MinecraftFive-Regular.woff2'); }
 ::-webkit-scrollbar {
     display: none;
@@ -16,7 +15,7 @@ h2 {
 h3 {
     margin-left: 10vw;
     line-height: 2vw;
-    font-family: 'MinecraftTest';
+    font-family: 'Minecraft';
     letter-spacing: -1.25px;
     font-size: 1.7vw;
 }
