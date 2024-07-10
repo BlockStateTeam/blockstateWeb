@@ -462,7 +462,7 @@ export function handleButtonClick(name, url, cssClass, cookieState) {
 
     const cell3 = newRow.insertCell(2);
     let removeButton = document.createElement("div");
-    removeButton.innerHTML = `<button id="searchButton" class="headButton" onClick="headDecoration.removeButtonClick()">Remove head</button>`;
+    removeButton.innerHTML = `<button id="searchButton" class="headButton" onClick="headDecoration.removeButtonClick()">Remove</button>`;
     cell3.appendChild(removeButton);
 
     const cell4 = newRow.insertCell(3);
