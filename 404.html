@@ -714,7 +714,7 @@
         }
         async function initializeWorkingTV() {
             try {
-                workingTV = await import('/projects/working-tv.js');
+                workingTV = await import('/module/working-tv.js');
                 console.log('working-tv.js module has been loaded');
                 workingTV.setupEventListeners();
                 console.log('Event listeners have been set up');
@@ -724,7 +724,7 @@
         }
         async function initializeMusicExtension() {
             try {
-                musicExtension = await import('/projects/music-extension.js');
+                musicExtension = await import('/module/music-extension.js');
                 console.log('music-extension.js module has been loaded');
             } catch (error) {
                 console.error('Error loading the working-tv module:', error);
@@ -732,7 +732,7 @@
         }
         async function initializeHeadDecoration() {
             try {
-                headDecoration = await import('/projects/head-decoration.js');
+                headDecoration = await import('/module/head-decoration.js');
                 console.log('head-decoration.js module has been loaded');
                 document.cookie.split('; ').forEach(cookie => {
                     const [cookieName, cookieValue] = cookie.split('=');
@@ -741,7 +741,6 @@
                         if (name && css) headDecoration.handleButtonClick(name, cookieName, css, false);
                     }
                 });
-                console.log('Event listeners have been set up');
             } catch (error) {
                 console.error('Error loading the head-decoration module:', error);
             }
