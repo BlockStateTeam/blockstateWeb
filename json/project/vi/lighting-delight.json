@@ -1,0 +1,25 @@
+{
+    "version": "normal",
+    "title": "Project: Lighting Delight",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/64ao67ii5sv8ilark85fp/Lighting-Delight.mcpack?rlkey=j2fk7zhvvv2lxr5jrwtb5xtyc&dl=0",
+    "introduction": "If you've dabbled in the world of Java Edition Optifine Mod, or even caught a glimpse of it in action through videos, you've probably caught onto its mesmerizing feature: Dynamic Lighting. Now, if the concept of Dynamic Lighting hasn't crossed your gaming radar yet, picture this - it's a game effect that makes items like torches, lanterns, or shroomlights held by players cast a luminous glow. And guess what? Brace yourself, because this very feature is about to work its magic in the Bedrock Edition too!",
+    "content": [
+        {
+            "type": "video",
+            "text": "Have a look at Dynamic lighting feature with this video!"
+        },
+        {
+            "type": "img",
+            "text": "Here's a list of items that will emitt 15-level-light:<br><br>Torch; Redstone Block; Sea Lantern; Lantern; Lit Pumpkin; Beacon; Campfire; Verdant Froglight; Pearlescent Froglight; Ochre Froglight; Glowstone; Shroomlight; End Rod"
+        },
+        {
+            "type": "img",
+            "text": "And this list is all items with level-12 light emitting:<br><br>Deepslate Redstone Ore Redstone Ore; Redstone Torch; Enchanting Table; Soul Torch; Soul Campfire; Soul Lantern; Amethyst Block; Nether Star"
+        },
+        {
+            "type": "img",
+            "text": "The final list with all items of level 8 light:<br><br>Ender Chest; Glow Lichen; Magma; Glowstone Dust; Amethyst Shard; Glow Frame; Sea Pickle; Glow Ink Sac; Glow Berries; Redstone"
+        }
+    ],
+    "postwarning": "WARNING:  This Addon requires Beta APIs experimental to work properly!"
+}

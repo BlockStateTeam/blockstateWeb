@@ -1,0 +1,28 @@
+{
+    "version": "normal",
+    "title": "Project: Wind Charge Demo",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/bdsurn3xbqbfcogcod9ry/Tuff-Golem-Addon.mcaddon?rlkey=m1eurtr2tn3cw9qkzc7imy407&dl=0",
+    "introduction": "Who doesn't love Tuff Golems? They're lovely creatures that can be used to show off your collection or simply help you with decoration for your builds! Sadly, they didn't get enough vote. But what if you could have them right now? Well, now you can! With this Add-On, you can now have Tuff Golems in your game!",
+    "content": [
+        {
+            "type": "img",
+            "text": "Let's dive into how this Add-On works! The Tuff Golem can display one item of your choice! It can be a spyglass, a painting, a block of glass, basically anything!"
+        },
+        {
+            "type": "video",
+            "text": "To spawn them in, you'll need to build a Tuff Golem Spawner. It's a simple structure that can be built with 1 tuff block, 1 wool block of any colors, and 1 carved pumpkin (The carved pumpkin needs to be the last block being placed). Once you've built it, the Tuff Golem will spawn in!"
+        },
+        {
+            "type": "video",
+            "text": "You can give any item to the Golem for it to display, and to take back the item, you would need an empty hand (slot) to execute the take back action.<br><br> Also, the Tuff Golem has 2 modes: Awake and Sleep. When it's awake, it can randomly move around. When it's asleep, it'll stay still. To change its mode, simply SNEAK + RIGHT CLICK it!"
+        },
+        {
+            "type": "video",
+            "text": "When the Golem is sleeping, you can rotate it by SNEAK + RIGHT CLICKING it."
+        },
+        {
+            "type": "video",
+            "text": "This video is a tutorial for mobile UI."
+        }
+    ]
+}

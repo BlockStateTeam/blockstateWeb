@@ -1,0 +1,46 @@
+{
+    "version": "normal",
+    "title": "DỰ ÁN: TRÌNH BIÊN TẬP ADD-ON",
+    "downloadLink": "https://raw.githubusercontent.com/BlockStateTeam/Addon-Compiler/main/BlockState-Add-On-Compiler.vbs",
+    "prewarning": "Trước khi đọc về dự án này! Dự án này chỉ dành cho máy tính!<br><br>Các yêu cầu khác bao gồm: <a href=\"https://www.google.com/chrome/\" target=\"_blank\">Chrome</a> và <a href=\"https://nodejs.org/en\" target=\"_blank\">NodeJS</a> đã được cài đặt!<br><br>",
+    "introduction": "<br><br>Bạn đã chán ngấy với quá trình thủ công tìm kiếm các tập RP và BP từ các thư mục riêng biệt, nén chúng và thay đổi mở rộng tệp liên tục mỗi khi bạn muốn chia sẻ Add-On của mình chưa?<br><br>Chúng tôi có giải pháp dành cho bạn! Giới thiệu Add-On Compiler! Công cụ này sẽ tự động thu thập tất cả các tệp cần thiết và biên dịch chúng thành một tệp .mcaddon duy nhất cho bạn!",
+    "content": [
+        {
+            "type": "img",
+            "text": "Hãy khám phá cách thức hoạt động của trình biên dịch này và những tính năng nó cung cấp!"
+        },
+        {
+            "type": "img",
+            "text": "Đây là giao diện người dùng của trình biên dịch! Đơn giản phải không? Và đúng, chế độ Dark-mode là chế độ mặc định! Hãy cùng điểm qua các tính năng của nó!"
+        },
+        {
+            "type": "img",
+            "text": "Khi khởi động, trình biên dịch sẽ tự động phát hiện các thư mục development_resource_packs và development_behavior_packs trên máy tính của bạn và sẽ sử dụng chúng để phân loại các dự án của bạn thành 3 danh mục: Resource Pack, Add-On và Behavior Pack.<br><br>Theo một cách đơn giản nó sẽ quét và cố gắng tìm các RP và BP phù hợp có cùng tên và sẽ đưa chúng vào danh mục Add-On. Nếu không thể tìm thấy sự phù hợp, nó sẽ đưa chúng vào danh mục Resource Pack hoặc Behavior Pack.<br><br>Lưu ý rằng, chúng phải có cùng tên (bạn có thể sử dụng RP hoặc BP ở cuối tên của chúng) để được xem là một cặp! Ví dụ: \"Dự án của tôi\" bao gồm \"Dự án RP của tôi\" và \"Dự án BP của tôi\" sẽ được xem như là một Add-On."
+        },
+        {
+            "type": "img",
+            "text": "Bạn cũng có thể sử dụng công tắc giao diện người dùng để chuyển sang chủ đề yêu thích của bạn! (Chế độ Dark là chủ đề mặc định)"
+        },
+        {
+            "type": "img",
+            "text": "Chế độ Save Mode cho phép bạn thay đổi thư mục mà trình biên dịch sẽ lưu Add-On đã biên dịch vào!"
+        },
+        {
+            "type": "img",
+            "text": "Bạn cũng có thể thêm/xóa thư mục tùy chỉnh vào trình biên dịch! Điều này sẽ cho phép bạn biên dịch các Add-On đến bất kỳ đâu trên máy tính của bạn!"
+        },
+        {
+            "type": "img",
+            "text": "Bạn sẽ nhận được một thông báo ở góc dưới bên phải màn hình khi một thư mục mới được thêm vào. Thông báo sẽ tự động biến mất sau một khoảng thời gian ngắn."
+        },
+        {
+            "type": "img",
+            "text": "Bây giờ bạn đã sẵn sàng rồi! Chỉ cần nhấp vào nút \"Compile\" và trình biên dịch sẽ thực hiện tất cả công việc thủ công cho bạn! Bao gồm cả nén các tệp và thay đổi phần mở rộng của chúng thành .mcaddon!"
+        },
+        {
+            "type": "img",
+            "text": "Cho những người đam mê ScriptAPI, bạn cũng có thể sử dụng trình biên dịch để cập nhật các dự án ScriptAPI của mình! Trình biên dịch sẽ kiểm tra phiên bản mới nhất của ScriptAPI và sẽ nhắc bạn cập nhật.<br><br>CHÚ Ý: Tính năng này đang trong quá trình phát triển và có thể không hoạt động hoàn hảo!"
+        }
+    ],
+    "postwarning": "An ninh và minh bạch là ưu tiên hàng đầu của chúng tôi! Chúng tôi muốn đảm bảo rằng bạn có thể tin tưởng chúng tôi!<br> Đó là lý do tại sao chúng tôi đã quyết định công khai mã nguồn của chúng tôi!<br> Bạn có thể kiểm tra mã nguồn <a href=\"https://github.com/BlockStateTeam/Addon-Compiler\" style=\"font-weight: bolder;\">ở đây</a>"
+}

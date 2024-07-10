@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6164958056874648" crossorigin="anonymous"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
     <meta charset="UTF-8">
@@ -325,7 +326,59 @@
             border-radius: 20px;
             width: 70vw;
         }
+        #languageSwitcher {
+            background-color: white;
+            border-radius: 52%;
+            z-index: 49;
+            position: fixed;
+            bottom: 2vh;
+            right: 2vh;
+            width: 5vw;
+            height: 5vw;
+            fill: black;
+        }
+        #languageDialog {
+            background-color: #F8ECEC;
+            padding: 2v;
+            font-size: 2vw;
+            user-select: none;
+            font-family: 'MinecraftTen';
+            border: none;
+            border-radius: 1vw;
+        }
+        #languageDialog form > button {
+            margin-left: 2vw;
+            height: 7vh;
+            width: 7vw;
+            font-size: 2vw;
+            font-family: 'Minecraft';
+            border: none;
+            border-radius: 0.5vw;
+            background-color: #4229B9;
+            color: white;
+        }
+        ::backdrop {
+            background-color: black;
+            opacity: 0.75;
+        }
         @media (max-aspect-ratio: 3/4) {
+            #languageDialog form > button {
+                font-size: 2.5vh;
+                margin-left: 12vw;
+                height: 5vh;
+                width: 17vw;
+                border-radius: 2vw;
+            }
+            #languageDialog {
+                font-size: 3.2vh;
+                width: 90vw;
+            }
+            #languageSwitcher {
+                bottom: 2vh;
+                right: 2vh;
+                width: 15vw;
+                height: 15vw;
+            }
             .warning {
                 font-size: 2vh;
                 height: 17vh;
@@ -435,6 +488,19 @@
     </style>
 </head>
 <body>
+    <dialog id="languageDialog">
+        <h3 style="margin: 0; margin-bottom: 5vh;">Choose a supported language</h3>
+        <form method="dialog">
+            <select class="knowSelect" id="languageSelect">
+                <option value="en">English</option>
+                <option value="vi">Tiếng Việt</option>
+            </select>
+            <button>OK!</button>
+        </form>
+    </dialog>
+    <svg viewBox="0 0 375.29 375.29" id="languageSwitcher">
+        <path class="cls-1" d="M237.08,202.16l-11.83,22.48h23.66l-11.83-22.48ZM187.64,0C84.01,0,0,84.01,0,187.64s84.01,187.65,187.64,187.65,187.65-84.01,187.65-187.65S291.28,0,187.64,0Zm-30.54,221.99c-4.02,0-8.04-1.56-11.07-4.66l-1.95-1.99c-11.96,13.05-25.35,23.05-39.24,29.15-2.03,.89-4.14,1.31-6.22,1.31-5.97,0-11.65-3.46-14.2-9.27-3.44-7.84,.12-16.98,7.96-20.42,10.83-4.75,21.02-12.95,29.94-23l-24.43-24.95c-5.99-6.12-5.89-15.93,.23-21.92s15.93-5.89,21.92,.23l20.42,20.86c6.91-12.42,11.94-25.52,14.42-37.48H86.19c-8.56,0-15.5-6.94-15.5-15.5s6.94-15.5,15.5-15.5h36.78v-7.27c0-8.57,6.94-15.5,15.5-15.5s15.5,6.93,15.5,15.5v7.27h36.78c8.56,0,15.5,6.94,15.5,15.5s-6.94,15.5-15.5,15.5h-4.39c-2.83,18.48-10.43,38.81-21.78,57.8-.54,.9-1.08,1.79-1.62,2.67l5.22,5.33c5.99,6.11,5.88,15.93-.23,21.92-3.02,2.95-6.94,4.42-10.85,4.42Zm140.77,62.4c-7.57,3.99-16.95,1.08-20.93-6.5l-11.71-22.25h-56.3l-11.71,22.25c-2.78,5.28-8.16,8.29-13.73,8.29-2.44,0-4.9-.58-7.21-1.79-7.57-3.99-10.48-13.36-6.49-20.93l52.94-100.6c2.81-5.34,8.31-8.66,14.35-8.66s11.53,3.32,14.34,8.66l52.95,100.6c3.98,7.57,1.08,16.94-6.5,20.93Zm-72.62-59.75h23.66l-11.83-22.48-11.83,22.48Zm11.83-22.48l-11.83,22.48h23.66l-11.83-22.48Z"/>
+    </svg>
     <iframe id="loadingScreen" src="/loading.html" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
 	<div class="topnav" id="myTopnav">
 		<video id="hoverVideo" src="/assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
@@ -502,6 +568,31 @@
         </div>
     </div>
     <script>
+        const supportedLanguages = ['en', 'vi'];
+        let currentLanguage;
+        const langCookie = document.cookie.split(';').map(cookie => cookie.trim()).find(cookie => cookie.startsWith('language='));
+        if (langCookie) {
+            currentLanguage = langCookie ? langCookie.split('=')[1] : null;
+        } else {
+            currentLanguage = supportedLanguages.includes(navigator.language.substring(0, 2)) ? navigator.language.substring(0, 2) : 'en';
+        }
+        console.log('Current language: ', currentLanguage);
+        document.getElementById('languageSwitcher').addEventListener('click', () => {
+            document.getElementById('languageDialog').showModal();
+            console.log('Language switcher has been clicked');
+        });
+        document.getElementById('languageDialog').addEventListener('close', () => {
+            const selectedLanguage = document.getElementById('languageSelect').value;
+            if (currentLanguage !== selectedLanguage) {
+                currentLanguage = selectedLanguage;
+                console.log('Switching language to', currentLanguage);
+                const expires = new Date(Date.now() + 30*24*60*60*1000).toUTCString();
+                document.cookie = `language=${currentLanguage};expires=${expires};path=/`;
+                reloadPage(currentLanguage);
+            } else {
+                console.log('Language has not been changed, staying as ', currentLanguage);
+            }
+        });
         function showLoadingScreen() {
             const loadingScreen = document.getElementById("loadingScreen");
             loadingScreen.style.opacity = "0";
@@ -547,16 +638,17 @@
             });
         });
         let projectData, workingTV, headDecoration, musicExtension;
-        function displayProjectPage(title, projectName) {
+        function displayProjectPage(title, projectName, previousLanguage) {
             window.history.pushState({}, document.title, window.location.href);
             window.history.replaceState({}, title, `/projects/${projectName}`);
-            reloadPage();
+            reloadPage(previousLanguage);
         }
         window.addEventListener('popstate', () => {
             document.getElementById('projectContent').innerHTML = '';
-            reloadPage();
+            reloadPage(currentLanguage);
         });
-        function reloadPage() {
+        function reloadPage(tryLanguage) {
+            console.log('Reloading page in', tryLanguage, 'language.');
             window.scrollTo(0, 0);
             let currentUrl = window.location.pathname.replace('.html','');
             if (currentUrl === '/project') {
@@ -567,6 +659,7 @@
                 document.getElementById('belowSection').style.display = 'none';
                 document.title = "Project";
                 const container = document.querySelector('.container');
+                container.innerHTML = '';
                 fetch('/projectList.json')
                 .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
                 .then(jsonData => {
@@ -575,7 +668,8 @@
                         div.classList.add('box');
                         div.dataset.order = index + 1;
                         div.dataset.item = project.dataItem;
-                        div.innerHTML = `<a onClick="displayProjectPage('${project.project}', '${project.formatName}')"><img src="${project.img}"></a>`;
+                        console.log(tryLanguage)
+                        div.innerHTML = `<a onClick="displayProjectPage('${project.project}', '${project.formatName}', '${tryLanguage}')"><img src="${project.img}"></a>`;
                         container.appendChild(div);
                     });
                 
@@ -620,10 +714,10 @@
                 document.getElementById('projectPage').style.display = 'block';
                 document.getElementById('projectContent').style.display = 'block';
                 document.getElementById('projectPageContent').style.display = 'none';
-                let currentLanguage = 'en';
                 console.log(currentUrl, " is a project page")
                 let projectName = currentUrl.replace('/projects/', '');
-                fetch(`/json/project/${currentLanguage}/${projectName}.json`)
+                console.log('Loading project:', projectName, 'in', tryLanguage, 'language.');
+                fetch(`/json/project/${tryLanguage}/${projectName}.json`)
                 .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
                 .then(data => {
                     projectData = data;
@@ -713,7 +807,10 @@
                         document.getElementById('projectContent').innerHTML = html;
                     }
                 })
-                .catch(error => console.error('Error fetching data:', error.message));
+                .catch(error => {
+                    console.error('Error fetching data:', error.message);
+                    reloadPage('en') //fall back to English if the requested language is not available
+                });
             } else {
                 console.log(currentUrl, " is a 404 page");
                 window.location.href = '/403.html';
@@ -752,7 +849,7 @@
                 console.error('Error loading the head-decoration module:', error);
             }
         }
-        reloadPage();
+        reloadPage(currentLanguage);
         const tosCheckbox = document.getElementById('tosCheckbox');
         const downloadButton = document.getElementById('genericButton');
         tosCheckbox.addEventListener('change', () => {

@@ -1,0 +1,21 @@
+{
+    "version": "normal",
+    "title": "Project:  Art Enthusiasm Version 3",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/cx96fwreggyj5tty1gftn/Art-Enthusiasm-V3-Addon.mcaddon?rlkey=ykml2sqqjol96urh969kue51y&st=n8nl4vp0&dl=0",
+    "introduction": "People love Art enthusiasm Add-On Version 1 and 2. And it's time to announce that the long-awaited update is finally here - introducing Art Enthusiasm Version 3!<br><br>There're 2 major changes in this version: Moving away from Beta APIs (Stable) and introducing 2 new tools! ",
+    "content": [
+        {
+            "type": "img",
+            "text": "The bucket tools and the Undo Edit are the new tools that are added in this version. The bucket tools allow you to fill in the area with the same color, and the Undo Edit allows you to undo the last edit you made. Their position is below the other tools section."
+        },
+        {
+            "type": "video",
+            "text": "Here's a video showing the new tools in action."
+        },
+        {
+            "type": "youtube",
+            "iframe": "<iframe src=\"https://www.youtube.com/embed/JNTatLTtebY\" title=\"Art Enthusiasm Add-On for Minecraft! | Minecraft Bedrock 1.21+\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+            "text": "Here's a video from Mooshrooom! Showcasing how to use the Add-On!"
+        }
+    ]
+}

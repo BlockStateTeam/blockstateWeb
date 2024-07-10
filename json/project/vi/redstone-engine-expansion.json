@@ -1,0 +1,39 @@
+{
+    "version": "normal",
+    "title": "Project: Redstone Engine Expansion",
+    "introduction": "Redstone Engine Expansion is a project that aims to expand the capabilities of the Redstone Engine block from the Crafty Plane Add-On! You don't need to download the Crafty Plane Add-On to use this pack. This is a standalone Add-On that adds brand-new features. But feel free to check out the Crafty Plane Add-On as well!",
+    "content": [
+        {
+            "type": "img",
+            "text": "Here's a reminder of how to craft the Redstone Engine block."
+        },
+        {
+            "type": "img",
+            "text": "The first feature is the Redstone Launcher. This structure requires 8 redstone block, 1 dispenser in the middle, and a barrel made out of iron bars. Finally, the Redstone Engine block is placed on the middle side of the redstone block with a button on top of it"
+        },
+        {
+            "type": "video",
+            "text": "To use it, you need one Redstone block as fuel, stand on the Redstone Engine block, and click the button on the Redstone Engine block. Then choose your target and sneak to launch!"
+        },
+        {
+            "type": "video",
+            "text": "Here's another angle of the Redstone Launcher in action."
+        },
+        {
+            "type": "img",
+            "text": "The second feature is the Redstone Air Defense. This structure requires 1 Redstone block , 1 Redstone Engine with a button on its side, and a dispenser on top"
+        },
+        {
+            "type": "video",
+            "text": "Simply click the button to activate the Redstone Air Defense. It generates a dome that protects you from projectiles from the Redstone Launcher. Note that any explosion will be negated if inside the dome."
+        },
+        {
+            "type": "video",
+            "text": "Here's a video of the Redstone Air Defense in action."
+        },
+        {
+            "type": "video",
+            "text": "The final feature is the Redstone Nuke. This structure requires 9 Iron blocks, 8 Redstone blocks and 1 Redstone Engine block. By placing the Redstone Engine block into the middle, you will immediately activate the Redstone Nuke."
+        }
+    ]
+}

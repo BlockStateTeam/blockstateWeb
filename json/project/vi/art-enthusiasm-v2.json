@@ -1,0 +1,42 @@
+{
+    "version": "normal",
+    "title": "Project: Art Enthusiasm Version 2",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/ixhq0xs71i5azwtq7orki/Art-Enthusiasm-V2-Addon.mcaddon?rlkey=7fqfc4ubfu8xtfqr9iqdwxmhr&dl=0",
+    "prewarning": "<div class=\"section\">Did you know <a href=\"https://www.blockstate.team/projects/art-enthusiasm-v3\" style=\"font-family: 'MinecraftFive'; letter-spacing: 1px;\">Art Enthusiasm V3</a> is out? It has more features and better performance! Check it out!</div>",
+    "introduction": "The \"Art Enthusiasm\" Add-On has taken the chart by storm, becoming the most downloaded and beloved Add-On out of all BlockState collection. Your enthusiasm for this remarkable Add-On has not gone unnoticed, and it's time to announce that the long-awaited update is finally here - introducing Art Enthusiasm Version 2!<br><br> Now, you must be eager to learn about the exciting new tools in Art Enthusiasm Version 2. If you need a refresher on how to use the existing features, please refer to the <a href=\"./art-enthusiasm\">first version instruction!</a>. Now, let's dive straight into the thrilling additions that await you:",
+    "content": [
+        {
+            "type": "img",
+            "text": "Introducing an exciting array of fresh tools and a vibrant spectrum of new colors has just become available!"
+        },
+        {
+            "type": "img",
+            "text": "\"Tool preview\" is also added! You can see what tool the cursor is hovering on!"
+        },
+        {
+            "type": "video",
+            "text": "Let's see how to use the new tools!"
+        },
+        {
+            "type": "img",
+            "text": "The fill tool works just like the reset tool, but instead fill the whole canvas with White color, it will fill whatever color is being selected by the brush!"
+        },
+        {
+            "type": "img",
+            "text": "Please note that there's a big change on Render system! In the previous version, whenever you draw anything, the system will auto-render it out and you can see the drawing on your map immediately.<br><br>Unfortunately, auto-rendering is very computational expensive! So, in this version 2, auto-rendering is disable. You will need to do manually rendering!"
+        },
+        {
+            "type": "img",
+            "text": "If you forget how to do manually render, just click this render button!"
+        },
+        {
+            "type": "img",
+            "text": "Ta-da! Now your beautiful art is now viewable on the map!"
+        },
+        {
+            "type": "img",
+            "text": "Also, a new reminder is added for people who keep forgetting to sneak to exit!"
+        }
+    ],
+    "postwarning": "WARNING:  This Addon requires Beta APIs experimental to work properly! "
+}

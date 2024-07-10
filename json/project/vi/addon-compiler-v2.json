@@ -1,0 +1,7 @@
+{
+    "version": "normal",
+    "title": "DỰ ÁN: TRÌNH BIÊN TẬP ADD-ON V2",
+    "downloadLink": "https://github.com/BlockStateTeam/addon-compiler-v2/releases/download/v2.1.0/Add-On.Compiler-x64-installer.exe",
+    "introduction": "Chương trình này là một phiên bản làm lại hoàn toàn của Add-On Compiler<br><br>Đối với tất cả những người đam mê ScriptAPI, bạn cũng có thể sử dụng trình biên dịch để cập nhật các dự án ScriptAPI của mình! Trình biên dịch sẽ kiểm tra phiên bản mới nhất của ScriptAPI và sẽ nhắc bạn cập nhật",
+    "content": []
+}

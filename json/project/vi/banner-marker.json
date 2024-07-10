@@ -1,0 +1,25 @@
+{
+    "version": "normal",
+    "title": "Project: Art Enthusiasm Version 2",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/jmmllm5l2rhg2f0gvgihr/Banner-Marker-Addon.mcaddon?rlkey=h1kbnmjq1tduaw10vy1g0oo8q&dl=1",
+    "introduction": "Are you tired of feeling jealous when you see someone marking locations on a map with banners in Minecraft Java Edition? Well, your wait is over because this Add-On is here to bring that feature to Minecraft Bedrock!",
+    "content": [
+        {
+            "type": "img",
+            "text": "Let's dive into how this Add-On works! It's simple; all you need is a banner and a map - that's it! Let's say you want to mark your beautiful river port on the map."
+        },
+        {
+            "type": "img",
+            "text": "Simply hold the map and then right-click on the banner!"
+        },
+        {
+            "type": "img",
+            "text": "Ta-da! Now you'll know exactly where your lovely port is located!"
+        },
+        {
+            "type": "img",
+            "text": "Note that if you want to remove the marker, SNEAK! And right-click the banner with the map in your hand!<br><br>That's everything! We hope you all enjoy it!"
+        }
+    ],
+    "postwarning": "WARNING:  This Addon requires Beta APIs experimental to work properly! "
+}

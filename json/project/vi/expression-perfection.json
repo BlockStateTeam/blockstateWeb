@@ -1,0 +1,41 @@
+{
+    "version": "normal",
+    "title": "Project: Expression Perfection",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/vlpvggvsnmyx8tw977vkz/Expression-Perfection-Addon.mcaddon?rlkey=dse75l79thmywod2gxawy8v9v&dl=0",
+    "introduction": "Introducing Expression Perfection. This innovative addon brings emojis to the Minecraft world, revolutionizing communication and creativity. From smiles to tears, it offers a whole new way to express emotions as you build, mine, and explore. Get ready to enhance your in-game interactions with a plethora of emojis, adding a touch of fun and immersion to your Minecraft experience.",
+    "content": [
+        {
+            "type": "img",
+            "text": "To get started, you need to know the emoji namespace, you can search the namespace by using :emoji:number command! In this image, we do :emoji:1 to show the first 10 emoji! You can do :emoji:1 :emoji:2 :emoji:3 etc to see more emoji!"
+        },
+        {
+            "type": "img",
+            "text": "Now, the emoji and their namespaces will appear in your chat dialog!"
+        },
+        {
+            "type": "img",
+            "text": "Let's send a Hello message with the :smile: emoji, shall we?"
+        },
+        {
+            "type": "img",
+            "text": "The final message will be just like this! A smile emoji!"
+        },
+        {
+            "type": "img",
+            "text": "It also works on Sign too! If it's not working, please stare your cursor at sign! The game may take a while to load the new emoji"
+        },
+        {
+            "type": "img",
+            "text": "Tada!"
+        },
+        {
+            "type": "img",
+            "text": "Using the anvil to rename the item with emoji will work too! Let's prepare some flower!"
+        },
+        {
+            "type": "img",
+            "text": "It's lovely, isn't it?"
+        }
+    ],
+    "postwarning": "WARNING:  This Addon requires Beta APIs experimental to work properly!"
+}
