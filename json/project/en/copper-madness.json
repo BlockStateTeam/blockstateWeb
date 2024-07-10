@@ -1,0 +1,42 @@
+{
+    "version": "normal",
+    "title": "Project: Copper Madness",
+    "downloadLink": "https://dl.dropboxusercontent.com/s/ey8fgduw3qj5503/Copper%20Madness%20%5BVER%201.2%5D.mcworld?dl=0",
+    "introduction": "Long time ago, on an isolated archipelago, Dr. Cooper and his team discovered the existence of copper. Amazed by its properties, they set up three facilities to conduct research on it. The copper machines were originally made to assist the labor-intensive process. At first, everything went smoothly, but something bad was about to happen... One day, the copper machines went crazy! They malfunctioned and attacked the staff. The machines were too strong and everything seemed to be lost forever, but then... YOU!",
+    "content": [
+        {
+            "type": "youtube",
+            "iframe": "<iframe src=\"https://www.youtube.com/embed/Fp-TshP-1cY\" title=\"Copper Madness Trailer\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+            "text": "Copper Madness has its own storyline and let's not spoil every details about it! Not to mention cool upbeat music from T-en-M! But, here some images for you to have a preview about it! Have a look!"
+        },
+        {
+            "type": "img",
+            "text": "The Copper Facility"
+        },
+        {
+            "type": "img",
+            "text": "The road to somewhere interesting..."
+        },
+        {
+            "type": "img",
+            "text": "Fixing Station? What's for?"
+        },
+        {
+            "type": "img",
+            "text": "Ohh....cave...."
+        },
+        {
+            "type": "img",
+            "text": "The Copper Factory"
+        },
+        {
+            "type": "img",
+            "text": "Quite a neat looking for a factory"
+        },
+        {
+            "type": "img",
+            "text": "The Copper Boss looks really tough..."
+        }
+
+    ]
+}

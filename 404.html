@@ -1,180 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Loading...</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Our Story</title>
+	<script>
+		window.onload = function () {
+		const menu_btn = document.querySelector('.hamburger');
+		const mobile_menu = document.querySelector('.mobile-nav');
+
+		menu_btn.addEventListener('click', function () {
+			menu_btn.classList.toggle('is-active');
+			mobile_menu.classList.toggle('is-active');
+		});
+	}
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('hoverVideo');
+            video.pause();
+            video.addEventListener('mouseover', () => {
+                video.play();
+            });
+            video.addEventListener('mouseout', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+	</script>
     <style>
-        @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); }
-        @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); }
-        #crtVideo {
-            position: fixed;
-            width: 30vw;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-        }
-        #puter{
-            position: relative;
-            z-index: 1;
-            font-family: 'Minecraft'; 
-            font-size: 3vw; width: 100vw; 
-            text-align: center; 
-            padding-top: 5vh; 
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            color: white;
-            text-decoration: none !important;
-        }
-        @keyframes flicker {
-            0% {
-            opacity: 0.4;
-            }
-            100% {
-            opacity: 0.6;
-            }
-        }
-        @keyframes textShadow {
-            0% {
-            text-shadow: 0.4389924193300864px 0 1px rgba(255, 0, 0, 0.5), -0.4389924193300864px 0 1px rgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            5% {
-            text-shadow: 2.7928974010788217px 0 1px rgba(255, 0, 0, 0.5), -2.7928974010788217px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            10% {
-            text-shadow: 0.02956275843481219px 0 1px rgba(255, 0, 0, 0.5), -0.02956275843481219px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            15% {
-            text-shadow: 0.40218538552878136px 0 1px rgba(255, 0, 0, 0.5), -0.40218538552878136px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            20% {
-            text-shadow: 3.4794037899852017px 0 1px rgba(255, 0, 0, 0.5), -3.4794037899852017px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            25% {
-            text-shadow: 1.6125630401149584px 0 1px rgba(255, 0, 0, 0.5), -1.6125630401149584px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            30% {
-            text-shadow: 0.7015590085143956px 0 1px rgba(255, 0, 0, 0.5), -0.7015590085143956px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            35% {
-            text-shadow: 3.896914047650351px 0 1px rgba(255, 0, 0, 0.5), -3.896914047650351px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            40% {
-            text-shadow: 3.870905614848819px 0 1px rgba(255, 0, 0, 0.5), -3.870905614848819px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            45% {
-            text-shadow: 2.231056963361899px 0 1px rgba(255, 0, 0, 0.5), -2.231056963361899px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            50% {
-            text-shadow: 0.08084290417898504px 0 1px rgba(255, 0, 0, 0.5), -0.08084290417898504px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            55% {
-            text-shadow: 2.3758461067427543px 0 1px rgba(255, 0, 0, 0.5), -2.3758461067427543px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            60% {
-            text-shadow: 2.202193051050636px 0 1px rgba(255, 0, 0, 0.5), -2.202193051050636px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            65% {
-            text-shadow: 2.8638780614874975px 0 1px rgba(255, 0, 0, 0.5), -2.8638780614874975px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            70% {
-            text-shadow: 0.48874025155497314px 0 1px rgba(255, 0, 0, 0.5), -0.48874025155497314px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            75% {
-            text-shadow: 1.8948491305757957px 0 1px rgba(255, 0, 0, 0.5), -1.8948491305757957px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            80% {
-            text-shadow: 0.0833037308038857px 0 1px rgba(255, 0, 0, 0.5), -0.0833037308038857px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            85% {
-            text-shadow: 0.09769827255241735px 0 1px rgba(255, 0, 0, 0.5), -0.09769827255241735px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            90% {
-            text-shadow: 3.443339761481782px 0 1px rgba(255, 0, 0, 0.5), -3.443339761481782px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            95% {
-            text-shadow: 2.1841838852799786px 0 1px rgba(255, 0, 0, 0.5), -2.1841838852799786px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-            100% {
-            text-shadow: 2.6208764473832513px 0 1px rgba(255, 0, 0, 0.5), -2.6208764473832513px 0 1px rgrgba(0, 255, 213, 0.45), 0 0 3px;
-            }
-        }
-        .crt::after {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: rgba(18, 16, 16, 0.1);
-            opacity: 0;
-            z-index: 2;
-            pointer-events: none;
-            animation: flicker 0.15s infinite;
-        }
-        .crt::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-        }
-        .crt {
-            animation: textShadow 3s infinite;
-        }
-        body {
-            margin: 0;
-        }
-        #errorState {
-            width: 100vw;
-            height: 100vh;
-            user-select: none;
-            overflow: hidden; 
-            margin: 0;
-            background-color: #7F0808;
+        @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); } 
+        @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); } 
+        @font-face { font-family: MinecraftTest; src: url('/assets/fonts/MinecraftTest.otf'); } 
+        @font-face { font-family: MinecraftFive; src: url('/assets/fonts/MinecraftFive-Regular.woff2'); }
+
+        body::-webkit-scrollbar {
             display: none;
-        }
-        #error{
-            position: relative;
-            z-index: 1;
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            overflow: hidden; 
-            margin-top: 15vh;
-            font-size: 13vw; 
-            font-family: 'MinecraftTen';
-            color: white;
-        }
-        #projectPage {
-            width: 100vw;
-            display: none;
-        }
-        ::-webkit-scrollbar {
-            display: none;
-        }
-        select {
-            margin-left: 10vw;
-            font-family: 'Minecraft';
-            z-index: 97;
-            height: 5vh;
-            font-size: 3.5vh;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        body {
-            overflow-x: hidden;
-            background-color: #F8ECEC;
-            margin: 0;
-            font-family: 'Minecraft';
         }
         #fakeLogo {
             position: fixed;
@@ -186,47 +47,11 @@
             font-size: 2vw;
             line-height: 0.85;
         }
-        .hidden{
-            height: 4.5vw;
-        }
-        h2 {
-            font-family: 'MinecraftTen';
-            font-size: 3vw;
-            margin-top: 10vh;
-            margin-left: 10vw;
-            margin-bottom: 6vh;
-        }
-        .container {
-            display: flex;
-            row-gap: 5vh;
-            flex-wrap: wrap;
-            margin-left: 10vw;
-            margin-top: 10vh;
-            margin-bottom: 10vh;
-            width: 90vw;
-        }
-
-        .box {
-            width: 35vw; /* Adjust as needed */
-            height: fit-content;
-            overflow: hidden;
-            background-color: white;
-            box-sizing: border-box;
-            border-radius: 10px;
-            transition: 0.3s;
-            margin-right: 5vw;
-        }
-        .box img{
-            width: 35vw;
-            height: auto;
-            transition: 0.3s;
-        }
-        .box:hover > a > img{
-            width: 40vw;
-        }
-        .box:hover{
-            width: 40vw;
-
+        body {
+            overflow-x: hidden;
+            font-family: 'Minecraft';
+            background-color: #F8ECEC;
+            margin: 0;
         }
         .topnav {
             z-index: 30;
@@ -299,9 +124,15 @@
         .hamburger.is-active .bar {
             opacity: 0;
         }
-
+        h2 {
+            font-family: 'MinecraftTen';
+            font-size: 3vw;
+            margin-top: 5vh;
+            margin-left: 10vw;
+            margin-bottom: 6vh;
+        }
         .mobile-nav {
-        display: none;
+            display: none;
             position: fixed;
             top: 0;
             left: 100%;
@@ -325,10 +156,187 @@
             padding: 12px 16px;
             text-decoration: none;
         }
+        .hidden{
+            height: 4.5vw;
+        }
+        .box {
+            width: 35vw; 
+            height: fit-content;
+            overflow: hidden;
+            background-color: white;
+            box-sizing: border-box;
+            border-radius: 10px;
+            transition: 0.3s;
+            margin-right: 5vw;
+        }
+        .box img{
+            width: 35vw;
+            height: auto;
+            transition: 0.3s;
+        }
+        .box a{
+            display: flex;
+            height: fit-content;
+        }
+        .box:hover > a > img{
+            width: 40vw;
+        }
+        .box:hover{
+            width: 40vw;
+        }
+        .container {
+            display: flex;
+            row-gap: 5vh;
+            flex-wrap: wrap;
+            margin-left: 10vw;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+            width: 90vw;
+        }
+        .knowSelect {
+            margin-left: 10vw;
+            font-family: 'Minecraft';
+            z-index: 97;
+            height: 5vh;
+            font-size: 3.5vh;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #content{
+            padding-left: 15vw;
+            padding-right: 15vw;
+        }
+        #video{
+            width: 70vw;
+            height: 80vh
+        }
+        .section {
+            letter-spacing: -0.1vw;
+            line-height: 4.5vh;
+            font-size: 1.5vw;
+            padding-bottom: 8vh;
+            text-align: center;
+        }
+        #content > img {
+            border-radius: 20px;
+            width: 70vw;
+        }
+        #content > video {
+            border-radius: 20px;
+            width: 70vw;
+        }
+        .downloadSection{
+            display: flex;
+            width: 100vw;
+            font-size: 2vw;
+            letter-spacing: -0.15vw;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input[type="checkbox"] {
+            transform: scale(3) translateY(-1px);
+            margin-right: 40px;
+            appearance: none;
+            border: 2px solid #4d009a;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        input[type="checkbox"]:checked {
+            content: "\2713";
+            color: #fff;
+            background-color: #4d009a;
+            animation: checkboxPulse 0.4s;
+        }
+        input[type="checkbox"]:checked:after {
+            content: "✓";
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        .warning {
+            color:red;
+            letter-spacing: -1px;
+            font-size: 1.5vw;
+            width: 100vw;
+            height: 10vh;
+            text-align: center;
+        }
+        .compiler {
+            display: none;
+            width: 100vw; 
+            height: 100vh; 
+            background-color: rgba(0, 0, 0, 0.85); 
+            position: fixed; 
+            z-index: 48; 
+            top: 0;
+            align-items: center; 
+            justify-content: center;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.2;
+        }
+        .genericButton {
+            margin: 2.5vw;
+            border: none;
+            border-radius: 0.5vw;
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: #4229B9;
+            color: #FFFFFF;
+            font-family: 'MinecraftTen';
+            font-size: 3vw;
+            transition: 0.25s;
+        }
+        .genericButton:hover {
+            border-radius: 1vw;
+            background-color: #1b0879;
+            color: #fcf2ff;
+        }
+        .genericButton:active {
+            border-radius: 1.5vw;
+            background-color: #100546;
+            transform: translate(10px,10px);
+        }
+        .buttonWrapper {
+            width: 100vw; 
+            height: 15vh; 
+            display: flex; 
+            justify-content: center;
+        }
+        #creditFormat {
+            text-align: left; 
+            padding-left: 10vw;
+            width: 80vw;
+        }
+        #creditFormat > img {
+            margin-left: 5vw;
+            border-radius: 20px;
+            width: 70vw;
+        }
         @media (max-aspect-ratio: 3/4) {
-            select {
-                font-size: 2.2vh;
-                height: 4vh;
+            .downloadSection{
+                margin-bottom: 5vh;
+            }
+            #fakeLogo {
+                height: 15vw;
+                margin-left: 16vw;
+                font-size: 3vh;
+                z-index: 40;
+            }
+            .hidden {
+                height: 7vh;
             }
             .mobile-nav {
                 display: flex;
@@ -340,21 +348,22 @@
             #desktopNav {
                 display: none;
             }
-            .hidden{
-                height: 7vh;
-            }
             .topnav {
-            height: 15vw;
+                height: 15vw;
             }
             .topnav a {
-            padding: 4vw 2vw;
-            font-size: 8vw;
+                padding: 4vw 2vw;
+                font-size: 8vw;
             }
-            h2{
+            h2 {
                 margin-left: 5vw !important;
                 font-size: 9vw !important;
                 margin-top: 2vh !important;
                 margin-bottom: 2vh !important;
+            }
+            .knowSelect {
+                font-size: 2.2vh;
+                height: 4vh;
             }
             .container {
                 margin-top: 5vh !important;
@@ -366,47 +375,134 @@
             .box img{
                 width: 80vw !important;
             }
+            input[type="checkbox"] {
+                margin-right: 20px;
+                width: 15px;
+                height: 15px;
+                margin-top: 20px;
+            }
+            #tosLabel{
+                font-size: 2.5vh;
+            }
+            .genericButton {
+                border: none;
+                border-radius: 1vh;
+                margin-top: 1.5vh;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-family: 'MinecraftTen';
+                font-size: 8vw;
+                transition: 0.25s;
+            }
+            .genericButton:hover {
+                background-color: #a800a8;
+                color: #fcf2ff;
+            }
+            .section {
+                letter-spacing: -0.15vh;
+                line-height: 3.5vh;
+                width: 95vw;
+                font-size: 2.5vh;
+            }
+            #content{
+                padding-left: 2.5vw;
+                padding-right: 2.5vw;
+            }
+            #content > img {
+                border-radius: 10px;
+                width: 95vw;
+            }
+            #creditFormat > img {
+                margin-left: -7.5vw;
+                border-radius: 10px;
+                width: 95vw;
+            }
+            #content > video {
+                border-radius: 10px;
+                width: 95vw;
+            }
+            .buttonWrapper {
+                height: 7.5vh;
+            }
         }
     </style>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3449C7QP0C"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-3449C7QP0C');
-</script>
 <body>
-    <div class="crt" id="errorState">
-        <video id="crtVideo" class="crt" src="/assets/media/PuterCorrupted.webm" muted autoplay></video>
-        <script>
-            window.onload = function () {
-                const menu_btn = document.querySelector('.hamburger');
-                const mobile_menu = document.querySelector('.mobile-nav');
-
-                menu_btn.addEventListener('click', function () {
-                    menu_btn.classList.toggle('is-active');
-                    mobile_menu.classList.toggle('is-active');
-                });
-            }
-            document.addEventListener('DOMContentLoaded', () => {
-                const video = document.getElementById('hoverVideo');
-                video.pause();
-                video.addEventListener('mouseover', () => {
-                    video.play();
-                });
-                video.addEventListener('mouseout', () => {
-                    video.pause();
-                    video.currentTime = 0;
-                });
-            });
-            window.addEventListener("load", () => {
+    <iframe id="loadingScreen" src="/loading.html" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+	<div class="topnav" id="myTopnav">
+		<video id="hoverVideo" src="/assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
+		<div id="fakeLogo">BlockState <br>Team</div>
+		<nav id="desktopNav">
+			<a href="project" class="active">Project</a>
+			<a href="announcement">Announcement</a>
+			<a href="contact">Contact</a>
+			<a href="our_story">Our Story</a>
+			<a href="/">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="/">Home</a>
+			<a href="our_story">Our Story</a>
+			<a href="contact">Contact</a>
+			<a href="announcement">Announcement</a>
+			<a href="project" class="active">Project</a>
+		</div>
+	</div>
+    <div id="projectPage">
+        <div id="projectPageContent">
+            <h2>Our official released projects!</h2>
+            <select id="filter" class="knowSelect">
+                <option value="latest">Latest</option>
+                <option value="oldest">Oldest</option>
+                <option value="addon">Add-On</option>
+                <option value="map">Map</option>
+                <option value="tool">Tool</option>
+            </select>
+            <div class="container">
+            </div>
+        </div>
+        <div id="projectContent">
+        </div>
+        <div id="belowSection">
+            <h2>HELP SECTION</h2>
+            <div class="section">
+                If you need any help, feel free to join our Discord!
+                <div class="buttonWrapper">
+                    <a href="https://discord.gg/p3FvBh2aBd">
+                        <button class="genericButton">Discord</button>
+                    </a>
+                </div>
+            </div>
+            <h2>DOWNLOAD SECTION</h2>
+            <div class="downloadSection">
+                <label for="tosCheckbox">
+                <input type="checkbox" id="tosCheckbox">
+                <span id="tosLabel">I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a></span>
+                </label><br>
+                <button class="genericButton" id="genericButton" disabled>Download Now!</button>
+            </div>
+            <div class="compiler">
+                <iframe src="/loading.html" style="width: 80vw; height: 95vh; background-color: white; border-radius: 2vw; z-index: 50;"></iframe>
+            </div>
+            <div id="loadingBar" class="compiler" style="background-color: black; height:20px; width:60vw; margin-left: 20vw; z-index: 51; top: 69vh; display: none;">
+                <div id="loadingBarRun" style="background-color: magenta; width:0%; height: inherit; z-index: 52; position: relative; left: 0;"></div>
+            </div>
+            <div class="compiler" id="loadingText" style="max-width: 90vw; margin-left: 5vw; text-overflow: clip; font-size: 5vw; font-family: 'MinecraftTen'; z-index: 49; margin-top: 28vh; background-color: rgba(0, 0, 0, 0) !important;">
+                LOADING...
+            </div>
+        </div>
+    </div>
+    <script>
+        function showLoadingScreen() {
             const loadingScreen = document.getElementById("loadingScreen");
-            const fadeDuration = 1000; // 1 second
-            const intervalTime = fadeDuration / 50;
-
+            loadingScreen.style.opacity = "0";
+            loadingScreen.style.visibility = "visible";
+        }
+        function hideLoadingScreen() {
+            const loadingScreen = document.getElementById("loadingScreen");
             loadingScreen.style.opacity = "1";
-
             setTimeout(() => {
                 const fadeOutStep = () => {
                     const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
@@ -417,128 +513,279 @@
                         clearInterval(fadeInterval);
                     }
                 };
-                const fadeInterval = setInterval(fadeOutStep, intervalTime);
-                }, 1000);
-            });
-            const video = document.getElementById('crtVideo');
-            function hideVideo() {video.style.display = 'none';}
-            function showVideo() {video.style.display = 'block';}
-            function playVideo() {
-                hideVideo();
-                setTimeout(() => {
-                    showVideo();
-                    video.play();
-                }, 3000);
-                video.addEventListener('ended', () => {
-                    hideVideo();
-                    setTimeout(playVideo, 3000);
-                });
-            }
-            playVideo();
-        </script>
-        <div id="error">
-            404
-        </div>
-        <div class="crt" id="puter">Puter has messed up this page again!<br> If you need help then contact us!</div>
-        <a href="/"><div class="crt" id="puter" style="font-family: 'MinecraftTen';">Go back to Home page</div></a>
-    </div>
-    <div id="projectPage">
-        <div class="topnav" id="myTopnav">
-            <video id="hoverVideo" src="/assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
-            <div id="fakeLogo">BlockState <br>Team</div>
-            <nav id="desktopNav">
-                <a href="project" class="active">Project</a>
-                <a href="announcement">Announcement</a>
-                <a href="contact">Contact</a>
-                <a href="our_story">Our Story</a>
-                <a href="/">Home</a>
-            </nav>
-            <button class="hamburger">
-                <div class="bar"></div>
-            </button>
-            <div class="mobile-nav">
-                <a href="/">Home</a>
-                <a href="our_story">Our Story</a>
-                <a href="contact">Contact</a>
-                <a href="announcement">Announcement</a>
-                <a href="project" class="active">Project</a>
-            </div>
-        </div>
-        <h2>Our official released projects!</h2>
-        <select id="filter">
-            <option value="latest">Latest</option>
-            <option value="oldest">Oldest</option>
-            <option value="addon">Add-On</option>
-            <option value="map">Map</option>
-            <option value="tool">Tool</option>
-        </select>
-        <div class="container">
-        </div>
-    </div>
-    <script>
-        let currentUrl = window.location.pathname.replace('.html','');
-        console.log(currentUrl);
-        if (currentUrl === '/project') {
-            console.log(currentUrl, " is the display project page")
-            document.getElementById('projectPage').style.display = 'block';
-            document.title = "Project";
-            const container = document.querySelector('.container');
-            fetch('/projectList.json')
-            .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
-            .then(data => {
-                data.forEach((project, index) => {
-                    const div = document.createElement('div');
-                    div.classList.add('box');
-                    div.dataset.order = index + 1;
-                    div.dataset.item = project.dataItem;
-                    div.innerHTML = `<a href="${project.internalLink}"><img src="${project.img}"></a>`;
-                    container.appendChild(div);
-                });
-            
-            })
-            .catch(error => console.error('Error fetching data:', error.message));
-            document.getElementById('filter').addEventListener('change', function () {
-                const selectedValue = filter.value;
-                switch (selectedValue) {
-                    case 'latest':
-                        sortItem();
-                    break;
-                    case 'oldest':
-                        sortItem(false);
-                    break;
-                    case 'addon':
-                        onlyShow('addon');
-                    break;
-                    case 'map':
-                        onlyShow('map');
-                    break;
-                    case 'tool':
-                        onlyShow('tool');
-                    break;
-                }
-            });
-            const sortItem = (ascending = true) => {
-                const childDivs = Array.from(container.querySelectorAll('div[data-order]'));
-                childDivs.forEach((div) => {
-                    div.style.display = '';
-                });
-                childDivs.sort((a, b) => ascending ? a.dataset.order - b.dataset.order : b.dataset.order - a.dataset.order);
-                childDivs.forEach(div => container.appendChild(div));
-            };
-            function onlyShow(id) {
-                const childDivs = Array.from(container.querySelectorAll('div[data-item]'));
-                childDivs.forEach((div) => {
-                    div.style.display = div.dataset.item === id ? '' : 'none';
-                });
-            };
-        } else if (currentUrl.startsWith('/projects/')) {
-            console.log(currentUrl, " is a project page")
-        } else {
-            console.log(currentUrl, " is a 404 page");
-            document.getElementById('errorState').style.display = 'block';
-            document.title = "404! Something went wrong!";
+                const fadeInterval = setInterval(fadeOutStep, 1000 / 50);
+            }, 1000);
         }
-        
+        window.addEventListener("load", () => {
+            hideLoadingScreen()
+        });
+        window.onload = function () {
+            const menu_btn = document.querySelector('.hamburger');
+            const mobile_menu = document.querySelector('.mobile-nav');
+
+            menu_btn.addEventListener('click', function () {
+                menu_btn.classList.toggle('is-active');
+                mobile_menu.classList.toggle('is-active');
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('hoverVideo');
+            video.pause();
+            video.addEventListener('mouseover', () => {
+                video.play();
+            });
+            video.addEventListener('mouseout', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+        let projectData, workingTV, headDecoration, musicExtension;
+        function displayProjectPage(title, projectName) {
+            window.history.pushState({}, document.title, window.location.href);
+            window.history.replaceState({}, title, `/projects/${projectName}`);
+            reloadPage();
+        }
+        window.addEventListener('popstate', () => {
+            document.getElementById('projectContent').innerHTML = '';
+            reloadPage();
+        });
+        function reloadPage() {
+            window.scrollTo(0, 0);
+            let currentUrl = window.location.pathname.replace('.html','');
+            if (currentUrl === '/project') {
+                console.log(currentUrl, " is the display project page")
+                document.getElementById('projectContent').style.display = 'none';
+                document.getElementById('projectPageContent').style.display = 'block';
+                document.getElementById('projectPage').style.display = 'block';
+                document.getElementById('belowSection').style.display = 'none';
+                document.title = "Project";
+                const container = document.querySelector('.container');
+                fetch('/projectList.json')
+                .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
+                .then(jsonData => {
+                    jsonData.forEach((project, index) => {
+                        const div = document.createElement('div');
+                        div.classList.add('box');
+                        div.dataset.order = index + 1;
+                        div.dataset.item = project.dataItem;
+                        div.innerHTML = `<a onClick="displayProjectPage('${project.project}', '${project.formatName}')"><img src="${project.img}"></a>`;
+                        container.appendChild(div);
+                    });
+                
+                })
+                .catch(error => console.error('Error fetching data:', error.message));
+                document.getElementById('filter').addEventListener('change', function () {
+                    const selectedValue = filter.value;
+                    switch (selectedValue) {
+                        case 'latest':
+                            sortItem();
+                        break;
+                        case 'oldest':
+                            sortItem(false);
+                        break;
+                        case 'addon':
+                            onlyShow('addon');
+                        break;
+                        case 'map':
+                            onlyShow('map');
+                        break;
+                        case 'tool':
+                            onlyShow('tool');
+                        break;
+                    }
+                });
+                const sortItem = (ascending = true) => {
+                    const childDivs = Array.from(container.querySelectorAll('div[data-order]'));
+                    childDivs.forEach((div) => {
+                        div.style.display = '';
+                    });
+                    childDivs.sort((a, b) => ascending ? a.dataset.order - b.dataset.order : b.dataset.order - a.dataset.order);
+                    childDivs.forEach(div => container.appendChild(div));
+                };
+                function onlyShow(id) {
+                    const childDivs = Array.from(container.querySelectorAll('div[data-item]'));
+                    childDivs.forEach((div) => {
+                        div.style.display = div.dataset.item === id ? '' : 'none';
+                    });
+                };
+            } else if (currentUrl.startsWith('/projects/')) {
+                document.getElementById('belowSection').style.display = 'block';
+                document.getElementById('projectPage').style.display = 'block';
+                document.getElementById('projectContent').style.display = 'block';
+                document.getElementById('projectPageContent').style.display = 'none';
+                let currentLanguage = 'en';
+                console.log(currentUrl, " is a project page")
+                let projectName = currentUrl.replace('/projects/', '');
+                fetch(`/json/project/${currentLanguage}/${projectName}.json`)
+                .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
+                .then(data => {
+                    projectData = data;
+                    if (data.version === "normal") {
+                        document.title = data.title;
+                        let html ='';
+                        html += `
+                        <h2>${data.title}</h2>`;
+                        if (data.prewarning) {
+                            html += `
+                            <div class="warning">
+                                ${data.prewarning}
+                            </div>
+                            `;
+                        }
+                        html += `
+                        <div id="content">
+                            <div class="section" style="text-align: left;">
+                                ${data.introduction}
+                            </div>
+                        `;
+                        for (let i = 0; i < data.content.length; i++) {
+                            let elementContent = data.content[i];
+                            if (elementContent.type === 'img') {
+                                html += `
+                                <img src="/assets/media/${projectName}/${i+1}.webp">
+                                <div class="section">
+                                    ${elementContent.text}
+                                </div>`
+                            } else if (elementContent.type === 'video') {
+                                html += `
+                                <video disableRemotePlayback loop muted autoplay>
+                                    <source src="/assets/media/${projectName}/${i+1}.webm" type="video/webm">
+                                </video>
+                                <div class="section">
+                                    ${elementContent.text}
+                                </div>`
+                            } else if (elementContent.type === 'youtube') {
+                                html += `
+                                <div class="section">
+                                    ${elementContent.text}<br>
+                                    ${elementContent.iframe}
+                                </div>
+                                `
+                            } else if (elementContent.type === 'iframe') {
+                                html += `
+                                <div class="section">
+                                    ${elementContent.text}<br>
+                                    ${elementContent.iframe}
+                                </div>`
+                            }
+                        }
+                        html += `</div>`;
+                        if (data.credit) {
+                            console.log('Credit section is available');
+                            html += `
+                            <h2>CREDIT SECTION</h2>
+                            <div class="section" id="creditFormat">
+                                ${data.credit}
+                            </div>
+                            `
+                        };
+                        if (data.customizable) {
+                            html += '<style>'
+                            for (let i = 0; i < data.customizable.style.length; i++) {
+                                html += data.customizable.style[i];
+                            }
+                            html += '</style>'
+                            html += `
+                            <h2>CUSTOMIZATION SECTION</h2>
+                            ${data.customizable.content}
+                            `
+                            if (data.downloadLink === 'module-working-tv') {
+                                initializeWorkingTV();
+                            } else if (data.downloadLink === 'module-head-decoration') {
+                                initializeHeadDecoration();
+                            } else if (data.downloadLink === 'module-music-extension') {
+                                initializeMusicExtension();
+                            }
+                        };
+                        if (data.postwarning) {
+                            html += `
+                            <div class="warning">
+                                ${data.postwarning}
+                            </div>`
+                        };
+                        document.getElementById('projectContent').innerHTML = html;
+                    }
+                })
+                .catch(error => console.error('Error fetching data:', error.message));
+            } else {
+                console.log(currentUrl, " is a 404 page");
+                window.location.href = '/403.html';
+            }
+        }
+        async function initializeWorkingTV() {
+            try {
+                workingTV = await import('/projects/working-tv.js');
+                console.log('working-tv.js module has been loaded');
+                workingTV.setupEventListeners();
+                console.log('Event listeners have been set up');
+            } catch (error) {
+                console.error('Error loading the working-tv module:', error);
+            }
+        }
+        async function initializeMusicExtension() {
+            try {
+                musicExtension = await import('/projects/music-extension.js');
+                console.log('music-extension.js module has been loaded');
+            } catch (error) {
+                console.error('Error loading the working-tv module:', error);
+            }
+        }
+        async function initializeHeadDecoration() {
+            try {
+                headDecoration = await import('/projects/head-decoration.js');
+                console.log('head-decoration.js module has been loaded');
+                document.cookie.split('; ').forEach(cookie => {
+                    const [cookieName, cookieValue] = cookie.split('=');
+                    if (cookieName && cookieValue) {
+                        const [name, css] = cookieValue.split('-');
+                        if (name && css) headDecoration.handleButtonClick(name, cookieName, css, false);
+                    }
+                });
+                console.log('Event listeners have been set up');
+            } catch (error) {
+                console.error('Error loading the head-decoration module:', error);
+            }
+        }
+        reloadPage();
+        const tosCheckbox = document.getElementById('tosCheckbox');
+        const downloadButton = document.getElementById('genericButton');
+        tosCheckbox.addEventListener('change', () => {
+        if (tosCheckbox.checked) {
+            downloadButton.removeAttribute('disabled');
+            tosLabel.innerHTML = 'I agree to the <a href="/TOS" target="_blank">Term of service</a>';
+        } else {
+            downloadButton.setAttribute('disabled', 'disabled');
+            tosLabel.innerHTML = 'I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a>';
+        }
+        });
+        downloadButton.addEventListener('click', () => {
+            if (!tosCheckbox.checked) {
+                alert('Please agree to the Terms of Service (TOS) before downloading.');
+                return;
+            }
+            fetch('https://api.ipify.org/')
+            .then(r => r.ok ? r.text() : Promise.reject('Network response was not ok'))
+            .catch(e => ('undefined', console.error('Error:', e)))
+            .then(fetchedData => {
+                let formData = new FormData();
+                formData.append("entry.606279263", fetchedData);
+                formData.append("entry.1080269179", projectData.title.replace('Project: ', ''));
+                formData.append("entry.826374623", Date.now());
+
+                return fetch("https://docs.google.com/forms/d/e/1FAIpQLSfiIG0fLLNucnSzChPm9F2gWqkk9GOhUHGHUlYT-k3h-FBRFA/formResponse", { method: "POST", body: formData, mode: "no-cors" });
+            })
+            .then(() => console.log("Form submitted successfully"))
+            .catch(error => console.error("Error:", error));
+            if (projectData.downloadLink === 'module-working-tv') {
+                workingTV.initializeDownload();
+            } else if (projectData.downloadLink === 'module-head-decoration') {
+                headDecoration.initializeDownload();
+            } else if (projectData.downloadLink === 'module-music-extension') {
+                musicExtension.initializeDownload();
+            } else {
+                window.location.href = projectData.downloadLink;
+            }
+        });
     </script>
 </body>
 </html>

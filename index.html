@@ -26,23 +26,23 @@
 		});
 	});
 	window.addEventListener("load", () => {
-	const loadingScreen = document.getElementById("loadingScreen");
-	const fadeDuration = 1000; // 1 second
-	const intervalTime = fadeDuration / 50;
+		const loadingScreen = document.getElementById("loadingScreen");
+		const fadeDuration = 1000; // 1 second
+		const intervalTime = fadeDuration / 50;
 
-	loadingScreen.style.opacity = "1";
+		loadingScreen.style.opacity = "1";
 
-	setTimeout(() => {
-		const fadeOutStep = () => {
-			const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
-			loadingScreen.style.opacity = currentOpacity;
+		setTimeout(() => {
+			const fadeOutStep = () => {
+				const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+				loadingScreen.style.opacity = currentOpacity;
 
-			if (currentOpacity <= 0) {
-				loadingScreen.style.visibility = "hidden";
-				clearInterval(fadeInterval);
-			}
-		};
-		const fadeInterval = setInterval(fadeOutStep, intervalTime);
+				if (currentOpacity <= 0) {
+					loadingScreen.style.visibility = "hidden";
+					clearInterval(fadeInterval);
+				}
+			};
+			const fadeInterval = setInterval(fadeOutStep, intervalTime);
 		}, 1000);
 	});
 	

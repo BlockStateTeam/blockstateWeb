@@ -1,0 +1,44 @@
+{
+    "version": "normal",
+    "title": "Project: Working TV",
+    "downloadLink": "module-working-tv",
+    "introduction": "Watching videos in Minecraft? It might sound unbelievable, but now, thanks to this Add-On, it's a reality! Introducing Working TV, an Add-On that enables you to seamlessly play videos in Minecraft. Choose any video you desire—all within the realm of vanilla Minecraft! No need for mods, plugins, or external software; it's the essence of pure vanilla Minecraft!",
+    "content": [
+        {
+            "type": "img",
+            "text": "This is the amazing TV! A brand new shiny block that allows you to play video in Minecraft! It's also fully customizable, allowing you to upload your own videos to play in Minecraft!"
+        },
+        {
+            "type": "img",
+            "text": "Let's start with its crafting recipe. It's pretty simple, just 5 iron ingots, 1 copper ingot and 1 redstone dust! Here's how it looks like in the crafting table!"
+        },
+        {
+            "type": "video",
+            "text": "To turn on the TV, simply right-click the TV. You can also turn it off by right-clicking it again! Now, the TV can play up to 5 videos, to change the video, simply right-click the copper antenna on top of the TV."
+        }
+    ],
+    "customizable": {
+        "style": [
+            ".info {display: none; flex-direction: column;align-items: center;justify-content: center;}",
+            ".previewVideo {width: 300px;height: 230px;overflow: hidden;object-fit:cover;display: none;}",
+            "#debugMessage {width: 80vw;height: 60vh;overflow-y: scroll;overflow-x: hidden;border: 1px solid #ccc;padding: 10px;}",
+            "audio {display: block !important;}",
+            ".devDebug{display: none;}",
+            "input[type=\"file\"] {display: none;}",
+            ".uploadButton {border: none; border-radius: 0.5vw; padding: 10px;background-color: #4229B9;color: #FFFFFF;font-family: 'Minecraft';font-size: 1.5vw;transition: 0.3s;}",
+            ".uploadButton:hover {background-color: #241182;padding: 15px;color: #fcf2ff;}",
+            ".uploadButton:active {background-color: #5232f4;transform: translate(0,25px);padding: 2.5px;}",
+            "table {font-size: 1.65vw;width: 70vw;border-collapse: collapse;margin: 20px 0;}",
+            "th, td {padding: 10px;text-align: center;}",
+            "td {padding-top: 5vh;}",
+            "th:first-child, td:first-child {width: 15vw;}",
+            "@media (max-aspect-ratio: 3/4) {",
+            ".uploadButton{font-size: 1.5vh;}",
+            "table{width: 90vw; font-size: 2.2vh;}",
+            "th:first-child, td:first-child {width: 25vw;}",
+            ".previewVideo {width: 200px;height: 154px;}",
+            "}"
+        ],
+        "content": "<div id=\"content\"><div class=\"section\" style=\"text-align: left;\">Upload a maximum of 5 videos to include them in the TV! Videos need to be: <br>> In .mp4 or .webm format <br>> In horizontal orientation <br>> Less than 4-ish minutes long per video (Due to Minecraft's limitation) <br>> You need to wait until the preview video is playable before you can download the Addon! <br><table><thead><tr><th>Video Source</th><th>Preview</th></tr></thead><tbody><tr><td><label for=\"upload1\" class=\"uploadButton\">Upload 1</label><input type=\"file\" accept=\".mp4, .webm\" id=\"upload1\" class=\"fileTrigger\"></td><td><video class=\"previewVideo\" id=\"upload1video\" controls></video><div id=\"upload1info\" class=\"info\"><p class=\"childMessage\">Message:</p><progress id=\"upload1progress\" max=\"100\" value=\"0\" class=\"childProgress\"></progress></div></td></tr><tr><td><label for=\"upload2\" class=\"uploadButton\">Upload 2</label><input type=\"file\" accept=\".mp4, .webm\" id=\"upload2\" class=\"fileTrigger\"></td><td><video class=\"previewVideo\" id=\"upload2video\" controls></video><div id=\"upload2info\" class=\"info\"><p class=\"childMessage\">Message:</p><progress id=\"upload1progress\" max=\"100\" value=\"0\" class=\"childProgress\"></progress></div></td></tr><tr><td><label for=\"upload3\" class=\"uploadButton\">Upload 3</label><input type=\"file\" accept=\".mp4, .webm\" id=\"upload3\" class=\"fileTrigger\"></td><td><video class=\"previewVideo\" id=\"upload3video\" controls></video><div id=\"upload3info\" class=\"info\"><p class=\"childMessage\">Message:</p><progress id=\"upload1progress\" max=\"100\" value=\"0\" class=\"childProgress\"></progress></div></td></tr><tr><td><label for=\"upload4\" class=\"uploadButton\">Upload 4</label><input type=\"file\" accept=\".mp4, .webm\" id=\"upload4\" class=\"fileTrigger\"></td><td><video class=\"previewVideo\" id=\"upload4video\" controls></video><div id=\"upload4info\" class=\"info\"><p class=\"childMessage\">Message:</p><progress id=\"upload1progress\" max=\"100\" value=\"0\" class=\"childProgress\"></progress></div></td></tr><tr><td><label for=\"upload5\" class=\"uploadButton\">Upload 5</label><input type=\"file\" accept=\".mp4, .webm\" id=\"upload5\" class=\"fileTrigger\"></td><td><video class=\"previewVideo\" id=\"upload5video\" controls></video><div id=\"upload5info\" class=\"info\"><p class=\"childMessage\">Message:</p><progress id=\"upload1progress\" max=\"100\" value=\"0\" class=\"childProgress\"></progress></div></td></tr></tbody></table><br><br><label for=\"devMode\"><input type=\"checkbox\" id=\"devMode\"><span> Enable Dev Mode (Do not enable unless instructed to do so)</span></label><br><br><p class=\"devDebug\" id=\"debugMessage\">Debug message:</p><div id=\"imageContainer\" class=\"devDebug\"></div></div></div>"
+    }
+}

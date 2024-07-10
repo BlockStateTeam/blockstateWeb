@@ -1,0 +1,46 @@
+{
+    "version": "normal",
+    "title": "Project: Add-On Compiler",
+    "downloadLink": "https://raw.githubusercontent.com/BlockStateTeam/Addon-Compiler/main/BlockState-Add-On-Compiler.vbs",
+    "prewarning": "Before reading about this project! This project is for Computer only!<br><br>Other requirements are: <a href=\"https://www.google.com/chrome/\" target=\"_blank\">Chrome</a> and <a href=\"https://nodejs.org/en\" target=\"_blank\">NodeJS</a> installed!<br><br>",
+    "introduction": "<br><br>Are you fed up with the manual process of gathering RP and BP files from separate folders, zipping them, and constantly changing their extensions whenever you want to share your Add-On?<br><br>Well, we have the solution for you! Introducing the Add-On Compiler! This tool will automatically gather all the necessary files and compile them into a single .mcaddon file for you!",
+    "content": [
+        {
+            "type": "img",
+            "text": "Let's dive into how this compiler works! And what features it offers!"
+        },
+        {
+            "type": "img",
+            "text": "Here's the compiler User Interface! It's pretty simple, right? And yes Dark-mode is the default mode! Let's go over the features!"
+        },
+        {
+            "type": "img",
+            "text": "When launched, the compiler will automatically detect development_resource_packs and development_behavior_packs folders om your computer and will use that to sort your projects into 3 categrories: Resource Pack, Add-On and Behavior Pack.<br><br>Simply put it will scan and try to match RP and BP that share the same name and will put them into the Add-On category. If it can't find a match, it will put them into the Resource Pack or Behavior Pack category.<br><br>Note that, they must share the same name (You can use RP or BP at the end of their name) to be considered a pair! For example: \"My project\"/\"My project RP\" and \"My project\"/\"My project BP\" will be consider as an Add-On."
+        },
+        {
+            "type": "img",
+            "text": "You can also use the UI switcher to change to your favorite theme! (Dark mode is the default theme)"
+        },
+        {
+            "type": "img",
+            "text": "Save Mode allows you to alter the directory that the compiler will save the compiled Add-On to!"
+        },
+        {
+            "type": "img",
+            "text": "You can also add/remove custom directory to the compiler! This will allow you to compile Add-Ons from anywhere on your computer!"
+        },
+        {
+            "type": "img",
+            "text": "You should see a notification at your bottom-right screen when a new directory is added The notification will disappear after a short period of time"
+        },
+        {
+            "type": "img",
+            "text": "Now you're all set! Simply click on the \"Compile\" button and the compiler will do all the manual work for you! Including zipping the files and changing their extensions to .mcaddon!"
+        },
+        {
+            "type": "img",
+            "text": "For all the ScriptAPI enthusiasts out there, you can also use the compiler to update your ScriptAPI projects! The compiler will check for the latest version of ScriptAPI and will promt you to update<br><br>IMPORTANT: This feature is still in development and may not work properly!"
+        }
+    ],
+    "postwarning": "Security and Transparency is our top priority! We want to make sure that you can trust us! <br> That's why we have decided to make our source code public! <br> You can check out <a href=\"https://github.com/BlockStateTeam/Addon-Compiler\" style=\"font-weight: bolder;\">our source code here</a>!"
+}

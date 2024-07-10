@@ -1,0 +1,24 @@
+{
+    "version": "normal",
+    "title": "Project: Wind Charge Demo",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/g3rnomni2egos699e0w6t/Wind-Charge-Addon.mcaddon?rlkey=mhuw6vzlly26uw43rdw7rkugt&dl=0",
+    "introduction": "The new Breeze mob is a new mob that will be added in the 1.21 update, and comes with a new item called Wind Charge. This item allows the Breeze to charge up and release a powerful gust of wind that can push entities and items away.<br><br>Right now, this feature is only available in the beta version of Minecraft Java, and we have created a demo to showcase the Wind Charge in action.",
+    "content": [
+        {
+            "type": "img",
+            "text": "Since this is just a demo, there's no method to obtain this item in Survival mode. However, you can use the /give command or switch to Creative mode to obtain it."
+        },
+        {
+            "type": "video",
+            "text": "The Wind Charge release a gust of wind that can push and damage entities"
+        },
+        {
+            "type": "video",
+            "text": "It can also give you a powerful boost!"
+        },
+        {
+            "type": "video",
+            "text": "You can use it to get across large gaps or to reach high places."
+        }
+    ]
+}

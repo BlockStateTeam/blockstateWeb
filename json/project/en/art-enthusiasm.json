@@ -1,0 +1,63 @@
+{
+    "version": "normal",
+    "title": "Project: Art Enthusiasm",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/ipjbbbevdcsuci5e363sg/Art-Enthusiasm-Addon.mcaddon?rlkey=t1zlnyiywh4nn2a9fnfmrmsl1&dl=0",
+    "prewarning": "<div class=\"section\">Did you know <a href=\"https://www.blockstate.team/projects/art-enthusiasm-v3\" style=\"font-family: 'MinecraftFive'; letter-spacing: 1px;\">Art Enthusiasm V3</a> is out? It has more features and better performance! Check it out!</div>",
+    "introduction": "The \"Art Enthusiasm\" brings a fresh chance for you to show your artistic side in Minecraft Bedrock! With the \"Art Enthusiasm\" Add-On, you get a cool new method to let your creativity shine through in Minecraft Bedrock. This is fantastic news if you're someone who loves making art. So, let's dive in and learn more about what exactly this Add-On has to offer!",
+    "content": [
+        {
+            "type": "img",
+            "text": "Art Enthusiasm adds the brand new Painting Stand! It can be used as a decorating furniture for your house also it can be used to make painting!"
+        },
+        {
+            "type": "img",
+            "text": "You can craft the Painting Stand using 4 sticks, 3 planks (any kind of plank will do) and 1 piece of paper!"
+        },
+        {
+            "type": "img",
+            "text": "Now! To use the Painting Stand, you will need a brush and an empty map. Note that it needs to be empty map! Not empty locator map. Also the location of the brush and the empty map are also important. They need to be placed in the first and second hotbar slot, respectively.<br><br>Why empty map you might ask? Well, this Add-On use Minecraft Map as your painting! So you would need it to save your art when you've done with the drawing!"
+        },
+        {
+            "type": "img",
+            "text": "If you forget how to craft the brush and the map, here are the recipes!"
+        },
+        {
+            "type": "img",
+            "text": "Once you've followed all the instruction, just sit down on the Painting Stand and...<br> Ta-da! Now you're in the Painting Room!"
+        },
+        {
+            "type": "img",
+            "text": "Now, let's take a closer look at what each section does exactly!<div><ul style=\"list-style-type: square; text-align: left;\"><li>Color Selection:</li>&#8195;&#8195;Using the brush, you can pick a color! There are 11 unique colors for you to unleash your creativity with!<br>&#8195;<li>Brush Size Selection:</li>&#8195;&#8195;You have three brush sizes to choose from: \"small,\" \"medium,\" and the largest one, \"big\"!<br>&#8195;<li>Re-render Button: The functionality of this button will be explained in a later section. Just keep on reading!</li>&#8195;&#8195;<br>&#8195;<li>Reset Button: When pressed, this button will erase everything you've drawn and reset it to a blank state. Please use it carefully.</li>&#8195;&#8195;<br>&#8195;<li>Exit Button: This button should be used ONLY if you've done with the drawing as it will end your drawing section! By the way, as a safety measure, this button only works if you're sneaking and clicking it with the brush!</li>&#8195;&#8195;</ul></div>"
+        },
+        {
+            "type": "video",
+            "text": "Here is a video showcasing the basic controls for drawing! As you can see, by sneaking you can auto-paint without clicking left-click all the way!"
+        },
+        {
+            "type": "img",
+            "text": "Let's run a test! Here's a simple painting... and don't worry, my artistic skills are on par with a stick figure!"
+        },
+        {
+            "type": "img",
+            "text": "Don't forget about the empty map! Use it to see what the painting will look like. It's supposed to display whatever you've drawn. By the way, if the map doesn't update when you create something new, remember the Re-render button? Give it a click! That should refresh the map and show your latest masterpiece!"
+        },
+        {
+            "type": "img",
+            "text": "Once you're satisfied with your painting, turn around. You'll find a barrel and a cartography table there."
+        },
+        {
+            "type": "img",
+            "text": "Just take the glass pane in the barrel..."
+        },
+        {
+            "type": "img",
+            "text": "...and use it to lock the map! Don't forget to give your paiting a cool name too!"
+        },
+        {
+            "type": "img",
+            "text": "When you've done, sneak and click the exit button with the brush!"
+        }
+
+    ],
+    "postwarning": "WARNING:  This Addon requires Beta APIs experimental to work properly!"
+}

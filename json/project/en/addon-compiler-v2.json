@@ -1,0 +1,7 @@
+{
+    "version": "normal",
+    "title": "Project: Add-On Compiler V2",
+    "downloadLink": "https://github.com/BlockStateTeam/addon-compiler-v2/releases/download/v2.1.0/Add-On.Compiler-x64-installer.exe",
+    "introduction": "This program is an overhaul re-make of the Version Add-On Compiler <br><br> For all the ScriptAPI enthusiasts out there, you can also use the compiler to update your ScriptAPI projects! The compiler will check for the latest version of ScriptAPI and will promt you to update",
+    "content": []
+}

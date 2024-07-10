@@ -166,6 +166,7 @@ h1 {
     font-family: 'MinecraftTen';
     font-size: 2vw;
     line-height: 0.85;
+    z-index: 40;
 }
 .topnav {
     z-index: 30;
