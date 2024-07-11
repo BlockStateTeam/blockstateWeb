@@ -1,48 +1,48 @@
 {
     "version": "normal",
-    "title": "Project: Music Extension",
+    "title": "Dự án: Music Extension",
     "downloadLink": "module-music-extension",
-    "introduction": "The \"Music Extension\" expands and improves the music system for Minecraft Bedrock. It adds a custom Music box with cool animations and five new music discs from T-en-M. Not only that, you can also add your own custom sound to the pack with a simple tool too! Now you can enjoy awesome tunes while playing Minecraft and make your adventures even more fun!<br><br>Let's see what this addon has to offer, shall we?",
+    "introduction": "\"Music Extension\" mở rộng và cải thiện hệ thống âm nhạc cho Minecraft Bedrock. Nó bổ sung một Music box tùy chỉnh với các hiệu ứng hoạt hình thú vị và năm đĩa nhạc mới từ T-en-M. Bạn cũng có thể thêm âm thanh tùy chỉnh của riêng bạn vào gói này với một công cụ đơn giản! Bây giờ bạn có thể thưởng thức những giai điệu tuyệt vời trong khi chơi Minecraft và làm cho cuộc phiêu lưu của bạn thêm phần thú vị!<br><br>Hãy xem addon này có gì để cung cấp nhé!",
     "content": [
         {
             "type": "img",
-            "text": "This is the Music Box! A brand new block that allows you to play music disc!<br><br>But we have Juke Box for that right? Don't worry, you will see why the Music Box is better (and cheap to craft too...)"
+            "text": "Đây là Music Box! Một khối mới hoàn toàn cho phép bạn phát đĩa nhạc!<br><br> Nhưng chúng ta đã có Juke Box để làm điều đó phải không? Đừng lo, bạn sẽ thấy tại sao Music Box lại tốt hơn (và rẻ để chế tạo nữa...)"
         },
         {
             "type": "img",
-            "text": "Let's start off with its recipe! Just with 5 planks, 1 redstone, a stick and a gold nugget then voila... The music Box"
+            "text": "Hãy bắt đầu với công thức chế tạo của nó! Chỉ cần 5 mảnh ván, 1 đá redstone, một cái que và một miếng vàng ròng, rồi... Music Box!"
         },
         {
             "type": "img",
-            "text": "To use the Music Box, while holding the music disc, right-click onto the TOP side of the Box! The Musix Box will work with all kind of disc so don't worry!"
+            "text": "Để sử dụng Music Box, khi cầm đĩa nhạc, nhấp chuột phải vào phía TRÊN của Box! Music Box sẽ hoạt động với mọi loại đĩa nhạc, vì vậy đừng lo lắng!"
         },
         {
             "type": "img",
-            "text": "To get back the disc, right-click on any side of the Music Box and you will reset it to original state! (AKA spit out the disc)"
+            "text": "Để lấy lại đĩa, nhấp chuột phải vào bất kỳ bên nào của Music Box và nó sẽ đưa ra đĩa trở lại trạng thái ban đầu!"
         },
         {
             "type": "img",
-            "text": "You can only break the block from any side except from the top! (You don't want to break the fragile golden stylus, do you?)"
+            "text": "Bạn chỉ có thể phá vỡ khối từ bất kỳ bên nào trừ phía trên! (Bạn không muốn phá vỡ cây kim vàng dễ vỡ, phải không?)"
         },
         {
             "type": "img",
-            "text": "For song that you want to listen on repeat, simply put a gold block on the side where the Stylus is facing! You should see golden ring indicator pops up! From now on, your song will get played on loop!"
+            "text": "Để nghe một bài hát lặp đi lặp lại, đơn giản đặt một khối vàng vào bên mà kim chỉ đang hướng tới! Bạn sẽ thấy chỉ báo vòng vàng xuất hiện! Từ giờ, bài hát của bạn sẽ được phát lại liên tục!"
         },
         {
             "type": "img",
-            "text": "One cool feature for redstone engineer: If there's any non-air block on top of the Music Box, the Box will reset itself on loop! So if you want to stop the music automatically, just place some piston and set it up!"
+            "text": "Một tính năng thú vị cho kỹ sư redstone: Nếu có bất kỳ khối nào không phải khối không khí ở trên Music Box, Box sẽ tự động reset lại để phát lại! Vì vậy, nếu bạn muốn dừng âm nhạc tự động, chỉ cần đặt một số piston và thiết lập nó!"
         },
         {
             "type": "img",
-            "text": "Well, this addon also add some cool music from T-en-M! Yay! You need to craft these disc using 8 charcoals, I repeat charcoal...not coal, and at the middle, simply place the special items for each special disc!"
+            "text": "Addon này cũng thêm vào một số bản nhạc thú vị từ T-en-M! Yay! Bạn cần chế tạo các đĩa này bằng 8 than gỗ, tôi lặp lại, là than gỗ... không phải than đá, và ở giữa, đơn giản chỉ cần đặt các vật phẩm đặc biệt cho mỗi đĩa đặc biệt!"
         },
         {
             "type": "img",
-            "text": "The Wandering Trader also will offer special disc for just 5 emeralds each!<br><br>(It such a steal, isn't it?)"
+            "text": "Người Buôn Bán Lang Thang cũng sẽ cung cấp đĩa đặc biệt chỉ với 5 viên ngọc lam mỗi đĩa<br><br>(Rẻ quá chời rẻ, phải không?)"
         },
         {
             "type": "img",
-            "text": "[IMPORTANT]: You can also add your own custom sound too! Using the experimental tool below!<br><br>- The recipe will use Charcoal and dye! As you can see in the picture, each dye color is numerical assigned! What does it mean? It mean if you upload just 1 sound file, that sound will be assigned to the white disc, so on and so on. If you upload multiple sound files, their order will determine which disc will have what sound!<br><br>- Please note that even if you only add 1 sound file or didn't upload anything, the empty discs will still be included, but they won't play anything!"
+            "text": "[QUAN TRỌNG]: Bạn cũng có thể thêm âm thanh tùy chỉnh của riêng bạn! Sử dụng công cụ thử nghiệm dưới đây!<br><br>- Công thức sẽ sử dụng Than và thuốc nhuộm! Như bạn có thể thấy trong hình ảnh, mỗi màu thuốc nhuộm được chỉ định số học! Điều này có ý nghĩa gì? Điều đó có nghĩa là nếu bạn tải lên chỉ một tệp âm thanh, âm thanh đó sẽ được gán cho đĩa màu trắng, và như vậy. Nếu bạn tải lên nhiều tệp âm thanh, thứ tự của chúng sẽ xác định đĩa nào sẽ có âm thanh gì!<br><br>- Xin lưu ý rằng ngay cả khi bạn chỉ thêm một tệp âm thanh hoặc không tải lên bất cứ file gì, các đĩa trống vẫn sẽ được bao gồm, nhưng chúng sẽ không phát bất cứ gì!"
         }
     ],
     "customizable": {
@@ -77,5 +77,5 @@
         ],
         "content": "<div style=\"width: 100vw; display: flex; align-items: center; justify-content: center;\"><label for=\"musicInput\" class=\"custom-file-input\">Upload Custom Music </label><input type=\"file\" id=\"musicInput\" accept=\".ogg\" multiple hidden></div><div class=\"warning\" style=\"padding-top: 10vh;\">WARNING:  Experimental Customization tool only support OGG file format!<br> Also, its load time may take a while! Please be patient!</div>"
     },
-    "postwarning": "WARNING:  This Addon requires Upcoming Creator Feature and Holiday Creator Feature to work properly!"
+    "postwarning": "CẢNH BÁO: Addon này yêu cầu Upcoming Creator Feature và Holiday Creator Feature để hoạt động!"
 }
