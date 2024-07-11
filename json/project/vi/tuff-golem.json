@@ -1,28 +1,28 @@
 {
     "version": "normal",
-    "title": "Project: Wind Charge Demo",
+    "title": "Dự án: Tuff Golem",
     "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/bdsurn3xbqbfcogcod9ry/Tuff-Golem-Addon.mcaddon?rlkey=m1eurtr2tn3cw9qkzc7imy407&dl=0",
-    "introduction": "Who doesn't love Tuff Golems? They're lovely creatures that can be used to show off your collection or simply help you with decoration for your builds! Sadly, they didn't get enough vote. But what if you could have them right now? Well, now you can! With this Add-On, you can now have Tuff Golems in your game!",
+    "introduction": "Ai mà không yêu Tuff Golems? Chúng là những sinh vật dễ thương có thể được sử dụng để trưng bày bộ sưu tập của bạn hoặc đơn giản là giúp bạn trang trí cho các công trình của mình! Thật đáng tiếc, chúng không nhận được đủ số phiếu bầu. Nhưng nếu bạn có thể có chúng ngay bây giờ thì sao? Chà, bây giờ bạn có thể! Với Add-On này, bạn có thể có Tuff Golems trong trò chơi của mình!",
     "content": [
         {
             "type": "img",
-            "text": "Let's dive into how this Add-On works! The Tuff Golem can display one item of your choice! It can be a spyglass, a painting, a block of glass, basically anything!"
+            "text": "Hãy khám phá cách thức hoạt động của Add-On này! Tuff Golem có thể trưng bày một vật phẩm mà bạn chọn! Đó có thể là một kính viễn vọng, một bức tranh, một khối kính, về cơ bản là bất cứ thứ gì!"
         },
         {
             "type": "video",
-            "text": "To spawn them in, you'll need to build a Tuff Golem Spawner. It's a simple structure that can be built with 1 tuff block, 1 wool block of any colors, and 1 carved pumpkin (The carved pumpkin needs to be the last block being placed). Once you've built it, the Tuff Golem will spawn in!"
+            "text": "Để triệu hồi chúng, bạn cần xây dựng một Tuff Golem Spawner. Đây là một cấu trúc đơn giản có thể được xây dựng với 1 khối tuff, 1 khối len màu bất kỳ và 1 quả bí ngô được khắc (quả bí ngô được khắc phải là khối cuối cùng được đặt). Sau khi xây dựng xong, Tuff Golem sẽ xuất hiện!"
         },
         {
             "type": "video",
-            "text": "You can give any item to the Golem for it to display, and to take back the item, you would need an empty hand (slot) to execute the take back action.<br><br> Also, the Tuff Golem has 2 modes: Awake and Sleep. When it's awake, it can randomly move around. When it's asleep, it'll stay still. To change its mode, simply SNEAK + RIGHT CLICK it!"
+            "text": "Bạn có thể đưa cho Golem bất kỳ vật phẩm nào để nó trưng bày, và để lấy lại vật phẩm, bạn cần có tay trống (không có vật phẩm trong ô) để thực hiện hành động lấy lại.<br><br>Ngoài ra, Tuff Golem có 2 chế độ: Tỉnh giấc và Ngủ. Khi nó tỉnh giấc, nó có thể di chuyển ngẫu nhiên xung quanh. Khi nó ngủ, nó sẽ đứng im. Để thay đổi chế độ của nó, đơn giản là SNEAK và BẤM CHUỘT PHẢI lên nó!"
         },
         {
             "type": "video",
-            "text": "When the Golem is sleeping, you can rotate it by SNEAK + RIGHT CLICKING it."
+            "text": "Khi Golem đang ngủ, bạn có thể xoay nó bằng cách SNEAK + BẤM CHUỘT PHẢI lên nó."
         },
         {
             "type": "video",
-            "text": "This video is a tutorial for mobile UI."
+            "text": "Video trên hướng dẫn cho giao diện người dùng trên điện thoại di động."
         }
     ]
 }

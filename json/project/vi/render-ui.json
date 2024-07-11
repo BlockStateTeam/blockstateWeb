@@ -1,29 +1,29 @@
 {
     "version": "normal",
-    "title": "Project: Wind Charge Demo",
+    "title": "Dự án: Render UI",
     "downloadLink": "https://blockstate.team/render-ui",
-    "prewarning": "Before reading about this project! This project is a Rendering Tool! Not an Add-On!",
-    "introduction": "You want to make a render of your model and you don't know how to do it?<br><br>Well, we have the solution for you! Introducing the Render UI!",
+    "prewarning": "Trước khi đọc về dự án này! Dự án này là một Công cụ Rendering! Không phải là một Add-On!",
+    "introduction": "Bạn muốn tạo ra hình ảnh render của mô hình của bạn nhưng không biết làm thế nào?<br><br>Chúng tôi có giải pháp dành cho bạn! Giới thiệu Render UI!",
     "content": [
         {
             "type": "img",
-            "text": "Let's get into how this rendering tool works! And what can it do!"
+            "text": "Hãy bắt đầu với cách thức hoạt động của công cụ rendering này và những gì nó có thể làm được!"
         },
         {
             "type": "img",
-            "text": "Show/Hide GUI button is very much self-explanatory, it allows you to expand the render port on small screen devices!"
+            "text": "Nút Hiển thị/Ẩn GUI rất dễ hiểu, nó cho phép bạn mở rộng cổng render trên các thiết bị màn hình nhỏ!"
         },
         {
             "type": "img",
-            "text": "Upload GLTF button will promt you with an upload window, you can upload your GLTF file there!"
+            "text": "Nút Tải lên GLTF sẽ mở một cửa sổ tải lên, bạn có thể tải lên tệp GLTF của mình từ đó!"
         },
         {
             "type": "img",
-            "text": "The Environment button allows you to change the background of the render port! Pretty handy if you want to make a render with a specific scene!"
+            "text": "Nút Môi trường cho phép bạn thay đổi nền của cổng render! Rất tiện lợi nếu bạn muốn tạo một hình ảnh render với một cảnh cụ thể!"
         },
         {
             "type": "img",
-            "text": "Scaling factor and export work together! The scaling factor allows you to scale your final rendered image by a factor of the input (Default scaling is set to 1)<br><br>While the export button allows you to export your render as a PNG file!"
+            "text": "Yếu tố tỉ lệ và nút Xuất ảnh hoạt động cùng nhau! Yếu tố tỉ lệ cho phép bạn điều chỉnh tỉ lệ của hình ảnh render cuối cùng theo yếu tố đầu vào (Tỉ lệ mặc định được đặt là 1)<br><br>Trong khi đó, nút Xuất ảnh cho phép bạn xuất hình ảnh render của mình dưới dạng tệp PNG!"
         }
     ]
 }

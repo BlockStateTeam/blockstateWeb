@@ -1,39 +1,39 @@
 {
     "version": "normal",
-    "title": "Project: Redstone Engine Expansion",
-    "introduction": "Redstone Engine Expansion is a project that aims to expand the capabilities of the Redstone Engine block from the Crafty Plane Add-On! You don't need to download the Crafty Plane Add-On to use this pack. This is a standalone Add-On that adds brand-new features. But feel free to check out the Crafty Plane Add-On as well!",
+    "title": "Dự án: Redstone Engine Expansion",
+    "introduction": "Redstone Engine Expansion là một dự án nhằm mở rộng khả năng của khối Redstone Engine từ Add-On Crafty Plane! Bạn không cần phải tải xuống Add-On Crafty Plane để sử dụng pack này. Đây là một Add-On độc lập mà thêm vào các tính năng hoàn toàn mới. Tuy nhiên, hãy thoải mái kiểm tra Add-On Crafty Plane nếu bạn muốn!",
     "content": [
         {
             "type": "img",
-            "text": "Here's a reminder of how to craft the Redstone Engine block."
+            "text": "Đây là cách chế tạo khối Redstone Engine"
         },
         {
             "type": "img",
-            "text": "The first feature is the Redstone Launcher. This structure requires 8 redstone block, 1 dispenser in the middle, and a barrel made out of iron bars. Finally, the Redstone Engine block is placed on the middle side of the redstone block with a button on top of it"
+            "text": "Tính năng đầu tiên là Redstone Launcher. Cấu trúc này yêu cầu 8 khối đá redstone, 1 máy phóng ở giữa và một thùng làm từ thanh sắt. Cuối cùng, khối Redstone Engine được đặt ở phía giữa khối đá redstone với một nút ở trên đỉnh nó"
         },
         {
             "type": "video",
-            "text": "To use it, you need one Redstone block as fuel, stand on the Redstone Engine block, and click the button on the Redstone Engine block. Then choose your target and sneak to launch!"
+            "text": "Để sử dụng nó, bạn cần một khối Redstone làm nhiên liệu, đứng trên khối Redstone Engine và nhấp vào nút trên khối Redstone Engine. Sau đó chọn mục tiêu của bạn và Sneak để phóng!"
         },
         {
             "type": "video",
-            "text": "Here's another angle of the Redstone Launcher in action."
+            "text": "Đây là một góc quay khác của Redstone Launcher trong lúc hoạt động."
         },
         {
             "type": "img",
-            "text": "The second feature is the Redstone Air Defense. This structure requires 1 Redstone block , 1 Redstone Engine with a button on its side, and a dispenser on top"
+            "text": "Tính năng thứ hai là Redstone Air Defense. Cấu trúc này yêu cầu 1 khối Redstone, 1 Redstone Engine với một nút ở mặt bên của nó, và một máy phóng ở phía trên."
         },
         {
             "type": "video",
-            "text": "Simply click the button to activate the Redstone Air Defense. It generates a dome that protects you from projectiles from the Redstone Launcher. Note that any explosion will be negated if inside the dome."
+            "text": "Đơn giản chỉ cần nhấp vào nút để kích hoạt Redstone Air Defense. Nó sẽ tạo ra một vòm bảo vệ bạn khỏi các đạn pháo từ Redstone Launcher. Lưu ý rằng bất kỳ vụ nổ nào cũng sẽ bị loại bỏ nếu ở bên trong vòm."
         },
         {
             "type": "video",
-            "text": "Here's a video of the Redstone Air Defense in action."
+            "text": "Đây là video về cách Redstone Air Defense hoạt động."
         },
         {
             "type": "video",
-            "text": "The final feature is the Redstone Nuke. This structure requires 9 Iron blocks, 8 Redstone blocks and 1 Redstone Engine block. By placing the Redstone Engine block into the middle, you will immediately activate the Redstone Nuke."
+            "text": "Đặc điểm cuối cùng là Redstone Nuke. Cấu trúc này yêu cầu 9 khối sắt, 8 khối đá redstone và 1 khối Redstone Engine. Bằng cách đặt khối Redstone Engine vào giữa, bạn sẽ ngay lập tức kích hoạt Redstone Nuke."
         }
     ]
 }

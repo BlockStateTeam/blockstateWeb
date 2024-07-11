@@ -1,24 +1,24 @@
 {
     "version": "normal",
-    "title": "Project: Wind Charge Demo",
+    "title": "DỰ ÁN: DEMO CẦU GIÓ",
     "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/g3rnomni2egos699e0w6t/Wind-Charge-Addon.mcaddon?rlkey=mhuw6vzlly26uw43rdw7rkugt&dl=0",
-    "introduction": "The new Breeze mob is a new mob that will be added in the 1.21 update, and comes with a new item called Wind Charge. This item allows the Breeze to charge up and release a powerful gust of wind that can push entities and items away.<br><br>Right now, this feature is only available in the beta version of Minecraft Java, and we have created a demo to showcase the Wind Charge in action.",
+    "introduction": "Mob Breeze mới là một mob sẽ được thêm vào trong bản cập nhật 1.21, và đi kèm với một vật phẩm mới gọi là Wind Charge. Vật phẩm này cho phép Breeze tích tụ năng lượng và giải phóng một luồng gió mạnh có thể đẩy các thực thể và vật phẩm ra xa.<br><br>Hiện tại, tính năng này chỉ có sẵn trong phiên bản beta của Minecraft Java, và chúng tôi đã tạo ra một bản demo để thể hiện tính năng của Wind Charge.",
     "content": [
         {
             "type": "img",
-            "text": "Since this is just a demo, there's no method to obtain this item in Survival mode. However, you can use the /give command or switch to Creative mode to obtain it."
+            "text": "Vì đây chỉ là một bản demo, nên không có cách nào để có được vật phẩm này trong chế độ Survival. Tuy nhiên, bạn có thể sử dụng lệnh /give hoặc chuyển sang chế độ Sáng tạo để có được nó."
         },
         {
             "type": "video",
-            "text": "The Wind Charge release a gust of wind that can push and damage entities"
+            "text": "Wind Charge giải phóng một luồng gió có thể đẩy và gây sát thương cho các thực thể."
         },
         {
             "type": "video",
-            "text": "It can also give you a powerful boost!"
+            "text": "Nó cũng có thể cung cấp cho bạn một cú hích mạnh mẽ!"
         },
         {
             "type": "video",
-            "text": "You can use it to get across large gaps or to reach high places."
+            "text": "Bạn có thể sử dụng nó để vượt qua những vứt nứt lớn hoặc để đến những nơi cao."
         }
     ]
 }

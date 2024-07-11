@@ -1,25 +1,25 @@
 {
     "version": "normal",
-    "title": "Project: Wind Charge Demo",
+    "title": "Dự án: Squid Remodeled",
     "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/zfpqgcrj88jrlayr4weoq/Squid-Remodeled-Addon.mcaddon?rlkey=uiq1oe7usgg9wsh016q99e312&dl=0",
-    "introduction": "Have you ever thought that the squid in Minecraft is a bit boring? Well, we have the solution for you! Remodeled Squid - by <a href=\"https://discordapp.com/users/462343353678430209\" target=\"_blank\">FishCat</a>! have remodeled the squid to make it look more interesting and fun!",
+    "introduction": "Bạn đã từng nghĩ rằng con mực trong Minecraft hơi nhàm chán không? Chúng tôi có giải pháp dành cho bạn! Remodeled Squid - do <a href=\"https://discordapp.com/users/462343353678430209\" target=\"_blank\">FishCat</a> thực hiện! đã thay đổi mẫu mực để làm cho nó trông thú vị và vui nhộn hơn!",
     "content": [
         {
             "type": "img",
-            "text": "Vanilla glow squid"
+            "text": "Mực phát sáng Mặc định"
         },
         {
             "type": "img",
-            "text": "Remodeled glow squid!"
+            "text": "Mực phát sáng bản mới!"
         },
         {
             "type": "img",
-            "text": "Default squid look"
+            "text": "Mực bản gốc"
         },
         {
             "type": "img",
-            "text": "Brand new squid model!"
+            "text": "Mực phiên bản mới!"
         }
     ],
-    "credit": "Thank you to FishCat for creating this amazing resource pack! <br> Please check out his amazing work: <br><br><a href=\"https://www.planetminecraft.com/member/fishcat/\" target=\"_blank\">> Planet Minecraft</a><br><br> <a href=\"https://discordapp.com/users/462343353678430209\" target=\"_blank\">> Discord</a>"
+    "credit": "Cảm ơn FishCat đã tạo ra bộ resource pack tuyệt vời này!<br> Nếu có thể, hãy ủng hộ các sản phẩm tuyệt vời của anh ấy:<br><br><a href=\"https://www.planetminecraft.com/member/fishcat/\" target=\"_blank\">Planet Minecraft</a><br><br><a href=\"https://discordapp.com/users/462343353678430209\" target=\"_blank\">Discord</a>"
 }
