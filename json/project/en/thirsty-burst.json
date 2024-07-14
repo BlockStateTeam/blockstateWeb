@@ -1,0 +1,28 @@
+{
+    "version": "normal",
+    "title": "Project: Thirsty Burst",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/bdsurn3xbqbfcogcod9ry/Tuff-Golem-Addon.mcaddon?rlkey=m1eurtr2tn3cw9qkzc7imy407&dl=0",
+    "introduction": "Do you want your Minecraft gameplay more challenging? Do you want to have a thirst bar in your survival world? If so, this Add-On is perfect for you! Introducing the Thirsty Burst Add-On! This Add-On adds a thirst bar to your survival world, making your gameplay more challenging and realistic! You'll need to drink water to keep your thirst bar full, or you'll start losing health! Let's dive into how this Add-On works!",
+    "content": [
+        {
+            "type": "img",
+            "text": "You will have a thirst bar at the top of the hunger bar. The thirst bar will decrease over time, and if it's empty, you'll start losing health and getting dizzy!"
+        },
+        {
+            "type": "video",
+            "text": "To refill your thirst bar, you'll need to drink water. You can drink water by right-clicking on a water source block with an empty hand"
+        },
+        {
+            "type": "video",
+            "text": "You can give any item to the Golem for it to display, and to take back the item, you would need an empty hand (slot) to execute the take back action.<br><br> Also, the Tuff Golem has 2 modes: Awake and Sleep. When it's awake, it can randomly move around. When it's asleep, it'll stay still. To change its mode, simply SNEAK + RIGHT CLICK it!"
+        },
+        {
+            "type": "video",
+            "text": "When the Golem is sleeping, you can rotate it by SNEAK + RIGHT CLICKING it."
+        },
+        {
+            "type": "video",
+            "text": "This video is a tutorial for mobile UI."
+        }
+    ]
+}
