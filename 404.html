@@ -540,6 +540,34 @@
             .buttonWrapper {
                 height: 7.5vh;
             }
+            #coffee > div {
+                width: 90vw;
+                height: 85vh;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            #coffee > div > img {
+                width: 90vw;
+                height: 40vh;
+                object-fit: cover;
+            }
+            #coffee > div > div {
+                width: 90vw;
+                height: 45vh;
+                font-size: 2.75vh;
+            }
+            #closecoffee {
+                top: 9vh;
+                right: 9vw;
+                width: 7.5vh;
+                height: 7.5vh;
+                fill: #150857;
+            }
         }
     </style>
 </head>
@@ -936,6 +964,7 @@
                 alert('Please agree to the Terms of Service (TOS) before downloading.');
                 return;
             }
+            /*
             fetch('https://api.ipify.org/')
             .then(r => r.ok ? r.text() : Promise.reject('Network response was not ok'))
             .catch(e => ('undefined', console.error('Error:', e)))
@@ -949,6 +978,7 @@
             })
             .then(() => console.log("Form submitted successfully"))
             .catch(error => console.error("Error:", error));
+            */
             document.getElementById('coffee').style.display = 'flex';
             document.getElementById('closecoffee').addEventListener('click', () => {
                 console.log(projectData);
