@@ -637,6 +637,7 @@
         </div>
     </div>
     <script>
+        let projectData, workingTV, headDecoration, musicExtension;
         const supportedLanguages = ['en', 'vi'];
         let currentLanguage;
         const langCookie = document.cookie.split(';').map(cookie => cookie.trim()).find(cookie => cookie.startsWith('language='));
@@ -706,7 +707,6 @@
                 video.currentTime = 0;
             });
         });
-        let projectData, workingTV, headDecoration, musicExtension;
         function displayProjectPage(title, projectName, previousLanguage) {
             window.history.pushState({}, document.title, window.location.href);
             window.history.replaceState({}, title, `/projects/${projectName}`);
@@ -931,6 +931,7 @@
         }
         });
         downloadButton.addEventListener('click', () => {
+            console.log(projectData);
             if (!tosCheckbox.checked) {
                 alert('Please agree to the Terms of Service (TOS) before downloading.');
                 return;
@@ -948,9 +949,9 @@
             })
             .then(() => console.log("Form submitted successfully"))
             .catch(error => console.error("Error:", error));
-           console.log(projectData.downloadLink);
-           document.getElementById('coffee').style.display = 'flex';
-           document.getElementById('closecoffee').addEventListener('click', () => {
+            document.getElementById('coffee').style.display = 'flex';
+            document.getElementById('closecoffee').addEventListener('click', () => {
+                console.log(projectData);
                 document.getElementById('coffee').style.display = 'none';
                 if (projectData.downloadLink === 'module-working-tv') {
                     workingTV.initializeDownload();
@@ -958,8 +959,10 @@
                     headDecoration.initializeDownload();
                 } else if (projectData.downloadLink === 'module-music-extension') {
                     musicExtension.initializeDownload();
-                } else {
+                } else if (typeof projectData.downloadLink !== 'undefined') {
                     window.location.href = projectData.downloadLink;
+                } else {
+                    console.error("Something gone wrong")
                 }
             });
         });
