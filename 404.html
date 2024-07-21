@@ -366,6 +366,52 @@
             background-color: black;
             opacity: 0.75;
         }
+        #coffee {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        #coffee > div {
+            width: 70vw;
+            height: 70vh;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            flex-direction: row;
+            overflow: hidden;
+        }
+        #coffee > div > img {
+            width: 35vw;
+            height: 70vh;
+            object-fit: cover;
+        }
+        #coffee > div > div {
+            width: 35vw;
+            height: 70vh;
+            padding: 2.5vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 1.75vw;
+            font-family: 'Minecraft';
+        }
+        #closecoffee {
+            position: absolute;
+            top: 18vh;
+            right: 17vw;
+            width: 3vw;
+            height: 3vw;
+            fill: #4229B9;
+        }
         @media (max-aspect-ratio: 3/4) {
             #languageDialog form > button {
                 font-size: 2.5vh;
@@ -533,6 +579,19 @@
 			<a href="/project" class="active">Project</a>
 		</div>
 	</div>
+    <div id="coffee">
+        <div>
+            <img src="/assets/media/coffee.webp">
+            <div>
+                <h2 style="margin: 0">Support Us?</h2>
+                <br>
+                We're able to make free Minecraft Add-Ons thanks to your generous donation! If you like our work, please consider supporting us by buying us a coffee!
+                <br>
+                <button class="genericButton" style="margin: 2vw" onclick="window.open('https://buymeacoffee.com/blues8sbit', '_blank')">Support Now!</button>
+            </div>
+        </div>
+        <svg id="closecoffee" viewBox="0 0 512 512"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
+    </div>
     <div id="projectPage">
         <div id="projectPageContent">
             <h2>Our official released projects!</h2>
@@ -889,15 +948,20 @@
             })
             .then(() => console.log("Form submitted successfully"))
             .catch(error => console.error("Error:", error));
-            if (projectData.downloadLink === 'module-working-tv') {
-                workingTV.initializeDownload();
-            } else if (projectData.downloadLink === 'module-head-decoration') {
-                headDecoration.initializeDownload();
-            } else if (projectData.downloadLink === 'module-music-extension') {
-                musicExtension.initializeDownload();
-            } else {
-                window.location.href = projectData.downloadLink;
-            }
+           console.log(projectData.downloadLink);
+           document.getElementById('coffee').style.display = 'flex';
+           document.getElementById('closecoffee').addEventListener('click', () => {
+                document.getElementById('coffee').style.display = 'none';
+                if (projectData.downloadLink === 'module-working-tv') {
+                    workingTV.initializeDownload();
+                } else if (projectData.downloadLink === 'module-head-decoration') {
+                    headDecoration.initializeDownload();
+                } else if (projectData.downloadLink === 'module-music-extension') {
+                    musicExtension.initializeDownload();
+                } else {
+                    window.location.href = projectData.downloadLink;
+                }
+            });
         });
     </script>
 </body>
