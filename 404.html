@@ -838,9 +838,10 @@
                         `;
                         for (let i = 0; i < data.content.length; i++) {
                             let elementContent = data.content[i];
+                            let alt = elementContent.alt || `An image from the ${projectName.replace('-', '')} project`;
                             if (elementContent.type === 'img') {
                                 html += `
-                                <img src="/assets/media/${projectName}/${i+1}.webp">
+                                <img src="/assets/media/${projectName}/${i+1}.webp" alt="${alt}">
                                 <div class="section">
                                     ${elementContent.text}
                                 </div>`
