@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blockstate.team/sitemap.xml
