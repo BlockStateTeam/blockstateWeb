@@ -55,7 +55,14 @@
             }
 
             try {
-                const response = await fetch(`https://file.io/${key}`);
+                const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+                const targetUrl = `https://file.io/${key}`;
+                const response = await fetch(proxyUrl + targetUrl, {
+                    headers: {
+                        'x-requested-with': 'XMLHttpRequest'
+                    }
+                });
+
                 if (!response.ok) {
                     throw new Error('File not found or server error');
                 }
