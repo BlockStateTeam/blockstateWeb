@@ -47,6 +47,11 @@
         {
             "type": "video",
             "text": "The final two blocks are the drawer and the Furniture Design Table itself! The drawer can store items in it! First, interact with it to open the drawer. Then, you open it and put items in! For the Furniture Design Table, by placing any furniture block on top of it, it will decompose the block into its original material!"
+        },
+        {
+            "type": "youtube",
+            "iframe": "<iframe src=\"https://www.youtube.com/embed/8j8KZ7779ns\" title=\"Furniture Venture Add-On for Minecraft! | Minecraft Bedrock 1.21+\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+            "text": "Here's a video from Mooshrooom! Showcasing how to use the Add-On!"
         }
     ]
 }
