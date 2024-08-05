@@ -1,0 +1,52 @@
+{
+    "version": "normal",
+    "title": "Project: Furniture Venture",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/b0zsofiwzihowp8mq1wqp/Furniture-Venture-Addon.mcaddon?rlkey=mysy0ofrdr5ohiod5g1ubbb00&st=9c2owau6&dl=0",
+    "introduction": "Have you ever felt that your house is too boring? Or that Minecraft has more blocks to decorate your house? Well, you're in luck! This addon introduces a new way to decorate with new furniture blocks! You can craft them, place them, and even interact with them! Let's get started!",
+    "content": [
+        {
+            "type": "img",
+            "text": "To begin, you will need to craft the Furniture Design Table. You can craft them with 7 planks of any kind using the crafting table. Here are the recipes for the block!"
+        },
+        {
+            "type": "img",
+            "text": "Here's the Furniture Design Table! By interact with the block, you can access the Design GUI. You can look up all the recipes for the new furniture blocks here!"
+        },
+        {
+            "type": "img",
+            "text": "There're so much stuff! You can cycle through the list by clicking the arrows on the side."
+        },
+        {
+            "type": "video",
+            "text": "Let's go through some blocks, shall we? Here's the curtain! You can interact with it to open and close. You can also dye it using any dye of your choice! Note that all color furniture blocks are dyeable not just the curtain!"
+        },
+        {
+            "type": "video",
+            "text": "The lamp could be turned on and off by interacting with it. You can also place it on the wall"
+        },
+        {
+            "type": "video",
+            "text": "The chair is a block that you can sit on! It looks great with the table in your dining room! Terracotta Teapot also looks great with the table!"
+        },
+        {
+            "type": "video",
+            "text": "The piano is a block that you can play! You can play it by interacting with it. You can also play a collection of songs by interacting with a book renamed to that song. Here's the list of all possible song it can play: Christmas, Fur Elise, Symphony, Faded, Glimpse of Us, and Golden Hour."
+        },
+        {
+            "type": "video",
+            "text": "The awning can connect to each other to form bigger awning! It can also be dyed to any color of your choice!"
+        },
+        {
+            "type": "video",
+            "text": "The Brick Oven is the most unique block in this addon! You can cook food in it! But not only food, you can also use it to smoke Rotten Flesh into Leather! You can also turn cactus into green dye, sea pickle into lime dye"
+        },
+        {
+            "type": "video",
+            "text": "The item sign by interacting with it using an axe of any kind, you can change the item symbol it displays."
+        },
+        {
+            "type": "video",
+            "text": "The final two blocks are the drawer and the Furniture Design Table itself! The drawer can store items in it! First, interact with it to open the drawer. Then, you open it and put items in! For the Furniture Design Table, by placing any furniture block on top of it, it will decompose the block into its original material!"
+        }
+    ]
+}
