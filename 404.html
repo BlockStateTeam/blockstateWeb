@@ -720,7 +720,7 @@
                     <div id="otherComments"></div>
                     <div id="commentForm">
                         <textarea id="comment" rows="4" placeholder="Write your comment here..."></textarea>
-                        <button onclick="triggerCommentButton()" class="genericButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
+                        <button onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
                     </div>
                 </div>
             </div> 
@@ -775,10 +775,9 @@
                     method: 'GET',
                     credentials: 'include',
                 });
-                console.log('Response:', response);
                 if (response.ok) {
                     const data = await response.json();
-                    console.log('Logged in as:', data.userID);
+                    console.log('Data:', data);
                 }
             } catch (error) {
                 console.error('Error checking login status:', error);
@@ -1008,7 +1007,7 @@
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error.message);
-                    reloadPage('en') //fall back to English if the requested language is not available
+                    reloadPage('en')
                 });
                 getProjectList().then(projectList => {
                     projectList.forEach((project, index) => {
