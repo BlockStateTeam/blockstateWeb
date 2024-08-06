@@ -28,6 +28,12 @@
                 video.currentTime = 0;
             });
         });
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('isComment') === 'true') {
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        });
 	</script>
     <style>
         @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); } 
