@@ -412,37 +412,6 @@
             height: 3vw;
             fill: #4229B9;
         }
-        .comment-section {
-            width: 50%;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .comment-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .comment-form button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #28a745;
-            color: white;
-            cursor: pointer;
-        }
-        .comment {
-            margin-bottom: 20px;
-        }
-        .comment .username {
-            font-weight: bold;
-        }
-        .comment .content {
-            margin-top: 5px;
-        }
         @media (max-aspect-ratio: 3/4) {
             #languageDialog form > button {
                 font-size: 2.5vh;
@@ -667,7 +636,16 @@
         <div id="projectContent">
         </div>
         <div id="belowSection">
-            
+            <h2>COMMENT SECTION</h2>
+            <div class="section">
+                <div class="comment-section">
+                    <div class="comment-form">
+                        <textarea id="comment" rows="4" placeholder="Write your comment here..."></textarea>
+                        <button onclick="addComment()">Post Comment</button>
+                    </div>
+                    <div id="comments"></div>
+                </div>
+            </div>
             <h2>HELP SECTION</h2>
             <div class="section">
                 If you need any help, feel free to join our Discord!
@@ -997,7 +975,6 @@
                 alert('Please agree to the Terms of Service (TOS) before downloading.');
                 return;
             }
-            /*
             fetch('https://api.ipify.org/')
             .then(r => r.ok ? r.text() : Promise.reject('Network response was not ok'))
             .catch(e => ('undefined', console.error('Error:', e)))
@@ -1011,7 +988,6 @@
             })
             .then(() => console.log("Form submitted successfully"))
             .catch(error => console.error("Error:", error));
-            */
             document.getElementById('coffee').style.display = 'flex';
             document.getElementById('closecoffee').addEventListener('click', () => {
                 console.log(projectData);
