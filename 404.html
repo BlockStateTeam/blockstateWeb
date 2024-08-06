@@ -760,6 +760,22 @@
             console.log('Triggering comment button');
 
         }
+        async function checkLogin() {
+            try {
+                const response = await fetch('/checkLogin', {
+                    method: 'GET',
+                    credentials: 'include',
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Logged in as:', data.userID);
+                } else {
+                    console.log('Not logged in');
+                }
+            } catch (error) {
+                console.error('Error checking login status:', error);
+            }
+        }
         async function getProjectList() {
             try {
                 const response = await fetch('/projectList.json');
@@ -1011,6 +1027,7 @@
                                         }
                                     });
                                     document.getElementById('otherComments').appendChild(commentDiv);
+                                    checkLogin();
                                 } else {
                                     console.warn('Data is not matched');
                                 }
