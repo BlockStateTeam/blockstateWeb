@@ -719,7 +719,7 @@
                 <div class="section" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
                     <div id="otherComments"></div>
                     <div id="commentForm">
-                        <textarea id="comment" rows="4" placeholder="Write your comment here..."></textarea>
+                        <textarea id="commentTextArea" rows="4" placeholder="Write your comment here..."></textarea>
                         <button onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
                     </div>
                 </div>
@@ -778,6 +778,9 @@
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Data:', data);
+                    document.getElementById("commentSectionView").style.display = 'block'
+                    document.getElementById('loginButton').innerText = 'Comment';
+                    document.getElementById('commentTextArea').placeholder = 'Comment as ' + data.global_name;
                 }
             } catch (error) {
                 console.error('Error checking login status:', error);
