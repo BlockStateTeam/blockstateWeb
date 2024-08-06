@@ -730,6 +730,7 @@
         </div>
     </div>
     <script>
+        console.warn('Version 1.0.0');
         let projectData, workingTV, headDecoration, musicExtension;
         const supportedLanguages = ['en', 'vi'];
         let currentLanguage;
@@ -772,6 +773,7 @@
                     console.log('Logged in as:', data.userID);
                 } else {
                     console.log('Not logged in');
+                    console.log('Response:', response);
                 }
             } catch (error) {
                 console.error('Error checking login status:', error);
