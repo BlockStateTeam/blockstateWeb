@@ -740,7 +740,6 @@
         } else {
             currentLanguage = supportedLanguages.includes(navigator.language.substring(0, 2)) ? navigator.language.substring(0, 2) : 'en';
         }
-        console.log('Current language: ', currentLanguage);
         document.getElementById('languageSwitcher').addEventListener('click', () => {
             document.getElementById('languageDialog').showModal();
             console.log('Language switcher has been clicked');
@@ -757,6 +756,9 @@
                 console.log('Language has not been changed, staying as ', currentLanguage);
             }
         });
+        function removeSpecialChars(str) {
+            return str.replace(/[<>\/]/g, '');
+        }
         function triggerCommentButton() {
             console.log('Triggering comment button');
 
@@ -1021,7 +1023,7 @@
                                             commentDiv.innerHTML += `
                                             <div class="avatarHolder">
                                                 <a href="${userDiscordLink}"><img src="data:image/png;base64,${commentDataArray[0]}"></a>
-                                                <div><div class="usernamDisplay"><a href="${userDiscordLink}">${commentDataArray[1]}</a></div>${comment.comment}</div>
+                                                <div><div class="usernamDisplay"><a href="${userDiscordLink}">${commentDataArray[1]}</a></div>${removeSpecialChars(comment.comment)}</div>
                                             </div>
                                             `;
                                         }
