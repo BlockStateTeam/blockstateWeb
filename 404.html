@@ -32,7 +32,6 @@
     <style>
         @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); } 
         @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); } 
-        @font-face { font-family: MinecraftTest; src: url('/assets/fonts/MinecraftTest.otf'); } 
         @font-face { font-family: MinecraftFive; src: url('/assets/fonts/MinecraftFive-Regular.woff2'); }
 
         body::-webkit-scrollbar {
@@ -639,16 +638,8 @@
             #commentSectionView {
                 display: none;
             }
-            .comment-section {
-                width: 50%;
-                margin: 0 auto;
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-            }
-            .commentForm textarea {
+            #commentForm textarea {
                 width: 100%;
-                padding: 10px;
                 border: 1px solid #ccc;
                 border-radius: 5px;
                 margin-bottom: 10px;
@@ -656,33 +647,50 @@
                 font-family: 'Minecraft';
                 font-size: 1.5vw;
             }
-            .commentForm {
+            #commentForm {
                 width: 80vw;
                 display: flex;
                 flex-direction: column;
                 align-items: right;
             }
-            .comment {
-                margin-bottom: 20px;
+            .commentBlock {
+                user-select: none;
+                width: 80vw;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 20px;
+                padding-top: 0;
+                margin-bottom: 10px;
+                text-align: left;
+                margin-bottom: 10vh;
+                background-color: #FCFAFA;
             }
-            .comment .username {
-                font-weight: bold;
+            .avatarHolder {
+                margin-top: 5vh;
+                height: fit-content;
+                display: flex;
             }
-            .comment .content {
-                margin-top: 5px;
+            .usernamDisplay {
+                font-family: 'Minecraft';
+                font-size: 1.8vw;
+                font-weight: bolder;
+            }
+            .usernamDisplay > a {
+                text-decoration: none !important;
+                color: black;
+            }
+            .avatarHolder > a > img {
+                top: 0;
+                height: 10vh;
+                width: 10vh;
+                border-radius: 5px;
+                margin-right: 12px;
             }
         </style>
         <div id="belowSection">
-            <div id="commentSectionView">
-                <h2>COMMENT SECTION</h2>
-                <div class="section" style="display: flex; align-items: center; justify-content: center;">
-                    <div id="otherComments"></div>
-                    <div class="commentForm">
-                        <textarea id="comment" rows="4" placeholder="Write your comment here..."></textarea>
-                        <button onclick="addComment()" class="genericButton" style="width: 25vw; font-size: 2.5vw;">Post Comment</button>
-                    </div>
-                </div>
-            </div> 
             <h2>HELP SECTION</h2>
             <div class="section">
                 If you need any help, feel free to join our Discord!
@@ -700,6 +708,16 @@
                 </label><br>
                 <button class="genericButton" id="genericButton" disabled>Download Now!</button>
             </div>
+            <div id="commentSectionView">
+                <h2>COMMENT SECTION</h2>
+                <div class="section" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                    <div id="otherComments"></div>
+                    <div id="commentForm">
+                        <textarea id="comment" rows="4" placeholder="Write your comment here..."></textarea>
+                        <button onclick="triggerCommentButton()" class="genericButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
+                    </div>
+                </div>
+            </div> 
             <div class="compiler">
                 <iframe src="/loading.html" style="width: 80vw; height: 95vh; background-color: white; border-radius: 2vw; z-index: 50;"></iframe>
             </div>
@@ -738,6 +756,21 @@
                 console.log('Language has not been changed, staying as ', currentLanguage);
             }
         });
+        function triggerCommentButton() {
+            console.log('Triggering comment button');
+
+        }
+        async function getProjectList() {
+            try {
+                const response = await fetch('/projectList.json');
+                if (!response.ok) throw new Error(`Failed to fetch data. Status: ${response.status}`);
+                const jsonData = await response.json();
+                return jsonData;
+            } catch (error) {
+                console.error('Error fetching project list:', error);
+                throw error;
+            }
+        }
         function showLoadingScreen() {
             const loadingScreen = document.getElementById("loadingScreen");
             loadingScreen.style.opacity = "0";
@@ -804,10 +837,8 @@
                 document.title = "Project";
                 const container = document.querySelector('.container');
                 container.innerHTML = '';
-                fetch('/projectList.json')
-                .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
-                .then(jsonData => {
-                    jsonData.forEach((project, index) => {
+                getProjectList().then(projectList => {
+                    projectList.forEach((project, index) => {
                         const div = document.createElement('div');
                         div.classList.add('box');
                         div.dataset.order = index + 1;
@@ -816,9 +847,9 @@
                         div.innerHTML = `<a onClick="displayProjectPage('${project.project}', '${project.formatName}', '${tryLanguage}')"><img src="${project.img}"></a>`;
                         container.appendChild(div);
                     });
-                
-                })
-                .catch(error => console.error('Error fetching data:', error.message));
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
                 document.getElementById('filter').addEventListener('change', function () {
                     const selectedValue = filter.value;
                     switch (selectedValue) {
@@ -955,6 +986,42 @@
                 .catch(error => {
                     console.error('Error fetching data:', error.message);
                     reloadPage('en') //fall back to English if the requested language is not available
+                });
+                getProjectList().then(projectList => {
+                    projectList.forEach((project, index) => {
+                        if (project.formatName === projectName) {
+                            const projectIndexComment = projectList.length - index - 1;
+                            fetch(`https://script.google.com/macros/s/AKfycbyqQ1PhEBBgumf9uIe6qbhv07YurxQUlwvxkHx3Duavth8-OJRuCyt-tI2E1HnF2_wA/exec?projectIndex=` + projectIndexComment)
+                            .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
+                            .then(jsonData => {
+                                if (jsonData.projectIndex === projectIndexComment) {
+                                    const commentDiv = document.createElement('div');
+                                    commentDiv.classList.add('commentBlock');
+                                    jsonData.data.forEach(comment => {
+                                        console.log(comment);
+                                        if (comment.userId.length > 0) {
+                                            let commentDataArray = comment.userId.split(';');
+                                            let userDiscordLink = "https://discordapp.com/users/" + commentDataArray[2];
+                                            commentDiv.innerHTML += `
+                                            <div class="avatarHolder">
+                                                <a href="${userDiscordLink}"><img src="data:image/png;base64,${commentDataArray[0]}"></a>
+                                                <div><div class="usernamDisplay"><a href="${userDiscordLink}">${commentDataArray[1]}</a></div>${comment.comment}</div>
+                                            </div>
+                                            `;
+                                        }
+                                    });
+                                    document.getElementById('otherComments').appendChild(commentDiv);
+                                } else {
+                                    console.warn('Data is not matched');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
+                    });
+                }).catch(error => {
+                    console.error('Error:', error);
                 });
             } else {
                 console.log(currentUrl, " is a 404 page");
