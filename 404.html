@@ -411,9 +411,99 @@
             height: 3vw;
             fill: #4229B9;
         }
+        #loginButton {
+            width: 25vw; 
+            font-size: 2.5vw;
+        }
+        #commentForm textarea {
+            width: 100%;
+            height: 15vh;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            font-family: 'Minecraft';
+            font-size: 1.5vw;
+        }
+        #commentForm {
+            width: 80vw;
+            display: flex;
+            flex-direction: column;
+            align-items: right;
+        }
+        .commentBlock {
+            user-select: none;
+            width: 80vw;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            padding-top: 0;
+            margin-bottom: 10px;
+            text-align: left;
+            margin-bottom: 10vh;
+            background-color: #FCFAFA;
+        }
+        .avatarHolder {
+            margin-top: 5vh;
+            height: fit-content;
+            display: flex;
+        }
+        .usernamDisplay {
+            font-family: 'Minecraft';
+            font-size: 1.8vw;
+            font-weight: bolder;
+        }
+        .usernamDisplay > a {
+            text-decoration: none !important;
+            color: black;
+        }
+        .avatarHolder > a > img {
+            top: 0;
+            height: 10vh;
+            width: 10vh;
+            border-radius: 5px;
+            margin-right: 12px;
+        }
+        #commentCustomArea {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+        #userAvatarImage {
+            width: 15vh;
+            height: 15vh;
+            border-radius: 5px;
+            margin-right: 12px;
+        }
+        #commentSectionView {
+            margin-bottom: 30vh;
+        }
         @media (max-aspect-ratio: 3/4) {
-            #commentSectionView {
-                display: none;
+            #commentForm textarea {
+                font-size: 2.6vh;
+                height: 40vh;
+            }
+            .avatarHolder > a > img {
+                height: 8vh;
+                width: 8vh;
+            }
+            .avatarHolder {
+                margin-top: 2.5vh;
+            }
+            #userAvatarImage {
+                width: 8vh;
+                height: 8vh;
+                margin-bottom: 2.5vh;
+            }
+            #commentCustomArea {
+                flex-direction: column-reverse;
+                align-items: flex-start !important;
+            }
+            #loginButton {
+                width: fit-content; 
+                font-size: 4.5vh;
             }
             #languageDialog form > button {
                 font-size: 2.5vh;
@@ -507,10 +597,6 @@
                 font-size: 8vw;
                 transition: 0.25s;
             }
-            .genericButton:hover {
-                background-color: #a800a8;
-                color: #fcf2ff;
-            }
             .section {
                 letter-spacing: -0.15vh;
                 line-height: 3.5vh;
@@ -549,7 +635,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: white;
                 flex-direction: column;
                 overflow: hidden;
             }
@@ -637,73 +722,6 @@
         </div>
         <div id="projectContent">
         </div>
-        <style>
-            #commentForm textarea {
-                width: 100%;
-                height: 15vh;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                resize: none;
-                font-family: 'Minecraft';
-                font-size: 1.5vw;
-            }
-            #commentForm {
-                width: 80vw;
-                display: flex;
-                flex-direction: column;
-                align-items: right;
-            }
-            .commentBlock {
-                user-select: none;
-                width: 80vw;
-                height: fit-content;
-                display: flex;
-                flex-direction: column;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 20px;
-                padding-top: 0;
-                margin-bottom: 10px;
-                text-align: left;
-                margin-bottom: 10vh;
-                background-color: #FCFAFA;
-            }
-            .avatarHolder {
-                margin-top: 5vh;
-                height: fit-content;
-                display: flex;
-            }
-            .usernamDisplay {
-                font-family: 'Minecraft';
-                font-size: 1.8vw;
-                font-weight: bolder;
-            }
-            .usernamDisplay > a {
-                text-decoration: none !important;
-                color: black;
-            }
-            .avatarHolder > a > img {
-                top: 0;
-                height: 10vh;
-                width: 10vh;
-                border-radius: 5px;
-                margin-right: 12px;
-            }
-            #commentCustomArea {
-                display: flex;
-                flex-direction: row-reverse;
-                align-items: center;
-            }
-            #userAvatarImage {
-                width: 15vh;
-                height: 15vh;
-                border-radius: 5px;
-                margin-right: 12px;
-            }
-            #commentSectionView {
-                margin-bottom: 30vh;
-            }
-        </style>
         <div id="belowSection">
             <h2>HELP SECTION</h2>
             <div class="section">
@@ -725,14 +743,25 @@
             <div id="commentSectionView">
                 <h2 id="comment-section">COMMENT SECTION</h2>
                 <div class="section" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                    <div id="otherComments"></div>
-                    <div id="commentForm">
-                        <div id="commentCustomArea">
-                            <textarea id="commentTextArea" rows="4" placeholder="Write your comment here..." readonly></textarea>
+                    <div id="otherComments"><div class="commentBlock">
+                        <div class="avatarHolder">
+                            <a href="https://discordapp.com/users/424820587551129600"><img class="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEGUlEQVR4nO3dPWgUQRjG8Xd27xKUSCJoYxBJIwp2NilMZ6GFjUIwEQKaSkEUW7HQJqYRLG2UIJhYpFW01cLWIki0MAgaSZUPxfP2Y2QjpJvZ4zYvc5vn+bWT3bl4/3OZvcucGZ9rWSFYUegHQGExAHAMABwDAMcAwDEAcAwAHAMAxwDAMQBwDAAcAwDHAMAxAHAMABwDAMcAwDEAcAwAHAMAxwDAMQBwDABcQ3uCx2c3pKmY2cChw2KM0ZsgoHZqZfplW3UO9QCKJ78v1vvbk/7G3nzy/9P/3XgJAMcAwDEAcAwAHAMAxwDAMQBwDAAcAwDHAMAxAHAMABwDAMcAwKm/HTw5MSk2/at2/qHBAe+bpsvfvqvNrc00+uX47feqc6gHkKap2DRVO39Wcu4kSdTm1hbZWH8O9RmopzEAcAwAHAMAxwDAMQBw6svAldVVyZOW2vnX1vernTu0PG3J0uxp53jU3Ccn71S7T6AegLa9/m0XNs+6GusULwHgGAA4BgCOAYBjAOAYALjaLwOrmp88V/ITen+ineS5TC28UTt/J+ADCLm5RC/sbMBLADgGAI4BgGMA4BgAOAYALvgy8NXMdWk2uv/488X7zyTL3W8KF+v8Xt1HsBlHsnDlvHO8nWUytfBW9THwfwBwDAAcAwDHAMAxAHAMAFzwZWBVxRLPu8rr0SVgZ4yI8bxGfWMdqn0Ai49u6U6wvlHt+KHBrg9t2FhOjcxWm78ELwHgGAA4BgCOAYBjAOAYALjgy8AszyXK3Wv1OKpxozW4BxE8gAt3n3jHXz+8IY04YAQV1vF1UOOXF+0GBgCOAYBjAOAYADgGAE59GWjiphjfTldZ7j0+LdsIq+JGWY2ybx/P/Y9PSu5TpKl/HzPjOT6z+q9PMz7XCrrT2ucHz8WWPstuP482K83/Ye6Ee9Ba2ZpfdI8bIwcmLjmHiyf/zPSyczyKYxm7drnjx6qBlwBwDAAcAwDHAMAxAHAMAJz6fYAqS7zt40uW6aaDn/Ee7/1svZXEuxY33uONsf6twIxInvn/fYqloib1AL7MvBCbdB/B2nDT+wT3DVd7v/7YyKhzLLdWxpZ+OMfjyMhXz/FJmkvfEffxxV73754uOIejRixjV3XvE/ASAI4BgGMA4BgAOAYAjgGAC/6x8Cpr+B0VzmF93ztmy9bxvf+5/zLBAyhb55eJDvZXCmBza8U5Vmw/uH1+19xR/QPgJQAcAwDHAMAxAHAMABwDABd8GRjan7b7c/+eXeh3WOv+Ie89hh4BH8DovU+Vjt/85b6PkGS9HwAvAeAYADgGAI4BgGMA4BgAuPovA7fX4YHelrVWfrfcH3lPa7AMrH0A+Xo73NzFfYSbH4PNvxt4CQDHAMAxAHAMABwDAMcAwDEAcP8A0LnIIhaBKIIAAAAASUVORK5CYII="></a>
+                            <div><div class="usernamDisplay"><a href="https://discordapp.com/users/424820587551129600">Blues</a></div>LMAO</div>
                         </div>
-                        <button onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
+                        
+                        <div class="avatarHolder">
+                            <a href="https://discordapp.com/users/424820587551129600"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEGUlEQVR4nO3dPWgUQRjG8Xd27xKUSCJoYxBJIwp2NilMZ6GFjUIwEQKaSkEUW7HQJqYRLG2UIJhYpFW01cLWIki0MAgaSZUPxfP2Y2QjpJvZ4zYvc5vn+bWT3bl4/3OZvcucGZ9rWSFYUegHQGExAHAMABwDAMcAwDEAcAwAHAMAxwDAMQBwDAAcAwDHAMAxAHAMABwDAMcAwDEAcAwAHAMAxwDAMQBwDABcQ3uCx2c3pKmY2cChw2KM0ZsgoHZqZfplW3UO9QCKJ78v1vvbk/7G3nzy/9P/3XgJAMcAwDEAcAwAHAMAxwDAMQBwDAAcAwDHAMAxAHAMABwDAMcAwKm/HTw5MSk2/at2/qHBAe+bpsvfvqvNrc00+uX47feqc6gHkKap2DRVO39Wcu4kSdTm1hbZWH8O9RmopzEAcAwAHAMAxwDAMQBw6svAldVVyZOW2vnX1vernTu0PG3J0uxp53jU3Ccn71S7T6AegLa9/m0XNs+6GusULwHgGAA4BgCOAYBjAOAYALjaLwOrmp88V/ITen+ineS5TC28UTt/J+ADCLm5RC/sbMBLADgGAI4BgGMA4BgAOAYALvgy8NXMdWk2uv/488X7zyTL3W8KF+v8Xt1HsBlHsnDlvHO8nWUytfBW9THwfwBwDAAcAwDHAMAxAHAMAFzwZWBVxRLPu8rr0SVgZ4yI8bxGfWMdqn0Ai49u6U6wvlHt+KHBrg9t2FhOjcxWm78ELwHgGAA4BgCOAYBjAOAYALjgy8AszyXK3Wv1OKpxozW4BxE8gAt3n3jHXz+8IY04YAQV1vF1UOOXF+0GBgCOAYBjAOAYADgGAE59GWjiphjfTldZ7j0+LdsIq+JGWY2ybx/P/Y9PSu5TpKl/HzPjOT6z+q9PMz7XCrrT2ucHz8WWPstuP482K83/Ye6Ee9Ba2ZpfdI8bIwcmLjmHiyf/zPSyczyKYxm7drnjx6qBlwBwDAAcAwDHAMAxAHAMAJz6fYAqS7zt40uW6aaDn/Ee7/1svZXEuxY33uONsf6twIxInvn/fYqloib1AL7MvBCbdB/B2nDT+wT3DVd7v/7YyKhzLLdWxpZ+OMfjyMhXz/FJmkvfEffxxV73754uOIejRixjV3XvE/ASAI4BgGMA4BgAOAYAjgGAC/6x8Cpr+B0VzmF93ztmy9bxvf+5/zLBAyhb55eJDvZXCmBza8U5Vmw/uH1+19xR/QPgJQAcAwDHAMAxAHAMABwDABd8GRjan7b7c/+eXeh3WOv+Ie89hh4BH8DovU+Vjt/85b6PkGS9HwAvAeAYADgGAI4BgGMA4BgAuPovA7fX4YHelrVWfrfcH3lPa7AMrH0A+Xo73NzFfYSbH4PNvxt4CQDHAMAxAHAMABwDAMcAwDEAcP8A0LnIIhaBKIIAAAAASUVORK5CYII="></a>
+                            <div><div class="usernamDisplay"><a href="https://discordapp.com/users/424820587551129600">Blues</a></div>TESING!!!
+                    HAHHAA</div>
+                        </div>
+                        </div></div>
+                    <div id="commentForm">
+                    <div id="commentCustomArea">
+                        <textarea id="commentTextArea" rows="4" placeholder="Comment as Blues"></textarea>
+                    <img id="userAvatarImage" src="https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png"></div>
+                    <button onclick="triggerCommentButton()" class="genericButton" id="loginButton">Post Comment</button>
                     </div>
-                </div>
+                    </div>
             </div> 
             <div class="compiler">
                 <iframe src="/loading.html" style="width: 80vw; height: 95vh; background-color: white; border-radius: 2vw; z-index: 50;"></iframe>
