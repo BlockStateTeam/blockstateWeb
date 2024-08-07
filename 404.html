@@ -412,6 +412,9 @@
             fill: #4229B9;
         }
         @media (max-aspect-ratio: 3/4) {
+            #commentSectionView {
+                display: none;
+            }
             #languageDialog form > button {
                 font-size: 2.5vh;
                 margin-left: 12vw;
@@ -635,9 +638,6 @@
         <div id="projectContent">
         </div>
         <style>
-            #commentSectionView {
-                display: none;
-            }
             #commentForm textarea {
                 width: 100%;
                 border: 1px solid #ccc;
@@ -731,7 +731,7 @@
     </div>
     <script>
         console.warn('Version 1.0.0');
-        let projectData, workingTV, headDecoration, musicExtension;
+        let projectData, workingTV, headDecoration, musicExtension, userLogInInfo, projectName;
         const supportedLanguages = ['en', 'vi'];
         let currentLanguage;
         const langCookie = document.cookie.split(';').map(cookie => cookie.trim()).find(cookie => cookie.startsWith('language='));
@@ -760,10 +760,16 @@
             return str.replace(/[<>\/]/g, '');
         }
         function triggerCommentButton() {
-            console.log('Triggering comment button');
-            document.getElementById('loginButton').disabled = true;
-            document.getElementById('loginButton').innerText = 'Loading...';
-
+            if (!userLogInInfo) {
+                window.location.href = 'https://api.blockstate.team?projectName=' + projectName;
+            } else {
+                if (document.getElementById('commentTextArea').value.length > 0) {
+                    document.getElementById('loginButton').disabled = true;
+                    document.getElementById('loginButton').innerText = 'Loading...';
+                } else {
+                    alert('Please write a comment before posting!');
+                }
+            }
         }
         async function checkLogin() {
             try {
@@ -774,13 +780,9 @@
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Data:', data);
-                    document.getElementById("commentSectionView").style.display = 'block'
                     document.getElementById('loginButton').innerText = 'Post Comment';
                     document.getElementById('commentTextArea').placeholder = 'Comment as ' + data.global_name;
-                    const urlParams = new URLSearchParams(window.location.search);
-                    if (urlParams.get('isComment') === 'true') {
-                        window.scrollTo(0, document.body.scrollHeight - 50);
-                    }
+                    userLogInInfo = data;
                 }
             } catch (error) {
                 console.error('Error checking login status:', error);
@@ -915,7 +917,7 @@
                 document.getElementById('projectContent').style.display = 'block';
                 document.getElementById('projectPageContent').style.display = 'none';
                 console.log(currentUrl, " is a project page")
-                let projectName = currentUrl.replace('/projects/', '');
+                projectName = currentUrl.replace('/projects/', '');
                 console.log('Loading project:', projectName, 'in', tryLanguage, 'language.');
                 fetch(`/json/project/${tryLanguage}/${projectName}.json`)
                 .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
