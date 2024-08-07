@@ -728,7 +728,7 @@
                     <div id="otherComments"></div>
                     <div id="commentForm">
                         <div id="commentCustomArea">
-                            <textarea id="commentTextArea" rows="4" placeholder="Write your comment here..."></textarea>
+                            <textarea id="commentTextArea" rows="4" placeholder="Write your comment here..." readonly></textarea>
                         </div>
                         <button onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
                     </div>
@@ -747,7 +747,7 @@
     </div>
     <script>
         console.warn('Version 1.0.0');
-        let projectData, workingTV, headDecoration, musicExtension, userLogInInfo, projectName;
+        let projectData, workingTV, headDecoration, musicExtension, userLogInInfo, projectName, projectIndexComment;
         const supportedLanguages = ['en', 'vi'];
         let currentLanguage;
         const langCookie = document.cookie.split(';').map(cookie => cookie.trim()).find(cookie => cookie.startsWith('language='));
@@ -767,7 +767,7 @@
                     'Content-Type': 'application/json'
                 },
                 credentials: 'include',
-                body: JSON.stringify({ content: content })
+                body: JSON.stringify({ projectIndex: projectIndexComment, content: content })
             });
 
             if (!response.ok) {
@@ -805,6 +805,13 @@
                     postComment(document.getElementById('commentTextArea').value)
                     .then(responseText => {
                         console.log("Comment posted successfully:", responseText);
+                        fetchAndDisplayComments()
+                        .then(() => {
+                            console.log('Comments fetched and displayed successfully');
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
                     })
                     .catch(error => {
                         console.error("Error posting comment:", error);
@@ -892,6 +899,42 @@
             window.history.pushState({}, document.title, window.location.href);
             window.history.replaceState({}, title, `/projects/${projectName}`);
             reloadPage(previousLanguage);
+        }
+        function fetchAndDisplayComments() {
+            return getProjectList().then(projectList => {
+                let projectIndexComment;
+                projectList.forEach((project, index) => {
+                    if (project.formatName === projectName) {
+                        projectIndexComment = projectList.length - index - 1;
+                    }
+                });
+                if (projectIndexComment === undefined) {
+                    throw new Error('Project not found');
+                }
+                return fetch(`https://script.google.com/macros/s/AKfycbyqQ1PhEBBgumf9uIe6qbhv07YurxQUlwvxkHx3Duavth8-OJRuCyt-tI2E1HnF2_wA/exec?projectIndex=${projectIndexComment}`)
+                .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
+                .then(jsonData => {
+                    if (jsonData.projectIndex !== projectIndexComment) {
+                        throw new Error('Data is not matched');
+                    }
+
+                    const commentDiv = document.createElement('div');
+                    commentDiv.classList.add('commentBlock');
+                    jsonData.data.forEach(comment => {
+                        if (comment.userId.length > 0) {
+                            let commentDataArray = comment.userId.split(';');
+                            let userDiscordLink = "https://discordapp.com/users/" + commentDataArray[2];
+                            commentDiv.innerHTML += `
+                            <div class="avatarHolder">
+                                <a href="${userDiscordLink}"><img src="data:image/png;base64,${commentDataArray[0]}"></a>
+                                <div><div class="usernamDisplay"><a href="${userDiscordLink}">${commentDataArray[1]}</a></div>${removeSpecialChars(comment.comment)}</div>
+                            </div>
+                            `;
+                        }
+                    });
+                    document.getElementById('otherComments').innerHTML = commentDiv;
+                });
+            });
         }
         window.addEventListener('popstate', () => {
             document.getElementById('projectContent').innerHTML = '';
@@ -1054,43 +1097,12 @@
                         };
                         document.getElementById('projectContent').innerHTML = html;
                     }
-                })
-                .catch(error => {
+                }).catch(error => {
                     console.error('Error fetching data:', error.message);
                     reloadPage('en')
                 });
-                getProjectList().then(projectList => {
-                    projectList.forEach((project, index) => {
-                        if (project.formatName === projectName) {
-                            const projectIndexComment = projectList.length - index - 1;
-                            fetch(`https://script.google.com/macros/s/AKfycbyqQ1PhEBBgumf9uIe6qbhv07YurxQUlwvxkHx3Duavth8-OJRuCyt-tI2E1HnF2_wA/exec?projectIndex=` + projectIndexComment)
-                            .then(response => response.ok ? response.json() : Promise.reject(`Failed to fetch data. Status: ${response.status}`))
-                            .then(jsonData => {
-                                if (jsonData.projectIndex === projectIndexComment) {
-                                    const commentDiv = document.createElement('div');
-                                    commentDiv.classList.add('commentBlock');
-                                    jsonData.data.forEach(comment => {
-                                        if (comment.userId.length > 0) {
-                                            let commentDataArray = comment.userId.split(';');
-                                            let userDiscordLink = "https://discordapp.com/users/" + commentDataArray[2];
-                                            commentDiv.innerHTML += `
-                                            <div class="avatarHolder">
-                                                <a href="${userDiscordLink}"><img src="data:image/png;base64,${commentDataArray[0]}"></a>
-                                                <div><div class="usernamDisplay"><a href="${userDiscordLink}">${commentDataArray[1]}</a></div>${removeSpecialChars(comment.comment)}</div>
-                                            </div>
-                                            `;
-                                        }
-                                    });
-                                    document.getElementById('otherComments').appendChild(commentDiv);
-                                } else {
-                                    console.warn('Data is not matched');
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                            });
-                        }
-                    });
+                fetchAndDisplayComments().then(() => {
+                    console.log('Comments fetched and displayed successfully');
                 }).catch(error => {
                     console.error('Error:', error);
                 });
