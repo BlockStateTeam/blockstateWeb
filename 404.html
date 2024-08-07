@@ -795,6 +795,7 @@
         function triggerCommentButton() {
             if (!userLogInInfo) {
                 let redirectLink = 'https://api.blockstate.team?projectName=' + projectName;
+                console.log('Redirecting to', redirectLink);
                 window.location.href = redirectLink;
             } else {
                 if (document.getElementById('commentTextArea').value.length > 0) {
