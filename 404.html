@@ -782,6 +782,7 @@
                 if (document.getElementById('commentTextArea').value.length > 0) {
                     document.getElementById('loginButton').disabled = true;
                     document.getElementById('loginButton').innerText = 'Loading...';
+                    document.getElementById('commentTextArea').readOnly = true;
                     //fetch()
                 } else {
                     alert('Please write a comment before posting!');
