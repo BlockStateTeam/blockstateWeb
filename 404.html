@@ -910,7 +910,6 @@
         }
         function fetchAndDisplayComments() {
             return getProjectList().then(projectList => {
-                let projectIndexComment;
                 projectList.forEach((project, index) => {
                     if (project.formatName === projectName) {
                         projectIndexComment = projectList.length - index - 1;
