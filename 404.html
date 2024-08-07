@@ -28,12 +28,6 @@
                 video.currentTime = 0;
             });
         });
-        window.addEventListener('load', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('isComment') === 'true') {
-                window.scrollTo(0, document.body.scrollHeight);
-            }
-        });
 	</script>
     <style>
         @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); } 
@@ -715,7 +709,7 @@
                 <button class="genericButton" id="genericButton" disabled>Download Now!</button>
             </div>
             <div id="commentSectionView">
-                <h2>COMMENT SECTION</h2>
+                <h2 id="comment-section">COMMENT SECTION</h2>
                 <div class="section" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
                     <div id="otherComments"></div>
                     <div id="commentForm">
@@ -783,6 +777,10 @@
                     document.getElementById("commentSectionView").style.display = 'block'
                     document.getElementById('loginButton').innerText = 'Post Comment';
                     document.getElementById('commentTextArea').placeholder = 'Comment as ' + data.global_name;
+                    const urlParams = new URLSearchParams(window.location.search);
+                    if (urlParams.get('isComment') === 'true') {
+                        window.scrollTo(0, document.body.scrollHeight - 50);
+                    }
                 }
             } catch (error) {
                 console.error('Error checking login status:', error);
