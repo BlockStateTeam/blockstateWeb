@@ -761,6 +761,7 @@
             console.log('Language switcher has been clicked');
         });
         async function postComment(content) {
+            console.warn("projectIndexComment: ", projectIndexComment);
             const response = await fetch('https://api.blockstate.team/postComment', {
                 method: 'POST',
                 headers: {
