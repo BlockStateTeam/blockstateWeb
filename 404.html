@@ -794,7 +794,8 @@
         }
         function triggerCommentButton() {
             if (!userLogInInfo) {
-                window.location.href = 'https://api.blockstate.team?projectName=' + projectName;
+                let redirectLink = 'https://api.blockstate.team?projectName=' + projectName;
+                window.location.href = redirectLink;
             } else {
                 if (document.getElementById('commentTextArea').value.length > 0) {
                     document.getElementById('loginButton').disabled = true;
