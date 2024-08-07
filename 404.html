@@ -837,6 +837,7 @@
                     console.log('Data:', data);
                     document.getElementById('commentCustomArea').innerHTML += `<img id="userAvatarImage" src="https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png">`
                     document.getElementById('loginButton').innerText = 'Post Comment';
+                    document.getElementById('commentTextArea').readOnly = false;
                     document.getElementById('commentTextArea').placeholder = 'Comment as ' + data.global_name;
                     userLogInInfo = data;
                 }
