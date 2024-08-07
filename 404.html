@@ -802,25 +802,27 @@
                     document.getElementById('loginButton').disabled = true;
                     document.getElementById('loginButton').innerText = 'Loading...';
                     document.getElementById('commentTextArea').readOnly = true;
-                    postComment(document.getElementById('commentTextArea').value)
-                    .then(responseText => {
-                        console.log("Comment posted successfully:", responseText);
-                        document.getElementById('commentTextArea').value = '';
-                        document.getElementById('loginButton').disabled = false;
-                        document.getElementById('loginButton').innerText = 'Post Comment';
-                        document.getElementById('commentTextArea').readOnly = false;
-                        fetchAndDisplayComments()
-                        .then(() => {
-                            console.log('Comments fetched and displayed successfully');
+                    setTimeout(() => {
+                        postComment(document.getElementById('commentTextArea').value)
+                        .then(responseText => {
+                            console.log("Comment posted successfully:", responseText);
+                            document.getElementById('commentTextArea').value = '';
+                            document.getElementById('loginButton').disabled = false;
+                            document.getElementById('loginButton').innerText = 'Post Comment';
+                            document.getElementById('commentTextArea').readOnly = false;
+                            fetchAndDisplayComments()
+                            .then(() => {
+                                console.log('Comments fetched and displayed successfully');
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
                         })
                         .catch(error => {
-                            console.error('Error:', error);
+                            console.error("Error posting comment:", error);
+                            alert('Something went wrong! Please try again later.');
                         });
-                    })
-                    .catch(error => {
-                        console.error("Error posting comment:", error);
-                        alert('Something went wrong! Please try again later.');
-                    });
+                    }, 2500);
                 } else {
                     alert('Please write a comment before posting!');
                 }
