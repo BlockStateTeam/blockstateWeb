@@ -805,6 +805,10 @@
                     postComment(document.getElementById('commentTextArea').value)
                     .then(responseText => {
                         console.log("Comment posted successfully:", responseText);
+                        document.getElementById('commentTextArea').value = '';
+                        document.getElementById('loginButton').disabled = false;
+                        document.getElementById('loginButton').innerText = 'Post Comment';
+                        document.getElementById('commentTextArea').readOnly = false;
                         fetchAndDisplayComments()
                         .then(() => {
                             console.log('Comments fetched and displayed successfully');
