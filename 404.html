@@ -730,7 +730,7 @@
                         <div id="commentCustomArea">
                             <textarea id="commentTextArea" rows="4" placeholder="Write your comment here..."></textarea>
                         </div>
-                        <button data-current-state="0" onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
+                        <button onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
                     </div>
                 </div>
             </div> 
@@ -760,33 +760,22 @@
             document.getElementById('languageDialog').showModal();
             console.log('Language switcher has been clicked');
         });
-        async function postComment(userAvatar, globalName, userId, commentInput) {
-            const comment = {
-                avatar: userAvatar,
-                global_name: globalName,
-                id: userId,
-                content: commentInput
-            };
-            try {
-                const response = await fetch("https://api.blockstate.team/postComment", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    credentials: "include",
-                    body: JSON.stringify(comment)
-                });
+        async function postComment(content) {
+            const response = await fetch('https://api.blockstate.team/postComment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify({ content: content })
+            });
 
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(errorText);
-                }
-                const responseData = await response.text();
-                alert(responseData);
-            } catch (error) {
-                console.error("Error posting comment:", error);
-                alert("Error posting comment: " + error.message);
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Failed to post comment: ${errorText}`);
             }
+
+            return await response.text();
         }
         document.getElementById('languageDialog').addEventListener('close', () => {
             const selectedLanguage = document.getElementById('languageSelect').value;
@@ -811,7 +800,14 @@
                     document.getElementById('loginButton').disabled = true;
                     document.getElementById('loginButton').innerText = 'Loading...';
                     document.getElementById('commentTextArea').readOnly = true;
-                    //fetch()
+                    postComment(document.getElementById('commentTextArea').value)
+                    .then(responseText => {
+                        console.log("Comment posted successfully:", responseText);
+                    })
+                    .catch(error => {
+                        console.error("Error posting comment:", error);
+                        alert('Something went wrong! Please try again later.');
+                    });
                 } else {
                     alert('Please write a comment before posting!');
                 }
