@@ -720,7 +720,7 @@
                     <div id="otherComments"></div>
                     <div id="commentForm">
                         <textarea id="commentTextArea" rows="4" placeholder="Write your comment here..."></textarea>
-                        <button onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
+                        <button data-current-state="0" onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
                     </div>
                 </div>
             </div> 
@@ -767,6 +767,8 @@
         }
         function triggerCommentButton() {
             console.log('Triggering comment button');
+            document.getElementById('loginButton').disabled = true;
+            document.getElementById('loginButton').innerText = 'Loading...';
 
         }
         async function checkLogin() {
@@ -779,7 +781,7 @@
                     const data = await response.json();
                     console.log('Data:', data);
                     document.getElementById("commentSectionView").style.display = 'block'
-                    document.getElementById('loginButton').innerText = 'Comment';
+                    document.getElementById('loginButton').innerText = 'Post Comment';
                     document.getElementById('commentTextArea').placeholder = 'Comment as ' + data.global_name;
                 }
             } catch (error) {
