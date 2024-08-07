@@ -936,7 +936,8 @@
                             `;
                         }
                     });
-                    document.getElementById('otherComments').innerHTML = commentDiv;
+                    document.getElementById('otherComments').innerHTML = '';
+                    document.getElementById('otherComments').appendChild(commentDiv);
                 });
             });
         }
