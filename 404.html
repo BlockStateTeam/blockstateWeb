@@ -640,9 +640,9 @@
         <style>
             #commentForm textarea {
                 width: 100%;
+                height: 15vh;
                 border: 1px solid #ccc;
                 border-radius: 5px;
-                margin-bottom: 10px;
                 resize: none;
                 font-family: 'Minecraft';
                 font-size: 1.5vw;
@@ -689,6 +689,20 @@
                 border-radius: 5px;
                 margin-right: 12px;
             }
+            #commentCustomArea {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+            }
+            #userAvatarImage {
+                width: 15vh;
+                height: 15vh;
+                border-radius: 5px;
+                margin-right: 12px;
+            }
+            #commentSectionView {
+                margin-bottom: 30vh;
+            }
         </style>
         <div id="belowSection">
             <h2>HELP SECTION</h2>
@@ -713,7 +727,9 @@
                 <div class="section" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
                     <div id="otherComments"></div>
                     <div id="commentForm">
-                        <textarea id="commentTextArea" rows="4" placeholder="Write your comment here..."></textarea>
+                        <div id="commentCustomArea">
+                            <textarea id="commentTextArea" rows="4" placeholder="Write your comment here..."></textarea>
+                        </div>
                         <button data-current-state="0" onclick="triggerCommentButton()" class="genericButton" id="loginButton" style="width: 25vw; font-size: 2.5vw;">Login to comment</button>
                     </div>
                 </div>
@@ -766,6 +782,7 @@
                 if (document.getElementById('commentTextArea').value.length > 0) {
                     document.getElementById('loginButton').disabled = true;
                     document.getElementById('loginButton').innerText = 'Loading...';
+                    //fetch()
                 } else {
                     alert('Please write a comment before posting!');
                 }
@@ -780,6 +797,7 @@
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Data:', data);
+                    document.getElementById('commentCustomArea').innerHTML += `<img id="userAvatarImage" src="https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png">`
                     document.getElementById('loginButton').innerText = 'Post Comment';
                     document.getElementById('commentTextArea').placeholder = 'Comment as ' + data.global_name;
                     userLogInInfo = data;
