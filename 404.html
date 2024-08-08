@@ -1124,7 +1124,11 @@
                     }
                 }).catch(error => {
                     console.error('Error fetching data:', error.message);
-                    reloadPage('en')
+                    if (tryLanguage !== 'en') {
+                        reloadPage('en')
+                    } else {
+                        window.location.href = 'https://blockstate.team/403';
+                    }
                 });
                 fetchAndDisplayComments().then(() => {
                     console.log('Comments fetched and displayed successfully');
@@ -1136,7 +1140,7 @@
                 }, 1000);
             } else {
                 console.log(currentUrl, " is a 404 page");
-                window.location.href = '/403.html';
+                window.location.href = 'https://blockstate.team/403';
             }
         }
         async function initializeWorkingTV() {
