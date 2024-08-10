@@ -777,7 +777,6 @@
         }
         document.getElementById('languageSwitcher').addEventListener('click', () => {
             document.getElementById('languageDialog').showModal();
-            console.log('Language switcher has been clicked');
         });
 
         let isYouTubeAPIReady = false;
@@ -790,7 +789,7 @@
         function loadYouTubeAPI() {
             return new Promise((resolve, reject) => {
                 if (typeof YT !== 'undefined' && YT.Player) {
-                    resolve(); // API is already loaded
+                    resolve();
                 } else {
                     var tag = document.createElement('script');
                     tag.src = "https://www.youtube.com/iframe_api";
@@ -925,7 +924,6 @@
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    console.log('Data:', data);
                     document.getElementById('commentCustomArea').innerHTML += `<img id="userAvatarImage" src="https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png">`
                     document.getElementById('loginButton').innerText = 'Post Comment';
                     document.getElementById('commentTextArea').readOnly = false;
@@ -1165,7 +1163,6 @@
                         }
                         html += `</div>`;
                         if (data.credit) {
-                            console.log('Credit section is available');
                             html += `
                             <h2>CREDIT SECTION</h2>
                             <div class="section" id="creditFormat">
