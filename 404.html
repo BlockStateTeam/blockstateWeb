@@ -33,7 +33,9 @@
         @font-face { font-family: MinecraftTen; src: url('/assets/fonts/MinecraftTen.woff'); } 
         @font-face { font-family: Minecraft; src: url('/assets/fonts/Minecraft.otf'); } 
         @font-face { font-family: MinecraftFive; src: url('/assets/fonts/MinecraftFive-Regular.woff2'); }
-
+        .lockedIframe {
+            pointer-events: none;
+        }
         body::-webkit-scrollbar {
             display: none;
         }
@@ -227,10 +229,11 @@
             border-radius: 20px;
             width: 70vw;
         }
-        .section > iframe {
+        iframe {
+            background-color: white;
             border-radius: 20px;
             width: 70vw;
-            height: 40vw;
+            height: calc((70vw * 9) / 16);
         }
         .downloadSection{
             display: flex;
@@ -620,10 +623,10 @@
                 border-radius: 10px;
                 width: 95vw;
             }
-            .section > iframe {
+            iframe {
                 border-radius: 10px;
                 width: 95vw;
-                height: 50vw;
+                height: calc((95vw * 9) / 16);
             }
             .buttonWrapper {
                 height: 7.5vh;
@@ -777,6 +780,75 @@
             document.getElementById('languageDialog').showModal();
             console.log('Language switcher has been clicked');
         });
+
+        let isYouTubeAPIReady = false;
+        function onYouTubeIframeAPIReady() {
+            isYouTubeAPIReady = true;
+            if (window.videoData) {
+                createYouTubePlayers(window.videoData);
+            }
+        }
+        function loadYouTubeAPI() {
+            return new Promise((resolve, reject) => {
+                if (typeof YT !== 'undefined' && YT.Player) {
+                    resolve(); // API is already loaded
+                } else {
+                    var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    tag.onload = () => resolve();
+                    tag.onerror = () => reject(new Error("Failed to load YouTube IFrame API script"));
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                }
+            });
+        }
+        function createYouTubePlayers(data) {
+            if (!isYouTubeAPIReady) {
+                console.error("YouTube API is not ready.");
+                window.videoData = data;
+                return;
+            }
+            data.forEach((item, index) => {
+                if (item.type === "videoEmbed") {
+                    const playerId = `player${index + 1}`;
+                    new YT.Player(playerId, {
+                        videoId: item.id,
+                        playerVars: {
+                            autoplay: 1,
+                            mute: 1,
+                            controls: 0,
+                            modestbranding: 1,
+                            rel: 0,
+                            showinfo: 0,
+                            fs: 0
+                        },
+                        events: {
+                            onReady: (e) => {
+                                e.target.playVideo();
+                            },
+                            onStateChange: (e) => {
+                                if (e.data === YT.PlayerState.ENDED) {
+                                    e.target.playVideo(); 
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        function initializeYouTubePlayers(data) {
+            loadYouTubeAPI().then(() => {
+                console.log("YouTube IFrame API script loaded.");
+                if (isYouTubeAPIReady) {
+                    createYouTubePlayers(data);
+                } else {
+                    window.videoData = data;
+                }
+            }).catch(error => {
+                console.error(error);
+            });
+        }
         async function postComment(content) {
             console.warn("projectIndexComment: ", projectIndexComment);
             const response = await fetch('https://api.blockstate.team/postComment', {
@@ -1071,6 +1143,12 @@
                                 <div class="section">
                                     ${elementContent.text}
                                 </div>`
+                            } else if (elementContent.type === 'videoEmbed') {
+                                html += `
+                                <div id="player${i+1}" class="lockedIframe"></div>
+                                <div class="section">
+                                    ${elementContent.text}
+                                </div>`
                             } else if (elementContent.type === 'youtube') {
                                 html += `
                                 <div class="section">
@@ -1121,6 +1199,7 @@
                             </div>`
                         };
                         document.getElementById('projectContent').innerHTML = html;
+                        initializeYouTubePlayers(data.content);
                     }
                 }).catch(error => {
                     console.error('Error fetching data:', error.message);
@@ -1130,6 +1209,7 @@
                         window.location.href = 'https://blockstate.team/403';
                     }
                 });
+                /*
                 fetchAndDisplayComments().then(() => {
                     console.log('Comments fetched and displayed successfully');
                 }).catch(error => {
@@ -1138,6 +1218,7 @@
                 setTimeout(() => {
                     checkLogin();
                 }, 1000);
+                */
             } else {
                 console.log(currentUrl, " is a 404 page");
                 window.location.href = 'https://blockstate.team/403';
