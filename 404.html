@@ -492,7 +492,7 @@
             position: absolute;
             background-color: #fff;
             border: 1px solid #ccc;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
             font-size: 1.75vw;
             font-family: 'MinecraftFive';
             z-index: 20;
@@ -525,6 +525,9 @@
             cursor: pointer;
         }
         @media (max-aspect-ratio: 3/4) {
+            .contextMenu ul li {
+                padding: 10px;
+            }
             .contextMenu ul li svg {
                 width: 4vh;
                 height: 4vh;
@@ -863,7 +866,7 @@
             const x = window.pageXOffset || document.documentElement.scrollLeft;
             const y = window.pageYOffset || document.documentElement.scrollTop;
             menu.style.left = `${Math.min(rect.left + x, window.innerWidth - menu.offsetWidth - 10)}px`;
-            menu.style.top = `${rect.bottom + y + menu.offsetHeight > window.innerHeight + y ? rect.top + y - menu.offsetHeight : rect.bottom + y}px`;
+            menu.style.top = `${rect.bottom + y + menu.offsetHeight > window.innerHeight + y ? rect.top + y - menu.offsetHeight : rect.bottom + y - 25}px`;
         }
         document.addEventListener('click', function(event) {
             const contextMenu = document.getElementById('contextMenu');
