@@ -728,6 +728,18 @@
     </dialog>
     <div id="contextMenu" class="contextMenu">
         <ul>
+            <li onclick="replyComment()">
+                <svg width="800px" height="800px" viewBox="0 0 20 20">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g transform="translate(-260, -6479)" fill="#4F19FF">
+                            <g transform="translate(56, 160)">
+                                <path d="M212.271,6328.958 L216.942,6333.906 L218.396,6332.544 L215.968,6330 L224,6330 L224,6328 L215.968,6328 L218.396,6325.408 L216.942,6324.06 L212.271,6328.958 Z M214,6339 L204,6339 L204,6319 L214,6319 L214,6323 L212,6323 L212,6321 L206,6321 L206,6337 L212,6337 L212,6335 L214,6335 L214,6339 Z" id="arrow_in_left-[#387]"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                Reply
+            </li>
             <li onclick="deleteComment()">
                 <svg width="800px" height="800px" viewBox="0 -0.5 21 21">
                     <g stroke="none" stroke-width="2" fill="none" fill-rule="evenodd">
@@ -738,7 +750,8 @@
                         </g>
                     </g>
                 </svg>
-                Delete</li>
+                Delete
+            </li>
             <li onclick="reportComment()">
                 <svg width="800px" height="800px" viewBox="0 -0.5 21 21">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -857,10 +870,11 @@
             currentLanguage = supportedLanguages.includes(navigator.language.substring(0, 2)) ? navigator.language.substring(0, 2) : 'en';
         }
         function showContextMenu(e, userId) {
+            if (!userLogInInfo) return;
             e.preventDefault();
             const menu = document.getElementById('contextMenu');
             menu.style.display = 'block';
-            let deleteOption = menu.querySelector('ul li:nth-child(1)');
+            let deleteOption = menu.querySelector('ul li:nth-child(2)');
             userLogInInfo?.id !== userId ? deleteOption.style.display = 'none' : deleteOption.style.display = 'block';
             const rect = e.target.getBoundingClientRect();
             const x = window.pageXOffset || document.documentElement.scrollLeft;
@@ -874,6 +888,10 @@
                 contextMenu.style.display = 'none';
             }
         });
+        function replyComment() {
+            console.log('Replying Comment');
+            document.getElementById('contextMenu').style.display = 'none';
+        }
         function deleteComment() {
             console.log('Deleting Comment');
             document.getElementById('contextMenu').style.display = 'none';
@@ -1123,13 +1141,14 @@
                         if (comment.userId.length > 0) {
                             let commentDataArray = comment.userId.split(';');
                             let userDiscordLink = "https://discordapp.com/users/" + commentDataArray[2];
+                            let commentData = JSON.parse(comment.comment);
                             commentDiv.innerHTML += `
                             <div class="avatarHolder">
                                 <a href="${userDiscordLink}"><img src="data:image/png;base64,${commentDataArray[0]}"></a>
                                 <div>
                                     <div class="usernamDisplay">
                                         <a href="${userDiscordLink}">${commentDataArray[1]}</a> <span class="commentOption" onClick="showContextMenu(event, '${commentDataArray[2]}')">▪</span>
-                                    </div>${removeSpecialChars(comment.comment)}
+                                    </div>${removeSpecialChars(commentData.message)}
                                 </div>
                             </div>
                             `;
