@@ -415,7 +415,11 @@
             fill: #4229B9;
         }
         #loginButton {
-            width: 25vw; 
+            width: fit-content; 
+            font-size: 2.5vw;
+        }
+        #exitReplyState {
+            width: fit-content; 
             font-size: 2.5vw;
         }
         #commentForm textarea {
@@ -463,11 +467,23 @@
             color: black;
         }
         .avatarHolder > a > img {
+            position: relative;
             top: 0;
             height: 10vh;
             width: 10vh;
             border-radius: 5px;
             margin-right: 12px;
+            z-index: 10 !important;
+        }
+        .commentPointerArrow {
+            position: relative;
+            z-index: 9 !important;
+            height: 20vh;
+            margin-left: -7vh;
+            margin-top: -14vh;
+        }
+        .commentPointerArrow path {
+            fill: url(#gradient);
         }
         #commentCustomArea {
             display: flex;
@@ -481,7 +497,7 @@
             margin-right: 12px;
         }
         #commentSectionView {
-            margin-bottom: 30vh;
+            margin-bottom: 10vh;
         }
         .commentOption {
             display: inline-block;
@@ -524,7 +540,15 @@
             scale: 2.5;
             cursor: pointer;
         }
+        .beingReplyAtState {
+            border: #3E2AB2 5px solid;
+            border-radius: 10px;
+            z-index: 20;
+        }
         @media (max-aspect-ratio: 3/4) {
+            #commentSectionView {
+                margin-bottom: 25vh;
+            }
             .contextMenu ul li {
                 padding: 10px;
             }
@@ -560,8 +584,10 @@
                 align-items: flex-start !important;
             }
             #loginButton {
-                width: fit-content; 
-                font-size: 4.5vh;
+                font-size: 3.75vh;
+            }
+            #exitReplyState {
+                font-size: 3.75vh;
             }
             dialog form > button {
                 font-size: 2.5vh;
@@ -728,7 +754,7 @@
     </dialog>
     <div id="contextMenu" class="contextMenu">
         <ul>
-            <li onclick="replyComment()">
+            <li>
                 <svg width="800px" height="800px" viewBox="0 0 20 20">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g transform="translate(-260, -6479)" fill="#4F19FF">
@@ -740,7 +766,7 @@
                 </svg>
                 Reply
             </li>
-            <li onclick="deleteComment()">
+            <li>
                 <svg width="800px" height="800px" viewBox="0 -0.5 21 21">
                     <g stroke="none" stroke-width="2" fill="none" fill-rule="evenodd">
                         <g transform="translate(-179, -360)" fill="#4F19FF">
@@ -752,7 +778,7 @@
                 </svg>
                 Delete
             </li>
-            <li onclick="reportComment()">
+            <li>
                 <svg width="800px" height="800px" viewBox="0 -0.5 21 21">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g transform="translate(-299, -520)" fill="#4F19FF">
@@ -843,11 +869,15 @@
                     <div id="otherComments"></div>
                     <div id="commentForm">
                         <div id="commentCustomArea">
-                            <textarea id="commentTextArea" rows="4" placeholder="You need to log in first"></textarea>
+                            <textarea id="commentTextArea" rows="4" placeholder="You need to log in first" disabled></textarea>
                         </div>
-                        <button onclick="triggerCommentButton()" class="genericButton" id="loginButton">LOG IN NOW!</button>
+                        <div style="display: flex;">
+                            <button onclick="triggerCommentButton()" class="genericButton" id="loginButton">LOG IN NOW!</button>
+                            <button onclick="exitReplyState()" class="genericButton" id="exitReplyState" style="display: none;">Exit Reply</button>
+                        </div>
                     </div>
-                </div> 
+                </div>
+            </div>
             <div class="compiler">
                 <iframe src="/loading.html" style="width: 80vw; height: 95vh; background-color: white; border-radius: 2vw; z-index: 50;"></iframe>
             </div>
@@ -860,7 +890,7 @@
         </div>
     </div>
     <script>
-        let projectData, workingTV, headDecoration, musicExtension, userLogInInfo, projectName, projectIndexComment;
+        let projectData, workingTV, headDecoration, musicExtension, userLogInInfo, projectName, projectIndexComment, replyToState;
         const supportedLanguages = ['en', 'vi'];
         let currentLanguage;
         const langCookie = document.cookie.split(';').map(cookie => cookie.trim()).find(cookie => cookie.startsWith('language='));
@@ -869,10 +899,15 @@
         } else {
             currentLanguage = supportedLanguages.includes(navigator.language.substring(0, 2)) ? navigator.language.substring(0, 2) : 'en';
         }
-        function showContextMenu(e, userId) {
+        function showContextMenu(e, userId, commentUserName, uuid) {
+            console.log('UserID: ', userId, 'CommentUserName: ', commentUserName, 'UUID: ', uuid);
             if (!userLogInInfo) return;
             e.preventDefault();
             const menu = document.getElementById('contextMenu');
+            const menuItems = document.querySelectorAll("#contextMenu ul li");
+            menuItems[0].onclick = () => replyComment(userId, commentUserName, uuid);
+            menuItems[1].onclick = () => deleteComment(userId, commentUserName, uuid);
+            menuItems[2].onclick = () => reportComment(userId, commentUserName, uuid);
             menu.style.display = 'block';
             let deleteOption = menu.querySelector('ul li:nth-child(2)');
             userLogInInfo?.id !== userId ? deleteOption.style.display = 'none' : deleteOption.style.display = 'block';
@@ -882,22 +917,53 @@
             menu.style.left = `${Math.min(rect.left + x, window.innerWidth - menu.offsetWidth - 10)}px`;
             menu.style.top = `${rect.bottom + y + menu.offsetHeight > window.innerHeight + y ? rect.top + y - menu.offsetHeight : rect.bottom + y - 25}px`;
         }
+        window.addEventListener('resize', () => {exitReplyState()});
         document.addEventListener('click', function(event) {
             const contextMenu = document.getElementById('contextMenu');
             if (!contextMenu.contains(event.target) && event.target.className !== 'commentOption') {
                 contextMenu.style.display = 'none';
             }
         });
-        function replyComment() {
-            console.log('Replying Comment');
-            document.getElementById('contextMenu').style.display = 'none';
+        document.addEventListener('keydown', (event) => {
+            if (event.key === "Escape" || event.key === "Esc") {
+                exitReplyState();
+            }
+        });
+        function exitReplyState() {
+            document.getElementById('exitReplyState').style.display = 'none';
+            document.getElementById('commentTextArea').placeholder = 'Write a comment...';
+            document.getElementById('loginButton').innerText = 'Post Comment';
+            document.querySelectorAll('.beingReplyAtState').forEach(div => {div.remove()});
+            replyToState = undefined;
         }
-        function deleteComment() {
+        function replyComment(userId, commentUserName, uuid) {
+            exitReplyState()
+            console.log(document.querySelector(`div[data-uuid="${uuid}"]`).getBoundingClientRect());
+            let replyOutline = document.createElement('div');
+            replyOutline.className = 'beingReplyAtState';
+            let targetElement = document.querySelector(`div[data-uuid="${uuid}"]`);
+            let rect = targetElement.getBoundingClientRect();
+            Object.assign(replyOutline.style, {
+                position: 'absolute',
+                top: `${rect.top + window.scrollY - 4.5}px`,
+                left: `${rect.left + window.scrollX - 3}px`,
+                width: `${rect.width}px`,
+                height: '10vh'
+            });
+            document.body.appendChild(replyOutline);
+            document.getElementById('commentTextArea').disabled = false;
+            document.getElementById('contextMenu').style.display = 'none';
+            window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+            document.getElementById('commentTextArea').placeholder = `Replying to ${commentUserName}`;
+            document.getElementById('loginButton').innerText = `To ${commentUserName}`;
+            document.getElementById('exitReplyState').style.display = 'block';
+            replyToState = uuid;
+        }
+        function deleteComment(userId, commentUserName, uuid) {
             console.log('Deleting Comment');
             document.getElementById('contextMenu').style.display = 'none';
         }
-        function reportComment() {
-            console.log('Reporting Comment');
+        function reportComment(userId, commentUserName, uuid) {
             document.getElementById('contextMenu').style.display = 'none';
         }
         document.getElementById('languageSwitcher').addEventListener('click', () => {
@@ -972,14 +1038,13 @@
             });
         }
         async function postComment(content) {
-            console.warn("projectIndexComment: ", projectIndexComment);
             const response = await fetch('https://api.blockstate.team/postComment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 credentials: 'include',
-                body: JSON.stringify({ projectIndex: projectIndexComment, content: content })
+                body: JSON.stringify({ projectIndex: projectIndexComment, content: content, replyUUID: replyToState})
             });
 
             if (!response.ok) {
@@ -1006,9 +1071,7 @@
         }
         function triggerCommentButton() {
             if (!userLogInInfo) {
-                let redirectLink = 'https://api.blockstate.team/login?projectName=' + projectName;
-                console.log('Redirecting to', redirectLink);
-                window.location.href = redirectLink;
+                window.location.href =`https://api.blockstate.team/login?projectName=${projectName}`;
             } else {
                 if (document.getElementById('commentTextArea').value.length > 0) {
                     document.getElementById('loginButton').disabled = true;
@@ -1052,6 +1115,7 @@
                     document.getElementById('loginButton').innerText = 'Post Comment';
                     document.getElementById('commentTextArea').readOnly = false;
                     document.getElementById('commentTextArea').placeholder = 'Comment as ' + data.global_name;
+                    document.getElementById('commentTextArea').disabled = false;
                     userLogInInfo = data;
                 }
             } catch (error) {
@@ -1137,23 +1201,62 @@
 
                     const commentDiv = document.createElement('div');
                     commentDiv.classList.add('commentBlock');
+                    commentDiv.id = 'commentBlock';
+                    let replyCommentList = [];
                     jsonData.data.forEach(comment => {
                         if (comment.userId.length > 0) {
                             let commentDataArray = comment.userId.split(';');
                             let userDiscordLink = "https://discordapp.com/users/" + commentDataArray[2];
                             let commentData = JSON.parse(comment.comment);
-                            commentDiv.innerHTML += `
-                            <div class="avatarHolder">
-                                <a href="${userDiscordLink}"><img src="data:image/png;base64,${commentDataArray[0]}"></a>
-                                <div>
-                                    <div class="usernamDisplay">
-                                        <a href="${userDiscordLink}">${commentDataArray[1]}</a> <span class="commentOption" onClick="showContextMenu(event, '${commentDataArray[2]}')">▪</span>
-                                    </div>${removeSpecialChars(commentData.message)}
+                            let commentHTML = `
+                                <div class="avatarHolder" data-uuid="${commentData.uuid}">
+                                    <a href="${userDiscordLink}"><img src="data:image/png;base64,${commentDataArray[0]}"></a>
+                                    <div>
+                                        <div class="usernamDisplay">
+                                            <a href="${userDiscordLink}">${commentDataArray[1]}</a> <span class="commentOption" onClick="showContextMenu(event, '${commentDataArray[2]}', '${commentDataArray[1]}', '${commentData.uuid}')">▪</span>
+                                        </div>${removeSpecialChars(commentData.message)}
+                                    </div>
                                 </div>
-                            </div>
-                            `;
+                                `
+                            if (commentData.reply) {
+                                replyCommentList.push([commentData, commentHTML.replace(`<div class="avatarHolder" data-uuid="${commentData.uuid}">`, `
+                                    <div class="avatarHolder" data-uuid="${commentData.uuid}">
+                                        <svg viewBox="0 0 61.53 168.51" class="commentPointerArrow">
+                                            <defs>
+                                                <linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                                                    <stop offset="0%" style="stop-color:#CCCCCC;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#CCCCCC;stop-opacity:0" />
+                                                </linearGradient>
+                                            </defs>
+                                            <g>
+                                                <path class="cls-1" d="M61.16,168.37h-25.67C15.92,168.37,0,152.13,0,132.16V0H3V132.16c0,18.31,14.57,33.21,32.49,33.21h25.67v3Z"/>
+                                            </g>
+                                        </svg>
+                                    `)]);
+                            } else {
+                                commentDiv.innerHTML += commentHTML;
+                            };
+
                         }
                     });
+                    setTimeout(() => {
+                    function appendReplies(parentElement, replyList) {
+                        const replyContainer = parentElement.querySelector('div');
+                        
+                        replyList.forEach(r => {
+                            replyContainer.insertAdjacentHTML('beforeend', r[1]);
+                            const nestedReplies = replyCommentList.filter(nr => nr[0].reply === r[0].uuid);
+                            if (nestedReplies.length > 0) {
+                                const nestedReplyContainer = replyContainer.lastElementChild;
+                                appendReplies(nestedReplyContainer, nestedReplies);
+                            }
+                        });
+                    }
+                    document.querySelectorAll('div[data-uuid]').forEach(c => {
+                        const replies = replyCommentList.filter(r => r[0].reply === c.dataset.uuid);
+                        appendReplies(c, replies);
+                    });
+                    }, 0);
                     document.getElementById('otherComments').innerHTML = '';
                     document.getElementById('otherComments').appendChild(commentDiv);
                 });
