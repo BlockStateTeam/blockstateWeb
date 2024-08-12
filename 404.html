@@ -482,7 +482,7 @@
             margin-left: -7vh;
             margin-top: -14vh;
         }
-        .commentPointerArrow path {
+        .commentPointerArrow polygon {
             fill: url(#gradient);
         }
         #commentCustomArea {
@@ -1221,16 +1221,14 @@
                             if (commentData.reply) {
                                 replyCommentList.push([commentData, commentHTML.replace(`<div class="avatarHolder" data-uuid="${commentData.uuid}">`, `
                                     <div class="avatarHolder" data-uuid="${commentData.uuid}">
-                                        <svg viewBox="0 0 61.53 168.51" class="commentPointerArrow">
+                                        <svg viewBox="0 0 61.5 168.5" class="commentPointerArrow">
                                             <defs>
                                                 <linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
                                                     <stop offset="0%" style="stop-color:#CCCCCC;stop-opacity:1" />
                                                     <stop offset="100%" style="stop-color:#CCCCCC;stop-opacity:0" />
                                                 </linearGradient>
                                             </defs>
-                                            <g>
-                                                <path class="cls-1" d="M61.16,168.37h-25.67C15.92,168.37,0,152.13,0,132.16V0H3V132.16c0,18.31,14.57,33.21,32.49,33.21h25.67v3Z"/>
-                                            </g>
+                                            <polygon points="61.5,165.5 61.5,168.5 0,168.5 0,0 3,0 3,165.5 "/>
                                         </svg>
                                     `)]);
                             } else {
