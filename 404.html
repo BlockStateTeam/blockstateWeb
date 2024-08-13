@@ -965,7 +965,7 @@
             let deleteCommentBlock = document.querySelector(`div[data-uuid="${uuid}"]`);
             let dataTextMessage = deleteCommentBlock.getAttribute('data-text-message');
             let replyToUuid = deleteCommentBlock.getAttribute('data-reply-to-uuid');
-            handleDeleteComment(dataTextMessage, replyToUuid)
+            handleDeleteComment(dataTextMessage, replyToUuid, uuid)
             .then(responseText => {
                 fetchAndDisplayComments()
                 .then(() => {
@@ -1054,14 +1054,14 @@
                 console.error(error);
             });
         }
-        async function handleDeleteComment(content, replyToUuid) {
+        async function handleDeleteComment(content, replyToUuid, preGenUUID) {
             const response = await fetch('https://api.blockstate.team/deleteComment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 credentials: 'include',
-                body: JSON.stringify({ projectIndex: projectIndexComment, comment: content, replyToUUID: replyToUuid})
+                body: JSON.stringify({ projectIndex: projectIndexComment, comment: content, replyToUUID: replyToUuid, preGenUUID: preGenUUID})
             });
 
             if (!response.ok) {
