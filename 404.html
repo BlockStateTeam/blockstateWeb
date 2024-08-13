@@ -911,6 +911,7 @@
             menu.style.display = 'block';
             let deleteOption = menu.querySelector('ul li:nth-child(2)');
             userLogInInfo?.id !== userId ? deleteOption.style.display = 'none' : deleteOption.style.display = 'block';
+            deleteOption.style.display = 'block';
             const rect = e.target.getBoundingClientRect();
             const x = window.pageXOffset || document.documentElement.scrollLeft;
             const y = window.pageYOffset || document.documentElement.scrollTop;
@@ -960,8 +961,24 @@
             replyToState = uuid;
         }
         function deleteComment(userId, commentUserName, uuid) {
-            console.log('Deleting Comment');
             document.getElementById('contextMenu').style.display = 'none';
+            let deleteCommentBlock = document.querySelector(`div[data-uuid="${uuid}"]`);
+            let dataTextMessage = deleteCommentBlock.getAttribute('data-text-message');
+            let replyToUuid = deleteCommentBlock.getAttribute('data-reply-to-uuid');
+            handleDeleteComment(dataTextMessage, replyToUuid)
+            .then(responseText => {
+                fetchAndDisplayComments()
+                .then(() => {
+                    console.log('Comments fetched and displayed successfully');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            })
+            .catch(error => {
+                console.error("Error posting comment:", error);
+                alert('Something went wrong! Please try again later.');
+            });
         }
         function reportComment(userId, commentUserName, uuid) {
             document.getElementById('contextMenu').style.display = 'none';
@@ -1037,6 +1054,23 @@
                 console.error(error);
             });
         }
+        async function handleDeleteComment(content, replyToUuid) {
+            const response = await fetch('https://api.blockstate.team/deleteComment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify({ projectIndex: projectIndexComment, comment: content, replyToUUID: replyToUuid})
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Failed to post comment: ${errorText}`);
+            }
+
+            return await response.text();
+        }
         async function postComment(content) {
             const response = await fetch('https://api.blockstate.team/postComment', {
                 method: 'POST',
@@ -1044,7 +1078,7 @@
                     'Content-Type': 'application/json'
                 },
                 credentials: 'include',
-                body: JSON.stringify({ projectIndex: projectIndexComment, content: content, replyUUID: replyToState})
+                body: JSON.stringify({ projectIndex: projectIndexComment, content: removeSpecialChars(content), replyUUID: replyToState})
             });
 
             if (!response.ok) {
@@ -1077,8 +1111,7 @@
                     document.getElementById('loginButton').disabled = true;
                     document.getElementById('loginButton').innerText = 'Loading...';
                     document.getElementById('commentTextArea').readOnly = true;
-                    setTimeout(() => {
-                        postComment(document.getElementById('commentTextArea').value)
+                    postComment(document.getElementById('commentTextArea').value)
                         .then(responseText => {
                             exitReplyState();
                             document.getElementById('commentTextArea').value = '';
@@ -1097,7 +1130,6 @@
                             console.error("Error posting comment:", error);
                             alert('Something went wrong! Please try again later.');
                         });
-                    }, 2500);
                 } else {
                     alert('Please write a comment before posting!');
                 }
@@ -1209,7 +1241,7 @@
                             let userDiscordLink = "https://discordapp.com/users/" + commentDataArray[2];
                             let commentData = JSON.parse(comment.comment);
                             let commentHTML = `
-                                <div class="avatarHolder" data-uuid="${commentData.uuid}">
+                                <div class="avatarHolder" data-uuid="${commentData.uuid}" data-text-message="${removeSpecialChars(commentData.message)}">
                                     <a href="${userDiscordLink}"><img src="data:image/png;base64,${commentDataArray[0]}"></a>
                                     <div>
                                         <div class="usernamDisplay">
@@ -1219,8 +1251,9 @@
                                 </div>
                                 `
                             if (commentData.reply) {
-                                replyCommentList.push([commentData, commentHTML.replace(`<div class="avatarHolder" data-uuid="${commentData.uuid}">`, `
-                                    <div class="avatarHolder" data-uuid="${commentData.uuid}">
+                                replyCommentList.push([commentData, commentHTML.replace(`<div class="avatarHolder" data-uuid="${commentData.uuid}" data-text-message="${removeSpecialChars(commentData.message)}">`, 
+                                    `
+                                    <div class="avatarHolder" data-uuid="${commentData.uuid}" data-text-message="${removeSpecialChars(commentData.message)}" data-reply-to-uuid="${commentData.reply}">
                                         <svg viewBox="0 0 61.5 168.5" class="commentPointerArrow">
                                             <defs>
                                                 <linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
