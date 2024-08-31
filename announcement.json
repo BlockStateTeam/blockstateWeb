@@ -1,97 +1,11 @@
-
-<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Announcement</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="announcement.css" rel="stylesheet" type="text/css">
-    <script>
-		window.onload = function () {
-            const menu_btn = document.querySelector('.hamburger');
-            const mobile_menu = document.querySelector('.mobile-nav');
-
-            menu_btn.addEventListener('click', function () {
-                menu_btn.classList.toggle('is-active');
-                mobile_menu.classList.toggle('is-active');
-            });
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            const video = document.getElementById('hoverVideo');
-            video.pause();
-            video.addEventListener('mouseover', () => {
-                video.play();
-            });
-            video.addEventListener('mouseout', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
-        });
-        window.addEventListener("load", () => {
-        const loadingScreen = document.getElementById("loadingScreen");
-        const fadeDuration = 1000; // 1 second
-        const intervalTime = fadeDuration / 50;
-
-        loadingScreen.style.opacity = "1";
-
-        setTimeout(() => {
-            const fadeOutStep = () => {
-                const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
-                loadingScreen.style.opacity = currentOpacity;
-
-                if (currentOpacity <= 0) {
-                    loadingScreen.style.visibility = "hidden";
-                    clearInterval(fadeInterval);
-                }
-            };
-            const fadeInterval = setInterval(fadeOutStep, intervalTime);
-            }, 1000);
-        });
-	</script>	
-</head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3449C7QP0C"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-3449C7QP0C');
-</script>
-<body>
-    <div class="topnav" id="myTopnav">
-		<video id="hoverVideo" src="./assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
-		<div id="fakeLogo">BlockState <br>Team</div>
-		<nav id="desktopNav">
-			<a href="project">Project</a>
-			<a href="announcement" class="active">Announcement</a>
-			<a href="contact">Contact</a>
-			<a href="our_story">Our Story</a>
-			<a href="/">Home</a>
-		</nav>
-		<button class="hamburger">
-			<div class="bar"></div>
-		</button>
-		<div class="mobile-nav">
-			<a href="/">Home</a>
-			<a href="our_story">Our Story</a>
-			<a href="contact">Contact</a>
-			<a href="announcement" class="active">Announcement</a>
-			<a href="project">Project</a>
-		</div>
-	</div>
-    <h2>official announcement panel</h2>
-    <h3>You can also visit our <a href="https://discord.blockstate.team/" target="_blank">Discord server</a> for more information.</h3>
-    <div id="messageContainer"></div>
-    <script>
-        let data = [
+[
   {
     "content": "# LIGHTING DELIGHT BUG FIX! #\n\n### @everyone Thank you @o_w_e_n for discovering the observer block update bug in the Lighting Delight Addon! This issue caused the Addon to be incompatible with redstone, which wasn't the intended behavior. A new update has been released to fix this bug. As a reward, you've earned the \u003c@\u00261206955959755472958\u003e role!  ###\n\n## [DOWNLOAD LINK]: https://blockstate.team/projects/lighting-delight ##",
     "date": "2024-08-15T18:09:28.522Z",
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1273705135293333627/image.png?ex=66c38a58\u0026is=66c238d8\u0026hm=46c7e88d9ce3e6ce5c75b2291bf9f675c00802610494897052039d7220fb4d43\u0026",
-    "attachmentLocalURL": "/discordImg/4e6f8ff0-701b-49b0-a54e-d5195b6a1a81.webp"
+    "attachmentLocalURL": "/discordImg/6b992b3f-264e-46d5-8f2b-53f0c7d5eee9.webp"
   },
   {
     "content": "# ADDON UPDATE #\n\n### @everyone  Fresh release of Minecraft is here, and our Addon has a brand new update! All projects are now fully compatible with the latest Minecraft version. Enjoy the new features right away! ###\n\n## [PROJECT PAGE]: https://blockstate.team/project ##",
@@ -99,7 +13,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1273126992346218588/image.png?ex=66c36a28\u0026is=66c218a8\u0026hm=da4f4fc03adb91300b3398f82f2ec298302f9bbd692da15d8b51d86338ccb8a6\u0026",
-    "attachmentLocalURL": "/discordImg/35db9bdf-0f40-4f2c-80a6-821b0fa26e39.webp"
+    "attachmentLocalURL": "/discordImg/2bf0c26f-9da4-42b9-804d-67b3172aa68d.webp"
   },
   {
     "content": "#  COMMENT FEATURE IS HERE #\n\n### @everyone Since our last survey for the website revamp, a comment section has been one of the most requested features. I'm excited to announce that the comment section is now live! You can now express your thoughts and let everyone know what you think about our projects through comments. Please note that we enforce the same rules in the comment section, so be nice and polite. We have also updated our Terms of Service to include a Privacy Policy. Check it out using the link below. ###\n\n## [TOS]: https://blockstate.team/TOS ##",
@@ -107,7 +21,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1270774098284511253/image.png?ex=66c36c9a\u0026is=66c21b1a\u0026hm=25468233acfb2a94fb12392826f1e186ffa8a0fbd55d7adad3707c0d12bd86dc\u0026",
-    "attachmentLocalURL": "/discordImg/8d4dc3e8-2685-403f-b4dc-eb378c739c12.webp"
+    "attachmentLocalURL": "/discordImg/b172d868-cbc6-4765-9a4b-5c2ad8ceea71.webp"
   },
   {
     "content": "#  FURNITURE VENTURE VIDEO! #\n### Thank you @mooshrooom1 for making this amazing video! ###\nhttps://www.youtube.com/watch?v=8j8KZ7779ns",
@@ -121,7 +35,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1270057096083406889/furnitureVenture.webp?ex=66c373d8\u0026is=66c22258\u0026hm=4474a1ce8a442ceb9fbfb732a6a716ef51953ae1c6b996a9c70cb98f00a4570c\u0026",
-    "attachmentLocalURL": "/discordImg/abb40bc4-03d5-4730-88c8-66e5bb3b503d.webp"
+    "attachmentLocalURL": "/discordImg/684ea7b9-f2d6-4e20-a06b-ed1385b903c1.webp"
   },
   {
     "content": "#  WEBSITE REVAMP #\n\n### Hello @everyone, Blockstate's Birthday is coming soon! So we're planning to  update our website! Give it a new look, some new functionality, and deliver a better user experience! In order to do that, I'd love to hear some suggestion for the revamp, feel free to use the link belows to voice your opinion! Thank you and have a good day  ###\n\n\n## [GOOGLE FORM LINK]: https://forms.gle/VGkLHuThVqat2DuK8  ##",
@@ -135,15 +49,15 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1257522875817263174/image.png?ex=66c35631\u0026is=66c204b1\u0026hm=b05dec2e4c09dea1ad73a8e5f5fedf63ba83add10e3ca00cd2e30433c2b7ebb4\u0026",
-    "attachmentLocalURL": "/discordImg/db0f9346-499c-4376-bb1a-54c3145ff9ed.webp"
+    "attachmentLocalURL": "/discordImg/1581f3d6-0feb-44e4-b007-fe291b852cac.webp"
   },
   {
     "content": "#  NEW PROJECT RELEASED: REDSTONE ENGINE EXPANSION  #\n\n### @everyone  It's been a while since we last released any project, so I'm excited to announce that Redstone Engine Expansion is out now! Redstone Engine Expansion is a project that aims to expand the capabilities of the Redstone Engine block from the Crafty Plane Add-On! Try it out now! ###\n\n## [DOWNLOAD LINK]:  https://blockstate.team/projects/redstone-engine-expansion ##",
     "date": "2024-07-01T20:38:49.579Z",
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
-    "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1257435266684031086/redstoneEngineExpansion.webp?ex=66c3ad59\u0026is=66c25bd9\u0026hm=95ce80e671d547c45d6afd77159b70555d6e6af6c7954a0f8c21b8feaf8e31ca\u0026",
-    "attachmentLocalURL": "/discordImg/e78746de-123b-4115-8a53-5139ef9242e6.webp"
+    "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1257435266684031086/redstoneEngineExpansion.webp?ex=66c30499\u0026is=66c1b319\u0026hm=74b25d2915d43d339eb89370ac2e77a7f0229d1f704eabe0317a6810f1b04096\u0026",
+    "attachmentLocalURL": "/discordImg/cbff6476-c36b-4581-a312-31f0a108d385.webp"
   },
   {
     "content": "# ART ENTHUSIASM VERSION 3 IS OUT!   #\n\n### @everyone  People love Art enthusiasm Add-On Version 1 and 2, even though they lack Realm support and could be a little buggy sometime. And it's time to announce that the long-awaited update is finally here - introducing Art Enthusiasm Version 3! ###\n\n## [DOWNLOAD LINK]:  https://www.blockstate.team/projects/art-enthusiasm-v3 ##",
@@ -151,15 +65,15 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1251663009730793483/artEnthusiasmV3.webp?ex=66c31cc4\u0026is=66c1cb44\u0026hm=a2562802b42b3e3af0b39ea9935fd9bf8581a29f2570ae54876863fa294e07c6\u0026",
-    "attachmentLocalURL": "/discordImg/9050279b-cdb0-42e5-b388-7eed4b7cc106.webp"
+    "attachmentLocalURL": "/discordImg/9b47cf45-ce70-494e-9ec4-97683b6541ab.webp"
   },
   {
     "content": "# Update completed for 1.21.0! #\n\n### @everyone All projects that require Beta API have been updated to Tricky Trials 1.21.0! Thank you for your patience! ###",
     "date": "2024-06-15T07:37:34.4Z",
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
-    "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1251440451953623120/image.png?ex=66c39efe\u0026is=66c24d7e\u0026hm=2d104e191ed2e49bb7bac738711d27cf05000cf7c248e76ad09ee2aca0d06efe\u0026",
-    "attachmentLocalURL": "/discordImg/9265d58e-57b9-41e8-8fad-0fad99e389b6.webp"
+    "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1251440451953623120/image.png?ex=66c2f63e\u0026is=66c1a4be\u0026hm=8df46a06043a3a50f407f29bc3ec53ad9ec2c51126d0f0ef1becf3f8da13acbc\u0026",
+    "attachmentLocalURL": "/discordImg/fd7ccf74-1640-44b1-952e-95994818bb9a.webp"
   },
   {
     "content": "# Bug fix for Music Extension! #\n\n### @everyone  I have released a new bug fix for the mentioned project due to the change of how entity runs command 1.20.60 update. Thank to @luciousfox  for reporting this bug! As a reward, please have the \u003c@\u00261206955959755472958\u003e  role!  ###\n\n## [FIXED VERSION]: https://blockstate.team/projects/music-extension ##",
@@ -173,7 +87,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1205270526646427698/windChargeDemo.webp?ex=66c31666\u0026is=66c1c4e6\u0026hm=58628fa97385781745835dc32d5fa3e443a9e3e3203e6e8c1d67a17cc8741821\u0026",
-    "attachmentLocalURL": "/discordImg/f9fe33da-3e22-4a35-b96e-ad31d3c007fc.webp"
+    "attachmentLocalURL": "/discordImg/fc018059-5bde-4ef8-95fc-8f56634b149a.webp"
   },
   {
     "content": "# ADD-ON UPDATE #\n\n### @everyone All Add-On packs that require Beta Script API have been updated! Thank you for your waiting ###",
@@ -187,7 +101,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1203350022339432498/squidRemodeled.webp?ex=66c35a0a\u0026is=66c2088a\u0026hm=953ee7e65e8ce3c5c5dcb341e0aa95c11c9a8ba024ee710290e7d66c98c26dff\u0026",
-    "attachmentLocalURL": "/discordImg/700cec91-db49-422d-bbd5-e383fcab9c84.webp"
+    "attachmentLocalURL": "/discordImg/b60df9a7-5c31-4b07-a29c-62efbfe63095.webp"
   },
   {
     "content": "# TUFF GOLEM IS FINALLY OUT! #\n### @everyone  Who doesn't love Tuff Golems? They're lovely creatures that can be used to show off your collection or simply help you with decoration for your builds! Sadly, they didn't get enough vote. But what if you could have them right now? Well, now you can! With this Add-On, you can now have Tuff Golems in your game! ###\n## [DOWNLOAD LINK]: https://www.blockstate.team/projects/tuff-golem ##",
@@ -195,7 +109,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1196705398154080316/tuffGolem.webp?ex=66c39180\u0026is=66c24000\u0026hm=4a5edad0b8ff9f791c7381ea93be091b8a686ca56925bd1b782953c487624c7d\u0026",
-    "attachmentLocalURL": "/discordImg/7973e131-516e-4260-9fbf-edfd0e3422cf.webp"
+    "attachmentLocalURL": "/discordImg/1196703a-aacb-40fe-b9a9-72adc92bde9e.webp"
   },
   {
     "content": "# WORKING TV IS NOW PUBLISHED #\n\n### @everyone Watching videos in Minecraft? It might sound unbelievable, but now, thanks to this Add-On, it's a reality! Introducing Working TV, an Add-On that enables you to seamlessly play videos in Minecraft. Choose any video you desire—all within the realm of vanilla Minecraft! No need for mods, plugins, or external software; it's the essence of pure vanilla Minecraft! ###\n\n## [DOWNLOAD LINK]: https://www.blockstate.team/projects/working-tv ##",
@@ -203,7 +117,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1176030270575620167/workingTV.webp?ex=66c37fca\u0026is=66c22e4a\u0026hm=94f003c2be0d3f934573b058d63269eff99e919995f83e9f3d03304d7fb24be7\u0026",
-    "attachmentLocalURL": "/discordImg/686812c1-4b09-4a9e-91c6-4e3587479d40.webp"
+    "attachmentLocalURL": "/discordImg/6f969a2d-0021-445d-a7f4-3077a6d7fb29.webp"
   },
   {
     "content": "# CRAFTY PLANE RELEASED! #\n\n### @everyone Walking? Running? Traveling by minecart? Feeling a bit sluggish for exploring the expansive Minecraft world? That's precisely why this Add-On was created! Behold! A fresh mode of transportation has arrived: the Plane! ###\n\n## [DOWNLOAD LINK]: https://www.blockstate.team/projects/crafty-plane ##",
@@ -211,7 +125,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1171074822382551121/craftyPlane.webp?ex=66c344eb\u0026is=66c1f36b\u0026hm=61aeb0fe9d6307cfebfab3a1abcf6da99f55cc19167bdb8d1d9bfb3b1fb580ad\u0026",
-    "attachmentLocalURL": "/discordImg/bb86d938-1eea-4b7c-bf67-3d3343806efe.webp"
+    "attachmentLocalURL": "/discordImg/1e3a1bc4-0b19-431c-8134-d98aee74f8a3.webp"
   },
   {
     "content": "# Revamping Project page #\n\n### @everyone The project page has remained largely unchanged since the inception of our website. As a result, I've taken the initiative to give it a fresh new look! The concept of a project is no longer limited to Add-Ons; instead, it will showcase a diverse array of tools developed by our team. Additionally, you can now seamlessly filter the entire page to quickly find the specific released project you're seeking. ###\n\n## [PROJECT PAGE]: https://www.blockstate.team/project ##",
@@ -219,7 +133,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1169526224859693066/image.png?ex=66c3916c\u0026is=66c23fec\u0026hm=cc5905113672629261939fe2aa4ee13cfef8788f3e28f515b37231018865d684\u0026",
-    "attachmentLocalURL": "/discordImg/f8e7387a-8fba-49f1-82a4-947eb3deedff.webp"
+    "attachmentLocalURL": "/discordImg/4e8ad6f7-5d5f-49a3-9499-a8c223f0d239.webp"
   },
   {
     "content": "# HEAD DECORATION IS NOW LIVE #\n\n###  @everyone   Presenting Head Decorations! You now have the option to select from a variety of head blocks and seamlessly incorporate them into your game, much like in the Java Edition, but now accessible in Minecraft Bedrock Edition. ###\n\n## [DOWNLOAD LINK]:  https://www.blockstate.team/projects/head-decoration ##",
@@ -227,7 +141,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1162027346044391504/headDecoration.webp?ex=66c3504c\u0026is=66c1fecc\u0026hm=e369b06f1b7f984e415c68f907cad86776b22b70a2c1f85b325448fa426b3550\u0026",
-    "attachmentLocalURL": "/discordImg/43274722-46a6-4150-89f6-28fbc480e61d.webp"
+    "attachmentLocalURL": "/discordImg/970c7d42-1a36-42ed-912b-42949b2f6db1.webp"
   },
   {
     "content": "# ART ENTHUSIASM VERSION 2 IS NOW AVAILABLE! 😱  #\n\n### @everyone  The \"Art Enthusiasm\" Add-On has taken the chart by storm, becoming the most downloaded and beloved Add-On out of all BlockState collection. Your enthusiasm for this remarkable Add-On has not gone unnoticed, and it's time to announce that the long-awaited update is finally here - introducing Art Enthusiasm Version 2! ###\n\n## [DOWNLOAD LINK]:  https://www.blockstate.team/projects/art-enthusiasm-v2 ##",
@@ -301,7 +215,7 @@
     "author": "theblue._.",
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png",
     "attachmentURL": "https://cdn.discordapp.com/attachments/1125672701932089416/1128182439265718333/image.png?ex=66c37406\u0026is=66c22286\u0026hm=911e8f18fb4c762ea2fa95e263442cf01133c151ca02ef950d55b39636113e55\u0026",
-    "attachmentLocalURL": "/discordImg/10ab800d-c855-4251-9211-6b234ad23b53.webp"
+    "attachmentLocalURL": "/discordImg/ad57811e-b8bc-4b26-a5a0-a83baf1b6cdc.webp"
   },
   {
     "content": "# THE OFFICIAL RELEASE OF COPPER MADNESS #\n\n### After some beta testing and the removal of several bugs, we can now public this map for everyone to enjoy. If you find any bug, please let me know (DM me cause I have no Discord for release yet!) ###\n### Once again! Thank you for your support of this map! ###\n\n### https://www.youtube.com/watch?v=Fp-TshP-1cY ###",
@@ -310,38 +224,3 @@
     "avatar": "https://cdn.discordapp.com/avatars/424820587551129600/2b48d6f42ce5410f664df642d8f09ce6.png"
   }
 ]
-        function formatDate(inputDate) {
-            if (!inputDate) return ' ';
-            const formatDateInternal = (date) => date ? `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}` : 'Invalid Date';
-            const date = new Date(inputDate);
-            return formatDateInternal(isNaN(date.getTime()) ? null : date);
-        }
-        function convertDiscordMarkupToHTML(input) {
-            const patterns = [
-                { regex: /###(.*?)###/g, replacement: '<span class="slightlyBold">$1</span>' },
-                { regex: /##(.*?)##/g, replacement: '<span class="bold">$1</span>' },
-                { regex: /#(.*?)#/g, replacement: '<span class="veryBold">$1</span>' },
-                { regex: /(https:\/\/\S+)/g, replacement: '<a href="$1" target="_blank" class="link">$1</a>' },
-                { regex: /@everyone/g, replacement: '<span class="everyone">@everyone</span>' },
-                { regex: /\n/g, replacement: '<br>' }
-            ];
-
-            let result = input;
-
-            patterns.forEach(({ regex, replacement }) => {
-                result = result.replace(regex, replacement);
-            });
-
-            return result;
-        }
-        for (let i = 0 ; i < data.length; i++) {
-            document.getElementById('messageContainer').innerHTML +=  '<br>' + '<div class="message">' + `<img class="userAvatar" src="${data[i].avatar}"> <div> <p class="username">${data[i].author} <span class="timestamp">${formatDate(data[i].date)}</span></p>` + convertDiscordMarkupToHTML(data[i].content) + '</div>' + '</div>';
-            if (data[i].attachmentURL != null) {
-                document.getElementById('messageContainer').innerHTML += `<div class="attachment"><img class="attachmentImg" src="${data[i].attachmentLocalURL}"></div>`;
-            };
-            document.getElementById('messageContainer').innerHTML += `<div class="line">${formatDate(data[i+1]?.date)}</div>`;
-            document.getElementById('messageContainer').style.height = 'auto';
-        }
-    </script>
-</body>
-</html>
