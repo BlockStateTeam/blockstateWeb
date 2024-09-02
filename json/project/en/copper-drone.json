@@ -1,0 +1,75 @@
+{
+    "version": "normal",
+    "title": "Project: Copper Drone",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/us3lwlnrdrm1g4pb4ko6d/Copper-Drone-Addon.mcaddon?rlkey=qm5r04jsjsxpag8eiw17cjzf6&st=z6vrz4rl&dl=0",
+    "introduction": "Do you want to bring your drone into Minecraft? Well, now you can! With this Add-On, you can craft a drone and do tons of cool stuff with it! This Add-On is perfect for those who want to explore and interact their world in a new way!",
+    "content": [
+        {
+            "type": "img",
+            "text": "To begin, you will need to craft the Redstone Engine! The drone needs this to be crafted! You can craft it by combining 1 Iron block, 4 Redstone dust, and 4 Copper ingot in the crafting table!"
+        },
+        {
+            "type": "img",
+            "text": "Then we can craft the Copper Drone itself! You can craft it by combining 1 Redstone Engine, 3 Copper blocks, and 5 Iron ingot in the crafting table! Now you have the Drone Block, it is a good decoration block, but to make it fly, you need to make the controller first!"
+        },
+        {
+            "type": "img",
+            "text": "To craft the controller, you need to combine 1 Redstone dust, 5 Copper ingots, and 1 Iron ingot in the crafting table!"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "IP7bGPb2x3M",
+            "text": "You can switch between modes of the controller by interacting with it! The controller has 3 modes: Control, Spy, and Call!"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "itf8kcF2s6Q",
+            "text": "For the Control mode, simply interact with the Copper Drone block to make it fly! Then interact with the drone again to make it land!"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "1JbyR3KhEbU",
+            "text": "With Spy mode, you can interact with the drone and use it to observe your surroundings! It can fly everywhere and you can see what the drone sees! Note that if you jump while in spy mode, the drone will stop flying and hover mid air!"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "P65NXbjtkCg",
+            "text": "You can also equip the Copper Drone with a TNT block, then use the spy mode to control the Drone and detonate it! You can disable it by switch to other mode using the controller"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "ddaeDfBJrxM",
+            "text": "Call mode will make the drone fly to you. If you're looking at one drone, that drone alone will get back, but if you're sneaking, all drones will fly back!"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "bMISboAmmrU",
+            "text": "The Copper Drone will try to protect you from hostile mobs! It will attack any hostile mobs that are near you!"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "krRusJNG0io",
+            "text": "The Copper Drone when destroyed instead of despawning, it will convert into the Broken Drone Block"
+        },
+        {
+            "type": "img",
+            "text": "You then could repair the Broken Drone Block using a crafting table with 1 Redstone dust, 1 Iron ingot, and 1 Copper block to get the Copper Drone back!"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "wNzzYaCus9w",
+            "text": "By interacting using the Redstone Block, you can increase the Copper Drone damage for 1 minute! Using the Iron Block will increase the Copper Drone's health for indefinitely"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "h7E7YB97wag",
+            "text": "The Copper Drone could change its attack mode by giving it a dispenser! The Copper Drone will shoot wind charges and push the hostile mobs upward instead of melee attack!"
+        },
+        {
+            "type": "videoEmbed",
+            "id": "NkrorzuofoE",
+            "text": "By giving it a flint and steel, the Copper Drone can set the hostile mobs on fire upon melee attack!"
+        }
+    ],
+    "postwarning": "WARNING:  This Addon requires Beta APIs experimental to work properly! "
+}
