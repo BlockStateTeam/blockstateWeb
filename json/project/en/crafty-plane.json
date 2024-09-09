@@ -5,7 +5,8 @@
     "introduction": "Walking? Running? Traveling by minecart? Feeling a bit sluggish for exploring the expansive Minecraft world? That's precisely why this Add-On was created! Behold! A fresh mode of transportation has arrived: the Plane!",
     "content": [
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1007147496",
             "text": "Take a look at the plane! It's so cool! And those blocks aren't just for decoration! You will learn more about them later."
         },
         {
@@ -17,11 +18,13 @@
             "text": "Finally, the plane itself. You'll need the Redstone engine, 2 iron blocks on both side, 1 compass on top and 5 iron ingots. Once you have all the materials, you can craft the plane!"
         },
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1007147505",
             "text": "Oh right! I forgot to mention that you'll need to fuel the plane with redstone! You can do so by right-clicking on the plane with redstone (or redstone block) in your hand. There's a fuel indicator on the plane, so you can check how much fuel you have left."
         },
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1007147519",
             "text": "Let's equip the plane with some attachments, shall we. There're 3 of them: Chest, Daylight Sensor and Dispenser!"
         },
         {
@@ -41,19 +44,23 @@
             "text": "And here's all the items that you can use with the dispenser. The TNT and TNT-mincart are very much self-explanatory, it drops down TNT from the sky. Let's explore the rest of them one by one and see what they do."
         },
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1007147530",
             "text": "The first one is Dye! Any dye will do, while the plane is flying, it will create a trail of colored smoke behind it. The color of the particles will be the same as the dye you used."
         },
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1007147536",
             "text": "The dye won't be visible at night, so you'll need to use the glowstone dust instead. It will create a trail of glowing particles behind the plane."
         },
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1007147549",
             "text": "If you're interested in farming, you can use the bone meal to fertilize the crops beneath the plane. It will only work with crops (wheat, carrot, potato, etc) and not with sapling or mushroom."
         },
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1007147558",
             "text": "The firework rockets and redstone will both instant-boost your plane speed. While the redstone only boost in the Y-axis, the firework will boost in your view direction.<br><br>Note that, the plane can crash! If you fly the plane to go straight down (or execute a bad landing), the plane will crash and explode."
         },
         {

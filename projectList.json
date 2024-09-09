@@ -1,9 +1,9 @@
 [
     {
+        "index": 20,
         "project": "Copper Drone",
         "formatName": "copper-drone",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.21",
         "img": "/assets/media/project-logo/copperDrone.webp",
@@ -11,10 +11,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/us3lwlnrdrm1g4pb4ko6d/Copper-Drone-Addon.mcaddon?rlkey=qm5r04jsjsxpag8eiw17cjzf6&st=z6vrz4rl&dl=0"
     },
     {
+        "index": 19,
         "project": "Furniture Venture",
         "formatName": "furniture-venture",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/furnitureVenture.webp",
@@ -22,10 +22,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/b0zsofiwzihowp8mq1wqp/Furniture-Venture-Addon.mcaddon?rlkey=mysy0ofrdr5ohiod5g1ubbb00&st=9c2owau6&dl=0"
     },
     {
+        "index": 18,
         "project": "Redstone Engine Expansion",
         "formatName": "redstone-engine-expansion",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": false,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/redstoneEngineExpansion.webp",
@@ -33,10 +33,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/3o228q9ftug8rbjrsh86i/Redstone-Engine-Expansion-Addon.mcaddon?rlkey=byqv2aijwiyj6g23lz7z0evsi&st=p7iw6924&dl=0"
     },
     {
+        "index": 17,
         "project": "Art Enthusiasm V3",
         "formatName": "art-enthusiasm-v3",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": false,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/artEnthusiasmV3.webp",
@@ -44,10 +44,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/cx96fwreggyj5tty1gftn/Art-Enthusiasm-V3-Addon.mcaddon?rlkey=ykml2sqqjol96urh969kue51y&st=n8nl4vp0&dl=0"
     },
     {
+        "index": 16,
         "project": "Addon Compiler V2",
         "formatName": "addon-compiler-v2",
         "dataItem": "tool",
-        "enforceRedirect": false,
         "experimentalRequire": false,
         "supportVersion": "Windows 10",
         "img": "/assets/media/project-logo/addonCompilerV2.webp",
@@ -56,10 +56,10 @@
         "latestVersion": ""
     },
     {
+        "index": 15,
         "project": "Wind Charge Demo",
         "formatName": "wind-charge-demo",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "deprecated",
         "img": "/assets/media/project-logo/windChargeDemo.webp",
@@ -67,10 +67,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/g3rnomni2egos699e0w6t/Wind-Charge-Addon.mcaddon?rlkey=mhuw6vzlly26uw43rdw7rkugt&dl=0"
     },
     {
+        "index": 14,
         "project": "Squid Remodeled",
         "formatName": "squid-remodeled",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": false,
         "supportVersion": "1.19.0",
         "img": "/assets/media/project-logo/squidRemodeled.webp",
@@ -78,10 +78,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/zfpqgcrj88jrlayr4weoq/Squid-Remodeled-Addon.mcaddon?rlkey=uiq1oe7usgg9wsh016q99e312&dl=0"
     },
     {
+        "index": 13,
         "project": "Tuff Golem",
         "formatName": "tuff-golem",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/tuffGolem.webp",
@@ -89,10 +89,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/bdsurn3xbqbfcogcod9ry/Tuff-Golem-Addon.mcaddon?rlkey=m1eurtr2tn3cw9qkzc7imy407&dl=0"
     },
     {
+        "index": 12,
         "project": "Working TV",
         "formatName": "working-tv",
         "dataItem": "addon",
-        "enforceRedirect": true,
         "experimentalRequire": false,
         "supportVersion": "1.17.0",
         "img": "/assets/media/project-logo/workingTV.webp",
@@ -100,10 +100,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/e9vzm55bsdfgbgnkn2g3h/Working-TV-Addon.mcaddon?rlkey=937gyfsne5yejerm6nwhoxy8n&dl=0"
     },
     {
+        "index": 11,
         "project": "Crafty Plane",
         "formatName": "crafty-plane",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/craftyPlane.webp",
@@ -111,10 +111,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/jeq0l77sgcs4komsc3bka/Crafty-Plane-Addon.mcaddon?rlkey=kkaczykhoc5a5lfh6ukun7qvz&dl=0"
     },
     {
+        "index": 10,
         "project": "Render UI",
         "formatName": "render-ui",
         "dataItem": "tool",
-        "enforceRedirect": false,
         "experimentalRequire": false,
         "supportVersion": "Windows 10",
         "img": "/assets/media/project-logo/renderUI.webp",
@@ -122,10 +122,10 @@
         "directLink": "https://blockstate.team/render-ui"
     },
     {
+        "index": 9,
         "project": "Addon Compiler",
         "formatName": "addon-compiler",
         "dataItem": "tool",
-        "enforceRedirect": false,
         "experimentalRequire": false,
         "supportVersion": "Windows 10",
         "img": "/assets/media/project-logo/addonCompiler.webp",
@@ -133,10 +133,10 @@
         "directLink": "https://raw.githubusercontent.com/Andinh123/Addon-Compiler/main/BlockState-Add-On-Compiler.vbs"
     },
     {
+        "index": 8,
         "project": "Head Decoration",
         "formatName": "head-decoration",
         "dataItem": "addon",
-        "enforceRedirect": true,
         "experimentalRequire": false,
         "supportVersion": "1.17.0",
         "img": "/assets/media/project-logo/headDecoration.webp",
@@ -144,10 +144,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/a9h5fhxme55phkpdlxbwh/Head-Decoration-Addon.mcaddon?rlkey=lv65g9zt6emerxpxo0xqo5zzu&dl=0"
     },
     {
+        "index": 7,
         "project": "Art Enthusiasm V2",
         "formatName": "art-enthusiasm-v2",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/artEnthusiasmV2.webp",
@@ -155,10 +155,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/ixhq0xs71i5azwtq7orki/Art-Enthusiasm-V2-Addon.mcaddon?rlkey=7fqfc4ubfu8xtfqr9iqdwxmhr&dl=0"
     },
     {
+        "index": 6,
         "project": "Banner Marker",
         "formatName": "banner-marker",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/bannerMarker.webp",
@@ -166,10 +166,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/jmmllm5l2rhg2f0gvgihr/Banner-Marker-Addon.mcaddon?rlkey=h1kbnmjq1tduaw10vy1g0oo8q&dl=1"
     },
     {
+        "index": 5,
         "project": "Expression Perfection",
         "formatName": "expression-perfection",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/expressionPerfection.webp",
@@ -177,20 +177,21 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/vlpvggvsnmyx8tw977vkz/Expression-Perfection-Addon.mcaddon?rlkey=dse75l79thmywod2gxawy8v9v&dl=0"
     },
     {
+        "index": 4,
         "project": "Lighting Delight",
         "formatName": "lighting-delight",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/lightingDelight.webp",
         "internalLink": "/projects/lighting-delight",
-        "directLink": "https://dl.dropboxusercontent.com/scl/fi/i7aua40v526mrkiyz03nj/Lighting-Delight-Behavior-Pack.mcaddon?rlkey=jgii2qdeth25m68jnbvwgi14d&st=3p0ssogd&dl=0"  },
+        "directLink": "https://dl.dropboxusercontent.com/scl/fi/i7aua40v526mrkiyz03nj/Lighting-Delight-Behavior-Pack.mcaddon?rlkey=jgii2qdeth25m68jnbvwgi14d&st=3p0ssogd&dl=0"
+    },
     {
+        "index": 3,
         "project": "Art Enthusiasm",
         "formatName": "art-enthusiasm",
         "dataItem": "addon",
-        "enforceRedirect": false,
         "experimentalRequire": true,
         "supportVersion": "1.21.0",
         "img": "/assets/media/project-logo/artEnthusiasm.webp",
@@ -198,10 +199,10 @@
         "directLink": "https://dl.dropboxusercontent.com/scl/fi/ipjbbbevdcsuci5e363sg/Art-Enthusiasm-Addon.mcaddon?rlkey=t1zlnyiywh4nn2a9fnfmrmsl1&dl=0"
     },
     {
+        "index": 2,
         "project": "Music Extension",
         "formatName": "music-extension",
         "dataItem": "addon",
-        "enforceRedirect": true,
         "experimentalRequire": false,
         "supportVersion": "1.19.0",
         "img": "/assets/media/project-logo/musicExtension.webp",
@@ -209,10 +210,10 @@
         "directLink": "https://dl.dropboxusercontent.com/s/9c5zrbpikx3vxea/Music%20Box%20RP.mcaddon?dl=0"
     },
     {
+        "index": 1,
         "project": "Copper Madness",
         "formatName": "copper-madness",
         "dataItem": "map",
-        "enforceRedirect": false,
         "experimentalRequire": false,
         "supportVersion": "1.19.0",
         "img": "/assets/media/project-logo/copperMadness.webp",

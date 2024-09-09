@@ -15,38 +15,37 @@
             "text": "The first feature is the Redstone Launcher. This structure requires 8 redstone block, 1 dispenser in the middle, and a barrel made out of iron bars. Finally, the Redstone Engine block is placed on the middle side of the redstone block with a button on top of it"
         },
         {
-            "type": "video",
-            "alt": "A video of how to use the Redstone Launcher in Minecraft Bedrock Edition for the Redstone Engine Expansion Add-On",
+            "type": "videoEmbedVimeo",
+            "id": "1006703722",
             "text": "To use it, you need one Redstone block as fuel, stand on the Redstone Engine block, and click the button on the Redstone Engine block. Then choose your target and sneak to launch!"
         },
         {
-            "type": "video",
-            "alt": "A video of the launch phase of the Redstone Launcher in action from a side by side angle in Minecraft Bedrock Edition for the Redstone Engine Expansion Add-On",
+            "type": "videoEmbedVimeo",
+            "id": "1006703764",
             "text": "Here's another angle of the Redstone Launcher in action."
         },
         {
             "type": "img",
-            "alt": "The structure of the Redstone Air Defense contains one redstone block, one redstone engine and one dispenser facing upward in Minecraft Bedrock Edition for the Redstone Engine Expansion Add-On",
             "text": "The second feature is the Redstone Air Defense. This structure requires 1 Redstone block , 1 Redstone Engine with a button on its side, and a dispenser on top"
         },
         {
-            "type": "video",
-            "alt": "A video of how to use the Redstone Air Defense in Minecraft Bedrock Edition for the Redstone Engine Expansion Add-On",
+            "type": "videoEmbedVimeo",
+            "id": "1006703798",
             "text": "Simply click the button to activate the Redstone Air Defense. It generates a dome that protects you from projectiles from the Redstone Launcher. Note that any explosion will be negated if inside the dome."
         },
         {
-            "type": "video",
-            "alt": "A video of the Redstone Air Defense in action preventing the TNT launch from the Redstone launcher from landing in Minecraft Bedrock Edition for the Redstone Engine Expansion Add-On",
+            "type": "videoEmbedVimeo",
+            "id": "1006703828",
             "text": "Here's a video of the Redstone Air Defense in action."
         },
         {
-            "type": "video",
-            "alt": "A video of the of a structure called Redstone Engine Lightning Rod in Minecraft Bedrock Edition for the Redstone Engine Expansion Add-On",
+            "type": "videoEmbedVimeo",
+            "id": "1006703866",
             "text": "The Redstone Engine Lightning Rod is the third feature. You can summon a lightning bolt by clicking the button on the Redstone Engine block. The lightning bolt will strike the lightning rod placed above the Redstone Engine."
         },
         {
-            "type": "video",
-            "alt": "A video of the of a structure called Redstone nuke in Minecraft Bedrock Edition for the Redstone Engine Expansion Add-On",
+            "type": "videoEmbedVimeo",
+            "id": "1006703904",
             "text": "The final feature is the Redstone Nuke. This structure requires 9 Iron blocks, 8 Redstone blocks and 1 Redstone Engine block. By placing the Redstone Engine block into the middle, you will immediately activate the Redstone Nuke."
         }
     ]

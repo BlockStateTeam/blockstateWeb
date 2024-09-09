@@ -5,6 +5,46 @@ function convertToHttps(url) {
 function trimDown(variable) {
     return variable.toLowerCase().replace(/\s+/g, "_").replace(/[^a-z0-9_]/g, "");
 }
+window.onload = function () {
+    const menu_btn = document.querySelector('.hamburger');
+    const mobile_menu = document.querySelector('.mobile-nav');
+    menu_btn.addEventListener('click', function () {
+        menu_btn.classList.toggle('is-active');
+        mobile_menu.classList.toggle('is-active');
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('hoverVideo');
+    video.pause();
+    video.addEventListener('mouseover', () => {
+        video.play();
+    });
+    video.addEventListener('mouseout', () => {
+        video.pause();
+        video.currentTime = 0;
+    });
+});
+window.addEventListener("load", () => {
+const loadingScreen = document.getElementById("loadingScreen");
+const fadeDuration = 1000;
+const intervalTime = fadeDuration / 50;
+
+loadingScreen.style.opacity = "1";
+
+setTimeout(() => {
+    const fadeOutStep = () => {
+        const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+        loadingScreen.style.opacity = currentOpacity;
+
+        if (currentOpacity <= 0) {
+            loadingScreen.style.visibility = "hidden";
+            clearInterval(fadeInterval);
+        }
+    };
+    const fadeInterval = setInterval(fadeOutStep, intervalTime);
+    }, 1000);
+});
+/////////////////////////////////////////////////////////////////////////////////////////
 let paginatedData;
 let searchInput = document.getElementById("search");
 let searchButton = document.getElementById("searchButton");
@@ -76,7 +116,7 @@ function renderTable(data, currentPage, itemsPerPage) {
                     </div>
                 </div>`;
             htmlCell.innerHTML = headHtml;
-            let btnHTML = `<button id="searchButton" class="headButton" onClick="headDecoration.handleButtonClick('${item.name}', '${imageUrl}', '${headClass}', true)">Add head</button>`;
+            let btnHTML = `<button id="searchButton" class="headButton" onClick="handleButtonClick('${item.name}', '${imageUrl}', '${headClass}', true)">Add head</button>`;
             buttonCell.innerHTML = btnHTML;
             row.appendChild(nameCell);
             row.appendChild(htmlCell);
@@ -108,7 +148,7 @@ function updatePagination(data, itemsPerPage) {
 document.getElementById("category").addEventListener("change", function() {
     let selectedCategory = this.value;
     if (selectedCategory) {
-        let apiUrl = `https://blockstate.team/json/${selectedCategory}.json`;
+        let apiUrl = `/json/${selectedCategory}.json`;
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
@@ -195,7 +235,7 @@ function updateFetch(fetchContent) {
     numericWidth += 8.333;
     loadingBarRun.style.width = numericWidth + '%';
 }
-function expandImage(url) {
+function cropImage(url) {
     return new Promise((resolve, reject) => {
         const image = new Image();
         image.crossOrigin = 'Anonymous';
@@ -203,11 +243,11 @@ function expandImage(url) {
         image.onload = () => {
             const canvas = document.createElement('canvas');
             canvas.width = 64;
-            canvas.height = 64;
+            canvas.height = 16;
             const context = canvas.getContext('2d');
             context.fillStyle = 'transparent';
-            context.fillRect(0, 0, 64, 64);
-            context.drawImage(image, 0, 0, 64, 32, 0, 0, 64, 32);
+            context.fillRect(0, 0, 64, 16);
+            context.drawImage(image, 0, 0, 64, 16, 0, 0, 64, 16);
             canvas.toBlob(blob => resolve(blob), 'image/png');
         };
         image.onerror = () => {
@@ -344,7 +384,7 @@ async function buildAddon(totalData) {
             const individualTexture = {
                 name: `Head Decoration RP/textures/blocks/custom/${trimDown(totalData[i][0])}.png`,
                 lastModified: new Date(),
-                input: await expandImage(convertToHttps(totalData[i][1])),
+                input: await cropImage(convertToHttps(totalData[i][1])),
             };
             TXLIST.push(individualTexture);
             textureFile.texture_data[trimDown(totalData[i][0])] = {
@@ -391,13 +431,13 @@ async function buildAddon(totalData) {
         const RPMF = { name:"Head Decoration RP/manifest.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/bti6c2dqlxalgy3vc4rxs/manifest.json?rlkey=vl1d1s8i1fua1lbh7att9upir&dl=0") };
         console.log("LOADING RPMF");
         updateFetch("LOADING RPMF");
-        const RPTX = { name:"Head Decoration RP/textures/blocks/base.png", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/9ekew12vjbcvkpwhnx5jp/base.png?rlkey=qzfysk1nc1j2yckqbcindzmg2&dl=0") };
+        const RPTX = { name:"Head Decoration RP/textures/blocks/base.png", lastModified: new Date(), input: await fetch("./base.png") };
         console.log("LOADING RPTX");
         updateFetch("LOADING RPTX");
         const RPLJ = { name:"Head Decoration RP/texts/languages.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/mtew7mgt17uleu6izalt8/languages.json?rlkey=5wpapeaccwzl186ql3njm96nx&dl=0") };
         console.log("LOADING RPLJ");
         updateFetch("LOADING RPLJ");
-        const RPM = { name:"Head Decoration RP/models/blocks/base.geo.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/8epmni11rjzvcyvovk5q0/base.geo.json?rlkey=dlf8le7xxhlez1xr2u2vx7zwn&dl=0") };
+        const RPM = { name:"Head Decoration RP/models/blocks/base.geo.json", lastModified: new Date(), input: await fetch("./base.geo.json") };
         console.log("LOADING RPM");
         updateFetch("LOADING RPM");
         updateFetch("FINISHED!");
@@ -415,102 +455,63 @@ async function buildAddon(totalData) {
         }
     }
 }
-export function handleButtonClick(name, url, cssClass, cookieState) {
-    if (cookieState === true) {
-        document.cookie = `${url}=${name}-${cssClass}; expires=${new Date('9999-12-31').toUTCString()}; path=/`;
+const tosCheckbox = document.getElementById('tosCheckbox');
+const downloadButton = document.getElementById('genericButton');
+tosCheckbox.addEventListener('change', () => {
+if (tosCheckbox.checked) {
+    downloadButton.removeAttribute('disabled');
+    tosLabel.innerHTML = 'I agree to the <a href="/TOS" target="_blank">Term of service</a>';
+} else {
+    downloadButton.setAttribute('disabled', 'disabled');
+    tosLabel.innerHTML = 'I <span style="text-decoration: underline;">disagree</span> to the <a href="/TOS" target="_blank">Term of service</a>';
+}
+});
+const errorWarningCompile = document.getElementById("errorWarningCompile");
+let errorFound = false;
+downloadButton.addEventListener('click', () => {
+    if (!tosCheckbox.checked) {
+        alert('Please agree to the Terms of Service (TOS) before downloading.');
+        return;
     }
-    let table = document.getElementById("myTable")
-    let mulitRows = table.getElementsByTagName("tr");
-    for (let i = 0; i < mulitRows.length; i++) {
-        if (mulitRows[i].getElementsByTagName("td").length >= 4 && mulitRows[i].getElementsByTagName("td")[3].textContent === url) {
-            console.log("Match found");
-            return;
-        }
-    }
-    document.getElementById("emptywarning").style.display = "none";
-    table.style.display = "block";
-    table.getElementsByTagName("tbody")[0];
-    let newRow = table.insertRow(table.rows.length);
-    const cell1 = newRow.insertCell(0);
-    const input = document.createElement("input");
-    input.type = "text";
-    input.autocomplete = "off";
-    input.classList.add("input-name-field");
-    input.value = name;
-    cell1.appendChild(input);
-
-    const cell2 = newRow.insertCell(1);
-    let imageRender = document.createElement("div"); // Create a div element
-    imageRender.innerHTML = `
-        <div class="${cssClass}">
-            <div class="faces">
-                <div class="inner back" style="background-image: url('${url}');"></div>
-                <div class="inner right" style="background-image: url('${url}');"></div>
-                <div class="inner top" style="background-image: url('${url}');"></div>
-                <div class="inner bottom" style="background-image: url('${url}');"></div>
-                <div class="inner front" style="background-image: url('${url}');"></div>
-                <div class="inner left" style="background-image: url('${url}');"></div>
-                <div class="outer back" style="background-image: url('${url}');"></div>
-                <div class="outer right" style="background-image: url('${url}');"></div>
-                <div class="outer top" style="background-image: url('${url}');"></div>
-                <div class="outer bottom" style="background-image: url('${url}');"></div>
-                <div class="outer front" style="background-image: url('${url}');"></div>
-                <div class="outer left" style="background-image: url('${url}');"></div>
-            </div>
-        </div>`;
-    cell2.appendChild(imageRender);
-
-    const cell3 = newRow.insertCell(2);
-    let removeButton = document.createElement("div");
-    removeButton.innerHTML = `<button id="searchButton" class="headButton" onClick="headDecoration.removeButtonClick()">Remove</button>`;
-    cell3.appendChild(removeButton);
-
-    const cell4 = newRow.insertCell(3);
-    let hiddenElement = document.createElement("div");
-    hiddenElement.innerHTML = `${url}`;
-    hiddenElement.style.display = "none";
-    cell4.appendChild(hiddenElement);
-};
-export function removeButtonClick() {
-    let button = event.target;
-    let row = button.closest('tr');
-    document.cookie = `${row.cells[3].querySelector('div').textContent}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
-    let table = document.getElementById('myTable');
-    if (row) {
-        row.remove();
-    }
-    if (table.rows.length === 1) {
-        table.style.display = "none";
-        document.getElementById("emptywarning").style.display = "block";
-    };
-};
-export function initializeDownload() {
     let dataTable = document.getElementById("myTable");
     let uniqueInputValues = [];
     let dataArray = [];
-    let inputValue, errorFound;
     for (let i = 1; i < dataTable.rows.length; i++) {
         let row = dataTable.rows[i];
-        inputValue = row.querySelector('input.input-name-field').value;
+        let inputValue = row.querySelector('input.input-name-field').value;
         let rowData = [inputValue, row.cells[3].textContent];
         if (uniqueInputValues.includes(inputValue)) {
+            console.log(`Duplicate value found: ${inputValue}`);
             errorFound = true;
+            errorWarningCompile.style.display = "block";
+            errorWarningCompile.innerHTML += `<br>${inputValue}`;
         } else {
+            errorWarningCompile.style.display = "none";
             uniqueInputValues.push(inputValue);
             dataArray.push(rowData);
             errorFound = false;
         }
-    };
-    if (!errorFound) {
-        const compiler = document.getElementsByClassName("compiler");
-        for (let i = 0; i < compiler.length; i++) {
-            compiler[i].style.display = "flex";
-        }
-        const loadingBarRun = document.getElementById("loadingBar");
-        loadingBarRun.style.display = "block";
-        buildAddon(dataArray);
-    } else {
-        alert("Duplicate values found: " + inputValue);
     }
-    
-}
+    if (errorFound) {return;}
+    const compiler = document.getElementsByClassName("compiler");
+    for (let i = 0; i < compiler.length; i++) {
+        compiler[i].style.display = "flex";
+    }
+    const loadingBarRun = document.getElementById("loadingBar");
+    loadingBarRun.style.display = "block";
+    console.log(dataArray);
+    buildAddon(dataArray);
+    fetch('https://api.ipify.org/')
+    .then(r => r.ok ? r.text() : Promise.reject('Network response was not ok'))
+    .catch(e => ('undefined', console.error('Error:', e)))
+    .then(data => {
+        let formData = new FormData();
+        formData.append("entry.606279263", data);
+        formData.append("entry.1080269179", document.URL.substring(document.URL.lastIndexOf("/") + 1));
+        formData.append("entry.826374623", Date.now());
+
+        return fetch("https://docs.google.com/forms/d/e/1FAIpQLSfiIG0fLLNucnSzChPm9F2gWqkk9GOhUHGHUlYT-k3h-FBRFA/formResponse", { method: "POST", body: formData, mode: "no-cors" });
+    })
+    .then(() => console.log("Form submitted successfully"))
+    .catch(error => console.error("Error:", error));
+});

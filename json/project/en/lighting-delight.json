@@ -5,7 +5,8 @@
     "introduction": "If you've dabbled in the world of Java Edition Optifine Mod, or even caught a glimpse of it in action through videos, you've probably caught onto its mesmerizing feature: Dynamic Lighting. Now, if the concept of Dynamic Lighting hasn't crossed your gaming radar yet, picture this - it's a game effect that makes items like torches, lanterns, or shroomlights held by players cast a luminous glow. And guess what? Brace yourself, because this very feature is about to work its magic in the Bedrock Edition too!",
     "content": [
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1006708269",
             "text": "Have a look at Dynamic lighting feature with this video!"
         },
         {

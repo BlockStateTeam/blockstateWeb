@@ -17,54 +17,54 @@
             "text": "There're so much stuff! You can cycle through the list by clicking the arrows on the side."
         },
         {
-            "type": "videoEmbed",
-            "id": "st01GrTPpc8",
+            "type": "videoEmbedVimeo",
+            "id": "1006670070",
             "text": "Let's go through some blocks, shall we? Here's the curtain! You can interact with it to open and close. You can also dye it using any dye of your choice! Note that all color furniture blocks are dyeable not just the curtain!"
         },
         {
-            "type": "videoEmbed",
-            "id": "KhmLVZHqLsU",
+            "type": "videoEmbedVimeo",
+            "id": "1006670126",
             "text": "Bird Cage when interacted with, you can place a parrot inside! You can interact it again to take the parrot out!"
         },
         {
-            "type": "videoEmbed",
-            "id": "JSlpRglcz2U",
+            "type": "videoEmbedVimeo",
+            "id": "1006670175",
             "text": "The lamp could be turned on and off by interacting with it. You can also place it on the wall"
         },
         {
-            "type": "videoEmbed",
-            "id": "rHMeCcWVWLo",
+            "type": "videoEmbedVimeo",
+            "id": "1006670216",
             "text": "The chair is a block that you can sit on! It looks great with the table in your dining room! Terracotta Teapot also looks great with the table!"
         },
         {
-            "type": "videoEmbed",
-            "id": "ENrKi8h9bYU",
+            "type": "videoEmbedVimeo",
+            "id": "1006670283",
             "text": "The piano is a block that you can play! You can play it by interacting with it. You can also play a collection of songs by interacting with a book renamed to that song. Here's the list of all possible song it can play: Christmas, Fur Elise, Symphony, Faded, Glimpse of Us, and Golden Hour."
         },
         {
-            "type": "videoEmbed",
-            "id": "gGgD_iQmD4o",
+            "type": "videoEmbedVimeo",
+            "id": "1006670349",
             "text": "The awning can connect to each other to form bigger awning! It can also be dyed to any color of your choice!"
         },
         {
-            "type": "videoEmbed",
-            "id": "iK8VVywy7xU",
+            "type": "videoEmbedVimeo",
+            "id": "1006670398",
             "text": "The Brick Oven is the most unique block in this addon! You can cook food in it! But not only food, you can also use it to smoke Rotten Flesh into Leather! You can also turn cactus into green dye, sea pickle into lime dye"
         },
         {
-            "type": "videoEmbed",
-            "id": "MBv46AYxXN0",
+            "type": "videoEmbedVimeo",
+            "id": "1006670459",
             "text": "The item sign by interacting with it using an axe of any kind, you can change the item symbol it displays."
         },
         {
-            "type": "videoEmbed",
-            "id": "Hb-W8BTi8NA",
+            "type": "videoEmbedVimeo",
+            "id": "1006670006",
             "text": "The final two blocks are the drawer and the Furniture Design Table itself! The drawer can store items in it! First, interact with it to open the drawer. Then, you open it and put items in! For the Furniture Design Table, by placing any furniture block on top of it, it will decompose the block into its original material!"
         },
         {
             "type": "youtube",
             "iframe": "<iframe src=\"https://www.youtube.com/embed/8j8KZ7779ns\" title=\"Furniture Venture Add-On for Minecraft! | Minecraft Bedrock 1.21+\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-            "text": "Here's a videoEmbed from Mooshrooom! Showcasing how to use the Add-On!"
+            "text": "Here's a videoEmbedVimeo from Mooshrooom! Showcasing how to use the Add-On!"
         }
     ],
     "postwarning": "WARNING:  This Addon requires Beta APIs experimental to work properly! "

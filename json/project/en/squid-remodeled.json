@@ -19,6 +19,10 @@
         {
             "type": "img",
             "text": "Brand new squid model!"
+        },
+        {
+            "type": "youtube",
+            "iframe": "<iframe src=\"https://www.youtube.com/embed/1bVIpOUwqe4\" title=\"Nyan Squid (Nyan Cat parody)\" frameborder=\"0\"></iframe>"
         }
     ],
     "credit": "Thank you to FishCat for creating this amazing resource pack! <br> Please check out his amazing work: <br><br><a href=\"https://www.planetminecraft.com/member/fishcat/\" target=\"_blank\">> Planet Minecraft</a><br><br> <a href=\"https://discordapp.com/users/462343353678430209\" target=\"_blank\">> Discord</a>"

@@ -1,0 +1,399 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.music_box.setblock": {
+            "loop": false,
+            "animation_length": 0.1,
+            "timeline": {
+                "0.05": "/setblock ~ ~ ~ mb:dummy_block"
+            }
+        },
+        "animation.music_box.on_loop": {
+            "loop": true,
+            "animation_length": 0.05,
+            "timeline": {
+                "0": [
+                    "/execute if block ^ ^ ^-1 gold_block run tag @s add looped",
+                    "/execute if block ^ ^ ^-1 gold_block run event entity @s mb:should_loop",
+                    "/execute unless block ^ ^ ^-1 gold_block run tag @s remove looped",
+                    "/execute unless block ^ ^ ^-1 gold_block run event entity @s mb:should_not_loop",
+                    "/execute unless block ~ ~1 ~ air run event entity @s mb:spill",
+                    "/execute unless block ~ ~1 ~ air run stopsound @a",
+                    "/execute unless block ~ ~ ~ mb:dummy_block run event entity @s mb:destroyed"
+                ]
+            }
+        },
+        "animation.music_box.i1": {
+            "loop": true,
+            "animation_length": 0.11,
+            "timeline": {
+                "0": [
+                    "/playsound mb.i1 @a"
+                ],
+                "0.12": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.i2": {
+            "loop": true,
+            "animation_length": 0.13,
+            "timeline": {
+                "0": [
+                    "/playsound mb.i2 @a"
+                ],
+                "0.14": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.i3": {
+            "loop": true,
+            "animation_length": 0.15,
+            "timeline": {
+                "0": [
+                    "/playsound mb.i3 @a"
+                ],
+                "0.16": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.i4": {
+            "loop": true,
+            "animation_length": 0.17,
+            "timeline": {
+                "0": [
+                    "/playsound mb.i4 @a"
+                ],
+                "0.18": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.i5": {
+            "loop": true,
+            "animation_length": 0.19,
+            "timeline": {
+                "0": [
+                    "/playsound mb.i5 @a"
+                ],
+                "0.21": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.gilded": {
+            "loop": true,
+            "animation_length": 134,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Gilded",
+                    "/playsound mb.gilded @a"
+                ],
+                "133": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.raider": {
+            "loop": true,
+            "animation_length": 186,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Raider",
+                    "/playsound mb.raider @a"
+                ],
+                "185": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.shrieker": {
+            "loop": true,
+            "animation_length": 129,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Shrieker",
+                    "/playsound mb.shrieker @a"
+                ],
+                "128": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.wither": {
+            "loop": true,
+            "animation_length": 149,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Wither",
+                    "/playsound mb.wither @a"
+                ],
+                "148": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.warden": {
+            "loop": true,
+            "animation_length": 187,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Warden",
+                    "/playsound mb.warden @a"
+                ],
+                "186": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.13": {
+            "loop": true,
+            "animation_length": 179,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing 13",
+                    "/playsound mb.13 @a"
+                ],
+                "178": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.cat": {
+            "loop": true,
+            "animation_length": 186,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Cat",
+                    "/playsound mb.cat @a"
+                ],
+                "185": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.blocks": {
+            "loop": true,
+            "animation_length": 345,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Blocks",
+                    "/playsound mb.blocks @a"
+                ],
+                "344": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.chirp": {
+            "loop": true,
+            "animation_length": 186,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Chirp",
+                    "/playsound mb.chirp @a"
+                ],
+                "185": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.far": {
+            "loop": true,
+            "animation_length": 148,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Far",
+                    "/playsound mb.far @a"
+                ],
+                "147": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.mall": {
+            "loop": true,
+            "animation_length": 198,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Mall",
+                    "/playsound mb.mall @a"
+                ],
+                "197": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.mellohi": {
+            "loop": true,
+            "animation_length": 98,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Mellohi",
+                    "/playsound mb.mellohi @a"
+                ],
+                "97": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.stal": {
+            "loop": true,
+            "animation_length": 151,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Stal",
+                    "/playsound mb.stal @a"
+                ],
+                "150": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.strad": {
+            "loop": true,
+            "animation_length": 190,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Strad",
+                    "/playsound mb.strad @a"
+                ],
+                "189": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.ward": {
+            "loop": true,
+            "animation_length": 252,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Ward",
+                    "/playsound mb.ward @a"
+                ],
+                "251": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.11": {
+            "loop": true,
+            "animation_length": 72,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing 11",
+                    "/playsound mb.11 @a"
+                ],
+                "71": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.wait": {
+            "loop": true,
+            "animation_length": 237,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Wait",
+                    "/playsound mb.wait @a"
+                ],
+                "236": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.pigstep": {
+            "loop": true,
+            "animation_length": 149,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Pigstep",
+                    "/playsound mb.pigstep @a"
+                ],
+                "148": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.otherside": {
+            "loop": true,
+            "animation_length": 196,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Otherside",
+                    "/playsound mb.otherside @a"
+                ],
+                "195": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.5": {
+            "loop": true,
+            "animation_length": 179,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing 5",
+                    "/playsound mb.5 @a"
+                ],
+                "178": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.relic": {
+            "loop": true,
+            "animation_length": 219,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Relic",
+                    "/playsound mb.relic @a"
+                ],
+                "218": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.creator": {
+            "loop": true,
+            "animation_length": 176,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Creator",
+                    "/playsound mb.creator @a"
+                ],
+                "175": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.creator_music_box": {
+            "loop": true,
+            "animation_length": 73,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Creator Music Box",
+                    "/playsound mb.creator_music_box @a"
+                ],
+                "72": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        },
+        "animation.music_box.precipice": {
+            "loop": true,
+            "animation_length": 299,
+            "timeline": {
+                "0": [
+                    "/title @a actionbar Now playing Precipice",
+                    "/playsound mb.precipice @a"
+                ],
+                "298": [
+                    "/event entity @s[tag=!looped] mb:spill"
+                ]
+            }
+        }
+    }
+}

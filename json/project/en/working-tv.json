@@ -13,8 +13,14 @@
             "text": "Let's start with its crafting recipe. It's pretty simple, just 5 iron ingots, 1 copper ingot and 1 redstone dust! Here's how it looks like in the crafting table!"
         },
         {
-            "type": "video",
+            "type": "videoEmbedVimeo",
+            "id": "1007152138",
             "text": "To turn on the TV, simply right-click the TV. You can also turn it off by right-clicking it again! Now, the TV can play up to 5 videos, to change the video, simply right-click the copper antenna on top of the TV."
+        },
+        {
+            "type": "youtube",
+            "iframe": "<iframe src=\"https://www.youtube.com/embed/F86WdfpVAbk\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+            "text": "Here's a video of Bad Apple playing in Minecraft!"
         }
     ],
     "customizable": {

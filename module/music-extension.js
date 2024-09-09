@@ -1,56 +1,59 @@
-import { downloadZip } from "https://cdn.jsdelivr.net/npm/client-zip/index.js"
-function validateFiles() {
-    const musicInput = document.getElementById("musicInput");
-    const userFiles = musicInput.files;
-    console.log("Uploaded file quantity: " + userFiles.length);
-    if (userFiles.length > 5) {
-        alert('You can only upload a maximum of 5 files.');
-    }
-    return userFiles.length;
+import { downloadZip } from "https://cdn.jsdelivr.net/npm/client-zip/index.js";
+let shouldCustomize = false;
+let musicList = {
+    disc0: [undefined, 0],
+    disc1: [undefined, 0],
+    disc2: [undefined, 0],
+    disc3: [undefined, 0],
+    disc4: [undefined, 0]
+};
+for (let i = 0; i < 5; i++) {
+    document.getElementById(`upload${i + 1}`).addEventListener('change', () => {
+        shouldCustomize = true;
+        const file = document.getElementById(`upload${i + 1}`).files[0];
+        const audio = document.getElementById(`upload${i + 1}audio`);
+        audio.src = URL.createObjectURL(file);
+        audio.addEventListener("loadedmetadata", () => {
+            musicList['disc' + i][0] = file;
+            musicList['disc' + i][1] = Math.ceil(audio.duration);
+            console.log(`upload${i + 1}: ${musicList['disc' + i][1]}`);
+        });
+
+    });
 }
 function updateFetch(fetchContent) {
     document.getElementById("loadingText").innerHTML = fetchContent;
     let loadingBarRun = document.getElementById("loadingBarRun");
     let currentWidth = loadingBarRun.style.width;
     let numericWidth = parseFloat(currentWidth);
-    numericWidth += 1.369863;
+    numericWidth += 1.36985;
     loadingBarRun.style.width = numericWidth + '%';
 }
-document.getElementById('musicInput').addEventListener('change', validateFiles);
-async function downloadTestZip() {
-    const musicInput = document.getElementById("musicInput");
-    const files = musicInput.files;
-    const zipItems = [];
-    let audioDurations = [];
-
-    for (let i = 0; i < files.length; i++) {
-        const file = files[i];
-        const audio = new Audio();
-        const audioSource = URL.createObjectURL(files[i]);
-        const audioLoadingPromise = new Promise((resolve) => {
-            audio.src = audioSource;
-            audio.addEventListener("loadedmetadata", function() {
-                const duration = audio.duration;
-                resolve(Math.ceil(duration));
-            });
-        });
-        const duration = await audioLoadingPromise;
-        audioDurations.push(duration);
-        const zipItem = {
-            name: `Music Box RP/sounds/music/i${i + 1}.ogg`,
-            lastModified: file.lastModified,
-            input: file,
+window.downloadTestZip = async function downloadTestZip() {
+    if (!shouldCustomize) {
+        window.location.href = 'https://dl.dropboxusercontent.com/s/9c5zrbpikx3vxea/Music%20Box%20RP.mcaddon?dl=0';
+        return;
+    }
+    [...document.getElementsByClassName("compiler")].forEach((element) => {
+        element.style.display = "flex";
+    });
+    let zipItems = [];
+    for (let i = 0; i < 5; i++) {
+        let file = musicList['disc' + i][0];
+        if (file !== undefined) {
+            const zipItem = {
+                name: `Music Box RP/sounds/music/i${i + 1}.ogg`,
+                lastModified: new Date(),
+                input: file,
+            };
+            zipItems.push(zipItem);
         };
-        zipItems.push(zipItem);
     }
     let BPAnim;
-    for (let i = 0; i < 5; i++) {
-        if (audioDurations[i] === undefined) { audioDurations[i] = 0};
-    }
-    fetch('https://dl.dropboxusercontent.com/scl/fi/2vhvn4nj3de0tw6us4crh/music_box.animation.json?rlkey=26mgyyj2zlym4hciu6f7kghg2&dl=0')
+    fetch('https://dl.dropboxusercontent.com/scl/fi/wdc6nbmskwjpl4e3buzhg/music_box.animation.json?rlkey=92erzwjew495pk5aipwb7lq3c&st=1fvxblve&dl=0')
     .then((response) => response.json())
     .then((jsonData) => {
-        BPAnim = JSON.stringify(jsonData).replace(0.12, `${audioDurations[4]+0.05}`).replace(0.13, `${audioDurations[3]}`).replace(0.11, `${audioDurations[4]}`).replace(0.20, `${audioDurations[0]+0.05}`).replace(0.19, `${audioDurations[0]}`).replace(0.18, `${audioDurations[1]+0.05}`).replace(0.17, `${audioDurations[1]}`).replace(0.16, `${audioDurations[2]+0.05}`).replace(0.15, `${audioDurations[2]}`).replace(0.14, `${audioDurations[3]+0.05}`);
+        BPAnim = JSON.stringify(jsonData).replace(0.11, `${musicList.disc0[1] + 0.05}`).replace(0.12, musicList.disc0[1]).replace(0.13, `${musicList.disc1[1] + 0.05}`).replace(0.14, musicList.disc1[1]).replace(0.15, `${musicList.disc2[1] + 0.05}`).replace(0.16, musicList.disc2[1]).replace(0.17, `${musicList.disc3[1] + 0.05}`).replace(0.18, musicList.disc3[1]).replace(0.19, `${musicList.disc4[1] + 0.05}`).replace(0.21, musicList.disc4[1]);
     })
     .catch((error) => console.error('Error fetching and updating JSON data:', error));
     updateFetch("LOADING BPAnim");
@@ -168,9 +171,6 @@ async function downloadTestZip() {
     const RPTI10 = { name: "Music Box RP/textures/items/wither.png", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/wx3szgrzyssf6gn0rxu6g/wither.png?rlkey=1bf5p3i10mditdht14w2pvo0k&dl") };
     console.log("LOADING RPTI10");
     updateFetch("LOADING RPTI10");
-    const RPPA = { name: "Music Box RP/textures/particle/note.png", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/q5orz05uuwiahhhfwurvg/note.png?rlkey=zl9e5nx5oy8wkc0lfw7sy4avd&dl") };
-    console.log("LOADING RPPA");
-    updateFetch("LOADING RPPA");
     const RPIT = { name: "Music Box RP/textures/item_texture.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/eyn7q7r9jfngnrb78a6at/item_texture.json?rlkey=ztsxquef9rb228h1cf99qccuh&dl") };
     console.log("LOADING RPIT");
     updateFetch("LOADING RPIT");
@@ -190,6 +190,9 @@ async function downloadTestZip() {
     const BPPI = { name: "Music Box BP/pack_icon.png", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/4si7pqk54jrkk5ehipme4/pack_icon.png?rlkey=pmz6qsu3qivdfwtszc7xzntp6&dl") };
     console.log("LOADING BPPI");
     updateFetch("LOADING BPPI");
+    const BPSCRIPT = { name: "Music Box BP/scripts/main.js", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/su1is6byf847my0vw3494/main.js?rlkey=f4gbvj5kyyl0sdnvw816h3lnx&st=346d5o9p&dl=0") };
+    console.log("LOADING BPSCRIPT");
+    updateFetch("LOADING BPSCRIPT");
     const BPAC = { name: "Music Box BP/animation_controllers/music_box.animation_controllers.json", lastModified: new Date(), input: await fetch("https://dl.dropboxusercontent.com/scl/fi/mwectpyr1r5xe349wzg81/music_box.animation_controllers.json?rlkey=9p3tf0h0y6pjz62npe8vihvdp&dl") };
     console.log("LOADING BPAC");
     updateFetch("LOADING BPAC");
@@ -281,7 +284,7 @@ async function downloadTestZip() {
     console.log("LOADING BPMF");
     updateFetch("LOADING BPMF");
     updateFetch("FINISHED!");
-    const blob = await downloadZip([...zipItems, RPSE, BPTD, BPMF, BPI10, BPLT, BPR1, BPR2, BPR3, BPR4, BPR5, BPR6, BPR7, BPR8, BPR9, BPR10, BPR11, BPPI, BPAC, BPAnimInject, BPB, BPE1, BPE2, BPE3, BPI1, BPI2, BPI3, BPI4, BPI5, BPI6, BPI7, BPI8, BPI9, RPPA, RPIT, RPTT, RPBJ, RPMNF, RPPI, RPTI1, RPTI2, RPTI3, RPTI4, RPTI5, RPTI6, RPTI7, RPTI8, RPTI9, RPTI10, RPSF1, RPSF2, RPSF3, RPSF4, RPSF5, RPT, RPTB, RPTE, RPAC, RPAnim, RPE1, RPE2, RPE3, RPI1, RPI2, RPI3, RPI4, RPI5, RPI6, RPI7, RPI8, RPI9, RPI10, RPMB, RPME, RPP, RPSD]).blob()
+    const blob = await downloadZip([...zipItems, BPSCRIPT, RPSE, BPTD, BPMF, BPI10, BPLT, BPR1, BPR2, BPR3, BPR4, BPR5, BPR6, BPR7, BPR8, BPR9, BPR10, BPR11, BPPI, BPAC, BPAnimInject, BPB, BPE1, BPE2, BPE3, BPI1, BPI2, BPI3, BPI4, BPI5, BPI6, BPI7, BPI8, BPI9, RPIT, RPTT, RPBJ, RPMNF, RPPI, RPTI1, RPTI2, RPTI3, RPTI4, RPTI5, RPTI6, RPTI7, RPTI8, RPTI9, RPTI10, RPSF1, RPSF2, RPSF3, RPSF4, RPSF5, RPT, RPTB, RPTE, RPAC, RPAnim, RPE1, RPE2, RPE3, RPI1, RPI2, RPI3, RPI4, RPI5, RPI6, RPI7, RPI8, RPI9, RPI10, RPMB, RPME, RPP, RPSD]).blob()
     const link = document.createElement("a")
     link.href = URL.createObjectURL(blob)
     link.download = "Music Box Addon.mcaddon"
@@ -290,19 +293,5 @@ async function downloadTestZip() {
     const compiler = document.getElementsByClassName("compiler");
     for (let i = 0; i < compiler.length; i++) {
         compiler[i].style.display = "none";
-    }
-}
-export function initializeDownload() {
-    if (validateFiles() === 0) {
-        window.location.href = 'https://dl.dropboxusercontent.com/s/9c5zrbpikx3vxea/Music%20Box%20RP.mcaddon?dl=0';
-    } else {
-        downloadTestZip();
-        console.log("TESTETSTESTEST");
-        const compiler = document.getElementsByClassName("compiler");
-        for (let i = 0; i < compiler.length; i++) {
-            compiler[i].style.display = "flex";
-        }
-        document.getElementById("loadingBar").style.display = "block";
-        document.getElementById("loadingBarRun").style.width = "0";
     }
 }
