@@ -1,0 +1,210 @@
+@font-face { font-family: MinecraftTen; src: url('./assets/fonts/MinecraftTen.woff'); } 
+@font-face { font-family: Monocraft; src: url('./assets/fonts/Monocraft.ttf'); } 
+@font-face { font-family: Minecraft; src: url('./assets/fonts/Minecraft.otf'); }
+@font-face { font-family: MinecraftFive; src: url('./assets/fonts/MinecraftFive-Regular.woff2'); } 
+
+body {
+    overflow-x: hidden;
+    font-family: 'Minecraft';
+    background-color: #F8ECEC;
+    margin: 0;
+    font-size: 1.75vw;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+input[type="file"] {
+    display: none;
+}
+pre {
+    background-color: white;
+    border-radius: 0.5vw;
+    padding: 2vw;
+    font-family: 'Minecraft';
+}
+h1 {
+    user-select: none;
+    font-family: 'MinecraftTen';
+    font-size: 3vw;
+}
+#fakeLogo {
+    position: fixed;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    margin-left: 5.5vw;
+    font-family: 'MinecraftTen';
+    font-size: 2vw;
+    line-height: 0.85;
+    z-index: 40;
+}
+.topnav {
+    z-index: 30;
+    background-color: #FFFFFF;
+    height: 5vw;
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+}
+.topnav a {
+    font-family: 'MinecraftTen';
+    float: right;
+    display: block;
+    color: #373097;
+    text-align: center;
+    padding: 1.2vw 1.5vw;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: 0.15s;
+}
+.topnav a:hover {
+    background-color: #e9d3ff;
+    color: #8000ff;
+}
+
+.topnav a.active {
+    background-color: #4d009a;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+text { 
+    user-select: none;
+}
+.toolContainer {
+    display: flex;
+    flex-direction: column;
+}
+.toolContainer > * {
+    margin-top: 2vh;
+}
+.genericButton {
+    width: fit-content;
+    border: none;
+    border-radius: 0.5vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #4229B9;
+    color: #FFFFFF;
+    font-family: 'MinecraftTen';
+    font-size: 2vw;
+    transition: 0.25s;
+}
+.genericButton:hover {
+    border-radius: 1vw;
+    background-color: #1b0879;
+    color: #fcf2ff;
+}
+.genericButton:active {
+    border-radius: 1.5vw;
+    background-color: #100546;
+    transform: translate(2px,2px);
+}
+#mobileNav {
+    display: none;
+}
+.hamburger {
+    margin: 2vw;
+    margin-left: 85vw;
+    z-index: 200;
+    display: none;
+	position: fixed;
+	width: 50px;
+	cursor: pointer;
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+}
+.hamburger .bar, .hamburger:after, .hamburger:before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 5px;
+	background-color: #4229B9;
+	margin: 6px 0px;
+	transition: 0.25s;
+}
+
+.hamburger.is-active:before {
+	transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+	transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+	opacity: 0;
+}
+
+.mobile-nav {
+    display: none;
+	position: fixed;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	min-height: 100vh;
+	background-color: white;
+	padding-top: 120px;
+	transition: 0.25s;
+}
+
+.mobile-nav.is-active {
+	left: 0;
+}
+
+.mobile-nav a {
+	display: block;
+	width: 100%;
+	max-width: 200px;
+	margin: 0 auto 16px;
+	text-align: center;
+	padding: 12px 16px;
+	text-decoration: none;
+}
+.hidden{
+    height: 4.5vw;
+}
+@media (max-aspect-ratio: 3/4) {
+    #fakeLogo {
+        height: 15vw;
+        margin-left: 16vw;
+        font-size: 3vh;
+    }
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block;
+    }
+    #desktopNav {
+        display: none;
+    }
+    .genericButton {
+        border-radius: 1.5vh;
+        font-size: 5vw;
+        width: 80vw !important;
+        height: 8vh !important;
+    }
+    h1{
+        font-size: 10vw;
+        margin-top: 5vh;
+    }
+    .hidden{
+        height: 7vh;
+    }
+    .topnav {
+        height: 15vw;
+    }
+    
+    .topnav a {
+        background-color: white;
+        padding: 4vw 2vw;
+        font-size: 8vw;
+    }
+}

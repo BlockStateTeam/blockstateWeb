@@ -1,0 +1,259 @@
+
+<iframe id="loadingScreen" src="/loading" style="position: fixed; width: 100vw; height: 100vh; z-index: 50; background-color: white;"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Toolkit</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="toolkit.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script>
+		window.onload = function () {
+            const menu_btn = document.querySelector('.hamburger');
+            const mobile_menu = document.querySelector('.mobile-nav');
+
+            menu_btn.addEventListener('click', function () {
+                menu_btn.classList.toggle('is-active');
+                mobile_menu.classList.toggle('is-active');
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('hoverVideo');
+            video.pause();
+            video.addEventListener('mouseover', () => {
+                video.play();
+            });
+            video.addEventListener('mouseout', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+        window.addEventListener("load", () => {
+        const loadingScreen = document.getElementById("loadingScreen");
+        const fadeDuration = 1000; // 1 second
+        const intervalTime = fadeDuration / 50;
+
+        loadingScreen.style.opacity = "1";
+
+        setTimeout(() => {
+            const fadeOutStep = () => {
+                const currentOpacity = parseFloat(loadingScreen.style.opacity) - (1 / 50);
+                loadingScreen.style.opacity = currentOpacity;
+
+                if (currentOpacity <= 0) {
+                    loadingScreen.style.visibility = "hidden";
+                    clearInterval(fadeInterval);
+                }
+            };
+            const fadeInterval = setInterval(fadeOutStep, intervalTime);
+            }, 1000);
+        });
+	</script>	
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3449C7QP0C"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3449C7QP0C');
+</script>
+<body>
+    <div class="topnav" id="myTopnav">
+		<video id="hoverVideo" src="./assets/media/rotatingBlock2D.webm" class="hidden" type="video/webm" style="z-index: 40; position: fixed; margin-left: 1vw;" muted loop>BlockState Team</video>
+		<div id="fakeLogo">BlockState <br>Team</div>
+		<nav id="desktopNav">
+			<a href="project">Project</a>
+			<a href="announcement">Announcement</a>
+			<a href="contact">Contact</a>
+			<a href="our_story">Our Story</a>
+			<a href="/">Home</a>
+		</nav>
+		<button class="hamburger">
+			<div class="bar"></div>
+		</button>
+		<div class="mobile-nav">
+			<a href="/">Home</a>
+			<a href="our_story">Our Story</a>
+			<a href="contact">Contact</a>
+			<a href="announcement">Announcement</a>
+			<a href="project">Project</a>
+		</div>
+	</div>
+    <div style="width: 80vw; margin-left: 10vw; margin-top: 10vh;">
+        <h1>- Change UUID</h1>
+        <div class="toolContainer">
+            <input type="file" id="fileInput" accept=".zip,.mcaddon">
+            <button class="genericButton" id="toggleButton">Choose File</button>
+            <pre id="output" style="display: none;"></pre>
+            <div id="errorDisplay"></div>
+        </div>
+    </div>
+    
+    <script>
+        function getUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+                const r = Math.random() * 16 | 0;
+                return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const output = document.getElementById('output');
+            const errorDisplay = document.getElementById('errorDisplay');
+            const toggleButton = document.getElementById('toggleButton');
+            const fileInput = document.getElementById('fileInput');
+            toggleButton.addEventListener('click', function () {
+                if (toggleButton.textContent === 'Choose File') {
+                    document.getElementById('fileInput').click();
+                } else {
+                    if (output.style.display === 'none') {
+                    output.style.display = 'block';
+                    toggleButton.textContent = 'Hide Directory Tree';
+                    } else {
+                        output.style.display = 'none';
+                        toggleButton.textContent = 'Show Directory Tree';
+                    }
+                }
+            });
+            fileInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                output.textContent = "";
+                errorDisplay.textContent = "";
+                if (file) {
+                    const allowedExtensions = ['.zip', '.mcaddon'];
+                    const fileExtension = file.name.slice(file.name.lastIndexOf('.')).toLowerCase();
+                    if (!allowedExtensions.includes(fileExtension)) {
+                        errorDisplay.textContent = "Invalid file type. Please upload a .zip or .mcaddon file.";
+                        toggleButton.textContent = 'Choose File';
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const zipData = e.target.result;
+                        JSZip.loadAsync(zipData).then(async (zip) => {
+                            errorDisplay.textContent = "Reading the ZIP file...";
+                            const tree = {};
+                            const topLevelDirectories = new Set();
+                            zip.forEach(function (relativePath, zipEntry) {
+                                const normalizedPath = relativePath.replace(/\\/g, '/');
+                                const parts = normalizedPath.split('/');
+                                const topLevel = parts[0];
+                                topLevelDirectories.add(topLevel);
+                                let current = tree;
+                                parts.forEach((part, index) => {
+                                    if (!current[part]) {
+                                        current[part] = index === parts.length - 1 && !zipEntry.dir ? 'File' : {};
+                                    }
+                                    current = current[part];
+                                });
+                            });
+                            if (topLevelDirectories.size !== 2) {
+                                errorDisplay.textContent = `The ZIP must contain exactly 2 top-level directories, but it contains ${topLevelDirectories.size}.`;
+                                toggleButton.textContent = 'Choose File';
+                                return;
+                            }
+
+                            let topLevelDirectoryArray = Array.from(topLevelDirectories);
+                            let rpDir, bpDir;
+                            if (topLevelDirectoryArray[0].toLowerCase().includes("rp")) {
+                                rpDir = topLevelDirectoryArray[0];
+                                bpDir = topLevelDirectoryArray[1];
+                            } else if (topLevelDirectoryArray[1].toLowerCase().includes("rp")) {
+                                rpDir = topLevelDirectoryArray[1];
+                                bpDir = topLevelDirectoryArray[0];
+                            } else {
+                                errorDisplay.textContent = "The ZIP must contain a top-level directory with 'RP' in the name.";
+                                toggleButton.textContent = 'Choose File';
+                                return;
+                            }
+                            const rpHeaderUUID = getUUID();
+                            const bpHeaderUUID = getUUID();
+                            let previousRPUUID;
+                            async function processRPManifest(directory, manifestPath) {
+                                const manifestContent = await zip.file(manifestPath).async('text');
+                                const manifest = JSON.parse(manifestContent);
+                                previousRPUUID = manifest.header.uuid;
+                                console.log(previousRPUUID);
+                                manifest.header.uuid = rpHeaderUUID;
+                                zip.file(manifestPath, JSON.stringify(manifest, null, 4));
+                            }
+                            async function processBPManifest(directory, manifestPath) {
+                                const manifestContent = await zip.file(manifestPath).async('text');
+                                const updatedContent = manifestContent.replace(previousRPUUID, rpHeaderUUID);
+                                const manifest = JSON.parse(updatedContent);
+                                manifest.header.uuid = bpHeaderUUID;
+                                zip.file(manifestPath, JSON.stringify(manifest, null, 4));
+                            }
+                            try {
+                                const rpManifestFiles = Object.keys(zip.files)
+                                    .filter(path => path.includes(`${rpDir}/manifest.json`) || path.includes(`${rpDir}\\manifest.json`));
+                                if (rpManifestFiles.length > 0) {
+                                    await processRPManifest(rpDir, rpManifestFiles[0]);
+                                } else {
+                                    errorDisplay.textContent = `RP Manifest file not found in ${rpDir}`;
+                                }
+                            } catch (error) {
+                                console.error("Error processing RP manifest:", error);
+                                errorDisplay.textContent = `Error processing RP manifest: ${error.message}`;
+                            }
+
+                            try {
+                                const bpManifestFiles = Object.keys(zip.files)
+                                    .filter(path => path.includes(`${bpDir}/manifest.json`) || path.includes(`${bpDir}\\manifest.json`));
+                                if (bpManifestFiles.length > 0) {
+                                    await processBPManifest(bpDir, bpManifestFiles[0]);
+                                } else {
+                                    errorDisplay.textContent = `BP Manifest file not found in ${bpDir}`;
+                                }
+                            } catch (error) {
+                                console.error("Error processing BP manifest:", error);
+                                errorDisplay.textContent = `Error processing BP manifest: ${error.message}`;
+                            }
+
+                            toggleButton.textContent = 'Show Directory Tree';
+                            errorDisplay.innerHTML = `<button id="downloadButton" class="genericButton" style="background-color:#124E89"> >Download Modified Pack< </button>`;
+
+                            document.getElementById('downloadButton').addEventListener('click', async () => {
+                                const modifiedZip = await zip.generateAsync({ type: 'blob' });
+                                const blobUrl = URL.createObjectURL(modifiedZip);
+                                const link = document.createElement('a');
+                                link.href = blobUrl;
+                                link.download = file.name;
+                                link.click();
+                                URL.revokeObjectURL(blobUrl);
+                            });
+
+                            function renderTree(node, indent = '', isLast = true) {
+                                let output = "";
+                                const keys = Object.keys(node);
+                                keys.forEach((key, i) => {
+                                    const lastChild = i === keys.length - 1;
+                                    const connector = lastChild ? '└──' : '├──';
+                                    output += `${indent}${connector} ${key}\n`;
+
+                                    if (node[key] !== 'File') {
+                                        output += renderTree(node[key], indent + (lastChild ? '    ' : '│   '), lastChild);
+                                    }
+                                });
+                                return output;
+                            }
+
+                            const treeOutput = `${file.name}\n${renderTree(tree)}`;
+                            output.textContent = treeOutput;
+                        }).catch(function (error) {
+                            console.error("Error reading the ZIP file:", error);
+                            errorDisplay.textContent = "Error reading the ZIP file.";
+                            toggleButton.textContent = 'Choose File';
+                        });
+                    };
+                    reader.readAsArrayBuffer(file);
+                } else {
+                    toggleButton.textContent = 'Choose File';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
