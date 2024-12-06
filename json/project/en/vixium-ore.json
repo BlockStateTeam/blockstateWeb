@@ -1,0 +1,66 @@
+{
+    "version": "normal",
+    "title": "Project: Vixium Ore",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/us3lwlnrdrm1g4pb4ko6d/Copper-Drone-Addon.mcaddon?rlkey=qm5r04jsjsxpag8eiw17cjzf6&st=z6vrz4rl&dl=0",
+    "introduction": "Wanna have more ores in your world? This addon adds a new ore called Vixium! Inspired by Positive XYZ's idea! With this brand new ore, you can craft exclusive tools aiding you in your survival journey!",
+    "content": [
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036862955",
+            "text": "Vixium Ore does not spawn naturally in the world, you need to trigger an asteroid event to get them. You would need to right-click a nether star on the lightning rod! You have about 3 seconds to negate the event by hitting the star."
+        },
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036862999",
+            "text": "Once the asteroid lands, you can mine the Vixium Infused Obsidian, and you will get the Raw Vixium!"
+        },
+        {
+            "type": "img",
+            "text": "Simply smelt the Raw Vixium in the furnace to get the Vixium Bar! You can use the Vixium Bar to craft Vixium Tools!"
+        },
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036863047",
+            "text": "You don't need to worry about getting more nether stars to mine the Vixium Ore. Once you craft the Vixium Block, you can use Amethyst shards to grow more Vixium Ore!"
+        },
+        {
+            "type": "img",
+            "text": "Once the Amethyst budding grows and emits particles, you can mine it to get the Raw Vixium!"
+        },
+        {
+            "type": "img",
+            "text": "You can craft the Vixium Tools using the Vixium Bar using the same recipe as the vanilla tools! The Vixium Trident is the only tool that has this unique recipe!"
+        },
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036863086",
+            "text": "Let's start with the Vixium Sword. It has Sweeping Edge ability which deals damage to multiple mobs at once!"
+        },
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036863120",
+            "text": "By right-clicking the Vixium Sword, you can throw it like a boomerang! It will deal damage to the mobs it hits and return to you!"
+        },
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036863142",
+            "text": "The Vixium Pickaxe has the ability to vein mine ores! Not only that, but it also auto-smelts the ores you mine!"
+        },
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036863171",
+            "text": "Both the Vixium Hoe and Shovel, when right-clicked, will be thrown to generate grass path and farmland respectively!"
+        },
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036863203",
+            "text": "The Vixium Axe requires you to sneak to activate its auto-chopping ability! It will chop down the whole tree for you! Without sneaking, it will work like a normal axe!"
+        },
+        {
+            "type": "videoEmbedVimeo",
+            "id": "1036863249",
+            "text": "The Vixium trident is the most powerful tool in the addon! It could be used as a transportation tool. Once charged, it will launch you to the direction you are facing! Not only that, it also deals damage to the mobs you collide with!"
+        }
+    ],
+    "credit": "Greatly appreciate Positive XYZ for the idea of Vixium Ore! Also for creating amazing texture! <br> Shout out: <br><br> <a href=\"https://discordapp.com/users/1222907341436092496\" target=\"_blank\">> Discord</a>"
+}
