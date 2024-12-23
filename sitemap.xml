@@ -31,6 +31,30 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>http://blockstate.team/projects/emoji-whimsy</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://blockstate.team/projects/vixium-ore</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://blockstate.team/projects/copper-drone</loc>
+        <lastmod>2024-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://blockstate.team/projects/furniture-venture</loc>
+        <lastmod>2024-08-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
         <loc>https://blockstate.team/projects/redstone-engine-expansion</loc>
         <lastmod>2024-08-01</lastmod>
         <changefreq>monthly</changefreq>

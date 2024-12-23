@@ -1,0 +1,25 @@
+{
+    "version": "normal",
+    "title": "Project: Emoji Whimsy",
+    "downloadLink": "https://dl.dropboxusercontent.com/scl/fi/6aqoyynedy3xgtbliaoy1/Emoji-Whimsy-Addon.mcaddon?rlkey=9o2fnrq68y0c208elbj26s65b&st=frpuwlhc&dl=0",
+    "introduction": "Introducing Emoji Whimsy! This addon will allow you to use emojis in your chat dialog! Simply type the emoji and then send! The final message will have your emoji! Enjoy!",
+    "content": [
+        {
+            "type": "img",
+            "text": "When you type an emoji, it will show up like this in the preview chat dialog. But don't worry!"
+        },
+        {
+            "type": "img",
+            "text": "Because when you send the message, the emoji will show up like this!"
+        },
+        {
+            "type": "img",
+            "text": "It also works with signs too!"
+        },
+        {
+            "type": "img",
+            "text": "Tada! The emoji will show up on the sign!"
+        }
+    ],
+    "postwarning": "WARNING:  This Addon requires Beta APIs experimental to work properly!"
+}

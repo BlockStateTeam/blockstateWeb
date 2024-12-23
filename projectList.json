@@ -1,5 +1,16 @@
 [
     {
+        "index": 22,
+        "project": "Emoji Whimsy",
+        "formatName": "emoji-whimsy",
+        "dataItem": "addon",
+        "experimentalRequire": true,
+        "supportVersion": "1.21.51",
+        "img": "/assets/media/project-logo/emojiWhimsy.webp",
+        "internalLink": "/projects/emoji-whimsy",
+        "directLink": "https://dl.dropboxusercontent.com/scl/fi/6aqoyynedy3xgtbliaoy1/Emoji-Whimsy-Addon.mcaddon?rlkey=9o2fnrq68y0c208elbj26s65b&st=frpuwlhc&dl=0"
+    },
+    {
         "index": 21,
         "project": "Vixium Ore",
         "formatName": "vixium-ore",
