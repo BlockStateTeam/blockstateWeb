@@ -1,5 +1,16 @@
 [
     {
+        "index": 23,
+        "project": "Head Deco",
+        "formatName": "head-deco",
+        "dataItem": "addon",
+        "experimentalRequire": false,
+        "supportVersion": "1.21.51",
+        "img": "/assets/media/project-logo/headDeco.webp",
+        "internalLink": "/projects/head-deco",
+        "directLink": "https://dl.dropboxusercontent.com/scl/fi/8ia2m772q06flwghe00l3/Head-Deco-Addon.mcaddon?rlkey=n0qshmxnzqq2n1f1qxylki443&st=u2ljjbyw&dl=0"
+    },
+    {
         "index": 22,
         "project": "Emoji Whimsy",
         "formatName": "emoji-whimsy",
