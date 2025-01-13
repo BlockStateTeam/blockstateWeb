@@ -6,7 +6,111 @@
     "content": [
         {
             "type": "img",
-            "text": "Except for vinalla heads includings wither skeleton, creeper, zombie, and skeleton, all other mob upon death has a chance to drop their head. There's a wooping 368 brand new heads to collect! Including all variants of mobs, such different sheep colors, different cat breed, etc. Note that each mob has different drop rate, you can search the rate with the table belows <br><br> <style>table {width: 100%;border-collapse: collapse;margin: 20px 0;background-color: #fff;}th, td {border: 1px solid #ddd;padding: 8px;text-align: left;}th {background-color: #000085;color: white;}tr:nth-child(even) {background-color: #f2f2f2;}tr:hover {background-color: #ddd;}</style><details><summary>Click to show table</summary><table><thead><tr><th>Entity</th><th>Drop Rate</th></tr></thead><tbody><tr><td>Allay</td><td>20%</td></tr><tr><td>Axolotl</td><td>100%</td></tr><tr><td>Armadillo</td><td>30%</td></tr><tr><td>Bat</td><td>20%</td></tr><tr><td>Bee</td><td>20%</td></tr><tr><td>Breeze</td><td>10%</td></tr><tr><td>Blaze</td><td>0.5%</td></tr><tr><td>Bogged</td><td>1%</td></tr><tr><td>Camel</td><td>100%</td></tr><tr><td>Cat</td><td>33%</td></tr><tr><td>Cave Spider</td><td>0.5%</td></tr><tr><td>Chicken</td><td>1%</td></tr><tr><td>Cod</td><td>10%</td></tr><tr><td>Cow</td><td>1%</td></tr><tr><td>Creaking</td><td>10%</td></tr><tr><td>Dolphin</td><td>33%</td></tr><tr><td>Donkey</td><td>20%</td></tr><tr><td>Drowned</td><td>5%</td></tr><tr><td>Elder Guardian</td><td>100%</td></tr><tr><td>Enderman</td><td>0.5%</td></tr><tr><td>Endermite</td><td>10%</td></tr><tr><td>Evoker</td><td>25%</td></tr><tr><td>Fox</td><td>100%</td></tr><tr><td>Frog</td><td>100%</td></tr><tr><td>Ghast</td><td>6.25%</td></tr><tr><td>Glow Squid</td><td>5%</td></tr><tr><td>Goat</td><td>100%</td></tr><tr><td>Guardian</td><td>0.5%</td></tr><tr><td>Hoglin</td><td>3%</td></tr><tr><td>Horse</td><td>27%</td></tr><tr><td>Husk</td><td>6%</td></tr><tr><td>Iron Golem</td><td>5%</td></tr><tr><td>Llama</td><td>24%</td></tr><tr><td>Magma Cube</td><td>0.5%</td></tr><tr><td>Mooshroom</td><td>100%</td></tr><tr><td>Mule</td><td>20%</td></tr><tr><td>Ocelot</td><td>20%</td></tr><tr><td>Panda</td><td>27%</td></tr><tr><td>Parrot</td><td>25%</td></tr><tr><td>Phantom</td><td>10%</td></tr><tr><td>Pig</td><td>1%</td></tr><tr><td>Piglin Brute</td><td>1%</td></tr><tr><td>Pillager</td><td>2.5%</td></tr><tr><td>Polar Bear</td><td>20%</td></tr><tr><td>Pufferfish</td><td>15%</td></tr><tr><td>Rabbit</td><td>10%</td></tr><tr><td>Ravager</td><td>10%</td></tr><tr><td>Salmon</td><td>10%</td></tr><tr><td>Sheep</td><td>1.75%</td></tr><tr><td>Shulker</td><td>5%</td></tr><tr><td>Silverfish</td><td>10%</td></tr><tr><td>Slime</td><td>0.5%</td></tr><tr><td>Sniffer</td><td>80%</td></tr><tr><td>Snow Golem</td><td>5%</td></tr><tr><td>Spider</td><td>0.5%</td></tr><tr><td>Squid</td><td>5%</td></tr><tr><td>Stray</td><td>5%</td></tr><tr><td>Strider</td><td>10%</td></tr><tr><td>Tadpole</td><td>10%</td></tr><tr><td>Trader Llama</td><td>24%</td></tr><tr><td>Tropicalfish</td><td>10%</td></tr><tr><td>Turtle</td><td>10%</td></tr><tr><td>Vex</td><td>10%</td></tr><tr><td>Villager</td><td>50%</td></tr><tr><td>Vindicator</td><td>5%</td></tr><tr><td>Wandering Trader</td><td>50%</td></tr><tr><td>Warden</td><td>100%</td></tr><tr><td>Witch</td><td>5%</td></tr><tr><td>Wolf</td><td>10%</td></tr><tr><td>Zoglin</td><td>10%</td></tr><tr><td>Zombie Villager</td><td>50%</td></tr><tr><td>Zombified Piglin</td><td>5%</td></tr></tbody></table></details>"
+            "text": "Except for vinalla heads includings wither skeleton, creeper, zombie, and skeleton, all other mob upon death has a chance to drop their head. There's a wooping 368 brand new heads to collect! Including all variants of mobs, such different sheep colors, different cat breed, etc. Note that each mob has different drop rate, you can search the rate with the table belows:"
+        },
+        {
+            "type": "table",
+            "containInSummary": true,
+            "tableContent": {
+                "css": {
+                    "table": {
+                        "width": "100%",
+                        "border-collapse": "collapse",
+                        "margin": "20px 0",
+                        "background-color": "#fff"
+                    },
+                    "th, td": {
+                        "border": "1px solid #ddd",
+                        "padding": "8px",
+                        "text-align": "left"
+                    },
+                    "th": {
+                        "background-color": "#000085",
+                        "color": "white"
+                    },
+                    "tr:nth-child(even)": {
+                        "background-color": "#f2f2f2"
+                    },
+                    "tr:hover": {
+                        "background-color": "#ddd"
+                    }
+                },
+                "head": ["Entity", "Drop Rate"],
+                "body": [
+                    ["Allay", "20%"],
+                    ["Axolotl", "100%"],
+                    ["Armadillo", "30%"],
+                    ["Bat", "20%"],
+                    ["Bee", "20%"],
+                    ["Breeze", "10%"],
+                    ["Blaze", "0.5%"],
+                    ["Bogged", "1%"],
+                    ["Camel", "100%"],
+                    ["Cat", "33%"],
+                    ["Cave Spider", "0.5%"],
+                    ["Chicken", "1%"],
+                    ["Cod", "10%"],
+                    ["Cow", "1%"],
+                    ["Creaking", "10%"],
+                    ["Dolphin", "33%"],
+                    ["Donkey", "20%"],
+                    ["Drowned", "5%"],
+                    ["Elder Guardian", "100%"],
+                    ["Enderman", "0.5%"],
+                    ["Endermite", "10%"],
+                    ["Evoker", "25%"],
+                    ["Fox", "100%"],
+                    ["Frog", "100%"],
+                    ["Ghast", "6.25%"],
+                    ["Glow Squid", "5%"],
+                    ["Goat", "100%"],
+                    ["Guardian", "0.5%"],
+                    ["Hoglin", "3%"],
+                    ["Horse", "27%"],
+                    ["Husk", "6%"],
+                    ["Iron Golem", "5%"],
+                    ["Llama", "24%"],
+                    ["Magma Cube", "0.5%"],
+                    ["Mooshroom", "100%"],
+                    ["Mule", "20%"],
+                    ["Ocelot", "20%"],
+                    ["Panda", "27%"],
+                    ["Parrot", "25%"],
+                    ["Phantom", "10%"],
+                    ["Pig", "1%"],
+                    ["Piglin Brute", "1%"],
+                    ["Pillager", "2.5%"],
+                    ["Polar Bear", "20%"],
+                    ["Pufferfish", "15%"],
+                    ["Rabbit", "10%"],
+                    ["Ravager", "10%"],
+                    ["Salmon", "10%"],
+                    ["Sheep", "1.75%"],
+                    ["Shulker", "5%"],
+                    ["Silverfish", "10%"],
+                    ["Slime", "0.5%"],
+                    ["Sniffer", "80%"],
+                    ["Snow Golem", "5%"],
+                    ["Spider", "0.5%"],
+                    ["Squid", "5%"],
+                    ["Stray", "5%"],
+                    ["Strider", "10%"],
+                    ["Tadpole", "10%"],
+                    ["Trader Llama", "24%"],
+                    ["Tropicalfish", "10%"],
+                    ["Turtle", "10%"],
+                    ["Vex", "10%"],
+                    ["Villager", "50%"],
+                    ["Vindicator", "5%"],
+                    ["Wandering Trader", "50%"],
+                    ["Warden", "100%"],
+                    ["Witch", "5%"],
+                    ["Wolf", "10%"],
+                    ["Zoglin", "10%"],
+                    ["Zombie Villager", "50%"],
+                    ["Zombified Piglin", "5%"]
+                ]
+            }
         },
         {
             "type": "img",
